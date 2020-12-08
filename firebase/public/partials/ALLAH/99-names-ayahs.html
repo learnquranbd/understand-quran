@@ -1,0 +1,204 @@
+ 
+<div class="card card-secondary">
+        <div class="card-header">
+                <h3 class="card-title">কুরআনের  আয়াতে ৯৯টি  নামের ব্যবহার </h3>
+        </div>
+</div>
+<div class="card-body ayah_with_names" style="display: block;"> 
+
+        <div class="row"> 
+                <div class="col-md-12"><div class="quranic_ayah" data-surah-ayah="2:255"></div></div>
+                <div class="col-md-12"><div class="quranic_ayah" data-surah-ayah="2:256"></div></div>
+                <div class="col-md-12"><div class="quranic_ayah" data-surah-ayah="2:257"></div></div>
+                <div class="col-md-12"><div class="quranic_ayah" data-surah-ayah="3:8"></div></div>
+                <div class="col-md-12"><div class="quranic_ayah" data-surah-ayah="3:26"></div></div>
+                <div class="col-md-12"><div class="quranic_ayah" data-surah-ayah="34:26"></div></div>
+                <div class="col-md-12"><div class="quranic_ayah" data-surah-ayah="38:65"></div></div>
+                <div class="col-md-12"><div class="quranic_ayah" data-surah-ayah="38:66"></div></div>
+                <div class="col-md-12"><div class="quranic_ayah" data-surah-ayah="51:58"></div></div>
+                <div class="col-md-12"><div class="quranic_ayah" data-surah-ayah="59:22"></div></div>
+                <div class="col-md-12"><div class="quranic_ayah" data-surah-ayah="59:23"></div></div>
+                <div class="col-md-12"><div class="quranic_ayah" data-surah-ayah="59:24"></div></div>
+                <div class="col-md-12"><div class="quranic_ayah" data-surah-ayah="112:2"></div></div>
+        </div>
+
+
+
+        <div class="name-card col-md-4"> 
+                <span class="ar"> الْقَابِضُ</span>
+                <span class="bn-tranlang"> [ আল-ক্ববিদ্ব' ] </span>
+                <span class="bn-meaning"> সংকীর্ণকারী</span> 
+                <a href="javascript:void(0)" data-ayah="2:245" class="loadAyahInModal white"></a> 
+        </div>
+
+
+
+        <div class="name-card col-md-4"> 
+                <span class="ar"> الْبَاسِطُ</span>
+                <span class="bn-tranlang"> [ আল-বাসিত ] </span>
+                <span class="bn-meaning"> প্রশস্তকারী</span> 
+                <a href="javascript:void(0)" data-ayah="2:245" class="loadAyahInModal white"></a> 
+        </div>
+
+
+        <div class="name-card col-md-4"> 
+                <span class="ar"> الْخَافِضُ</span>
+                <span class="bn-tranlang"> [ আল-খফিদ্বু ] </span>
+                <span class="bn-meaning"> অবনতকারী</span> 
+                <a href="javascript:void(0)" data-ayah="53:6" class="loadAyahInModal white"></a> 
+        </div>
+        <div class="name-card col-md-4"> 
+                <span class="ar"> الرَّافِعُ</span>
+                <span class="bn-tranlang"> [ আর রাফিউ ] </span>
+                <span class="bn-meaning"> উন্নতি প্রদানকারী</span> 
+                <a href="javascript:void(0)" data-ayah="58:11, 6:83" class="loadAyahInModal white"></a> 
+        </div> 
+
+        <div class="name-card col-md-4"> 
+                <span class="ar"> الْمُعِزُّ</span>
+                <span class="bn-tranlang"> [ আল-মুই'জ্ব ] </span>
+                <span class="bn-meaning"> সম্মান-দানকারী</span> 
+                <a href="javascript:void(0)" data-ayah="3:26" class="loadAyahInModal white"></a> 
+        </div>
+        <div class="name-card col-md-4"> 
+                <span class="ar"> المُذِلُّ</span>
+                <span class="bn-tranlang"> [ আল-মুজিল্লু ] </span>
+                <span class="bn-meaning"> বেইজ্জতকারী</span> 
+                <a href="javascript:void(0)" data-ayah="3:26" class="loadAyahInModal white"></a> 
+        </div>
+
+
+
+
+</div>
+
+ 
+<style>
+        .name-card .quranic_verse .transliteration,
+        .name-card .quranic_verse .arabic {
+                text-align: right;
+        }
+
+        .loadAyahInModal,
+        .loadAyahInModal:hover {
+                background: #0f466f;
+                padding: 5px;
+                border-radius: 6px;
+                font-size: 0.9rem;
+                color: #fff;
+        }
+</style>
+
+
+
+<script>
+    $(document).ready(function () {
+            it = 0;
+            bg_classes = ['bg-info',   'bg-gray' ];
+            $('.ayah_with_names .quranic_ayah').each(function(){
+                      CSurahAyah  = $(this).data('surah-ayah').split(':');
+                      Csurah  = CSurahAyah[0];
+                      Cayah   = CSurahAyah[1];
+                      Ctitle  =  getSurahMinHeading(Csurah-1) + ' | আয়াত নং ( ' + en2bnNumber( Cayah ) +' )' ;
+                      surah_ayah_html_c = '';
+                      
+                      bg_class = bg_classes[it % 2];
+                      surah_ayah_html_c += '<a onClick="loadChildAyah(this)" class="btn '+bg_class+' buttontoloadayah btn-sm d-block text-left" data-toggle="collapse" href="#quranic_ayah_'+Csurah+'_'+Cayah+'_'+it+'" role="button" aria-expanded="false" aria-controls="quranic_ayah_'+Csurah+'_'+Cayah+'_'+it+'"> '+ Ctitle + '</a>';
+                      surah_ayah_html_c += '<div id="quranic_ayah_'+Csurah+'_'+Cayah+'_'+it+'" class="collapse"><div class="card card-info quranic_ayah"><div class="card-body quran-container"><div data-loadtype="onlyarabic" class="quran-container ondemandload waiting hidden arabic onlyarabic  on-ar-surah-'+Csurah+'-ayah-'+Cayah+'" id="only-ar-'+Csurah+'-ayah-'+Cayah+'_'+it+'" data-ajaxurl="/resources/verses/'+Csurah+'_'+Cayah+'.html"></div>';
+                      surah_ayah_html_c += '<div data-loadtype="tajweed" class="quran-container ondemandload waiting arabic tajweed hidden tajweed-ar-'+Csurah+'-ayah-'+Cayah+'" id="tajweed-ar-'+Csurah+'-ayah-'+Cayah+'_'+it+'" data-ajaxurl="/resources/tajweed/'+Csurah+'_'+Cayah+'.html"></div>';
+                      surah_ayah_html_c += '<div data-loadtype="wordbywordwrap" class="quran-container ondemandload waiting wordbywordwrap '+Csurah+'-ayah-'+Cayah+'" id="'+Csurah+'-ayah-'+Cayah+'_'+it+'" data-ajaxurl="/resources/quran/'+Csurah+'/'+Cayah+'_ayat.html"></div>';
+                      surah_ayah_html_c += '<div data-loadtype="translation" class="ajax_translation translation ondemandload waiting '+Csurah+'-ayah-'+Cayah+'-translation" id="'+Csurah+'-ayah-'+Cayah+'-translation_'+it+'" data-ajaxurl="/resources/quran/'+Csurah+'/'+Cayah+'_translation.html"></div>';
+                      surah_ayah_html_c += ' <div class="ayah_extra"><ul><li class="tafseer"><a href="javascript:void(0)" class="tafseer_toggle" title="" onclick="loadTafseer('+Csurah+','+Cayah+')"><i class="fa fa-comments"></i>   আয়াতের তাফসীর দেখুন </a> </li>';
+                      surah_ayah_html_c += '<li class="grammer"><a href="javascript:void(0)" class="tafseer_toggle" title="" onclick="loadGrammer('+Csurah+','+Cayah+')"><i class="fa fa-comments"></i>  আয়াতের শব্দবিন্যাস ও  শব্দ পুনরাবৃত্তি </a> </li></ul></div>';
+                      surah_ayah_html_c += '<div data-loadtype="" class="translation-wrapper"><div class="quranic_tafseer ondemandload tafseer-'+Csurah+'-ayah-'+Cayah+'" data-ajaxurl="/resources/quran/'+Csurah+'/'+Cayah+'_tafseer.html"></div></div>';
+                      surah_ayah_html_c += '</div></div></div>';
+            
+                      it++;
+                      $(this).html(surah_ayah_html_c);
+
+                      // recursively_ajax()
+                      
+            });
+
+            $('.ayah_with_names .quranic_ayah .buttontoloadayah').slice(0, 5).each(function(){
+                    $(this).trigger('click'); 
+            });
+
+
+
+            $.each($('.ayah_with_names .loadAyahInModal'), function () {
+                        _this = $(this);
+                        ayah = $(this).data('ayah').split(',');
+                        $(this).html('<i class="fa fa-book-open"></i> কুরআনের ('+ en2bnNumber(ayah.length) + ') টি  আয়াতে এই নামের ব্যবহার ');
+            });
+
+
+
+
+
+           $('.ayah_with_names .loadAyahInModal').on('click', function () {
+                        _this = $(this);
+                        ayah = $(this).data('ayah');
+                        ayahs = ayah.split(',');
+                        s_a_mod_bdy_html   = '';
+                        s_a_mod_bdy_script = '';
+
+                        it = 0;
+                        bg_classes = ['bg-light', 'bg-gray'];
+
+                        $.each(ayahs, function (k, val) {
+                                surah_ayah = val.trim().split(":");
+                                Csurah = surah_ayah[0];
+                                Cayah = surah_ayah[1]; 
+        
+                                s_a_mod_bdy_html += '<div id="quranic_ayah_' + Csurah + '_' + Cayah + '_' + it +'"><div class="card card-info quranic_ayah"><div class="card-header"><h3 class="card-title">' + getSurahMinHeading(Csurah-1) +' | আয়াত নং - ' + en2bnNumber(Cayah) + ' </h3></div><div class="card-body quran-container"><div data-loadtype="wordbywordwrap" class="quran-container  ondemandload waiting  wordbywordwrap ' + Csurah + '-ayah-' + Cayah + '" id="' + Csurah +'-ayah-' + Cayah + '_' + it +'" data-ajaxurl="/resources/quran/' + Csurah + '/' +Cayah + '_ayat.html"></div>';
+                                s_a_mod_bdy_html += '<div data-loadtype="translation" class="ajax_translation translation ondemandload waiting ' + Csurah + '-ayah-' + Cayah + '-translation" id="' + Csurah + '-ayah-' + Cayah + '-translation_' + it + '" data-ajaxurl="/resources/quran/' + Csurah + '/' +Cayah + '_translation.html"></div>';
+                                s_a_mod_bdy_html += ' <div class="ayah_extra"><ul><li class="tafseer"><a href="javascript:void(0)" class="tafseer_toggle" title="" onclick="loadTafseer(' + Csurah + ',' + Cayah +')"><i class="fa fa-comments"></i>   সূরা '+ en2bnNumber(Csurah) + ' : ' + bangla_sura_names[Csurah-1]  + ' : ' + en2bnNumber(Cayah) + '  নং আয়াতের তাফসীর দেখুন </a> </li></ul></div>';
+                                s_a_mod_bdy_html += '<div data-loadtype="tafseer" class="translation-wrapper"><div class="quranic_tafseer ondemandload tafseer-' + Csurah + '-ayah-' + Cayah + '" data-ajaxurl="/resources/quran/' + Csurah + '/' +Cayah + '_tafseer.html"></div></div>';
+                                s_a_mod_bdy_html += '</div></div></div>';
+
+
+
+                                it++;
+
+
+                        });
+
+
+                        ftitle = '<h1><span  class="arabic">' + _this.parent().find('.ar').html() + '</span><span class="bn"> ' +
+                                        _this.parent().find('.bn-tranlang').html() +
+                                        '</span><span class="bn bg-navy"> &nbsp;&nbsp; অনুবাদ : ' +  _this.parent().find('.bn-meaning').html() + ' &nbsp;&nbsp; </span></h1>';
+
+                                
+                        $('#modal-xl .modal-title').html(ftitle);  
+                        $('#modal-xl .modal-body .modal-body-content').html(s_a_mod_bdy_html);  
+                        $('#modal-xl').modal(); 
+
+                        setTimeout(function(){
+                                
+                                $('#modal-xl .modal-body .modal-body-content .ondemandload').each(function () {
+                                        call_ajax_now($(this).data('ajaxurl'), $('#modal-xl .modal-body .modal-body-content #' + $(this).attr('id')));  
+                                });
+
+                        }, 500); 
+
+          }); 
+
+
+
+
+        });
+
+
+        function loadChildAyah(e){
+                parent = $(e).attr('href');
+                
+                $(parent + ' .ondemandload').each(function(){
+                        if($(this).attr('id') !== undefined){
+                                 if($('#' + $(this).attr('id')).html() === '')call_ajax_now($(this).data('ajaxurl'), $('#' + $(this).attr('id')));  
+                        }
+                        
+                });
+         
+        }
+</script> 

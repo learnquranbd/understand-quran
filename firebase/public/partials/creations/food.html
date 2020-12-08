@@ -1,0 +1,40 @@
+<div class="row topindexbar">
+   <div class="col-md-5 col-sm-12">
+
+           <h3 class="text-center arabic cs1">بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِیْمِ</h3>
+           <p class="bangla text-center">শুরু করছি আল্লাহর নামে যিনি পরম করুণাময়, অতি দয়ালু।</p>
+
+   </div>
+   <div class="col-md-2 col-sm-12 indexcol">
+           <button type="button" class="btn btn-block bg-gradient-secondary btn-lg" onClick="openSidebarMenu()"> সূচিপত্র/তালিকা </button>
+   </div>
+   <div class="col-md-5  col-sm-12">
+           <h3 class="text-center arabic cs1">   </h3>
+           <p class="bangla text-center">খাদ্যদ্রব্য</p>
+   </div>
+
+</div>
+
+
+
+
+<script>
+   $(document).ready(function () {
+           //openSidebarMenu(); 
+           CayahArray =
+                   "2:168, 2:173, 3:93, 5:3, 5:4, 6:118, 6:121, 6:138, 6:145, 6:146, 16:115, 35:12, 40:79, 80:24";
+           dynamic_data = {
+                   "subject": "খাদ্যদ্রব্য",
+                   "introHtml": "",
+                   "ayah": String2AyahArray(CayahArray),
+                   "videos": [],
+                   "articles": [],
+                   "books": []
+           };
+
+
+           populate_dynamic_view(dynamic_data);
+
+
+   });
+</script>

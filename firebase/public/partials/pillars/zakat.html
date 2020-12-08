@@ -1,0 +1,67 @@
+<div class="row topindexbar">
+    <div class="col-md-5 col-sm-12">
+
+        <h3 class="text-center arabic cs1">بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِیْمِ</h3>
+        <p class="bangla text-center">শুরু করছি আল্লাহর নামে যিনি পরম করুণাময়, অতি দয়ালু।</p>
+
+    </div>
+    <div class="col-md-2 col-sm-12 indexcol">
+        <button type="button" class="btn btn-block bg-gradient-secondary btn-lg" onClick="openSidebarMenu()">
+            সূচিপত্র/তালিকা </button>
+    </div>
+    <div class="col-md-5  col-sm-12">
+        <h3 class="text-center arabic cs1"> زكاة </h3>
+        <p class="bangla text-center">যাকাত </p>
+    </div>
+
+</div>
+
+
+
+<script>
+    $(document).ready(function () {
+        //openSidebarMenu(); 
+        CayahArray =
+            "2:110, 2:177, 2:277, 2:3, 2:43, 2:83, 3:85, 6:141, 7:156, 9:11, 9:18, 9:5, 9:71, 19:31, 19:55, 21:73, 22:41, 22:78, 23:4, 24:37, 24:56, 27:3, 30:39, 31:4, 33:33, 41:7, 58:13, 73:20, 98:5";
+        dynamic_data = {
+            "subject": "যাকাত",
+            "introHtml": "যাকাত হলো ইসলাম ধর্মের পঞ্চস্তম্ভের একটি। প্রত্যেক স্বাধীন, পূর্ণবয়স্ক মুসলমান নর-নারীকে প্রতি বছর স্বীয় আয় ও সম্পত্তির একটি নির্দিষ্ট অংশ, যদি তা ইসলামী শরিয়ত নির্ধারিত সীমা অতিক্রম করে তবে, গরীব-দুঃস্থদের মধ্যে বিতরণের নিয়মকে যাকাত বলা হয়।",
+            "ayah": String2AyahArray(CayahArray),
+            "videos": [{
+                "title": "যাকাতের গুরুত্ব, নিয়ম, মাসআলা এবং প্রশ্নোত্তর | শায়খ আব্দুল কাইয়ুম",
+                "thumb": "https://i.ytimg.com/vi/SIC1_RoJ7ZY/hqdefault.jpg",
+                "url": "https://www.youtube.com/embed/SIC1_RoJ7ZY"
+            }, {
+                "title": "“যাকাতের বিধান“ - এর অর্থ, গুরুত্ব এবং ফযিলত - শায়খ আব্দুল কাইয়ুম",
+                "thumb": "https://i.ytimg.com/vi/PcjcQg_NH74/hqdefault.jpg",
+                "url": "https://www.youtube.com/embed/PcjcQg_NH74"
+            }, {
+                "title": "জাকাত",
+                "thumb": "https://i.ytimg.com/vi/yOl9KJg5SBk/hqdefault.jpg",
+                "url": "https://www.youtube.com/playlist?list=PLIyfipnIsMtcbTK6mU1eCMBQiFD7Jbz55"
+            }
+            ],
+            "articles": [],
+            "books": [
+                    {
+                        'title': 'ফাতাওয়া আরকানুল ইসলাম-৩ যাকাত',
+                        "writer": "মুহাম্মাদ ইবন সালেহ আল-উসাইমীন",
+                        "type": "firebase-pdf",
+                        'thumb': 'zakat%2Fbn_fatawa_arkanul_islam_elzakat.png',
+                        'url': 'zakat%2Fbn_fatawa_arkanul_islam_elzakat.pdf'
+                    },{
+                        'title': 'যাকাত বিধানের সারসংক্ষেপ',
+                        "writer": "সানাউল্লাহ নজির আহমদ",
+                        "type": "firebase-pdf",
+                        'thumb': 'zakat%2Fbn_zakat_bidhaner_sarsongkep.png',
+                        'url': 'zakat%2Fbn_zakat_bidhaner_sarsongkep.pdf'
+                    },
+            ]
+        };
+
+
+        populate_dynamic_view(dynamic_data);
+
+
+    });
+</script>

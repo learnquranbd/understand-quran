@@ -1,0 +1,244 @@
+<div class="verify_memory">
+        <div class="pageIndex pindextop"> 
+            <div class="row">  
+                <div class="col-md-12 col-sm-12 col-lg-12 text-center">
+                    <div class="row">
+                        <div class="col-12"><h4 class="bg-navy pad10 lh12">এটা একটি মডিউল, যার মাধ্যমে আপনি আপনার মুখস্ত সূরা গুলো  চেক করে দেখতে পারেন, এটা  আপনাকে বিক্ষিপ্ত ভাবে আগের পরের আয়াত সম্পর্কে জিজ্ঞেস করবে। </h4></div>
+                        <div class="col-md-6  col-sm-12 text-right mobilecenter"> 
+                            <select  class="niceselect SelectQSurah" onchange="vqa_loadSurah_Ayah_range()">
+                                <option value=""> সূরা </option>
+                            </select>
+
+                            <select  class="niceselect SelectAyahFrom">
+                                <option value="1"> 1 </option>
+                            </select>
+
+                            - থেকে <select  class="niceselect SelectAyahTo">
+                                <option value="1"> 1 </option>
+                            </select>
+
+                            
+
+                        </div>
+                        <div class="col-md-6 col-sm-12 text-left mobilecenter">
+                            <button type="button" onclick="load_vqa_quiz_module()" class="btn bg-lightblue btn-lg"> সূরার আয়াত ~ লোড করুন </button> 
+                        </div>
+                    </div>
+                    <hr /> 
+                    
+                </div>
+            </div> 
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-sm-12 text-center"><div class="total_error bn text-center"></div></div>  
+        </div>
+        <div class="row"> 
+
+
+            <div class="col-sm-12 col-md-6">
+                <div class="quranic_arabic_ayah text-right"></div>  
+            </div> 
+            
+            <div class="col-sm-12 col-md-6">
+                <div class="correct_ayah_arabic text-right">
+                    <ul class="box_ul_li">
+
+                    </ul>
+                </div> 
+            </div>
+            
+        </div>
+
+        
+        <br /> 
+</div>
+<style>
+    .box_ul_li{
+        max-height: 900px;
+        overflow-y: scroll;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .box_ul_li li{
+        display: block;
+        list-style: none;
+        border: 1px solid rgb(28, 55, 105);
+        border-radius: 10px; 
+        padding: 5px 10px;
+        background: #eee;
+        margin-bottom: 5px;
+    }
+</style>
+
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $('.pageIndex').slideDown();
+    
+    var soptions = []; 
+       
+    soptions.push('<option value="',
+        1, '"> (',
+        en2bnNumber(1)+ ') সূরা - ' + bangla_sura_names[0], '</option>'); 
+
+    for (var i = 114; i > 1; i--) {
+        soptions.push('<option value="',
+        i, '"> (',
+        en2bnNumber(i)+ ') সূরা - ' + bangla_sura_names[i-1], '</option>'); 
+    }
+ 
+    $(".verify_memory  select.SelectQSurah").html(soptions.join('')); 
+   
+    $(".verify_memory  .pindextop select.SelectQSurah option[value=\"1\"]").prop('selected', true);
+    $(".verify_memory  .pindextop select.SelectQSurah").trigger('change');
+     
+
+    load_vqa_quiz_module();
+});
+
+
+
+var current_surah_json  = null;
+var start_ayah_from     = null;
+var end_ayah_to         = null;
+var total_error  = 0;
+
+
+function vqa_loadSurah_Ayah_range(){
+    surah = $(".verify_memory  select.SelectQSurah option:selected").val();
+    var foptions = [];  
+       
+    for (var i = 1; i <= ayat_numbers[surah-1]; i++) {
+        foptions.push('<option value="',
+        i, '"> আয়াত - ',
+        en2bnNumber(i), '</option>'); 
+    } 
+
+    start_ayah_from = 1;
+    end_ayah_to     = ayat_numbers[surah-1];
+
+    $(".verify_memory  select.SelectAyahFrom").html(foptions.join('')); 
+    $(".verify_memory  select.SelectAyahTo").html(foptions.join('')); 
+    
+    $(".verify_memory  .pindextop select.SelectAyahTo option[value=\""+ ayat_numbers[surah-1] +"\"]").prop('selected', true);
+ 
+    $('.total_error').html('');  
+    $('.quranic_arabic_ayah').html(' সূরার আয়াত ~ লোড করুন বাটন এ ক্লিক করুন ');
+    $('.correct_ayah_arabic ul').html('');
+
+}
+
+function load_vqa_quiz_module(){ 
+   
+    fsurah    = $(".verify_memory  select.SelectQSurah option:selected").val(); 
+
+    $.ajax({
+          url: '/resources/json/surah/'+fsurah+'.json',
+          success:function(data){ 
+            current_surah_json = data;
+            s_from           = parseInt($(".verify_memory  select.SelectAyahFrom option:selected").val());
+            start_ayah_from  = s_from > 1 ? s_from - 1 :  1;
+            end_ayah_to     = $(".verify_memory  select.SelectAyahTo option:selected").val();
+            total_error     = 0; 
+            
+            $('.total_error').html('');  
+            $('.correct_ayah_arabic ul').html('');
+
+            randomize_vqa_quiz();
+          },
+          error:function(){
+              alert('There is an Error ~ Try again or Contact Admin');
+          }
+
+    });
+    
+}
+
+function randomize_vqa_quiz(){
+    ayah_number = 'verse_' + start_ayah_from; 
+
+    random_ayah_steps   = getRandomInt(1, 2);  
+    $('.quranic_arabic_ayah').html(' <h4> আয়াত ' + en2bnNumber(start_ayah_from) + ' <i class="fa fa-arrow-circle-right"></i> &nbsp;<span class="arabic lfont">' + current_surah_json.verse[ayah_number] + '</span> <br /> ~ <span style="font-weight: bold;color:red;">এই আয়াত এর পরের আয়াত কোনটি  ? </span><h4/>');
+    $('.correct_ayah_arabic ul').append('<li class="bg-success"> আয়াত ' + en2bnNumber(start_ayah_from) + '<br /><span class="arabic lfont">' + current_surah_json.verse[ayah_number] + '</span></li>');    
+       
+    ayah_left = parseInt(end_ayah_to) - parseInt(start_ayah_from);
+    //console.log('Ayah Left : ' + ayah_left);
+    
+
+    random_ayah_array = [];
+
+    
+    jStart = parseInt(start_ayah_from) + 1;
+    how_many_options = (ayah_left > 5) ? jStart + 3 : end_ayah_to;
+
+    for(j =  jStart; j <= how_many_options; j++ ){
+        random_ayah_array.push(current_surah_json.verse['verse_'+ j]);
+    }
+
+    random_ayah_array = shuffle(random_ayah_array);
+
+    random_ayah_html = '';
+    $.each(random_ayah_array, function(k, v){
+        random_ayah_html += '<button type="button" class="btn bg-lightblue btn-lg arabic lfont mtb5" onclick="verify_quiz_ayah(this)">' + v + '</button> <br />';
+    });
+      
+    $('.quranic_arabic_ayah').append('<div class="user_options_list">'+ random_ayah_html + '</div>');
+
+    //console.log(random_ayah_array);
+}
+
+function verify_quiz_ayah(e){ 
+    next_ayah  = parseInt(start_ayah_from) + 1;
+
+    ayah_left = parseInt(end_ayah_to) - parseInt(start_ayah_from);
+
+    if( ayah_left > 1){
+        if(current_surah_json.verse['verse_'+ next_ayah] == $(e).text()){
+            start_ayah_from = next_ayah;
+            randomize_vqa_quiz();
+        } else{
+            $('.user_options_list .btn').removeClass('bg-danger').addClass('bg-lightblue');
+            $(e).removeClass('bg-lightblue').addClass('bg-danger');
+            $('.total_error').html('মোট ভুল হয়েছে  ' + en2bnNumber(++total_error) + ' বার');
+        }
+
+    }else{
+         $('.quranic_arabic_ayah').html('<h3 class="bg-success text-center" style="margin: 10px; padding: 10px; border-radious: 10px; border: 1px solid green;">আপনার নির্বাচিত আয়াত সমূহ সবগুলো পরীক্ষা করা শেষ হয়েছে! পরবর্তী সূরা লোড করুন বা পুনরায়  চেষ্টা করুন.</h3>'); 
+         $('.correct_ayah_arabic ul').append('<li class="bg-success"> আয়াত ' + en2bnNumber(start_ayah_from) + '<br /><span class="arabic lfont">' + current_surah_json.verse['verse_'+ end_ayah_to] + '</span></li>');     
+    }
+
+}
+
+
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+ 
+</script>

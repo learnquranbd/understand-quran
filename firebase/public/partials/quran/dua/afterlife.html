@@ -1,0 +1,83 @@
+
+
+<div class="row topindexbar">
+    <div class="col-md-5 col-sm-12">
+        
+            <h3 class="text-center arabic cs1">بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِیْمِ</h3>
+            <p class="bangla text-center">শুরু করছি আল্লাহর নামে যিনি পরম করুণাময়, অতি দয়ালু।</p>
+        
+    </div>
+    <div class="col-md-2 col-sm-12 indexcol">
+        <button type="button" class="btn btn-block bg-gradient-secondary btn-lg" onClick="openSidebarMenu()"> সূচিপত্র/তালিকা </button>
+    </div>
+    <div class="col-md-5  col-sm-12">
+                <h3 class="text-center arabic cs1"> الدعاء في الآخرة </h3>
+                <p class="bangla text-center">পরকালের জন্য দু'আ</p> 
+    </div> 
+
+</div>
+ 
+
+<script>
+    
+    $(document).ready(function() {
+        //openSidebarMenu(); 
+
+        dynamic_data =  {
+            "subject": "পরকালের জন্য দু'আ",
+            "introHtml": "দু‘আ হচ্ছে সকল ইবাদতের মূল। রসূল সা. বলেন,\n\nإِنَّ الدُّعَاءَ هُوَ الْعِبَادَةُ\nঅর্থ: নিশ্চয় দু‘আই হচ্ছে ইবাদত [মুসনাদে আহমদ : ১৮৩৮৬ সনদ সহীহ]।\nআল্লাহ তায়ালাও কুরআনের বিভিন্ন জায়গায় তাঁর কাছে দু‘আ করতে আদেশ করেছেন। ",
+            "ayah": [
+                        {
+                                "surah": 2,
+                                "ayah": [
+                                            201
+                                ]
+                        },
+                        {
+                                "surah": 12,
+                                "ayah": [
+                                            101
+                                ]
+                        },
+                        {
+                                "surah": 25,
+                                "ayah": [
+                                            65,
+                                            66
+                                ]
+                        },
+                        {
+                                "surah": 26,
+                                "ayah": [
+                                            87,
+                                            88,
+                                            89
+                                ]
+                        },
+                        {
+                                "surah": 40,
+                                "ayah": [
+                                            7,
+                                            8,
+                                            9
+                                ]
+                        },
+                        {
+                                "surah": 66,
+                                "ayah": [
+                                            11
+                                ]
+                        }
+            ],
+            "videos": [],
+            "articles": [],
+            "books": []
+            } ;
+        
+
+            populate_dynamic_view(dynamic_data); 
+
+
+    });
+</script>												
+                            

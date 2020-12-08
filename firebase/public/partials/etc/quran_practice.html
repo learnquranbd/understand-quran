@@ -1,0 +1,118 @@
+<div class="quranPractive">
+        <div class="pageIndex pindextop"> 
+            <div class="row">  
+                <div class="col-md-12 col-sm-12 col-lg-12 text-center">
+                    <div class="row">
+                        <div class="col-12"><h4 class="bg-navy pad10 lh12">এটা একটি মডিউল, যার মাধ্যমে আপনি আপনার সূরা জানা শব্দ কে যাচাই করতে পারবেন, আরবি টাইপ করার জন্য আগে "সূরার আয়াত লোড করুন" এ ক্লিক করে - নিদিষ্ট আয়াত লোড করে টাইপ করে দেখুন ~ <br /> " আরবি দেখান/লুকান " - এ বাটন এ ক্লিক করে দেখে নিন ( কতটা সঠিক হয়েছে / দেখে টাইপ করুন ) </h4></div>
+                        <div class="col-md-6  col-sm-12 text-right mobilecenter"> 
+                            <select  class="niceselect SelectQSurah" onchange="loadSurah_Ayah_range()">
+                                <option value=""> সূরা </option>
+                            </select>
+
+                            <select  class="niceselect SelectAyahFrom">
+                                <option value="1"> 1 </option>
+                            </select>
+
+                            - থেকে <select  class="niceselect SelectAyahTo">
+                                <option value="1"> 1 </option>
+                            </select>
+
+                            
+
+                        </div>
+                        <div class="col-md-6 col-sm-12 text-left mobilecenter">
+                            <button type="button" onclick="loadSurah_Ayah()" class="btn bg-lightblue btn-lg"> সূরার আয়াত লোড করুন </button>
+                            <button type="button" onclick="$('.full_quran_tajweed .arabic').removeClass('hidden')" class="btn bg-lightblue btn-lg"> আরবি <i class="fa fa-eye"></i>  </button>
+                            <button type="button" onclick="$('.full_quran_tajweed .arabic').addClass('hidden')" class="btn bg-lightblue btn-lg"> আরবি <i class="fa fa-eye-slash"></i>  </button>
+                        </div>
+                    </div>
+                    <hr /> 
+                    
+                </div>
+            </div> 
+        </div>
+
+
+        <div class="full_quran_tajweed qtext tajweed" dir="rtl">
+            
+        </div> 
+
+        <br /> 
+</div>
+ 
+
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $('.pageIndex').slideDown();
+    
+    var soptions = []; 
+       
+    soptions.push('<option value="',
+        1, '"> (',
+        en2bnNumber(1)+ ') সূরা - ' + bangla_sura_names[0], '</option>'); 
+
+    for (var i = 114; i > 1; i--) {
+        soptions.push('<option value="',
+        i, '"> (',
+        en2bnNumber(i)+ ') সূরা - ' + bangla_sura_names[i-1], '</option>'); 
+    }
+ 
+    $(".quranPractive  select.SelectQSurah").html(soptions.join('')); 
+   
+    $(".quranPractive  .pindextop select.SelectQSurah option[value=\"1\"]").prop('selected', true);
+    $(".quranPractive  .pindextop select.SelectQSurah").trigger('change');
+     
+
+    loadSurah_Ayah();
+});
+
+
+function loadSurah_Ayah_range(){
+    surah = $(".quranPractive  select.SelectQSurah option:selected").val();
+    var foptions = [];  
+       
+    for (var i = 1; i <= ayat_numbers[surah-1]; i++) {
+        foptions.push('<option value="',
+        i, '"> আয়াত - ',
+        en2bnNumber(i), '</option>'); 
+    } 
+
+    $(".quranPractive  select.SelectAyahFrom").html(foptions.join('')); 
+    $(".quranPractive  select.SelectAyahTo").html(foptions.join('')); 
+    
+    $(".quranPractive  .pindextop select.SelectAyahTo option[value=\""+ ayat_numbers[surah-1] +"\"]").prop('selected', true);
+ 
+    // loadSurah_Ayah();
+
+}
+
+function loadSurah_Ayah(){ 
+    $('.full_quran_tajweed').slideDown(); 
+
+    fsurah    = $(".quranPractive  select.SelectQSurah option:selected").val();
+    ayah_from = $(".quranPractive  select.SelectAyahFrom option:selected").val();
+    ayah_to   = $(".quranPractive  select.SelectAyahTo option:selected").val();
+    
+    
+    full_quran_tajweed_html = '';
+    for(fayah = ayah_from; fayah<= ayah_to; fayah++){
+        fayah_bn = en2bnNumber(fayah);
+        placeholder = (fsurah == 1 && fayah == 1)  ? 'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ ' : 'সূরা '+ bangla_sura_names[fsurah-1] +'`র '+ fayah_bn + ' নং  আয়াত  - টাইপ করুন ';
+        full_quran_tajweed_html += '<h5 class="bg-navy lh12 text-center pad5 clearfix">আয়াত নং : '+ fayah_bn + ' <button class="btn btn-info btn-sm float-right" onClick="$(\'.on-ar-surah-'+fsurah+'-ayah-'+fayah+'\').toggleClass(\'hidden\')"> সূরা '+ bangla_sura_names[fsurah-1] +'`র '+ fayah_bn + ' নং আয়াত এর আরবি দেখান/লুকান </button></h5>';
+        full_quran_tajweed_html += '<div dir="rtl" class="text-right quran-container recursiveajaxload2 waiting arabic hidden onlyarabic  on-ar-surah-'+fsurah+'-ayah-'+fayah+'" id="only-ar-surah-'+fsurah+'-ayah-'+fayah+'" data-ajaxurl="/resources/verses/'+ fsurah + '_' + fayah + '.html"></div>';
+        //full_quran_tajweed_html += '<div  class="quran-container recursiveajaxload waiting arabic tajweed hidden tajweed-ar-surah-'+fsurah+'-ayah-'+fayah+'" id="tajweed-ar-surah-'+fsurah+'-ayah-'+fayah+'" data-ajaxurl="/resources/tajweed/'+ fsurah + '_' + fayah + '.html"></div>';
+        full_quran_tajweed_html += '<div class="ajax_translation translation recursiveajaxload2 waiting surah-'+fsurah+'-ayah-'+fayah+'-translation"  data-ajaxurl="/resources/quran/'+ fsurah + '/' + fayah + '_translation.html"></div>';
+        full_quran_tajweed_html += '<textarea id="textarea-tajweed-ar-surah-'+fsurah+'-ayah-'+fayah+'" style="font-size: 3.0rem;width:100%;text-align:right;font-family:Kitab; padding: 4px;line-height: 2.2;" dir="rtl" placeholder="'+ placeholder + '"></textarea><hr />';
+        
+        
+        
+    }
+
+    $('.full_quran_tajweed').html(full_quran_tajweed_html);
+ 
+    recursively_ajax2();
+}
+ 
+ 
+</script>

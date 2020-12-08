@@ -1,0 +1,9 @@
+<div style="min-height: 110vh">
+    <div id="only_arabic_quran" style="min-height:800px"></div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        var flipBook = $("#only_arabic_quran").flipBook('/resources/pdf/quran.pdf', {height: '800px', cachedPages: 8, scrollWheel: false, duration: 800, backgroundColor: '#eee', maxTextureSize: 7680, zoomRatio: 1.2});
+    });
+</script>

@@ -1,0 +1,87 @@
+<div class="row topindexbar">
+    <div class="col-md-5 col-sm-12">
+
+        <h3 class="text-center arabic cs1">بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِیْمِ</h3>
+        <p class="bangla text-center">শুরু করছি আল্লাহর নামে যিনি পরম করুণাময়, অতি দয়ালু।</p>
+
+    </div>
+    <div class="col-md-2 col-sm-12 indexcol">
+        <button type="button" class="btn btn-block bg-gradient-secondary btn-lg" onClick="openSidebarMenu()">
+            সূচিপত্র/তালিকা </button>
+    </div>
+    <div class="col-md-5  col-sm-12">
+        <h3 class="text-center arabic cs1"> الصحابة </h3>
+        <p class="bangla text-center">সাহাবী</p>
+    </div>
+
+</div>
+ 
+
+
+<script>
+    $(document).ready(function () {
+        //openSidebarMenu(); 
+        CayahArray =
+            "9:100, 48:29, 98:8";
+        dynamic_data = {
+            "subject": "সাহাবী",
+            "introHtml": "",
+            "ayah": String2AyahArray(CayahArray),
+            "videos": [
+                {
+                    'title': 'সাহাবীদের ঈমানদীপ্ত জীবনী',
+                    'thumb': 'https://i.ytimg.com/vi/us_tffAs_rA/hqdefault.jpg',
+                    'url'  : 'https://www.youtube.com/playlist?list=PL7E7DFtKYTnbjRtTg4BM0qcHBgj1g02To'
+                },
+                {
+                    'title': 'আস-সিদ্দীক্ব | আবু বকর রাদিয়াল্লাহু আনহুর জীবনী',
+                    'thumb': 'https://i.ytimg.com/vi/MgmLjhn36Dc/hqdefault.jpg',
+                    'url'  : 'https://www.youtube.com/playlist?list=PLrEnZj_8pclsyO32h45uXpP43DsOGS2v4'
+                },
+                {
+                    'title': 'সাহাবীদের জীবন কাহিনী',
+                    'thumb': 'https://i.ytimg.com/vi/B3eui_Y2R3w/hqdefault.jpg',
+                    'url'  : 'https://www.youtube.com/playlist?list=PLi2xff1UDKWQZUMleaZqe0tStVoCmQu_N'
+                },
+                {
+                    'title': 'সাহাবীদের (রা) জানুনঃ',
+                    'thumb': 'https://i.ytimg.com/vi/i9PMsggYdm0/hqdefault.jpg',
+                    'url'  : 'https://www.youtube.com/playlist?list=PL2-hgLCkB6k6F7VT_rbEWLeYMABmPW0eM'
+                }
+            ],
+            "articles": [],
+            "books": [
+                        {
+                            'type'  : "firebase-pdf", 
+                            'title' : 'সাহাবীদের জীবন চিত্র ১',
+                            'writer': "ড. আব্দুর রহমান রাফাত পাশা রহ.",
+                            'url'   : 'story%2Fsahabider_jibon_chitro_1.pdf',
+                            'thumb' : 'story%2Fsahabider_jibon_chitro_1.png', 
+                        }, {
+                            'type'  : "firebase-pdf", 
+                            'title' : 'সাহাবীদের জীবন চিত্র [২য়]',
+                            'writer': "ড. আব্দুর রহমান রাফাত পাশা রহ.",
+                            'url'   : 'story%2Fsahabider_jibon_chitro_2.pdf',
+                            'thumb' : 'story%2Fsahabider_jibon_chitro_2.jpg', 
+                        },{
+                            'type'  : "firebase-pdf", 
+                            'title' : 'সাহাবীদের আলোকিত জীবন ১',
+                            'writer': "ড. আব্দুর রহমান রাফাত পাশা রহ.",
+                            'url'   : 'story%2Fsahabider_alokito_jibon_prothom_khondo.pdf',
+                            'thumb' : 'story%2Fsahabider_alokito_jibon_prothom_khondo.jpg', 
+                        },{
+                            'type'  : "firebase-pdf", 
+                            'title' : 'সাহাবীদের আলোকিত জীবন [২য়]',
+                            'writer': "ড. আব্দুর রহমান রাফাত পাশা রহ.",
+                            'url'   : 'story%2Fsahabider_alokito_jibon_ditio_khondo.pdf',
+                            'thumb' : 'story%2Fsahabider_alokito_jibon_ditio_khondo.jpg', 
+                        },
+            ]
+        };
+
+
+        populate_dynamic_view(dynamic_data);
+
+
+    });
+</script>

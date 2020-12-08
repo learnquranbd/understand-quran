@@ -1,0 +1,40 @@
+<div class="row topindexbar">
+    <div class="col-md-5 col-sm-12">
+
+        <h3 class="text-center arabic cs1">بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِیْمِ</h3>
+        <p class="bangla text-center">শুরু করছি আল্লাহর নামে যিনি পরম করুণাময়, অতি দয়ালু।</p>
+
+    </div>
+    <div class="col-md-2 col-sm-12 indexcol">
+        <button type="button" class="btn btn-block bg-gradient-secondary btn-lg" onClick="openSidebarMenu()">
+            সূচিপত্র/তালিকা </button>
+    </div>
+    <div class="col-md-5  col-sm-12">
+        <h3 class="text-center arabic cs1"> قوم عاد </h3>
+        <p class="bangla text-center">আদ জাতি</p>
+    </div>
+
+</div>
+
+ 
+
+<script>
+    $(document).ready(function () {
+        //openSidebarMenu(); 
+        CayahArray =
+            "7:65, 7:74, 9:70, 11:50, 11:51, 11:52, 11:53, 11:54, 11:55, 11:56, 11:57, 11:58, 11:59, 11:60, 22:42, 25:38, 26:123, 26:124, 26:125, 26:126, 26:127, 26:128, 26:129, 26:130, 26:131, 26:132, 26:133, 26:134, 26:135, 26:136, 26:137, 26:138, 26:139, 26:140, 29:38, 38:12, 41:15, 41:16, 46:21, 46:22, 46:23, 46:24, 46:25, 46:26, 50:13, 51:41, 53:50, 54:18, 54:19, 54:20, 54:21, 69:4, 69:6, 89:6";
+        dynamic_data = {
+            "subject": "আদ জাতি",
+            "introHtml": " আদ জাতি বা আদিত্যদেরকে প্রথম আরব দেশের বাসিন্দা হিসেবে বিশ্বাস করা হয়। তারা প্রাচীন আরব বা ধ্বংসপ্রাপ্ত আরব বাসিসমূহ নামে পরিচিত। আদের মৃত্যুর পর, তার পুত্র শাদিদ এবং শেদাদ আদিত্যদের উপরে উত্তরাধিকারসূত্রে শাসন করেন। তারপর থেকে আদ শব্দটি সকলের জন্য একটি 'অ্যাড অবতীর্ণ সমষ্টিগত হয়ে ওঠে। আদ জাতির উপর আল্লাহ্‌ তাআলা হুদ -কে তাদের জন্য নবী করে পাঠিয়েছিলেন।",
+            "ayah": String2AyahArray(CayahArray),
+            "videos": [],
+            "articles": [],
+            "books": []
+        };
+
+
+        populate_dynamic_view(dynamic_data);
+
+
+    });
+</script>

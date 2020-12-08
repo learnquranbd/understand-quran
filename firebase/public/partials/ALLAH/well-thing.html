@@ -1,0 +1,161 @@
+<div class="row topindexbar">
+    <div class="col-md-5 col-sm-12">
+
+        <h3 class="text-center arabic cs1">بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِیْمِ</h3>
+        <p class="bangla text-center">শুরু করছি আল্লাহর নামে যিনি পরম করুণাময়, অতি দয়ালু।</p>
+
+    </div>
+    <div class="col-md-2 col-sm-12 indexcol">
+        <button type="button" class="btn btn-block bg-gradient-secondary btn-lg" onClick="openSidebarMenu()">
+            সূচিপত্র/তালিকা </button>
+    </div>
+    <div class="col-md-5  col-sm-12">
+        <h3 class="text-center arabic cs1"> حسن الظن بالله </h3>
+        <p class="bangla text-center">আল্লাহর ~ প্রতি সুধারণা </p>
+    </div>
+
+</div>
+
+
+
+
+<script>
+    $(document).ready(function () {
+        //openSidebarMenu(); 
+        CayahArray =
+            "2:195,2:218, 3:8, 3:103,3:107, 4:48,4:99,4:110,4:147, 4:175,5:118, 7:56,9:18,9:59,9:102,14:36,14:41,15:2,16:38,16:99,19:48,21:90,21:107,26:51,26:82,28:22, 28:67, 29:23, 32:16, 33:21, 35:29,37:35,39:53,40:7, 41:23,46:16,47:19,55:60,71:28,74:42-47,79:40-41,92:15,92:20";
+        dynamic_data = {
+            "subject": "আল্লাহর ~ প্রতি সুধারণা",
+            "introHtml": "জাবের রদ্বি. থেকে বর্ণিত, তিনি বলেন, “আমি রসূল ﷺ-কে মৃত্যুর তিনদিন আগে বলতে শুনেছি, “তোমরা অবশ্যই যেন আল্লাহর প্রতি সুধারণা নিয়ে মৃত্যুবরণ করো।”",
+            "ayah": String2AyahArray(CayahArray),
+            "videos": [{
+                    "title": "আল্লাহর ক্ষমার ব্যাপারে হতাশ হতে নেই",
+                    "thumb": "https://i.ytimg.com/vi/mLqCBEPEkYE/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/mLqCBEPEkYE"
+                }, {
+                    "title": "99% Mercy Reserved - Mercy of Allah",
+                    "thumb": "https://i.ytimg.com/vi/WM1dbujFjgE/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/WM1dbujFjgE"
+                }, {
+                    "title": "ALLAHS MERCY REACHES THIS SINNER",
+                    "thumb": "https://i.ytimg.com/vi/32Vfe2AJT-k/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/32Vfe2AJT-k"
+                }, {
+                    "title": "The Mercy of Allah",
+                    "thumb": "https://i.ytimg.com/vi/M4cs_32Tkbw/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/M4cs_32Tkbw"
+                }, {
+                    "title": "Convert Your Sins To Good Deeds",
+                    "thumb": "https://i.ytimg.com/vi/C4JlRYrsbYw/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/C4JlRYrsbYw"
+                }, {
+                    "title": "REPENT SINCERELY TODAY & DON'T DELAY IF YOU WANT FORGIVENESS | WAHAJ TARIN",
+                    "thumb": "https://i.ytimg.com/vi/nvNccyRF1vY/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/nvNccyRF1vY"
+                }, {
+                    "title": "GRAB THE OPPORTUNITY || BY USTADH ABDUL RASHID",
+                    "thumb": "https://i.ytimg.com/vi/RP1imKny9g0/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/RP1imKny9g0"
+                }, {
+                    "title": "How to Convert All Sins into Good Deeds?",
+                    "thumb": "https://i.ytimg.com/vi/jAYtnTQeG_c/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/jAYtnTQeG_c"
+                }, {
+                    "title": "HERE ALLAH IS GIVING US A BONUS",
+                    "thumb": "https://i.ytimg.com/vi/QlgZt7KPV4M/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/QlgZt7KPV4M"
+                }, {
+                    "title": "Allah asks his Angels",
+                    "thumb": "https://i.ytimg.com/vi/IeD9QiyaOh8/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/IeD9QiyaOh8"
+                }, {
+                    "title": "This verse made the Sahabah fall on their knees",
+                    "thumb": "https://i.ytimg.com/vi/1THHyxasGmg/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/1THHyxasGmg"
+                }, {
+                    "title": "Will Allah Forgive ALL My SINS? - Powerful Reminder",
+                    "thumb": "https://i.ytimg.com/vi/NUiVU_OiAac/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/NUiVU_OiAac"
+                }, {
+                    "title": "ALLAH SMILES AT THIS SINNER",
+                    "thumb": "https://i.ytimg.com/vi/9-qkm3Wkq2E/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/9-qkm3Wkq2E"
+                }, {
+                    "title": "Don't Be Sad : Allah Knows",
+                    "thumb": "https://i.ytimg.com/vi/5pyZkY93B2A/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/5pyZkY93B2A"
+                }, {
+                    "title": "Allah Smiles At Such A Person",
+                    "thumb": "https://i.ytimg.com/vi/7qDlNhgDvmA/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/7qDlNhgDvmA"
+                }, {
+                    "title": "Secret Sins Of A Believer ᴴᴰ | Bilal Assad",
+                    "thumb": "https://i.ytimg.com/vi/mHaaTykD3R0/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/mHaaTykD3R0"
+                }, {
+                    "title": "You're Forgiven, Move On! - That's Messed Up! - Nouman Ali Khan",
+                    "thumb": "https://i.ytimg.com/vi/lNRFo1JXIJw/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/lNRFo1JXIJw"
+                }, {
+                    "title": "ADVICE FROM ALLAH FOR PROBLEMS IN LIFE",
+                    "thumb": "https://i.ytimg.com/vi/IcJO3LDrWQQ/maxresdefault.jpg",
+                    "url": "https://www.youtube.com/watch?v=IcJO3LDrWQQ"
+                }, {
+                    "title": "Allah Is Calling The Sinners",
+                    "thumb": "https://i.ytimg.com/vi/nC15ZzjVeyQ/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/nC15ZzjVeyQ"
+                }, {
+                    "title": "The Mercy of Allah in Regard to Forgiveness",
+                    "thumb": "https://i.ytimg.com/vi/I7KiVDHsfFg/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/I7KiVDHsfFg"
+                }, {
+                    "title": "Allah Loves This Type of Sinner",
+                    "thumb": "https://i.ytimg.com/vi/BC-Rcc4SneM/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/BC-Rcc4SneM"
+                }, {
+                    "title": "বান্দার প্রতি আল্লাহর ভালোবাসা | দেখুন আল্লাহ পাক আপনাকে কতটুকু ভালবাসেন!",
+                    "thumb": "https://i.ytimg.com/vi/nGmkjepmj2E/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/nGmkjepmj2E"
+                }, {
+                    "title": "Allah is Most Forgiving - Obey Him and Repent",
+                    "thumb": "https://i.ytimg.com/vi/ALHZhQCc_3s/hqdefault.jpg",
+                    "url": "https://www.youtube.com/watch?v=ALHZhQCc_3s"
+                }, {
+                    "title": "ALLAH FORGIVES ANY SIN WHEN YOU SAY THIS",
+                    "thumb": "https://i.ytimg.com/vi/P7bLGI9ejRA/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/P7bLGI9ejRA"
+                }, {
+                    "title": "ALLAH LOVES YOU, DON’T BE SAD",
+                    "thumb": "https://i.ytimg.com/vi/2IcbCBHYE5s/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/2IcbCBHYE5s"
+                }, {
+                    "title": "No One Can Love Like Allah Loves",
+                    "thumb": "https://i.ytimg.com/vi/9OKyL9H0l1I/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/9OKyL9H0l1I"
+                }, {
+                    "title": "কখন আল্লাহ হাসেন! When Allah Smiles Emotional",
+                    "thumb": "https://i.ytimg.com/vi/3dpFl4k8Ae0/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/3dpFl4k8Ae0"
+                }, {
+                    "title": "SINNERS BECAME ALLAH'S BEST FRIEND",
+                    "thumb": "https://i.ytimg.com/vi/I5mQqQqWOfY/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/I5mQqQqWOfY"
+                }
+
+            ],
+            "articles": [],
+            "books": [{
+                'title': 'আল্লাহর প্রতি সুধারণা',
+                "writer": "ইমাম ইবনু আবিদ দুনইয়া",
+                "type": "book",
+                "thumb": "https://wafilife-media.s3.amazonaws.com/uploads/2020/01/81370299_463374720989648_5086152984056823808_o-250x350.jpg",
+                "url": "https://www.wafilife.com/shop/books/allahor-proti-shudharona/"
+            }]
+        };
+
+
+        populate_dynamic_view(dynamic_data);
+
+
+    });
+</script>

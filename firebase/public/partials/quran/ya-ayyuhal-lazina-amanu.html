@@ -1,0 +1,162 @@
+<div class="row topindexbar">
+   <div class="col-md-5 col-sm-12">
+
+      <h3 class="text-center arabic cs1">بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِیْمِ</h3>
+      <p class="bangla text-center">শুরু করছি আল্লাহর নামে যিনি পরম করুণাময়, অতি দয়ালু।</p>
+
+   </div>
+   <div class="col-md-2 col-sm-12 indexcol">
+      <button type="button" class="btn btn-block bg-gradient-secondary btn-lg" onClick="openSidebarMenu()">
+         সূচিপত্র/তালিকা </button>
+   </div>
+   <div class="col-md-5  col-sm-12">
+      <h3 class="text-center arabic cs1"> _______ يٰٓأَيُّهَا الَّذِينَ ءَامَنُوا </h3>
+      <p class="bangla text-center">হে ঈমানদারগণ ______ </p>
+   </div>
+
+</div>
+ 
+
+
+
+<script>
+   $(document).ready(function () {
+      //openSidebarMenu(); 
+
+      dynamic_data = {
+         "subject": "হে ঈমানদারগণ ",
+         "introHtml": "<h5>কুরআনে আল্লাহ ৮৯টি আয়াতে হে ঈমানদারগণ বলে সম্বোধন করেছেন</h5><p>এই সকল আয়াতে আল্লাহ মুমিনদেরকে কি বলতে চেয়েছেন সেই বিষয়গুলো নিয়ে আলোচনা করা হয়েছে। আর এই সকল বিষয়ে আমল করে একজন মুমিন তার পার্থিব ও পারলৌকিক জীবকে সফল করতে পারবেন</p>",
+         "ayah": [{
+               "surah": 2,
+               "ayah": [104, 153, 172, 178, 183, 208, 254, 264, 267, 278, 282]
+            },
+            {
+               "surah": 3,
+               "ayah": [100, 102, 118, 130, 149, 156, 200]
+            },
+            {
+               "surah": 4,
+               "ayah": [19, 29, 43, 59, 71, 94, 135, 136, 144]
+            },
+            {
+               "surah": 5,
+               "ayah": [1, 2, 6, 8, 11, 35, 51, 54, 57, 87, 90, 94, 95, 101, 105, 106]
+            },
+            {
+               "surah": 8,
+               "ayah": [15, 20, 24, 27, 29, 45]
+            },
+            {
+               "surah": 9,
+               "ayah": [23, 28, 34, 38, 119, 123]
+            },
+            {
+               "surah": 22,
+               "ayah": [77]         
+            },
+            {
+               "surah": 24,
+               "ayah": [21, 27, 58]
+            },
+            {
+               "surah": 33,
+               "ayah": [9, 41, 49, 53, 56, 69, 70]
+            },
+            {
+               "surah": 47,
+               "ayah": [7, 33]
+            },
+            {
+               "surah": 49,
+               "ayah": [1, 2, 6, 11, 12]
+            },
+            {
+               "surah": 57,
+               "ayah": [28]
+            },
+            {
+               "surah": 58,
+               "ayah": [9, 11, 12]
+            },
+            {
+               "surah": 59,
+               "ayah": [18]
+            },
+            {
+               "surah": 60,
+               "ayah": [1, 10, 13]
+            },
+            {
+               "surah": 61,
+               "ayah": [2, 10, 14]
+            },
+            {
+               "surah": 62,
+               "ayah": [9]
+            },
+            {
+               "surah": 63,
+               "ayah": [9]
+            },
+            {
+               "surah": 64,
+               "ayah": [14]
+            },
+            {
+               "surah": 66,
+               "ayah": [6, 8]
+            }
+         ],
+         "videos": [{
+               "title": "Oh you who believe",
+               "thumb" : "https://i.ytimg.com/vi/2YfUtw06PuY/hqdefault.jpg",
+               "url": "https://www.youtube.com/embed/2YfUtw06PuY"
+            },
+            {
+               "title": "O you who have believed part-1 (হে তোমরা যারা ঈমান এনেছো পর্ব-১)", 
+               "thumb" : "https://i.ytimg.com/vi/lWbwD8YcedY/sddefault.jpg", 
+               "url": "https://www.youtube.com/embed/lWbwD8YcedY"
+            }, 
+            {
+            "title": "O you who Believe - Moutasem Al Hameedy",
+            "thumb": "https://i.ytimg.com/vi/DNc-MV-iSo0/hqdefault.jpg",
+            "url": "https://www.youtube.com/embed/DNc-MV-iSo0"
+            },
+            {
+               "title": "O you who believe! Do not let your wealth distract you (Quran)",
+               "thumb" : "https://i.ytimg.com/vi/39Eo7THcDK4/hqdefault.jpg",
+               "url": "https://www.youtube.com/embed/39Eo7THcDK4"
+            }
+         ],
+         "articles": [{
+               "title": "হে মুমিন! আল্লাহর রহমত থেকে নিরাশ হয়ো না",
+               "url": "https://www.jagonews24.com/religion/article/582189"
+            },
+            {
+               "title": "হে ঈমানদাররা! তোমরা ধৈর্য ও নামাজের মাধ্যমে সাহায্য প্রার্থনা করো",
+               "url": "https://bn.mtnews24.com/islam/342231/%E2%80%98%E0%A6%B9%E0%A7%87-%E0%A6%88%E0%A6%AE%E0%A6%BE%E0%A6%A8%E0%A6%A6%E0%A6%BE%E0%A6%B0%E0%A6%B0%E0%A6%BE--%E0%A6%A4%E0%A7%8B%E0%A6%AE%E0%A6%B0%E0%A6%BE-%E0%A6%A7%E0%A7%88%E0%A6%B0%E0%A7%8D%E0%A6%AF-%E0%A6%93-%E0%A6%A8%E0%A6%BE%E0%A6%AE%E0%A6%BE%E0%A6%9C%E0%A7%87%E0%A6%B0-%E0%A6%AE%E0%A6%BE%E0%A6%A7%E0%A7%8D%E0%A6%AF%E0%A6%AE%E0%A7%87-%E0%A6%B8%E0%A6%BE%E0%A6%B9%E0%A6%BE%E0%A6%AF%E0%A7%8D%E0%A6%AF-%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%A5%E0%A6%A8%E0%A6%BE-%E0%A6%95%E0%A6%B0%E0%A7%8B-"
+            }  
+         ],
+         "books": [{
+               "title": "শোনো হে মুমিন",
+               "writer": "মাওলানা মুফতী মুহাম্মদ শফী (রহ.)",
+               "type": "book",
+               "thumb": "https://wafilife-media.s3.amazonaws.com/uploads/2019/11/13427833_266242010406082_5438875410737295525_n-250x350.jpg",
+               "url": "https://www.wafilife.com/shop/books/shono-hey-mumin/"
+            },
+            {
+               "title": "হে মুমিনগণ",
+               "writer": "মুহাম্মদ মােতাহার হােসাইন",
+               "type": "file-pdf",
+               "thumb": "http://aazeenofislam.com/wp-content/uploads/2019/09/081-5x8x0.50-Nature-Things-Front-Back-Book-Mockup-COVERVAULT-720x380.jpg",
+               "url": "http://aazeenofislam.com/wp-content/uploads/2019/09/he_mumingon.pdf"
+            } 
+         ]
+      };
+
+
+      populate_dynamic_view(dynamic_data);
+
+
+   });
+</script>

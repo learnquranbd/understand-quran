@@ -1,0 +1,40 @@
+<div class="row topindexbar">
+   <div class="col-md-5 col-sm-12">
+
+           <h3 class="text-center arabic cs1">بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِیْمِ</h3>
+           <p class="bangla text-center">শুরু করছি আল্লাহর নামে যিনি পরম করুণাময়, অতি দয়ালু।</p>
+
+   </div>
+   <div class="col-md-2 col-sm-12 indexcol">
+           <button type="button" class="btn btn-block bg-gradient-secondary btn-lg" onClick="openSidebarMenu()"> সূচিপত্র/তালিকা </button>
+   </div>
+   <div class="col-md-5  col-sm-12">
+           <h3 class="text-center arabic cs1">   </h3>
+           <p class="bangla text-center">লূতের জাতি</p>
+   </div>
+
+</div>
+
+
+
+
+<script>
+   $(document).ready(function () {
+           //openSidebarMenu(); 
+           CayahArray =
+                   "7:80, 7:81, 7:82, 11:77, 11:78, 11:79, 11:80, 11:81, 11:82, 11:83, 15:10, 15:11, 15:12, 15:13, 15:14, 15:15, 15:16, 15:17, 15:18, 15:19, 15:20, 15:21, 15:22, 15:23, 15:24, 15:25, 15:26, 15:27, 15:28, 15:29, 15:30, 15:31, 15:32, 15:33, 15:34, 15:35, 15:36, 15:37, 15:38, 15:39, 15:40, 15:41, 15:42, 15:43, 15:44, 15:45, 15:46, 15:47, 15:48, 15:49, 15:50, 15:51, 15:52, 15:53, 15:54, 15:55, 15:56, 15:57, 15:58, 15:59, 15:60, 15:6, 15:61, 15:62, 15:63, 15:64, 15:65, 15:66, 15:67, 15:68, 15:69, 15:70, 15:7, 15:71, 15:72, 15:73, 15:74, 15:75, 15:76, 15:77, 15:8, 15:9, 29:28, 29:29";
+           dynamic_data = {
+                   "subject": "লূতের জাতি",
+                   "introHtml": "",
+                   "ayah": String2AyahArray(CayahArray),
+                   "videos": [],
+                   "articles": [],
+                   "books": []
+           };
+
+
+           populate_dynamic_view(dynamic_data);
+
+
+   });
+</script>

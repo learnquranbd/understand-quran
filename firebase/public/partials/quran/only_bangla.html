@@ -1,0 +1,98 @@
+<div class="only_bangla_wrap">
+        <div class="pageIndex pindextop"> 
+            <div class="row">  
+                <div class="col-md-12 col-sm-12 col-lg-4 text-center">
+                    <div class="row">
+                        <div class="col-md-6  col-sm-12 text-right"> 
+                            <select  class="niceselect SelectQSurah" onchange="loadFullSurahBn()">
+                                <option value=""> সূরা </option>
+                            </select>
+
+                        </div>
+                        <div class="col-md-6 col-sm-12 text-left">
+                            <button type="button" onclick="loadFullSurahBn()" class="btn bg-lightblue btn-lg"> সূরার বাংলা দেখান   </button>
+                        </div>
+                    </div>
+                    <hr /> 
+                    
+                </div>
+            </div> 
+        </div>
+
+
+        <div class="full_surah_bangla">
+            <div id="pg_1" data-ajaxurl="/partials/quran/tajweed/pg_1.html"  class="page recursiveajaxload2 waiting"></div> 
+        </div> 
+
+        <br /> 
+
+
+        <div class="pageIndex pindexbottom">
+            <div class="row">        
+                <div class="col-md-12 col-sm-12 col-lg-4 text-center">
+                    
+                            <select  class="niceselect SelectQSurah" onchange="cloadOnlySurahBn()">
+                                <option value=""> সূরা </option>
+                            </select> 
+                    
+                </div>
+            </div> 
+
+        </div>
+
+</div>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $('.pageIndex').slideDown(); 
+     
+    var soptions = []; 
+                
+    soptions.push('<option value="',
+        1, '"> (',
+        en2bnNumber(1)+ ') সূরা - ' + bangla_sura_names[0], '</option>'); 
+
+    for (var i = 114; i > 1; i--) {
+        soptions.push('<option value="',
+        i, '"> (',
+        en2bnNumber(i)+ ') সূরা - ' + bangla_sura_names[i-1], '</option>'); 
+    }
+ 
+    $(".only_bangla_wrap select.SelectQSurah").html(soptions.join(''));
+    
+    cv = $('.only_bangla_wrap #s2subject option:selected').val();
+    $(".only_bangla_wrap .pindextop select.SelectQSurah option[value=\""+ cv + "\"]").prop('selected', true);
+    $(".only_bangla_wrap .pindextop select.SelectQSurah").trigger('change');
+     
+
+});
+ 
+function cloadOnlySurahBn(){
+    
+    cv = $('.only_bangla_wrap .pindexbottom select.SelectQSurah option:selected').val();
+    $(".only_bangla_wrap .pindextop select.SelectQSurah option[value=\""+ cv + "\"]").prop('selected', true);
+    $(".only_bangla_wrap .pindextop select.SelectQSurah").trigger('change');
+}
+
+function loadFullSurahBn(){ 
+    $('.full_surah_bangla').slideDown(); 
+
+    i = $(".only_bangla_wrap select.SelectQSurah option:selected").val();
+    full_surah_bangla_html = '<div id="pg_'+i+'" data-ajaxurl="/partials/quran/onlybangla/'+i+'.html"  class="page recursiveajaxload2 waiting"></div>'; 
+    $('.full_surah_bangla').html(full_surah_bangla_html);
+
+    $(".only_bangla_wrap .pindexbottom select.SelectQSurah option[value=\""+ i + "\"]").prop('selected', true);
+
+    recursively_ajax2();
+}
+
+ 
+</script>
+
+<style>
+    .full_surah_bangla {
+       margin: auto;
+    }
+    .full_surah_bangla .surah-name{ font-size: 1.2rem;}
+    .full_surah_bangla .line{ font-size: 1.0rem; text-align: left;}
+</style>

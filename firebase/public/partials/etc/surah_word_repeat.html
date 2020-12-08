@@ -1,0 +1,145 @@
+<div class="etc_surah_word_repeat">
+    <div class="pageIndex pindextop">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-lg-12 text-center">
+                <div class="row">
+                    <div class="col-12">
+                        <h5 class="bg-navy pad10 lh12">এটা একটি মডিউল, এর মাধ্যমে আপনি নির্দিষ্ট সূরার শব্দ পুনরাবৃত্তি (হুবুহু শব্দ | মৌলিক শব্দ ) জানতে পারবেন </h5>
+                    </div>
+                    <div class="col-md-6  col-sm-12 text-right mobilecenter">
+                        <select class="niceselect SelectQSurah" onchange="etc_surah_word_repeat_andProcess()">
+                            <option value=""> সূরা </option>
+                        </select>  
+
+                    </div>
+                    <div class="col-md-6 col-sm-12 text-left mobilecenter">
+                        <button type="button" onclick="etc_surah_word_repeat_andProcess()"
+                            class="btn bg-lightblue btn-lg"> সূরার শব্দ পুনরাবৃত্তি (হুবুহু শব্দ | মৌলিক শব্দ ) লোড করুন </button> 
+                    </div>
+                </div>
+                <hr />
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <hr />
+    <div class="next_prev_nav clearfix text-right">
+        <button onclick="AyahTafseerNextPrevSurah(0)" class="btn btn-sm btn-info prev_surah float-left"><i class="fa fa-arrow-circle-left"></i> আগের সূরা </button>  
+         
+        <button onclick="AyahTafseerNextPrevSurah(1)" class="btn btn-sm btn-info next_surah float-right"><i class="fa fa-arrow-circle-right"></i> পরবর্তী সূরা </button>
+    </div>
+    <br />
+ 
+  
+
+    <div class="row">
+        <div class="col-12 text-center current_surah_ayah_heading"></div> <hr />  
+    </div>
+    
+
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+            <div class="etc_surah_word_repeat_details"></div>
+        </div>
+    </div>
+
+
+    <hr />
+    <div class="next_prev_nav clearfix text-center">
+        <button onclick="AyahTafseerNextPrevSurah(0)" class="btn btn-sm btn-info prev_surah float-left"><i
+                class="fa fa-arrow-circle-left"></i> আগের সূরা </button>  
+        <button onclick="AyahTafseerNextPrevSurah(1)" class="btn btn-sm btn-info next_surah float-right"><i
+                class="fa fa-arrow-circle-right"></i> পরবর্তী সূরা </button>
+    </div> 
+
+</div>
+  
+
+<script type="text/javascript">   
+
+    $(document).ready(function () {
+        $('.etc_surah_word_repeat .pageIndex').slideDown();
+
+        var soptions = [];
+
+        soptions.push('<option value="',
+            1, '"> (',
+            en2bnNumber(1) + ') সূরা - ' + bangla_sura_names[0], '</option>');
+
+        for (val = 114; val > 1; val--) {
+            soptions.push('<option value="',
+                val, '"> (',
+                en2bnNumber(val) + ') সূরা - ' + bangla_sura_names[val - 1], '</option>');
+        }
+        $(".etc_surah_word_repeat select.SelectQSurah").html(soptions.join(''));
+        $(".etc_surah_word_repeat .pindextop select.SelectQSurah option[value=\"1\"]").prop('selected', true);
+        $(".etc_surah_word_repeat .pindextop select.SelectQSurah").trigger('change');
+
+
+    });
+ 
+    function AyahTafseerNextPrevSurah(e) {
+
+        selectedayah = parseInt($(".etc_surah_word_repeat select.SelectQSurah option:selected").val(), 10);
+        selectedayah = selectedayah == 0 ? 1 : selectedayah;
+        if (e == 0) {
+            // previous 
+            ay = selectedayah - 1;
+            $(".etc_surah_word_repeat select.SelectQSurah option[value=\"" + ay + "\"]").prop('selected', true);
+            $(".etc_surah_word_repeat select.SelectQSurah").trigger('change');
+
+        }
+        if (e == 1) {
+            // next 
+            ay = selectedayah + 1;
+            $(".etc_surah_word_repeat select.SelectQSurah option[value=\"" + ay + "\"]").prop('selected', true);
+            $(".etc_surah_word_repeat select.SelectQSurah").trigger('change');
+
+        }
+
+    }
+  
+  
+
+    function etc_surah_word_repeat_andProcess() {  
+        gobacktotop(); 
+
+        $('.etc_surah_word_repeat_details').html('');
+
+        fsurah = parseInt($(".etc_surah_word_repeat select.SelectQSurah option:selected").val(), 10);
+       
+        $('.etc_surah_word_repeat .current_surah_ayah_heading').html('<h1 class="bg-navy  lpad"> সূরা '+ bangla_sura_names[fsurah-1] + ' | শব্দ পুনরাবৃত্তি (হুবুহু শব্দ | মৌলিক শব্দ ) </h1>'); 
+
+        
+
+        if (fsurah <= 1) $('.next_prev_nav .prev_surah').hide();
+        else {
+            $('.next_prev_nav .prev_surah').show();
+            $('.next_prev_nav .prev_surah').html('<i class="fa fa-arrow-circle-left"></i>  আগের সূরা (' + en2bnNumber(
+                fsurah - 1) + ") " + bangla_sura_names[fsurah - 2])
+        }
+
+        if (fsurah >= 114) $('.next_prev_nav .next_surah').hide();
+        else {
+            $('.next_prev_nav .next_surah').show();
+            $('.next_prev_nav .next_surah').html(' <i class="fa fa-arrow-circle-right"></i>  পরবর্তী সূরা (' +
+                en2bnNumber(fsurah + 1) + ") " + bangla_sura_names[fsurah])
+        }
+     
+
+        etc_surah_word_repeat_details_html = '<div class="quranic_wordspersurah text-center waiting ondemandload wordspersurah-'+ fsurah + '" data-ajaxurl="/partials/arabic_languages/wordspersurah/'+ fsurah   + '.html" ></div>';
+        $('.etc_surah_word_repeat_details').html(etc_surah_word_repeat_details_html); 
+        setTimeout(function(){
+            call_ajax_now($('.etc_surah_word_repeat_details .wordspersurah-'+ fsurah).data('ajaxurl'), $('.etc_surah_word_repeat_details .wordspersurah-'+ fsurah ));
+        }, 400);
+
+
+
+    }
+ 
+</script>
+ 

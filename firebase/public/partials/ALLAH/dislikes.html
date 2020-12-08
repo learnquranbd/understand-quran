@@ -1,0 +1,73 @@
+<div class="row topindexbar">
+        <div class="col-md-5 col-sm-12">
+
+                <h3 class="text-center arabic cs1">بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِیْمِ</h3>
+                <p class="bangla text-center">শুরু করছি আল্লাহর নামে যিনি পরম করুণাময়, অতি দয়ালু।</p>
+
+        </div>
+        <div class="col-md-2 col-sm-12 indexcol">
+                <button type="button" class="btn btn-block bg-gradient-secondary btn-lg" onClick="openSidebarMenu()">
+                        সূচিপত্র/তালিকা </button>
+        </div>
+        <div class="col-md-5  col-sm-12">
+                <h3 class="text-center arabic cs1"> الله لا يحب </h3>
+                <p class="bangla text-center">আল্লাহর ~ অপছন্দ</p>
+        </div>
+
+</div>
+
+
+
+
+<script>
+        $(document).ready(function () {
+                //openSidebarMenu(); 
+                CayahArray =
+                        "2:190,2:205,2:276,3:32,3:57,3:119,3:140,4:18,4:36,4:107,4:148,5:64,5:87,6:141,7:31,7:55,8:58,16:23,22:38,28:76,28:77,30:45,31:18,42:40,47:34,57:23";
+                dynamic_data = {
+                        "subject": "আল্লাহর ~ অপছন্দ",
+                        "introHtml": "স্বয়ং  আল্লাহর অপছন্দ",
+                        "ayah": String2AyahArray(CayahArray),
+                        "videos": [{
+                                "title": "আল্লাহ অপছন্দ যে জিনিস [কী করা উচিত না]",
+                                "thumb": "https://i.ytimg.com/vi/qOcXuZYWo6k/hqdefault.jpg",
+                                "url": "https://www.youtube.com/embed/qOcXuZYWo6k"
+                        }, {
+                                "title": "ধোকাবাজ, প্রতারককে আল্লাহ পছন্দ করেন না",
+                                "thumb": "https://i.ytimg.com/vi/tzOGOc-MNOM/hqdefault.jpg",
+                                "url": "https://www.youtube.com/embed/tzOGOc-MNOM"
+                        }, {
+                                "title": "আল্লাহ তা'আলা যেসব ব্যক্তিদের পছন্দ করেন না তারা হলেন...",
+                                "thumb": "https://i.ytimg.com/vi/8cvfisOpm-c/hqdefault.jpg",
+                                "url": "https://www.youtube.com/embed/8cvfisOpm-c"
+                        }, {
+                                "title": "আল্লাহ অহংকারীদের পছন্দ করেন না || শক্তিশালী ইসলামী ভিডিও ᴴᴰ",
+                                "thumb": "https://i.ytimg.com/vi/wHQTJVw_Q-g/hqdefault.jpg",
+                                "url": "https://www.youtube.com/embed/wHQTJVw_Q-g"
+                        }, {
+                                "title": "This Sin Can DELETE All Your Good Deeds",
+                                "thumb": "https://i.ytimg.com/vi/fNN7szZzCx0/hqdefault.jpg",
+                                "url": "https://www.youtube.com/embed/fNN7szZzCx0"
+                        }, {
+                                "title": "Allah does not Love Them!",
+                                "thumb": "https://i.ytimg.com/vi/KeIZyMjEgtk/hqdefault.jpg",
+                                "url": "https://www.youtube.com/embed/KeIZyMjEgtk"
+                        }, {
+                                "title": "আল্লাহ যখন কোন ব্যাক্তিকে ঘৃনা করে তখন কি হয়|When allah hate a person",
+                                "thumb": "https://i.ytimg.com/vi/hOKD2wCPqhE/hqdefault.jpg",
+                                "url": "https://www.youtube.com/embed/hOKD2wCPqhE"
+                        }, {
+                                "title": "Be careful of Arrogance and Pride.. Ustad Wahaj Tarin",
+                                "thumb": "https://i.ytimg.com/vi/EG0QONq57-o/hqdefault.jpg",
+                                "url": "https://www.youtube.com/embed/EG0QONq57-o"
+                        }],
+                        "articles": [],
+                        "books": []
+                };
+
+
+                populate_dynamic_view(dynamic_data);
+
+
+        });
+</script>

@@ -1,0 +1,109 @@
+<div class="row topindexbar">
+    <div class="col-md-5 col-sm-12">
+
+        <h3 class="text-center arabic cs1">بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِیْمِ</h3>
+        <p class="bangla text-center">শুরু করছি আল্লাহর নামে যিনি পরম করুণাময়, অতি দয়ালু।</p>
+
+    </div>
+    <div class="col-md-2 col-sm-12 indexcol">
+        <button type="button" class="btn btn-block bg-gradient-secondary btn-lg" onClick="openSidebarMenu()">
+            সূচিপত্র/তালিকা </button>
+    </div>
+    <div class="col-md-5  col-sm-12">
+        <h3 class="text-center arabic cs1"> دعاء الاعتذار </h3>
+        <p class="bangla text-center">ক্ষমা চাওয়ার দু'আ</p>
+    </div>
+
+</div>
+
+
+
+<script>
+    $(document).ready(function () {
+        //openSidebarMenu(); 
+
+        dynamic_data = {
+            "subject": "ক্ষমা চাওয়ার দু'আ",
+            "introHtml": "দু‘আ হচ্ছে সকল ইবাদতের মূল। রসূল সা. বলেন,\n\nإِنَّ الدُّعَاءَ هُوَ الْعِبَادَةُ\nঅর্থ: নিশ্চয় দু‘আই হচ্ছে ইবাদত [মুসনাদে আহমদ : ১৮৩৮৬ সনদ সহীহ]।\nআল্লাহ তায়ালাও কুরআনের বিভিন্ন জায়গায় তাঁর কাছে দু‘আ করতে আদেশ করেছেন। ",
+            "ayah": [{
+                    "surah": 2,
+                    "ayah": [
+                        285
+                    ]
+                },
+                {
+                    "surah": 3,
+                    "ayah": [
+                        16,
+                        147,
+                        191,
+                        192,
+                        193,
+                        194
+                    ]
+                },
+                {
+                    "surah": 7,
+                    "ayah": [
+                        23,
+                        151,
+                        155,
+                        156
+                    ]
+                },
+                {
+                    "surah": 14,
+                    "ayah": [
+                        41
+                    ]
+                },
+                {
+                    "surah": 23,
+                    "ayah": [
+                        109,
+                        118
+                    ]
+                },
+                {
+                    "surah": 27,
+                    "ayah": [
+                        44
+                    ]
+                },
+                {
+                    "surah": 28,
+                    "ayah": [
+                        16,
+                        17
+                    ]
+                },
+                {
+                    "surah": 59,
+                    "ayah": [
+                        10
+                    ]
+                },
+                {
+                    "surah": 71,
+                    "ayah": [
+                        28
+                    ]
+                }
+            ],
+            "videos": [{
+
+                "title": "যে নামের বরকতে আল্লাহ তায়ালা বান্দার গুনাহ চিরতরে মুছে দিবেন...",
+                "thumb": "https://i.ytimg.com/vi/shbHTXj5RIs/hqdefault.jpg",
+                "url": "https://www.youtube.com/embed/shbHTXj5RIs"
+
+            }],
+            "articles": [],
+            "books": []
+        };
+
+
+        populate_dynamic_view(dynamic_data);
+
+
+    });
+</script>

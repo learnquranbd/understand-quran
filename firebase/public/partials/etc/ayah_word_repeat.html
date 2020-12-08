@@ -1,0 +1,322 @@
+<div class="etc_ayah_word_repeat">
+    <div class="pageIndex pindextop">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-lg-12 text-center">
+                <div class="row">
+                    <div class="col-12">
+                        <h5 class="bg-navy pad10 lh12">এটা একটি মডিউল, এর মাধ্যমে আপনি নির্দিষ্ট আয়াতের শব্দবিন্যাস ও শব্দের পুনরাবৃত্তি জানতে পারবেন   </h5>
+                    </div>
+                    <div class="col-md-6  col-sm-12 text-right mobilecenter">
+                        <select class="niceselect SelectQSurah" onchange="etc_ayah_word_repeat_Ayahs()">
+                            <option value=""> সূরা </option>
+                        </select>
+
+                        <select class="niceselect SelectAyahSelected" onchange="etc_ayah_word_repeat_Ayahs_andProcess()">
+                            <option value="1"> 1 </option>
+                        </select>
+
+
+                    </div>
+                    <div class="col-md-6 col-sm-12 text-left mobilecenter">
+                        <button type="button" onclick="etc_ayah_word_repeat_Ayahs_andProcess()"
+                            class="btn bg-lightblue btn-lg"> সূরার আয়াতের শব্দবিন্যাস ও শব্দের পুনরাবৃত্তি লোড করুন </button> 
+                    </div>
+                </div>
+                <hr />
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <hr />
+    <div class="next_prev_nav clearfix text-right">
+        <button onclick="AyahTafseerNextPrevSurah(0)" class="btn btn-sm btn-info prev_surah float-left"><i
+                class="fa fa-arrow-circle-left"></i> আগের সূরা </button>
+        <button onclick="AyahTafseerNextPrev(0)" class="btn btn-sm btn-info prev_ayah"><i
+                class="fa fa-arrow-circle-left"></i> আগের আয়াত </button> &nbsp;
+        
+        
+        <button onclick="AyahTafseerNextPrev(1)" class="btn btn-sm btn-info next_ayah"><i
+                class="fa fa-arrow-circle-right"></i> পরবর্তী আয়াত </button> &nbsp;
+        <button onclick="AyahTafseerNextPrevSurah(1)" class="btn btn-sm btn-info next_surah float-right"><i
+                class="fa fa-arrow-circle-right"></i> পরবর্তী সূরা </button>
+    </div>
+    <br />
+ 
+  
+
+    <div class="row">
+        <div class="col-12 text-center current_surah_ayah_heading"></div> <hr /> 
+        <div class="col-md-1 text-center bg-white">
+            
+           <br /> আয়াতের অডিও :  <button class="bg-green btn btn-tool"><i class="current_ayah_to_play fas playayah fa-play-circle" data-playsrc="1:1" onclick="setnew_audio_and_play(this)"></i></button>
+
+        </div>
+        <div class="col-md-11 bg-white"> <div class="tajweed_ayah_html bg-white qtext tajweed2" dir="rtl"></div> </div>
+        <div class="col-12 text-center current_surah_ayah_heading2"></div> 
+    </div>
+    
+
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+            <div class="etc_ayah_word_repeat_details"></div>
+        </div>
+    </div>
+
+
+    <hr />
+    <div class="next_prev_nav clearfix text-center">
+        <button onclick="AyahTafseerNextPrevSurah(0)" class="btn btn-sm btn-info prev_surah float-left"><i
+                class="fa fa-arrow-circle-left"></i> আগের সূরা </button>
+        <button onclick="AyahTafseerNextPrev(0)" class="btn btn-sm btn-info prev_ayah"><i
+                class="fa fa-arrow-circle-left"></i> আগের আয়াত </button>
+        <button onclick="AyahTafseerNextPrev(1)" class="btn btn-sm btn-info next_ayah"><i
+                class="fa fa-arrow-circle-right"></i> পরবর্তী আয়াত </button>
+        <button onclick="AyahTafseerNextPrevSurah(1)" class="btn btn-sm btn-info next_surah float-right"><i
+                class="fa fa-arrow-circle-right"></i> পরবর্তী সূরা </button>
+    </div> 
+
+</div>
+  
+
+<script type="text/javascript">   
+
+    $(document).ready(function () {
+        $('.etc_ayah_word_repeat .pageIndex').slideDown();
+
+        var soptions = [];
+
+        soptions.push('<option value="',
+            1, '"> (',
+            en2bnNumber(1) + ') সূরা - ' + bangla_sura_names[0], '</option>');
+
+        for (val = 114; val > 1; val--) {
+            soptions.push('<option value="',
+                val, '"> (',
+                en2bnNumber(val) + ') সূরা - ' + bangla_sura_names[val - 1], '</option>');
+        }
+        $(".etc_ayah_word_repeat select.SelectQSurah").html(soptions.join(''));
+        $(".etc_ayah_word_repeat .pindextop select.SelectQSurah option[value=\"1\"]").prop('selected', true);
+        $(".etc_ayah_word_repeat .pindextop select.SelectQSurah").trigger('change');
+
+
+    });
+
+    function AyahTafseerNextPrev(e) {
+        surah = $(".etc_ayah_word_repeat select.SelectQSurah option:selected").val();
+        selectedayah = parseInt($(".etc_ayah_word_repeat select.SelectAyahSelected option:selected").val(), 10);
+
+        if (e == 0) {
+            // previous 
+            ay = selectedayah - 1;
+            $(".etc_ayah_word_repeat select.SelectAyahSelected option[value=\"" + ay + "\"]").prop('selected', true);
+            $(".etc_ayah_word_repeat select.SelectAyahSelected").trigger('change');
+
+        }
+        if (e == 1) {
+            // next 
+            ay = selectedayah + 1;
+            $(".etc_ayah_word_repeat select.SelectAyahSelected option[value=\"" + ay + "\"]").prop('selected', true);
+            $(".etc_ayah_word_repeat select.SelectAyahSelected").trigger('change');
+
+        }
+
+
+    }
+
+    function AyahTafseerNextPrevSurah(e) {
+
+        selectedayah = parseInt($(".etc_ayah_word_repeat select.SelectQSurah option:selected").val(), 10);
+        selectedayah = selectedayah == 0 ? 1 : selectedayah;
+        if (e == 0) {
+            // previous 
+            ay = selectedayah - 1;
+            $(".etc_ayah_word_repeat select.SelectQSurah option[value=\"" + ay + "\"]").prop('selected', true);
+            $(".etc_ayah_word_repeat select.SelectQSurah").trigger('change');
+
+        }
+        if (e == 1) {
+            // next 
+            ay = selectedayah + 1;
+            $(".etc_ayah_word_repeat select.SelectQSurah option[value=\"" + ay + "\"]").prop('selected', true);
+            $(".etc_ayah_word_repeat select.SelectQSurah").trigger('change');
+
+        }
+
+    }
+
+    var surah_ayahs_obj = null;
+    var surah_ayahs_tajweed_rules = null;
+
+
+    function etc_ayah_word_repeat_Ayahs() {
+       
+        surah = $(".etc_ayah_word_repeat  select.SelectQSurah option:selected").val();
+        var foptions = [];  
+        
+        for (var i = 1; i <= ayat_numbers[surah-1]; i++) {
+            foptions.push('<option value="',
+            i, '"> আয়াত - ',
+            en2bnNumber(i), '</option>'); 
+        } 
+
+        $(".etc_ayah_word_repeat  select.SelectAyahSelected").html(foptions.join('')); 
+        
+        $(".etc_ayah_word_repeat  .pindextop select.SelectAyahSelected option[value=\""+ 1 +"\"]").prop('selected', true);
+    
+     
+        etc_ayah_word_repeat_Ayahs_andProcess();
+         
+
+    }
+
+
+
+    function etc_ayah_word_repeat_Ayahs_andProcess() {  
+        gobacktotop();
+        $('.etc_ayah_word_repeat .tajweed_ayah_html').html(''); 
+        $('.etc_ayah_word_repeat_details').html('');
+
+        fsurah = parseInt($(".etc_ayah_word_repeat select.SelectQSurah option:selected").val(), 10);
+        selectedayah = parseInt($(".etc_ayah_word_repeat select.SelectAyahSelected option:selected").val(), 10);
+
+        $('.etc_ayah_word_repeat .current_surah_ayah_heading').html('<h3 class="bg-navy lpad"> সূরা '+ bangla_sura_names[fsurah-1] + ' |  আয়াত নং '+ en2bnNumber(selectedayah) + '</h3>'); 
+        $('.etc_ayah_word_repeat .current_surah_ayah_heading2').html('<h2 class="bg-navy lpad"> সূরা '+ bangla_sura_names[fsurah-1] + ' |  আয়াত নং '+ en2bnNumber(selectedayah) + ' - এর শব্দবিন্যাস ও শব্দের পুনরাবৃত্তি </h2>'); 
+
+        audio.pause();
+        $('.current_ayah_to_play').data('playsrc', fsurah+':'+selectedayah);  
+        var playbutton = $('#play i');
+        playbutton.removeClass('fa-pause-circle').addClass('fa-play-circle');  
+        $('.current_ayah_to_play').removeClass('fa-pause-circle').addClass('fa-play-circle'); 
+
+        
+
+
+
+        if (fsurah <= 1) $('.next_prev_nav .prev_surah').hide();
+        else {
+            $('.next_prev_nav .prev_surah').show();
+            $('.next_prev_nav .prev_surah').html('<i class="fa fa-arrow-circle-left"></i>  আগের সূরা (' + en2bnNumber(
+                fsurah - 1) + ") " + bangla_sura_names[fsurah - 2])
+        }
+
+        if (fsurah >= 114) $('.next_prev_nav .next_surah').hide();
+        else {
+            $('.next_prev_nav .next_surah').show();
+            $('.next_prev_nav .next_surah').html(' <i class="fa fa-arrow-circle-right"></i>  পরবর্তী সূরা (' +
+                en2bnNumber(fsurah + 1) + ") " + bangla_sura_names[fsurah])
+        }
+ 
+
+        if (selectedayah == 0) {
+            $('.next_prev_nav .prev_ayah').hide();
+
+            if (selectedayah >= ayat_numbers[fsurah - 1]) $('.next_prev_nav .next_ayah').hide();
+            else {
+                $('.next_prev_nav .next_ayah').show();
+                $('.next_prev_nav .next_ayah').html(' <i class="fa fa-arrow-circle-right"></i>  পরবর্তী আয়াত : ' +
+                    en2bnNumber(selectedayah + 1))
+            }
+        } else {
+            if (selectedayah == 1) $('.next_prev_nav .prev_ayah').hide();
+            else {
+                $('.next_prev_nav .prev_ayah').show();
+                $('.next_prev_nav .prev_ayah').html('<i class="fa fa-arrow-circle-left"></i>  আগের আয়াত : ' +
+                    en2bnNumber(selectedayah - 1))
+            }
+
+
+            if (selectedayah == ayat_numbers[fsurah - 1]) $('.next_prev_nav .next_ayah').hide();
+            else {
+                $('.next_prev_nav .next_ayah').show();
+                $('.next_prev_nav .next_ayah').html(' <i class="fa fa-arrow-circle-right"></i>  পরবর্তী আয়াত : ' +
+                    en2bnNumber(selectedayah + 1))
+            }
+        }
+
+
+        
+        surah_ayah_arabic_html = '<div  class="quran-container recursiveajaxload2 waiting arabic tajweed2 tajweed-ar-surah-' + fsurah + '-ayah-' + selectedayah + '" id="tajweed-ar-surah-' + fsurah + '-ayah-' + selectedayah + '" data-ajaxurl="/resources/tajweed/' + fsurah + '_' + selectedayah + '.html"></div>';
+        surah_ayah_arabic_html += '<div class="ajax_translation translation text-right recursiveajaxload waiting surah-'+fsurah+'-ayah-'+selectedayah+'-translation"  data-ajaxurl="/resources/quran/'+ fsurah + '/' + selectedayah + '_translation.html"></div> ';
+        $('.etc_ayah_word_repeat .tajweed_ayah_html').html(surah_ayah_arabic_html);
+      
+
+
+        etc_ayah_word_repeat_details_html = '<div style="padding:30px 0;" class="ayah_words_lists_wrap bg-white ondemandload ayah_grammer-'+ fsurah + '-ayah-'+ selectedayah + '" data-ajaxurl="/resources/grammer/'+ fsurah + '_' + selectedayah + '.html" ></div>';
+        $('.etc_ayah_word_repeat_details').html(etc_ayah_word_repeat_details_html);
+       
+       
+
+
+
+     setTimeout(function(){
+        call_ajax_now($('.etc_ayah_word_repeat .tajweed-ar-surah-' + fsurah + '-ayah-' + selectedayah).data('ajaxurl'), $('.etc_ayah_word_repeat .tajweed-ar-surah-' + fsurah + '-ayah-' + selectedayah));
+        call_ajax_now($('.etc_ayah_word_repeat .surah-'+fsurah+'-ayah-'+selectedayah+'-translation').data('ajaxurl'), $('.etc_ayah_word_repeat .surah-'+fsurah+'-ayah-'+selectedayah+'-translation'));
+        call_ajax_now($('.etc_ayah_word_repeat_details .ayah_grammer-'+ fsurah + '-ayah-'+ selectedayah).data('ajaxurl'), $( '.etc_ayah_word_repeat_details .ayah_grammer-'+ fsurah + '-ayah-'+ selectedayah), make_grammer_view);
+
+
+        }, 400);
+
+
+      
+
+    }
+
+    function make_grammer_view(){
+        $('.ayah_words_lists_wrap .ayah_words_lists').slick({
+                slidesToShow: 10,
+                slidesToScroll: 10,
+                dots: true,
+                infinite: false,
+                adaptiveHeight: true,
+                rtl: true,
+                useTransform:false, 
+                responsive: [ 
+                    {
+                      breakpoint: 1920,
+                      settings: {
+                        slidesToShow: 8,
+                        slidesToScroll: 8, 
+                        dots: true
+                      }
+                    }, 
+                    {
+                      breakpoint: 1024,
+                      settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3, 
+                        dots: true
+                      }
+                    },
+                    {
+                      breakpoint: 600,
+                      settings: {
+                        slidesToShow: 2, 
+                        slidesToScroll:2, 
+                        dots: false
+                      }
+                    },
+                    {
+                      breakpoint: 480,
+                      settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,  
+                        dots: false
+                      }
+                    }
+                    // You can unslick at a given breakpoint now by adding:
+                    // settings: "unslick"
+                    // instead of a settings object
+                  ]
+            });
+
+            
+
+            $($('.slick-slide.slick-active a')[0]).trigger('click');
+    }
+
+</script>
+ 

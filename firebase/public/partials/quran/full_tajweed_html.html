@@ -1,0 +1,153 @@
+<div class="full_tajweed_wrap">
+            <div class="pageIndex pindextop"> 
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-4 text-center">
+                        <button type="button" onclick="loadFullTajweedHTML()" class="btn bg-navy btn-lg"> সকল পেজ একসাথে (3MB) </button>
+                        <hr />
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-lg-4  text-center"> 
+
+                        <div class="row  text-center">
+                            <div class="col-md-6 col-sm-6 text-right"> 
+                                <select  class="niceselect SelectQPages" onchange="loadOnlySelctedPage()">
+                                    <option value=""> পেজ </option>
+                                </select>
+
+                            </div>
+                            <div class="col-md-6 col-sm-12 text-left">
+                                <button type="button" onclick="loadOnlySelctedPage()" class="btn bg-info btn-lg"> নির্বাচিত পেজ  </button> 
+                            </div>
+                        </div>  
+                        <hr />
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-lg-4 text-center">
+                        <div class="row">
+                            <div class="col-md-6  col-sm-12 text-right"> 
+                                <select  class="niceselect SelectQSurah" onchange="loadOnlySurahPages()">
+                                    <option value=""> সূরা </option>
+                                </select>
+
+                            </div>
+                            <div class="col-md-6 col-sm-12 text-left">
+                                <button type="button" onclick="loadOnlySurahPages()" class="btn bg-lightblue btn-lg"> নির্বাচিত সূরা  </button>
+                            </div>
+                        </div>
+                        <hr /> 
+                        
+                    </div>
+                </div> 
+            </div>
+
+
+            <div class="full_quran_tajweed qtext tajweed" dir="rtl">
+                <div id="pg_1" data-ajaxurl="/partials/quran/tajweed/pg_1.html"  class="page recursiveajaxload2 waiting"></div> 
+            </div> 
+
+            <br /> 
+
+
+            <div class="pageIndex pindexbottom">
+                <div class="row"> 
+                    <div class="col-md-12 col-sm-12 col-lg-6 text-center">
+                        
+                                <select  class="niceselect SelectQPages" onchange="cloadOnlySelctedPage()">
+                                    <option value=""> পেজ </option>
+                                </select>
+
+                    </div>        
+                    <div class="col-md-12 col-sm-12 col-lg-6 text-center">
+                        
+                                <select  class="niceselect SelectQSurah" onchange="cloadOnlySurahPages()">
+                                    <option value=""> সূরা </option>
+                                </select> 
+                        
+                    </div>
+                </div> 
+
+            </div>
+
+</div>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $('.pageIndex').slideDown();
+    //$('.full_quran_tajweed').html('');
+    
+    var options = []; 
+    var soptions = []; 
+                
+    for (var i = 1; i < 605; i++) {
+        options.push('<option value="',
+        i, '"> পেজ - ',
+        en2bnNumber(i), '</option>'); 
+    }
+       
+    for (var i = 1; i < 115; i++) {
+        soptions.push('<option value="',
+        i, '"> (',
+        en2bnNumber(i)+ ') সূরা - ' + bangla_sura_names[i-1], '</option>'); 
+    }
+
+    $(".full_tajweed_wrap  select.SelectQPages").html(options.join(''));
+    $(".full_tajweed_wrap  select.SelectQSurah").html(soptions.join(''));
+    
+    cv = $('.full_tajweed_wrap #s2subject option:selected').val();
+    $(".full_tajweed_wrap  .pindextop select.SelectQSurah option[value=\""+ cv + "\"]").prop('selected', true);
+    $(".full_tajweed_wrap  .pindextop select.SelectQSurah").trigger('change');
+     
+
+});
+
+
+function cloadOnlySelctedPage(){
+    cv = $('.pindexbottom select.SelectQPages option:selected').val();
+    $(".full_tajweed_wrap  .pindextop select.SelectQPages option[value=\""+ cv + "\"]").prop('selected', true);
+    $(".full_tajweed_wrap  .pindextop select.SelectQPages").trigger('change');
+}
+function loadOnlySelctedPage(){
+    $('.full_quran_tajweed').slideDown();
+ 
+    i = $(".full_tajweed_wrap  select.SelectQPages option:selected").val();
+    full_quran_tajweed_html = '<div id="pg_'+i+'" data-ajaxurl="/partials/quran/tajweed/pg_'+i+'.html"  class="page recursiveajaxload2 waiting"></div>'; 
+    $('.full_quran_tajweed').html(full_quran_tajweed_html);
+
+    $(".full_tajweed_wrap .pindexbottom select.SelectQPages option[value=\""+ i + "\"]").prop('selected', true);
+
+    recursively_ajax2();
+}
+
+
+
+function cloadOnlySurahPages(){
+    
+    cv = $('.pindexbottom select.SelectQSurah option:selected').val();
+    $(".full_tajweed_wrap  .pindextop select.SelectQSurah option[value=\""+ cv + "\"]").prop('selected', true);
+    $(".full_tajweed_wrap  .pindextop select.SelectQSurah").trigger('change');
+}
+
+function loadOnlySurahPages(){ 
+    $('.full_quran_tajweed').slideDown(); 
+
+    i = $(".full_tajweed_wrap  select.SelectQSurah option:selected").val();
+    full_quran_tajweed_html = '<div id="pg_'+i+'" data-ajaxurl="/partials/quran/surah_tajweed/'+i+'.html"  class="page recursiveajaxload2 waiting"></div>'; 
+    $('.full_quran_tajweed').html(full_quran_tajweed_html);
+
+    $(".full_tajweed_wrap .pindexbottom select.SelectQSurah option[value=\""+ i + "\"]").prop('selected', true);
+
+    recursively_ajax2();
+}
+
+
+
+function loadFullTajweedHTML(){  
+    $('.full_quran_tajweed').slideDown();
+
+    full_quran_tajweed_html = '';
+    for(i = 1; i< 605; i++){
+        full_quran_tajweed_html += '<div id="pg_'+i+'" data-ajaxurl="/partials/quran/tajweed/pg_'+i+'.html"  class="page recursiveajaxload2 waiting"></div>';
+    }
+    $('.full_quran_tajweed').html(full_quran_tajweed_html);
+    recursively_ajax2();
+
+}
+</script>

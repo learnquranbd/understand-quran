@@ -1,0 +1,84 @@
+<div class="row topindexbar">
+    <div class="col-md-5 col-sm-12">
+
+        <h3 class="text-center arabic cs1">بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِیْمِ</h3>
+        <p class="bangla text-center">শুরু করছি আল্লাহর নামে যিনি পরম করুণাময়, অতি দয়ালু।</p>
+
+    </div>
+    <div class="col-md-2 col-sm-12 indexcol">
+        <button type="button" class="btn btn-block bg-gradient-secondary btn-lg" onClick="openSidebarMenu()">
+            সূচিপত্র/তালিকা </button>
+    </div>
+    <div class="col-md-5  col-sm-12">
+        <h3 class="text-center arabic cs1"> الصرف </h3>
+        <p class="bangla text-center">ছরফ (সরফ) - শব্দের রুপান্তর </p>
+    </div>
+
+</div>
+
+ 
+
+
+<script>
+    $(document).ready(function () {
+        //openSidebarMenu();  
+        dynamic_data = {
+            "subject": "ছরফ (সরফ)",
+            "introHtml": "ছরফ (সরফ) - শব্দের রুপান্তর ",
+            "ayah": [],
+            "videos": [{
+                    "title": "Sarf 101",
+                    "thumb": "https://i.ytimg.com/vi_webp/T2_03wQ-JhE/hqdefault.webp",
+                    "url": "https://www.youtube.com/playlist?list=PLgdxnhgIhVNswpVUprfB3gTIGD9yoL2sD"
+                },
+                {
+                    "title": "আরবী ব্যাকরণ শিক্ষা",
+                    "thumb": "https://i.ytimg.com/vi/UjSql9HnFuw/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PL90TFVHYcR2dZ50xc-Ipt7EDpCQoIs__S"
+                },{
+                    "title": "First Steps To Understanding Sarf by Hashim Mohamed",
+                    "thumb": "https://i.ytimg.com/vi_webp/FEPiOBUYlLw/hqdefault.webp",
+                    "url": "https://www.youtube.com/playlist?list=PLzn0qdi6JpdvWf0IDGNfaiM-okPqDuQoc"
+                },{
+                    "title": "Sarf الصرف",
+                    "thumb": "https://i.ytimg.com/vi/HSiLQa6ZTTI/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PLyo54InWsoTajN5FA4zF2hVuXRORmVh-h"
+                } ,{
+                    "title": "Sarf",
+                    "thumb": "https://i.ytimg.com/vi/tq5nAA28pqQ/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PL-eYxZVIvXruR29b7-mUPCZfbJKuHKkoQ"
+                } ,{
+                    "title": "এসো ছরফ শিখি",
+                    "thumb": "https://i.ytimg.com/vi/_64kvVWcJjs/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PLwlIe2pxu_yawpst1i-bPWSRS14kpOPvD"
+                } ,{
+                    "title": "Sarf",
+                    "thumb": "https://i.ytimg.com/vi/Q0BTTI_QKwc/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PLmS7u3Scza_iOwwo5ctPqlAinXsIYLiiD"
+                } 
+            ],
+            "articles": [],
+            "books": [
+            {
+                            'type'  : "firebase-pdf", 
+                            'title' : 'ষাট ঘন্টায় নাহু-ছরফ শিক্ষা',
+                            'writer': "মোহাম্মদ ইব্রাহিম খলিল",
+                            'url'   : 'arabic_language%2Fnaho-sorf-with-60-classes.pdf',
+                            'thumb' : 'arabic_language%2Fnaho-sorf-with-60-classes.png', 
+                        } ,
+                        {
+                            'type'  : "firebase-pdf", 
+                            'title' : 'মিযানুছ ছরফ ও মুনশাইব ',
+                            'writer': "মাওলানা মহাম্মাদ আবুল কাছেম",
+                            'url'   : 'arabic_language%2Fmizan.pdf',
+                            'thumb' : 'arabic_language%2Fmizan.jpg', 
+                        } 
+            ]
+        };
+
+
+        populate_dynamic_view(dynamic_data);
+
+
+    });
+</script>

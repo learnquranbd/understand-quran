@@ -1,0 +1,145 @@
+<div class="row topindexbar">
+    <div class="col-md-5 col-sm-12">
+
+        <h3 class="text-center arabic cs1">بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِیْمِ</h3>
+        <p class="bangla text-center">শুরু করছি আল্লাহর নামে যিনি পরম করুণাময়, অতি দয়ালু।</p>
+
+    </div>
+    <div class="col-md-2 col-sm-12 indexcol">
+        <button type="button" class="btn btn-block bg-gradient-secondary btn-lg" onClick="openSidebarMenu()">
+            সূচিপত্র/তালিকা </button>
+    </div>
+    <div class="col-md-5  col-sm-12">
+        <h3 class="text-center arabic cs1"> صلاة </h3>
+        <p class="bangla text-center">সালাত/নামাজ </p>
+    </div>
+
+</div>
+
+
+
+
+<script>
+    $(document).ready(function () {
+        //openSidebarMenu(); 
+        CayahArray =
+            "2:110, 2:177, 2:277, 2:3, 2:43, 2:83, 4:102, 4:103, 4:77, 5:12, 5:55, 6:72, 7:170, 8:3, 9:11, 9:18, 9:5, 9:71, 10:87, 11:114, 13:22, 14:31, 14:37, 17:78, 20:14, 22:41, 22:78, 24:56, 27:3, 29:45, 30:31, 31:17, 31:4, 33:33, 35:18, 35:29, 42:38, 58:13, 73:20, 98:5";
+        dynamic_data = {
+            "subject": "সালাত/নামাজ",
+            "introHtml": "নামায/ নামাজ/ সালাত বা সালাত হল ইসলাম ধর্মের প্রধান উপাসনাকর্ম। প্রতিদিন ৫ ওয়াক্ত নামাজ আদায় করা প্রত্যেক মুসলিমের জন্য আবশ্যক বা ফরজ। ফরজ সাধারণত দুই প্রকার। যথা: ১.ফরজে আইন ২.ফরজে কিফায়া । তন্মধ্যে সালাত ফরজে আইন- এর অন্তর্ভুক্ত। নামায ইসলামের পাঁচটি স্তম্ভের একটি",
+            "ayah": String2AyahArray(CayahArray),
+            "videos": [{
+                    "title": "সালাত নিয়ে শ্রেষ্ঠ ওয়াজ !!",
+                    "thumb": "https://i.ytimg.com/vi/e9xGZJPLEos/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/e9xGZJPLEos"
+                }, {
+                    "title": "সুরাহ : ভুল উচ্চারন",
+                    "thumb": "https://i.ytimg.com/vi/D29mGO3iFP8/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PL3DThqevkiO6GXYAfLHv9YmNtU5E8-P91"
+                }, {
+                    "title": "কুরআন ও সালাহ বুঝুন আরো সহজ উপায়ে -Lesson 1a থেকে 10b",
+                    "thumb": "https://i.ytimg.com/vi/I4-2BOkWdV4/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/I4-2BOkWdV4"
+                }, {
+                    "title": "Full Course | Understand Quran and Salaah Easy Way | illustrated | 100 Episodes",
+                    "thumb": "https://i.ytimg.com/vi/SHNMiOZaywg/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/SHNMiOZaywg"
+                }, {
+                    "title": "Sweetness in Prayer (Salah) - Moutasem Al-Hameedi",
+                    "thumb": "https://i.ytimg.com/vi/O724d95udWg/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/O724d95udWg"
+                }, {
+                    "title": "ফিক-উস-সালাহ | নামাজের নিয়ম কানুন | পর্ব ১ | How to perform Salah",
+                    "thumb": "https://i.ytimg.com/vi/JaBrUxYA2tY/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/JaBrUxYA2tY"
+                }, {
+                    "title": "ফিক-উস-সালাহ | নামাজের নিয়ম কানুন | পর্ব ২ | How to perform Salah",
+                    "thumb": "https://i.ytimg.com/vi/3n8DbMR4tNw/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/3n8DbMR4tNw"
+                }, {
+                    "title": "ফিক-উস-সালাহ | নামাজের নিয়ম কানুন | পর্ব ৩ | How to perform Salah",
+                    "thumb": "https://i.ytimg.com/vi/bH5H2mPT7ng/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/bH5H2mPT7ng"
+                }, {
+                    "title": "ফিক-উস-সালাহ | নামাজের নিয়ম কানুন | পর্ব ৪ | How to perform Salah",
+                    "thumb": "https://i.ytimg.com/vi/TSNoGiA52Zc/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/TSNoGiA52Zc"
+                }, {
+                    "title": "ফিক-উস-সালাহ | নামাজের নিয়ম কানুন | পর্ব ৫ | How to perform Salah",
+                    "thumb": "https://i.ytimg.com/vi/vBzSppqLhtw/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/vBzSppqLhtw"
+                }, {
+                    "title": "ফিক-উস-সালাহ | নামাজের নিয়ম কানুন | পর্ব ৬ | How to perform Salah",
+                    "thumb": "https://i.ytimg.com/vi/cp8vGIzyQEg/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/cp8vGIzyQEg"
+                }, {
+                    "title": "ফিক-উস-সালাহ | নামাজের নিয়ম কানুন | পর্ব ৭ | How to perform Salah",
+                    "thumb": "https://i.ytimg.com/vi/rbEK0qPulx0/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/rbEK0qPulx0"
+                }, {
+                    "title": "ফিক-উস-সালাহ | নামাজের নিয়ম কানুন | পর্ব ৮ | How to perform Salah",
+                    "thumb": "https://i.ytimg.com/vi/TxTVqaeJ-tM/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/TxTVqaeJ-tM"
+                },
+                {
+                    "title": "দুরুদ-এ-ইবরাহিম: নামাজে পঠীত দুরুদ শরীফ। হাফেজ হোসেইন ইবরাহিম (সোমালী)",
+                    "thumb": "https://i.ytimg.com/vi/9KDYXecj33g/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/9KDYXecj33g"
+                }
+            ],
+            "articles": [],
+            "books": [
+                    {
+                        'title': 'সালাত শিক্ষা',
+                        "writer": "আব্দুল্লাহ ইবন আহমদ ইবন আলী আয-যায়েদ",
+                        "type": "firebase-pdf",
+                        'thumb': 'salat%2Fbn_Salat_shikka.png',
+                        'url': 'salat%2Fbn_Salat_shikka.pdf'
+                    }, {
+                        'title': 'রাসূলুল্লাহ সাল্লাল্লাহু আলাইহি ওয়া সাল্লামের নামাজ',
+                        "writer": "আব্দুল হামীদ ফাইযী",
+                        "type": "firebase-pdf",
+                        'thumb': 'salat%2Fbn_salate_mubasshir.png',
+                        'url': 'salat%2Fbn_salate_mubasshir.pdf'
+                    },{
+                        'title': 'মহা নাবীর সর্ব শেষ ওসিয়ত আস-সালাত, আস-সালাত',
+                        "writer": "নূর মুহাম্মাদ বদীউর রহমান",
+                        "type": "firebase-pdf",
+                        'thumb': 'salat%2Fbn_as-Solat_as-solat.png',
+                        'url': 'salat%2Fbn_as-Solat_as-solat.pdf'
+                    },{
+                        'title': 'সালাতের গুরুত্ব ও ফযীলত',
+                        "writer": "আব্দুল্লাহ বিন সাআদ আল ফালেহ",
+                        "type": "firebase-pdf",
+                        'thumb': 'salat%2Fbn_salater_gurutto_o_fojilot.png',
+                        'url': 'salat%2Fbn_salater_gurutto_o_fojilot.pdf'
+                    },{
+                        'title': 'সালাতে বিনয়ী হওয়ার তেত্রিশ উপায়',
+                        "writer": "শায়খ মুহাম্মদ সালেহ আল-মুনাজ্জিদ",
+                        "type": "firebase-pdf",
+                        'thumb': 'salat%2Fbn_salate_akagrota_orjoner.png',
+                        'url': 'salat%2Fbn_salate_akagrota_orjoner.pdf'
+                    }
+            ],
+            "extrahtml": [{
+                    "heading": "নামাজে আমরা কি পড়ি",
+                    "subheading": "সালাম ফেরানোর আগে দোয়া",
+                    "html": "/partials/pillars/salat_what_we_read.html",
+                    "icon": "hand-holding-heart"
+                },
+                {
+                    "heading": "সালাম ফেরানোর পরে দোয়া",
+                    "subheading": "নামাজ শেষে তাসবিহ পাঠ ও দোয়া",
+                    "html": "/partials/pillars/salat_after_salam.html",
+                    "icon": "hand-holding-heart"
+                }
+
+            ]
+        };
+
+
+        populate_dynamic_view(dynamic_data);
+
+
+    });
+</script>

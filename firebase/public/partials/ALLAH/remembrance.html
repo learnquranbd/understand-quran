@@ -1,0 +1,67 @@
+<div class="row topindexbar">
+    <div class="col-md-5 col-sm-12">
+
+        <h3 class="text-center arabic cs1">بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِیْمِ</h3>
+        <p class="bangla text-center">শুরু করছি আল্লাহর নামে যিনি পরম করুণাময়, অতি দয়ালু।</p>
+
+    </div>
+    <div class="col-md-2 col-sm-12 indexcol">
+        <button type="button" class="btn btn-block bg-gradient-secondary btn-lg" onClick="openSidebarMenu()">
+            সূচিপত্র/তালিকা </button>
+    </div>
+    <div class="col-md-5  col-sm-12">
+        <h3 class="text-center arabic cs1"> بذكر الله </h3>
+        <p class="bangla text-center">আল্লাহর স্মরণ </p>
+    </div>
+
+</div>
+
+
+
+
+<script>
+    $(document).ready(function () {
+        //openSidebarMenu(); 
+        CayahArray =
+            "2:152, 2:198, 2:200, 2:203, 2:221, 2:231, 2:237, 2:239, 2:269, 3:103, 3:135, 3:191, 3:41, 3:7, 4:103, 4:142, 5:110, 5:11, 5:2, 5:20, 5:7, 5:8, 5:91, 6:152, 6:80, 7:130, 7:201, 7:205, 7:26, 7:3, 7:69, 7:74, 8:45, 9:126, 10:3, 11:114, 11:24, 13:19, 13:27, 13:28, 14:25, 14:52, 14:6, 16:13, 16:17, 16:90, 17:41, 18:101, 18:23, 18:24, 18:28, 19:2, 20:14, 20:31, 20:32, 20:33, 20:34, 20:42, 20:44, 21:42, 21:48, 22:32, 22:37, 23:110, 23:84, 23:85, 24:1, 24:27, 24:36, 24:37, 25:50, 25:62, 26:225, 26:226, 26:227, 27:62, 28:43, 28:46, 28:51, 29:45, 33:21, 33:34, 33:35, 33:41, 33:9, 35:3, 35:37, 37:13, 37:155, 38:1, 38:17, 38:29, 38:45, 38:48, 39:22, 39:23, 39:27, 39:9, 40:13, 40:58, 41:41, 43:12, 43:13, 43:36, 44:58, 45:23, 48:26, 49:3, 50:31, 51:15, 51:49, 53:29, 54:15, 54:17, 54:22, 54:32, 54:40, 54:51, 56:62, 57:16, 58:19, 62:10, 62:9, 63:9, 69:41, 69:42, 69:48, 72:16, 72:17, 73:8, 74:54, 74:55, 74:56, 76:25, 77:41, 96:11, 96:12";
+        dynamic_data = {
+            "subject": "আল্লাহর স্মরণ",
+            "introHtml": "",
+            "ayah": String2AyahArray(CayahArray),
+            "videos": [{
+                    "title": "Remembrance of Allah - Mufti Menk",
+                    "url": "https://www.youtube.com/embed/PRLWnmxxoLQ",
+                    "thumb": "https://i.ytimg.com/vi/PRLWnmxxoLQ/hqdefault.jpg"
+                },{
+                    "title": "আল্লাহর স্মরণ",
+                    "url": "https://www.youtube.com/watch?v=jxtHjMJ8GOU",
+                    "thumb": "https://i.ytimg.com/vi/jxtHjMJ8GOU/maxresdefault.jpg"
+                },
+                {
+                    "title": "Purification by the Remembrance of Allah | REALLY EMOTIONAL | Sh. Riad Ouarzazi",
+                    "thumb": "https://i.ytimg.com/vi/znnAtt6ye0A/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/znnAtt6ye0A"
+                }, {
+                    "title": "Remembrance Of Allah ᴴᴰ | Featuring Mohamed Hoblos",
+                    "thumb": "https://i.ytimg.com/vi/IyOe-19q3bA/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/IyOe-19q3bA"
+                }, {
+                    "title": "Remembrance Of Allah  Part 1 - Dr. Bilal Philips",
+                    "thumb": "https://i.ytimg.com/vi/Oi8Y0rpiaEk/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/Oi8Y0rpiaEk"
+                }, {
+                    "title": "Remembrance of ALLAH is One's Life - A Must Watch!",
+                    "thumb": "https://i.ytimg.com/vi/cj7NwXq4OTk/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/cj7NwXq4OTk"
+                }
+            ],
+            "articles": [],
+            "books": []
+        };
+
+
+        populate_dynamic_view(dynamic_data);
+
+
+    });
+</script>

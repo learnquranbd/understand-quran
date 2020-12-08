@@ -1,0 +1,323 @@
+<div class="row topindexbar">
+
+    <div class="col-md-6 col-sm-12">
+
+        <div class="row">
+            <div class="col-md-1 text-center" style="margin-top: -10px;"><img src="/images/click_here.png"
+                    style="height: 80px;" alt="" class="pull-left" /> </div>
+            <div class="col-md-11 text-center"> </div>
+        </div>
+
+
+
+        <div class="input-group mb-3 customselect2">
+            <div class="input-group-prepend mobile100p">
+                <button type="button" class="btn btn-seconday mobile100p" onclick="loadQuranicVerse()">কুরআনের আয়াত
+                    পুনরাবৃত্তি =
+                </button>
+            </div>
+
+            <select class="form-control select2 bg-warning mobile100p" id="s2subject" style="width: 100%;">
+
+            </select>
+
+            <!-- /btn-group -->
+            <input type="hidden" id="ayahtoload" class="form-control" value="2:1,3:1,7:1,10:1,11:1,12:1,13:1,14:1,15:1,29:1,30:1,31:1,32:1">
+            <input type="hidden" id="ayahsubject" class="form-control" value="">
+        </div>
+
+
+    </div>
+
+    <div class="col-md-12 col-lg-2 indexcol">
+        <button type="button" class="btn btn-block bg-gradient-secondary btn-lg" onClick="openSidebarMenu()">
+            সূচিপত্র/তালিকা </button>
+    </div>
+
+    <div class="col-md-12 col-lg-4 col-sm-12">
+
+        <h3 class="text-center arabic cs1"> تكرار الكلمات / الآيات </h3>
+        <p class="bangla text-center"> শব্দ / আয়াত পুনরাবৃত্তি </p>
+
+    </div>
+
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        repeats = [
+            { 'subject' : 'আলিফ লাম *', 'ayah': '2:1,3:1,7:1,10:1,11:1,12:1,13:1,14:1,15:1,29:1,30:1,31:1,32:1'},
+            { 'subject' : 'হা-মীম', 'ayah': '40:1,41:1,42:1,43:1,44:1,45:1,46:1'},
+            { 'subject' : 'তা-সীন-মীম। / তা-সীন', 'ayah': '27:1,28:1,26:1'}, 
+            { 'subject' : 'অতএব (হে জ্বিন ও মানুষ!) তোমরা তোমাদের প্রতিপালকের কোন্ কোন্ নি‘মাতকে অস্বীকার করবে?', 'ayah': '55:13,55:16,55:18,55:21,55:23,55:25,55:28,55:30,55:32,55:34,55:36,55:38,55:40,55:42,55:45,55:47,55:49,55:51,55:53,55:55,55:57,55:59,55:61,55:63,55:65,55:67,55:69,55:71,55:73,55:75,55:77'},
+            { 'subject' : 'সেদিন দুর্ভোগ সত্য প্রত্যাখ্যানকারীদের জন্য।', 'ayah': '77:15,77:19,77:24,77:28,77:34,77:37,77:40,77:45,77:47,77:49,83:10'},
+            { 'subject' : 'তোমার পালনকর্তা অবশ্যই পরাক্রমশালী, বড়ই দয়ালু। ', 'ayah': '26:9,26:68,26:104,26:122,26:140,26:159,26:175,26:191'},
+            { 'subject' : 'কাজেই তোমরা আল্লাহকে ভয় কর ও আমার অনুসরণ কর।  ', 'ayah': '26:108,26:126,26:131,26:144,26:150,26:163,26:179'},
+            { 'subject' : 'আমি তার জন্য তোমাদের কাছে কোন প্রতিদান চাই না। আমার প্রতিদান একমাত্র বিশ্বজগতের প্রতিপালকের কাছেই আছে।', 'ayah': '26:109,26:127,26:145,26:164,26:180'},
+            { 'subject' : 'অবশ্যই এতে নিদর্শন আছে, কিন্তু তাদের অধিকাংশই বিশ্বাসী নয়। ', 'ayah': '26:121,26:158,26:174,26:190'}, 
+            { 'subject' : 'আমি এজন্য তোমাদের কাছে কোন প্রতিদান চাই না, আমার প্রতিদান একমাত্র জগতসমূহের প্রতিপালকের নিকট রয়েছে।', 'ayah': '26:109,26:127,26:145,26:164,26:180'},
+            { 'subject' : 'সৎকর্মশীলদেরকে আমি এভাবেই প্রতিদান দিয়ে থাকি।', 'ayah': '6:84,37:131,28:14,12:22,37:105,37:80,37:110,77:44'},
+            { 'subject' : 'আমি তোমাদের জন্য (প্রেরিত) এক বিশ্বস্ত রসুল।', 'ayah': '26:162,26:125,26:143,26:107,26:178'},
+            { 'subject' : 'সেকালের উপকথা মাত্র।', 'ayah': '68:15,83:13,16:24,8:31,25:5,6:25,46:17,27:68'},
+            { 'subject' : 'আমি কুরআনকে সহজ করে দিয়েছি উপদেশ গ্রহণের জন্য। উপদেশ গ্রহণের কেউ আছে কি?', 'ayah': '54:17,54:22,54:32,54:40'},
+            { 'subject' : 'তারা বলে, ‘তোমরা যদি সত্যবাদী হয়েই থাক তাহলে বল (ক্বিয়ামত সংঘটিত হওয়ার) ও‘য়াদা কখন (বাস্তবায়িত হবে)? ', 'ayah': '10:48,27:71,34:29,67:25'},
+            { 'subject' : 'সে/(তারা দু’জন) ছিল আমার মু’মিন বান্দাহদের একজন। ', 'ayah': '37:81,37:111,37:122,37:132'},
+            { 'subject' : 'কত ভয়ংকর ছিল আমার ‘আযাব ও ভীতি প্রদর্শন। ', 'ayah': '54:16,54:18,54:21,54:30,54:39'},
+            { 'subject' : 'আমি তাকে পরবর্তীদের মাঝে স্মরণীয় করে রাখলাম।  ', 'ayah': '37:78,37:108,37:129'},
+            { 'subject' : 'আমি আমার নিদর্শন ও স্পষ্ট প্রমাণসহ মূসাকে প্রেরণ করেছিলাম ', 'ayah': '14:5,11:96,40:23'},
+            { 'subject' : 'কাজেই তুমি তোমার মহান প্রতিপালকের গৌরব ও মহিমা ঘোষণা কর।', 'ayah': '69:52,56:96'},
+            { 'subject' : 'মূসা আর হারূনের প্রতিপালক', 'ayah': '7:122,26:48'},
+            { 'subject' : 'তারা বলল, ‘আমরা বিশ্বজগতের প্রতিপালকের প্রতি ঈমান আনলাম।', 'ayah': '26:47,7:121'},
+            { 'subject' : 'আর যারা ঈমান এনেছিল ও (আল্লাহকে) ভয় করত তাদেরকে রক্ষা করেছিলাম।', 'ayah': '41:18,27:53'},
+            { 'subject' : 'এটা বিশ্ব জগতের প্রতিপালকের নিকট থেকে অবতীর্ণ', 'ayah': '56:80,69:43'},
+            { 'subject' : 'আকাশমন্ডলী ও পৃথিবীতে যা কিছু আছে সবই তাঁর পবিত্রতা ও মহিমা ঘোষণা করে, তিনি পরাক্রমশালী, প্রজ্ঞাময়। ', 'ayah': '59:1,61:1'},
+            { 'subject' : 'এ কিতাব অবতীর্ণ হয়েছে মহা পরাক্রমশালী প্রজ্ঞাময় আল্লাহর নিকট হতে।', 'ayah': '45:2,46:2'},
+            { 'subject' : 'তবে আল্লাহর একনিষ্ঠ বান্দাদের কথা স্বতন্ত্র।', 'ayah': '37:74,37:128'},
+            { 'subject' : 'তবে তাদের মধ্য হতে আপনার নির্বাচিত বান্দাগণ ব্যতীত।', 'ayah': '15:40,38:83'},
+            { 'subject' : 'তাদের কি অদৃশ্যের জ্ঞান আছে যে, তারা তা লিখে রাখে?', 'ayah': '68:47,52:41'}, 
+            { 'subject' : 'সুস্পষ্ট কিতাব', 'ayah': '12:1,28:2,26:2,43:2,44:2'},
+            { 'subject' : 'আর বাম দিকের দল, কত হতভাগ্য বামদিকের দল!', 'ayah': '56:9,56:41'},
+            { 'subject' : 'এবং আমাদের পূর্বপুরুষরাও?', 'ayah': '37:17,56:48'},
+            { 'subject' : 'আবার সে এক পথ ধরল।', 'ayah': '18:89,18:92'},
+            { 'subject' : 'তারা ওতেই চিরকাল থাকবে, তাদের শাস্তি লঘু করা হবে না এবং তাদেরকে বিরামও দেয়া হবে না।', 'ayah': '2:162,3:88'},
+            { 'subject' : 'সুমহান জান্নাতে', 'ayah': '69:22,88:10'},
+            { 'subject' : 'উচ্চ আসনে বসে তারা (চারদিকের সবকিছু) দেখতে থাকবে।', 'ayah': '83:23,83:35'},
+            { 'subject' : 'তারা একে অপরের সামনাসামনি হয়ে জিজ্ঞাসাবাদ করবে', 'ayah': '37:27,52:25'},
+            { 'subject' : 'সে বললঃ হে প্রেরিতগণ! অতঃপর তোমরা কি বিশেষ কাজ নিয়ে এসেছ?', 'ayah': '15:57,51:31'},
+            { 'subject' : 'বরং আমরা বঞ্চিত হয়ে গেলাম।', 'ayah': '56:67,68:27'},
+            { 'subject' : 'লক্ষ্য কর, তারা তোমার সম্পর্কে কেমন সব উদাহরণ দিচ্ছে! যার ফলে তারা পথহারা হয়ে গেছে আর তারা কক্ষনো পথ পাবে না।', 'ayah': '17:48,25:9'},
+            { 'subject' : 'অবধারিত সময় উপস্থিত হওয়ার দিন পর্যন্ত।', 'ayah': '15:38,38:81'},
+            { 'subject' : 'ফলে তারা নিজেদের গৃহেই উপুড় হয়ে পড়ে রইল। ', 'ayah': '7:91,29:37'},
+            { 'subject' : 'তারা বললঃ তুমিতো যাদুগ্রস্তদের অন্তর্ভুক্ত। ', 'ayah': '26:153,26:185'},
+            { 'subject' : 'অতঃপর অন্য সব্বাইকে আমি পুরোপুরি ধ্বংস করে ছিয়েছিলাম। ', 'ayah': '26:172,37:136'},
+            { 'subject' : 'আর আমি তাদের উপর বর্ষিয়ে ছিলাম এক ভয়ংকর বৃষ্টি। ভীতি প্রদর্শিতদের উপর এ বৃষ্টি ছিল কতই না মন্দ!', 'ayah': '26:173,27:58'},
+            { 'subject' : 'তারা বললঃ তাকে এবং তার ভাইকে (হারুন) কিছু দিনের জন্য অবকাশ দিন, আর শহরে শহরে সংগ্রাহক পাঠিয়ে দিন,', 'ayah': '26:36,7:111'},
+            { 'subject' : 'ইবলীস বললঃ হে আমার রাব্ব! পুনরুত্থান দিন পর্যন্ত আমাকে অবকাশ দিন।', 'ayah': '15:36,38:79'},
+            { 'subject' : 'আল্লাহ বললেনঃ তোকে অবকাশ দেয়া হল', 'ayah': '15:37,38:80'},
+            { 'subject' : 'তুমি বলঃ আমি আমার রবের অবাধ্য হলে, আমি মহাবিচারের দিনের শাস্তির ভয় করছি।', 'ayah': '6:15,39:13'},
+            
+             
+        ]
+
+
+        $.each(repeats, function (key, val) {
+            surah = key + 1;
+            o = new Option(val['subject'], key);
+            $(o).data('subject', val['subject']);
+            $(o).data('ayah', val['ayah']);
+
+            $("#s2subject").append(o);
+        });
+
+        $('#s2subject').select2().on('change', function () {
+            $('#ayahtoload').val($('#s2subject').find(':selected').data('ayah'));
+            $('#ayahsubject').val($('#s2subject').find(':selected').data('subject'))
+            surah = $('#s2subject').find(':selected').val();
+            prepare_sura_output(surah);
+
+        });
+
+        prepare_sura_output(1);
+    });
+
+
+    function prepare_sura_output(surah_index) {
+        ayahString = $('#ayahtoload').val();
+        if (ayahString !== "") {
+            ayah_obj = String2AyahArray($('#ayahtoload').val());
+
+            var dynamic_data = {
+                "subject": $('#ayahsubject').val(),
+                "introHtml": "",
+                "ayah": ayah_obj,
+                "videos": [ {
+                    "title": "শব্দে শব্দে কুরআন (Word meaning of the Quran)",
+                    "thumb": "https://i.ytimg.com/vi_webp/abjitGyZOnQ/hqdefault.webp",
+                    "url": "https://www.youtube.com/playlist?list=PLgdxnhgIhVNun1m76XZNb_m9NSMYARORH"
+                }, {
+                    "title": "কুরআন ও সালাহ বুঝুন আরো সহজ উপায়ে",
+                    "thumb": "https://i.ytimg.com/vi/OP4NbdjXPYY/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PL2FHm7GZu6dkOquL_ZrA9kqsSf6JBhR6N"
+                }, {
+                    "title": "Bayyinah Dream Bangla",
+                    "thumb": "https://i.ytimg.com/vi_webp/iyKzNqsJZbI/hqdefault.webp",
+                    "url": "https://www.youtube.com/embed/videoseries?list=PL7TWabiVnFOIOTCjCLv5KWWO8wvWN2jtz"
+                }, {
+                    "title": "শব্দে শব্দে আল কুরআন",
+                    "thumb": "https://i.ytimg.com/vi_webp/fJAUxv0ideY/hqdefault.webp",
+                    "url": "https://www.youtube.com/playlist?list=PLkkcOOBminiUcUErBu3d-lGLKWtFgDiBo"
+                },{
+                    "title": "শব্দে শব্দে কোরআন শিক্ষা",
+                    "thumb": "https://i.ytimg.com/vi_webp/EAUkdGsO29U/hqdefault.webp",
+                    "url": "https://www.youtube.com/playlist?list=PLKNELR8ybjL1lXZnRkGcuD6E74Ql5UOpM"
+                }],
+                "articles": [{
+                    'title': 'কোরআনের শব্দ',
+                    'url': 'https://www.facebook.com/notes/muhammad-masood/%E0%A6%95%E0%A7%8B%E0%A6%B0%E0%A6%86%E0%A6%A8%E0%A7%87%E0%A6%B0-%E0%A6%B6%E0%A6%AC%E0%A7%8D%E0%A6%A6/10214804266356853/'
+                }, {
+                    'title': 'আল-কুরআনের আরও কিছু শব্দ',
+                    'url': 'https://www.facebook.com/notes/muhammad-masood/%E0%A6%86%E0%A6%B2-%E0%A6%95%E0%A7%81%E0%A6%B0%E0%A6%86%E0%A6%A8%E0%A7%87%E0%A6%B0-%E0%A6%86%E0%A6%B0%E0%A6%93-%E0%A6%95%E0%A6%BF%E0%A6%9B%E0%A7%81-%E0%A6%B6%E0%A6%AC%E0%A7%8D%E0%A6%A6/10219396425957973/'
+                }, {
+                    'title': 'আরবি নাকি বাংলা শব্দ ?',
+                    'url': 'https://www.facebook.com/notes/muhammad-masood/%E0%A6%86%E0%A6%B0%E0%A6%AC%E0%A6%BF-%E0%A6%A8%E0%A6%BE%E0%A6%95%E0%A6%BF-%E0%A6%AC%E0%A6%BE%E0%A6%82%E0%A6%B2%E0%A6%BE-%E0%A6%B6%E0%A6%AC%E0%A7%8D%E0%A6%A6-/10218860267714352/'
+                }, {
+                    'title': 'সুন্দর শব্দসমূহ',
+                    'url': 'https://www.alquranervasha.com/downloads'
+                }, {
+                    'title': 'কোরআনের নামবাচক শব্দ',
+                    'url': 'https://www.facebook.com/notes/muhammad-masood/%E0%A6%95%E0%A7%8B%E0%A6%B0%E0%A6%86%E0%A6%A8%E0%A7%87%E0%A6%B0-%E0%A6%A8%E0%A6%BE%E0%A6%AE%E0%A6%AC%E0%A6%BE%E0%A6%9A%E0%A6%95-%E0%A6%B6%E0%A6%AC%E0%A7%8D%E0%A6%A6/10217376067410272/'
+                }],
+                "books": [{
+                    'title': 'কুরআ’নীয় অভিধান: মৌলিক শব্দাবলি, শব্দ পরিচিত ও শব্দার্থ',
+                    'thumb': 'http://muhammadyeahia.com/images-book-covers/QuraniyaAvidhan.jpg',
+                    'url': "http://muhammadyeahia.com/pdf/Qura'niya%20Avidhan.pdf",
+                    'type': 'file-pdf',
+                    'writer': 'মুহাম্মদ আবু হেনা এবং মুহাম্মদ ইয়াহিয়া'
+                }, {
+                    'title': 'কুরআনীয় শব্দ',
+                    'thumb': 'https://www.alquranervasha.com/uploads/thumbnail/TestIaPyM.jpg',
+                    'url': "https://www.alquranervasha.com/download-book/31",
+                    'type': 'file-pdf',
+                    'writer': ''
+                }, {
+                    'title': 'আল-কুরআনের শব্দসমূহ ৭৫ %',
+                    'thumb': '/images/quranic_words.png',
+                    'url': "/resources/pdf/কুরআনের-শব্দ-৭৫-per-by-ইঞ্জিঃ-মুহাম্মদ-মাস্উদ.pdf",
+                    'type': 'file-pdf',
+                    'writer': 'ইঞ্জিঃ-মুহাম্মদ-মাস্উদ'
+                },{
+                    'title': 'আল-কুরআনের শব্দসমূহ',
+                    'thumb': 'https://www.alquranervasha.com/uploads/thumbnail/%E0%A6%86%E0%A6%B2-%E0%A6%95%E0%A7%81%E0%A6%B0%E0%A6%86%E0%A6%A8%E0%A7%87%E0%A6%B0%20%E0%A6%B6%E0%A6%AC%E0%A7%8D%E0%A6%A6%E0%A6%B8%E0%A6%AE%E0%A7%82%E0%A6%B9%20EWUFC.jpg',
+                    'url': "https://www.alquranervasha.com/download-book/35",
+                    'type': 'file-pdf',
+                    'writer': 'ইমরান হেলাল'
+                },
+                {
+                    'title' :  "কুরআ’ন সূরা আল বাকারা",
+                    "thumb": "http://muhammadyeahia.com/images-book-covers/alBakara.png",
+                    "writer":"সংকলন এবং সম্পাদনা মুহাম্মদ ইয়াহিয়া",
+                    'type'  : 'file-pdf',
+                    'url' : "http://muhammadyeahia.com/pdf/SurahAlBaqurah.pdf"
+                },
+                {
+                    'title' :  "কুরআ’ন সূরা আলি-ইমরান",
+                    "thumb": "http://muhammadyeahia.com/images-book-covers/aleImran.png",
+                    "writer":"সংকলন এবং সম্পাদনা মুহাম্মদ ইয়াহিয়া",
+                    'type'  : 'file-pdf',
+                    'url' : "http://muhammadyeahia.com/pdf/SurahAle- Imran.pdf"    
+                },
+                {
+                    'title' :  "কুরআ’ন সূরা নেসা এবং মায়িদা",
+                    "thumb": "http://muhammadyeahia.com/images-book-covers/nesa-mayeda.png",
+                    "writer":"সংকলন এবং সম্পাদনা মুহাম্মদ ইয়াহিয়া",
+                    'type'  : 'file-pdf',
+                    'url' : "http://muhammadyeahia.com/pdf/Nisa and Maidah.pdf"  	
+                },
+                {
+                    'title' :  "কুরআ’ন সূরা আনআম এবং আরাফ",
+                    "thumb": "http://muhammadyeahia.com/images-book-covers/anam-araf.png",
+                    "writer":"সংকলন এবং সম্পাদনা মুহাম্মদ ইয়াহিয়া",
+                    'type'  : 'file-pdf',
+                    'url' : "http://muhammadyeahia.com/pdf/Surah Anam and Araf.pdf"           
+                },
+                {
+                    'title' :  "কুরআ’ন সূরা আনফাল, তাওবা এবং ইউনুস",
+                    "thumb": "http://muhammadyeahia.com/images-book-covers/anfal-tawba.png",
+                    "writer":"সংকলন এবং সম্পাদনা মুহাম্মদ ইয়াহিয়া",
+                    'type'  : 'file-pdf',
+                    'url' : "http://muhammadyeahia.com/pdf/Anfal Tawba Yunus.pdf"           
+                },
+                {
+                    'title' :  "কুরআ’ন সূরা হুদ, ইউসুফ, রাদ, ইব্রাহীম এবং হিজর",
+                    "thumb": "http://muhammadyeahia.com/images-book-covers/hud-yusuf-raad-ibrahim.png",
+                    "writer":"সংকলন এবং সম্পাদনা মুহাম্মদ ইয়াহিয়া",
+                    'type'  : 'file-pdf',
+                    'url' : "http://muhammadyeahia.com/pdf/Hud Yusuf Raad Ibrahim Hijr.pdf"           
+                },
+                {
+                    'title' :  "কুরআ’ন সূরা নাহল, বনি ঈসরাইল, কাহাফ, মারিয়াম, ত্ব-হা, আম্বিয়া",
+                    "thumb": "http://muhammadyeahia.com/images-book-covers/nahl-ambia.png",
+                    "writer":"সংকলন এবং সম্পাদনা মুহাম্মদ ইয়াহিয়া",
+                    'type'  : 'file-pdf',
+                    'url' : "http://muhammadyeahia.com/pdf/Nahl - Ambia.pdf"           
+                },
+                {
+                    'title' :  "কুরআ’ন সূরা হাজ্জ, মু’মিনুন, নূর, ফুরকান, শুয়ারা, নামল, কাসাস",
+                    "thumb": "http://muhammadyeahia.com/images-book-covers/22haj-28kasaa.png",
+                    "writer":"সংকলন এবং সম্পাদনা মুহাম্মদ ইয়াহিয়া",
+                    'type'  : 'file-pdf',
+                    'url' : "http://muhammadyeahia.com/pdf/22 Haj to 28 Kasaa.pdf"           
+                },
+                {
+                    'title' :  "কুরআ’ন ২১তম এবং ২২তম পারা",
+                    "thumb": "http://muhammadyeahia.com/images-book-covers/21-22para.png",
+                    "writer":"সংকলন এবং সম্পাদনা মুহাম্মদ ইয়াহিয়া",
+                    'type'  : 'file-pdf',
+                    'url' : "http://muhammadyeahia.com/pdf/21-22 Para .pdf"           
+                },
+                {
+                    'title' :  "কুরআ’ন ২৩তম এবং ২৪তম পারা",
+                    "thumb": "http://muhammadyeahia.com/images-book-covers/23-24para.png",
+                    "writer":"সংকলন এবং সম্পাদনা মুহাম্মদ ইয়াহিয়া",
+                    'type'  : 'file-pdf',
+                    'url' : "http://muhammadyeahia.com/pdf/23-24 Para.pdf"           
+                },
+                {
+                    'title' :  "কুরআ’ন ২৫তম এবং ২৬তম পারা",
+                    "thumb": "http://muhammadyeahia.com/images-book-covers/25-26para.png",
+                    "writer":"সংকলন এবং সম্পাদনা মুহাম্মদ ইয়াহিয়া",
+                    'type'  : 'file-pdf',
+                    'url' : "http://muhammadyeahia.com/pdf/25-26 para.pdf"           
+                },
+                {
+                    'title' :  "কুরআ’ন ২৭তম পারা",
+                    "thumb": "http://muhammadyeahia.com/images-book-covers/27juz.png",
+                    "writer":"সংকলন এবং সম্পাদনা মুহাম্মদ ইয়াহিয়া",
+                    'type'  : 'file-pdf',
+                    'url' : "http://muhammadyeahia.com/pdf/27 Juz.pdf"           
+                },
+                {
+                    'title' :  "কুরআ’ন ২৮তম পারা",
+                    "thumb": "http://muhammadyeahia.com/images-book-covers/28juz.png",
+                    "writer":"সংকলন এবং সম্পাদনা মুহাম্মদ ইয়াহিয়া",
+                    'type'  : 'file-pdf',
+                    'url' : "http://muhammadyeahia.com/pdf/28 Juz.pdf"           
+                },
+                {
+                    'title' :  "কুরআ’ন ২৯তম পারা",
+                    "thumb": "http://muhammadyeahia.com/images-book-covers/29juz.png",
+                    "writer":"সংকলন এবং সম্পাদনা মুহাম্মদ ইয়াহিয়া",
+                    'type'  : 'file-pdf',
+                    'url' : "http://muhammadyeahia.com/pdf/29 Juz.pdf"           
+                },
+                {
+                    'title' :  "কুরআ’ন সূরা আল- ফাতিহা এবং ৩০তম পারা",
+                    "thumb": "http://muhammadyeahia.com/images-book-covers/12vol.png",
+                    "writer":"সংকলন এবং সম্পাদনা মুহাম্মদ ইয়াহিয়া",
+                    'type'  : 'file-pdf',
+                    'url' : "http://muhammadyeahia.com/pdf/Quran 12th vol.pdf"           
+                }
+            
+            ],
+
+            "extrahtml": [{
+                    "heading": "মৌলিক শব্দের পুনরাবৃত্তি",
+                    "subheading": "কুরআন মাজীদে শব্দ পুনরাবৃত্তি (মৌলিক শব্দ এর ভিত্তিতে) ক্রম",
+                    "html": "/partials/arabic_languages/words/lemma.html",
+                    "icon": "sort-amount-down"
+                },
+                {
+                    "heading": "শব্দ মূল / রুট শব্দ - পুনরাবৃত্তি",
+                    "subheading": "কুরআন মাজীদে শব্দ পুনরাবৃত্তি (শব্দ মূল / রুট শব্দ  এর ভিত্তিতে) ক্রম  ",
+                    "html": "/partials/arabic_languages/words/root.html",
+                    "icon": "sort-amount-down"
+                } 
+            ] 
+            };
+
+
+            populate_dynamic_view(dynamic_data);
+        }
+    }
+</script>

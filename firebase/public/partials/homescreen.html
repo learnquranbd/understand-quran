@@ -1,0 +1,1266 @@
+ <div class="row topindexbar">
+
+     <div class="col-md-6 col-sm-12">
+
+         <div class="row">
+             <div class="col-md-1 text-center" style="margin-top: -10px;"><img src="/images/start_here.jpg"
+                     style="height: 80px;" alt="" class="pull-left" /> </div>
+             <div class="col-md-11 text-center"><code> সূরা:আয়াত,সূরা:আয়াত-আয়াত|উদাহরণ
+                     (1:1,2:255,18:1-10,23:1-11,25:61-77,39:53)</code></div>
+         </div>
+
+
+
+         <div class="input-group mb-3 customselect2">
+             <div class="input-group-prepend mobile100p">
+                 <button type="button" class="btn btn-seconday mobile100p" onclick="loadQuranicVerse()">কুরআন পড়ুন =
+                 </button>
+             </div>
+
+             <select class="form-control select2 bg-warning mobile100p" id="s2subject" style="width: 100%;">
+
+             </select>
+
+             <!-- /btn-group -->
+             <input type="hidden" id="ayahtoload" class="form-control" value="1:1-7">
+             <input type="hidden" id="ayahsubject" class="form-control" value="">
+         </div>
+
+
+     </div>
+
+     <div class="col-md-12 col-lg-2 indexcol">
+         <button type="button" class="btn btn-block bg-gradient-secondary btn-lg" onClick="openSidebarMenu()">
+             সূচিপত্র/তালিকা </button>
+     </div>
+
+     <div class="col-md-12 col-lg-4 col-sm-12">
+
+         <h3 class="text-center arabic cs1">بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِیْمِ</h3>
+         <p class="bangla text-center">শুরু করছি আল্লাহর নামে যিনি পরম করুণাময়, অতি দয়ালু।</p>
+
+     </div>
+
+ </div>
+
+ <script>
+     var sura_videos = {
+         "1": [{
+                 "title": "10 common Mistakes in Suratul Fatiha That Invalidate Salah!",
+                 "url": "https://www.youtube.com/watch?v=ZLJG2e6SPQw"
+             },
+             {
+                 "title": "Surah Al-Fatihah - Omar Hisham",
+                 "url": "https://www.youtube.com/watch?v=ptfuzv7hBmc"
+             },
+             {
+                 "title": "সুরাহ ফাতিহাকে নতুন করে জানা",
+                 "thumb": "https://i.ytimg.com/vi/SgRI6V7Hb1M/hqdefault.jpg",
+                 "url": "https://www.youtube.com/playlist?list=PLRRmxaFCrLnWmzRNJN56nOmNc70ZJnz3v"
+             },
+             {
+                 "title": "যে ১০ টি ভুল সুরা ফাতিহার বাংলা উচ্চারণে আমাদের হয়ে থাকে",
+                 "thumb": "https://i.ytimg.com/vi/D29mGO3iFP8/hqdefault.jpg",
+                 "url": "https://www.youtube.com/watch?v=D29mGO3iFP8"
+             }
+         ],
+         "2": [{
+                 "title": "সূরা আল বাকারা হৃদয় ছোঁয়া তেলাওয়াত  Ι Surah Al Baqarah bangla anubad Ι Recited by Moaz Elsayed",
+                 "thumb": "https://i.ytimg.com/vi/2ABuWiFmcnE/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/2ABuWiFmcnE"
+             },
+             {
+                 "title": "তাফসির: ০২ আল বাক্বারাহ",
+                 "thumb": "https://i.ytimg.com/vi/N8vrOD_u3zo/hqdefault.jpg",
+                 "url": "https://www.youtube.com/playlist?list=PLDfP1yNs-Ic9ch8KjFBfXogZkSDuVWHqK"
+             },
+             {
+                 "title": "অসাধারণ কণ্ঠে আয়াতুল কুরসি ┇ Recited by Islam Sobhi ┇ An Nafee ┇ আন নাফী",
+                 "thumb": "https://i.ytimg.com/vi/akj9biVvlAA/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/akj9biVvlAA"
+             },
+             {
+                 "title": "সবচেয়ে সেরা কন্ঠে সূরা বাকারার শেষ দুই আয়াত|| Besir Duraku ||Raaed bd",
+                 "thumb": "https://i.ytimg.com/vi/eC5k738HE5A/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/eC5k738HE5A"
+             }, {
+                 "title": "মনোমুগ্ধকর তিলাওয়াত । সূরা বাকারা শেষের তিন আয়াত । Recited by Zain Abu Kautsar",
+                 "thumb": "https://i.ytimg.com/vi/nD9uW1vqVNI/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/nD9uW1vqVNI"
+             },
+             {
+                 "title": "Moutasem Al-Hameedi - Surah Al-Baqarah [Complete] - Amazing Recitation",
+                 "thumb": "https://i.ytimg.com/vi/UcwcZdXp_vo/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/UcwcZdXp_vo"
+             }
+         ],
+         "3": [{
+                 "title": "Al Imran",
+                 "url": "https://www.youtube.com/watch?v=Ap1A4h2PSsI"
+             }, {
+                 "title": "তাফসির: ০৩. সুরা আল-ইমরান",
+                 "thumb": "https://i.ytimg.com/vi/kSS9N__b4D8/hqdefault.jpg",
+                 "url": "https://www.youtube.com/playlist?list=PLDfP1yNs-Ic_teUE82IRv3n3BUZZ2qC6g"
+             }
+
+         ],
+         "4": [{
+                 "title": "Heart Touching Quran Recitation [Surah An-Nisa] - Moutasem Al-Hameedi",
+                 "thumb": "https://i.ytimg.com/vi/3RFwGtpD-KA/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/3RFwGtpD-KA"
+             }, {
+                 "title": "তাফসির: ০৪. সুরা আন-নিসা",
+                 "thumb": "https://i.ytimg.com/vi/_4c8I6SBZyk/hqdefault.jpg",
+                 "url": "https://www.youtube.com/playlist?list=PLDfP1yNs-Ic-Q4X29ueZa32z5bZ8SjL4I"
+             }
+
+         ],
+         "5": [{
+                 "title": "Surah Al-Ma'idah [05] | Bangla Translatio of Quran | সূরা আল মায়েদা ",
+                 "thumb": "https://i.ytimg.com/vi/M5de136pXk8/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/M5de136pXk8"
+             }, {
+                 "title": "তাফসির: ০৫. সুরা আল-মায়েদাহ",
+                 "thumb": "https://i.ytimg.com/vi/Icp4OvxCZCk/hqdefault.jpg",
+                 "url": "https://www.youtube.com/playlist?list=PLDfP1yNs-Ic8FCmoS6DiTGNgVOEvY0QNh"
+             }
+
+         ],
+         "6": [{
+                 "title": "EMOTIONAL || AL-AN'AM || MOUTASEM AL-HAMEEDY || سورة الأنعام - معتصم الحميدي",
+                 "url": "https://www.youtube.com/embed/FVSNGPEM-nQ"
+             }, {
+                 "title": "তাফসির: ০৬. সুরা আল-আন‘আম",
+                 "thumb": "https://i.ytimg.com/vi/6qacK842mg4/hqdefault.jpg",
+                 "url": "https://www.youtube.com/playlist?list=PLDfP1yNs-Ic8ncAI2TPSHhRXrU5cOPIR0"
+             }
+
+         ],
+         "7": [
+
+             {
+                 "title": "Heart Softening Recitation Of Surah Al-A'raf - Moutasem Al-Hameedi",
+                 "thumb": "https://i.ytimg.com/vi/52DyvR_7iZ8/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/52DyvR_7iZ8"
+             }, {
+                 "title": "তাফসির: ০৭. সুরা আল-আ‘রাফ",
+                 "thumb": "https://i.ytimg.com/vi/qDI99cCM_Is/hqdefault.jpg",
+                 "url": "https://www.youtube.com/playlist?list=PLDfP1yNs-Ic9uE7Yjw496-FdUzPUuQ-QW"
+             }
+         ],
+         "8": [{
+                 "title": "Surah Al-Anfal [08] | Bangla Translation of Quran | Quran Tilawat | noor (Light of Islam)",
+                 "thumb": "https://i.ytimg.com/vi/BIvDqOKdajM/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/BIvDqOKdajM"
+             }, {
+                 "title": "তাফসির: ০৮. সুরা আল-আনফাল",
+                 "thumb": "https://i.ytimg.com/vi/S9Och-GaBMI/hqdefault.jpg",
+                 "url": "https://www.youtube.com/playlist?list=PLDfP1yNs-Ic_Lg_ml5B32-Wc-m-AjCgxi"
+             }
+
+         ],
+         "9": [
+
+             {
+                 "title": "Surah At-Tawbah [09] | Bangla Translation of Quran | Quran Tilawat | noor (Light of Islam)",
+                 "thumb": "https://i.ytimg.com/vi/TdvQGGKR0W4/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/TdvQGGKR0W4"
+             }, {
+                 "title": "তাফসির: ০৯. সুরা আত-তাওবা",
+                 "thumb": "https://i.ytimg.com/vi/OB6TF0DsziA/hqdefault.jpg",
+                 "url": "https://www.youtube.com/playlist?list=PLDfP1yNs-Ic_a43pU5a9HYOPXklpHHGhT"
+             }
+         ],
+         "10": [{
+                 "title": "Surah Yunus [10] | Bangla Translation of Quran | Quran Tilawat | يُونُس | noor (Light of Islam)",
+                 "thumb": "https://i.ytimg.com/vi/WB7RFFwTY9Q/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/WB7RFFwTY9Q"
+             }, {
+                 "title": "তাফসির: ১০. সুরা ইউনুস",
+                 "thumb": "https://i.ytimg.com/vi/niG5eHgoZUw/hqdefault.jpg",
+                 "url": "https://www.youtube.com/playlist?list=PLDfP1yNs-Ic-P21IC3LBEYgAQsqW6QZA1"
+             }
+
+         ],
+         "11": [{
+                 "title": "Surah Hud [11] | Bangla Translation of Quran | Quran Tilawat | هُود | noor (Light of Islam)",
+                 "thumb": "https://i.ytimg.com/vi/nNP2m3_qv-Y/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/nNP2m3_qv-Y"
+             }, {
+                 "title": "তাফসির: ১১. সুরা হুদ",
+                 "thumb": "https://i.ytimg.com/vi/x48Q5y9zWic/hqdefault.jpg",
+                 "url": "https://www.youtube.com/playlist?list=PLDfP1yNs-Ic-r9-hjl5XIECAycyDAXp0J"
+             }
+
+         ],
+         "12": [{
+                 "title": "Surat Yusuf - Moutasem Al-Hameedi : سورة يوسف - الشيخ معتصم الحميدي",
+                 "thumb": "https://i.ytimg.com/vi/Zgb6xDFsUwo/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/Zgb6xDFsUwo"
+             },
+             {
+                 "title": "Surah Yusuf - Omar Hisham سورة يوسف - عمر هشام العربي",
+                 "thumb": "https://i.ytimg.com/vi/UYwsYIEx85Y/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/UYwsYIEx85Y"
+             }, {
+                 "title": "তাফসির: ১২. সুরা ইউসুফ",
+                 "thumb": "https://i.ytimg.com/vi/l-BvVsV5dWQ/hqdefault.jpg",
+                 "url": "https://www.youtube.com/playlist?list=PLDfP1yNs-Ic8rpv7s4Ip2n65O1tpJxLd3"
+             }
+
+         ],
+         "13": [{
+                 "title": "Surah Ar-Ra'd (Be heaven) سورة الرعد Omar Hisham",
+                 "thumb": "https://i.ytimg.com/vi/NS-pDhYYzX4/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/NS-pDhYYzX4"
+             }, {
+                 "title": "তাফসির: ১৩. সুরা আর রা‘দ",
+                 "thumb": "https://i.ytimg.com/vi/_IqyPtdZpvg/hqdefault.jpg",
+                 "url": "https://www.youtube.com/playlist?list=PLDfP1yNs-Ic9a5Kt9SliCDGrRk-f4iwhV"
+             }
+
+
+         ],
+         "14": [{
+                 "title": "Surah Ibrahim [14] | Bangla Translation of Quran | সূরা ইব্রাহীম | noor (Light of Islam)",
+                 "thumb": "https://i.ytimg.com/vi/O0rwTTLGRgc/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/O0rwTTLGRgc"
+             }, {
+                 "title": "তাফসির: ১৪. সুরা ইবরাহিম",
+                 "thumb": "https://i.ytimg.com/vi/INPTQtYzxpo/hqdefault.jpg",
+                 "url": "https://www.youtube.com/playlist?list=PLDfP1yNs-Ic92pTIg9kW3cdNw4Fii0rvr"
+             }
+
+         ],
+         "15": [{
+                 "title": "PURE TRANQUILITY: Surah Al Hijr سكينة - سورة الحجر",
+                 "url": "https://www.youtube.com/embed/z4riptWsrGU"
+             }, {
+                 "title": "তাফসির: ১৫ আল-হিজর",
+                 "thumb": "https://i.ytimg.com/vi/vX5_6Z9mQ4A/hqdefault.jpg",
+                 "url": "https://www.youtube.com/playlist?list=PLDfP1yNs-Ic9cU58aFfuL4lnUfsSoBIry"
+             }
+
+
+         ],
+         "16": [{
+                 "title": "Surah An-Nahl [16] | Bangla Translation of Quran | সূরা আন নাহল | الْنَّحْل | noor (Light of Islam)",
+                 "thumb": "https://i.ytimg.com/vi/ys-8N-JRnZ4/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/ys-8N-JRnZ4"
+             }, {
+                 "title": "তাফসির: ১৬. আন-নাহল",
+                 "thumb": "https://i.ytimg.com/vi/c72iXerQuKw/hqdefault.jpg",
+                 "url": "https://www.youtube.com/playlist?list=PLDfP1yNs-Ic8orAZZ6Ejg2fqzK5eQUzu8"
+             }
+
+         ],
+         "17": [{
+                 "title": "তাফসির: ১৭ বনী ইসরাঈল",
+                 "thumb": "https://i.ytimg.com/vi/SAUicUon7kQ/hqdefault.jpg",
+                 "url": "https://www.youtube.com/playlist?list=PLDfP1yNs-Ic_W3HjtSfOXVg1QFMfj-S-A"
+             },
+             {
+                 "title": "Moutasem Al-Hameedi - Surah Al-'Isra' [FULL] - Mesmerizing Recitation",
+                 "thumb": "https://i.ytimg.com/vi/U3f07qkLzjY/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/U3f07qkLzjY"
+             }
+         ],
+         "18": [{
+                 "title": "আবেগময় সূরা কাহফ এর তিলাওয়াত ┇ Beautiful Surah Kahf Recited by Ismail Al Nouri ┇ An Nafee ┇ আন নাফী",
+                 "thumb": "https://i.ytimg.com/vi/5R06LRdUCSE/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/5R06LRdUCSE"
+             },
+             {
+                 "title": "Surah Al Kahf (Be Heaven) سورة الكهف",
+                 "url": "https://www.youtube.com/embed/p9ao_uu_DL8"
+             },
+             {
+                 "title": "সূরা আল কাহফ ( الكهف)  -  দাজ্জালের ফিতনা থেকে রক্ষা পান",
+                 "thumb": "https://i.ytimg.com/vi/Rjo1MueB6-I/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/Rjo1MueB6-I"
+             }
+         ],
+         "19": [{
+                 "title": "সূরা মারইয়াম (سورة مريم) -  হৃদয় স্পর্শী কুরআন  তেলাওয়াত",
+                 "thumb": "https://i.ytimg.com/vi/zKzYdpbVtCI/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/zKzYdpbVtCI"
+             }
+
+         ],
+         "20": [{
+                 "title": "অন্তর শীতল করা কণ্ঠে সূরা আত ত্বহা / তোহা এর তিলাওয়াত ┇Recited by Ismail An Nouri ┇An Nafee┇ আন নাফী",
+                 "thumb": "https://i.ytimg.com/vi/eBxOASuLlHI/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/eBxOASuLlHI"
+             },
+             {
+                 "title": "TAHA  سورة طه (HEALING QURAN RECITATION)",
+                 "thumb": "https://i.ytimg.com/vi/1dn60yPZG3A/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/1dn60yPZG3A"
+             }
+
+         ],
+         "21": [{
+                 "title": "Surah Al Anbiya [21] | Bangla Translation of Quran | Quran Tilawat | noor (Light of Islam)",
+                 "thumb": "https://i.ytimg.com/vi/y_dDwdJl_ps/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/y_dDwdJl_ps"
+             }
+
+         ],
+         "22": [{
+                 "title": "Surah Al-Hajj [22] | Bangla Translation of Quran | Quran Tilawat | الحج | noor (Light of Islam)",
+                 "thumb": "https://i.ytimg.com/vi/qkPGdaiI1Ts/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/qkPGdaiI1Ts"
+             },{
+                 "title": "Surah Al-Hajj [22]",
+                 "thumb": "https://i.ytimg.com/vi/bRkLs0N7T94/hqdefault.jpg",
+                 "url": "https://www.youtube.com/watch?v=bRkLs0N7T94"
+             }
+
+         ],
+         "23": [
+
+             {
+                 "title": "তারাই হল জান্নাতের ওয়ারিস ┇ সূরা আল মু'মিনুন ┇ Sura Mu'minoon by Ismail An Naouri ┇MercifulServantBD",
+                 "thumb": "https://i.ytimg.com/vi/Zx8tUZl_xcQ/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/Zx8tUZl_xcQ"
+             },
+             {
+                 "title": "Surah Al Mu`minun",
+                 "thumb": "https://i.ytimg.com/vi/PV7HofmlvZk/hqdefault.jpg",
+                 "url": "https://www.youtube.com/watch?v=PV7HofmlvZk"
+             }
+         ],
+         "24": [{
+                 "title": "Surah An Nur [24] | Bangla Translation of Quran  | Quran Shareef | noor (Light of Islam)",
+                 "thumb": "https://i.ytimg.com/vi/qzAIVTIxd48/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/qzAIVTIxd48"
+             }
+
+         ],
+         "25": [{
+                 "title": "Moutasem Al-Hameedi | Surah Al-Furqan | Heartfelt Recitation",
+                 "thumb": "https://i.ytimg.com/vi/fG6JQp2n8Tw/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/fG6JQp2n8Tw"
+             },
+             {
+                 "title": "দয়াময় আল্লাহ তাঁর বান্দাদের বৈশিষ্ট্য বলে দিয়েছেন এই সূরায় | সূরা আল ফুরক্বান | Saakinah Media",
+                 "thumb": "https://i.ytimg.com/vi/xbNTk9081ZY/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/xbNTk9081ZY"
+             }, {
+                 "title": "Allah will replace their sins with good deeds. Surah Al-Furqan | Verse 68-70 |",
+                 "thumb": "https://i.ytimg.com/vi/K1Fe7lEUwTc/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/K1Fe7lEUwTc"
+             }
+
+         ],
+         "26": [
+
+             {
+                 "title": "Surah Ash-Shu'ara [26]  | Bangla Translation of Quran | সূরা আশ শো’আরা |  noor (Light of Islam)",
+                 "thumb": "https://i.ytimg.com/vi/-4KRPS4_B5c/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/-4KRPS4_B5c"
+             }
+         ],
+         "27": [
+
+             {
+                 "title": "Surah An-Naml [27] |Bangla Translation of Quran |সূরা আন নামল ।Quran Tilawat |noor (Light of Islam)",
+                 "thumb": "https://i.ytimg.com/vi/G3xrUg9UHgQ/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/G3xrUg9UHgQ"
+             }
+         ],
+         "28": [{
+                 "title": "Surah Al-Qasas [28] | Bangla Translation of Quran | সূরা আল-কাসাস | noor (Light of Islam)",
+                 "thumb": "https://i.ytimg.com/vi/la8d8mLLJ40/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/la8d8mLLJ40"
+             }
+
+         ],
+         "29": [{
+                 "title": "Surah Al-'Ankabut [29]  | Bangla Translation of Quran | Quran Tilawat | noor (Light of Islam)",
+                 "thumb": "https://i.ytimg.com/vi/KrNwV-TNSbQ/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/KrNwV-TNSbQ"
+             }
+
+         ],
+         "30": [{
+                 "title": "Surah Al Rum - Omar Hisham (worldstyle) سورة الروم - عمر هشام العربي",
+                 "thumb": "https://i.ytimg.com/vi/CGCzgyf3t6o/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/CGCzgyf3t6o"
+             }
+
+         ],
+         "31": [{
+                 "title": "নিজ পুত্রকে দেয়া লুকমান হাকীমের মূল্যবান উপদেশসমূহ কি ছিল, জানতে শুনুন Surah Luqman | Saakinah Media",
+                 "thumb": "https://i.ytimg.com/vi/esBY6p-JvuQ/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/esBY6p-JvuQ"
+             }
+
+         ],
+         "32": [{
+                 "title": "Emotional & Beautiful Recitation of Surah As Sajdah ┇ Recited by Omar Hisham Al Arabi ┇ An Nafee",
+                 "thumb": "https://i.ytimg.com/vi/vyUidvDs5tc/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/vyUidvDs5tc"
+             }
+
+         ],
+         "33": [{
+                 "title": "SURAH AL AHZAB: INCREDIBLE AYAHS سورة الاحزاب",
+                 "thumb": "https://i.ytimg.com/vi/tNr2M966Dfg/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/tNr2M966Dfg"
+             }
+
+         ],
+         "34": [{
+                 "title": "Surah As Saba [34] |Bangla Translation of Quran |সূরা আস সাবা |Quran Shareef |noor [Light of Islam]",
+                 "thumb": "https://i.ytimg.com/vi/mNjRab55Jgw/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/mNjRab55Jgw"
+             }
+
+         ],
+         "35": [{
+                 "title": "BEAUTIFUL QURAN RECITATION (Surah Fatir) سورة فاطر- عمر هشام",
+                 "thumb": "https://i.ytimg.com/vi/dXaIES5yqNs/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/dXaIES5yqNs"
+             }
+
+         ],
+         "36": [{
+                 'title': 'Surah Yasin - NewStyle سورة يس - عمر هشام العربي',
+                 'url': 'https://www.youtube.com/watch?v=y8Q6wRIOFos'
+             },
+             {
+                 "title": "অন্তর শীতল করা সূরা ইয়াসিন এর তিলাওয়াত ┇ Surah Yasin Recited by Ismail An Nouri ┇ An Nafee",
+                 "thumb": "https://i.ytimg.com/vi/VLyktW15HXI/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/VLyktW15HXI"
+             },
+             {
+                 "title": "কুরআনের হৃদয় বলা হয় যাকে | সূরা ইয়াসীন এর মনোমুগ্ধকর তিলাওয়াত | Ismail Annuri | Saakinah Media",
+                 "thumb": "https://i.ytimg.com/vi/QZOGEmwVYgw/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/QZOGEmwVYgw"
+             }
+
+         ],
+         "37": [
+
+             {
+                 "title": "Surah As-Saffat [37] | Bangla Translation of Quran | সূরা  আস সাফফাত | noor (Light of Islam)",
+                 "thumb": "https://i.ytimg.com/vi/ZE5AHfpQVO0/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/ZE5AHfpQVO0"
+             }
+         ],
+         "38": [
+
+             {
+                 "title": "Surah Saad سورة ص Healing - spiritual  القارئ عمر هشام العربي",
+                 "thumb": "https://i.ytimg.com/vi/0fPevHa24wo/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/0fPevHa24wo"
+             }
+         ],
+         "39": [{
+                 "title": "Surah Az-Zumar [39] | Bangla Translation of Quran | সূরা আয্‌-যুমার । noor (Light of Islam)",
+                 "thumb": "https://i.ytimg.com/vi/3m6qagomoc8/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/3m6qagomoc8"
+             }
+
+         ],
+         "40": [
+
+             {
+                 "title": "Surah Ghafir (Al Mu'min) [40] | Bangla Translation of Quran | সূরা আল মুমিন | noor (Light of Islam)",
+                 "thumb": "https://i.ytimg.com/vi/cJIsiTs8dbM/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/cJIsiTs8dbM"
+             }
+         ],
+         "41": [{
+                 "title": "Surah Fussilat [41] (Ha-Mim and As-Sajdah) | Bangla Translation of Quran । noor (Light of Islam)",
+                 "thumb": "https://i.ytimg.com/vi/qVXI7R60QQE/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/qVXI7R60QQE"
+             }
+
+         ],
+         "42": [{
+                 "title": "Surah Ash-Shuraa [42] | Bangla Translation of Quran | সূরা আশ-শুরা |  noor (Light of Islam)",
+                 "thumb": "https://i.ytimg.com/vi/RAFldiaKyD0/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/RAFldiaKyD0"
+             }
+
+         ],
+         "43": [{
+                 "title": "Surah Az-Zukhruf [43] | Bangla Translation of Quran | সূরা যুখরুফ। noor (Light of Islam)",
+                 "thumb": "https://i.ytimg.com/vi/nOrj95IveVY/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/nOrj95IveVY"
+             }
+
+         ],
+         "44": [{
+                 "title": "সূরা আদ দুখান আবেগময় তেলাওয়াত  Surah Dukhan bangla Onubad #Mishary_Al-Afasy",
+                 "thumb": "https://i.ytimg.com/vi/9xY8W2cne5g/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/9xY8W2cne5g"
+             }
+
+         ],
+         "45": [
+
+             {
+                 "title": "Surah Al-Jathiyah [45] | Bangla Translation of Quran । সূরা আল-জাসিয়া । noor (Light of Islam)",
+                 "thumb": "https://i.ytimg.com/vi/ZTq6Znbd2JU/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/ZTq6Znbd2JU"
+             }
+         ],
+         "46": [
+             {
+                 "title": "Surah Al Ahqaf",
+                 "thumb": "https://i.ytimg.com/vi/xQ5Bk0x8dBo/hqdefault.jpg",
+                 "url": "https://www.youtube.com/watch?v=xQ5Bk0x8dBo"
+             }
+
+         ],
+         "47": [{
+                 "title": "Surah Muhammad سورة محمد  (TRANQUILITY)",
+                 "thumb": "https://i.ytimg.com/vi/u8EEQdR-A0A/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/u8EEQdR-A0A"
+             }
+
+
+         ],
+         "48": [{
+                 "title": "Surah Al-Fath [48] | Quran Shareef | Bangla Translation of Quran | noor [Light of Islam]",
+                 "thumb": "https://i.ytimg.com/vi/szC5nV3D_78/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/szC5nV3D_78"
+             }
+
+         ],
+         "49": [{
+                 "title": "শিষ্ঠাচার শিখতে চাইলে এই সূরাটি শুনুন | Surah Al-Hujurat - سورة الحجرات  by Omar Hisham Al Arabi",
+                 "thumb": "https://i.ytimg.com/vi/n11mxM-HX-c/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/n11mxM-HX-c"
+             }
+
+         ],
+         "50": [{
+                 "title": "Surah Qaf [50] | Bangla Translation of Quran | Quran Tilawa। সূরা ক্বাফ | noor (Light of Islam)",
+                 "thumb": "https://i.ytimg.com/vi/eEIEkKY_rOk/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/eEIEkKY_rOk"
+             },
+             {
+                 "title": "QAF (FEARLESS) القارئ عمر هشام العربي - سورة ق",
+                 "thumb": "https://i.ytimg.com/vi/THIWLQizMEQ/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/THIWLQizMEQ"
+             }
+
+         ],
+         "51": [{
+                 "title": "BE HEAVEN: Surah Adh-dhariyat سورة الذريات - عمرهشام العربي",
+                 "url": "https://www.youtube.com/embed/HQdJKlZOVt8"
+             }
+
+         ],
+         "52": [{
+                 "title": "সূরা আত্ব-তূর -  হৃদয় বিগলিত  তেলাওয়াত । Recited By Salem Ruwaili । sikhun surah",
+                 "thumb": "https://i.ytimg.com/vi/ZrN5bnDxCJo/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/ZrN5bnDxCJo"
+             }
+
+         ],
+         "53": [{
+                 "title": "Surah An-Najm [53] | Bangla Translation of Quran । সুরাহ আল নাজম | noor (Light of Islam)",
+                 "thumb": "https://i.ytimg.com/vi/2Ai1-Zs-_f4/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/2Ai1-Zs-_f4"
+             }
+
+
+         ],
+         "54": [{
+                 "title": "Surah Al-Qamar [54] |Bangla Translation of Quran |Quran Tilawat |সূরা কামার  |noor (Light of Islam)",
+                 "thumb": "https://i.ytimg.com/vi/aRFDNMnTObE/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/aRFDNMnTObE"
+             }
+
+
+         ],
+         "55": [{
+                 "title": "সূরা আর রহমান এর সবচেয়ে সুমধুর তিলাওয়াত┇Surah Rahman by Mishary Rashid Al Afasy ┇ MercifulServant BD",
+                 "thumb": "https://i.ytimg.com/vi/WNM-5ecolUQ/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/WNM-5ecolUQ"
+             },
+             {
+                 "title": "Surah Ar-Rahman (Be Heaven) سورة الرحمن",
+                 "thumb": "https://i.ytimg.com/vi/sHDmxMrCfCw/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/sHDmxMrCfCw"
+             },
+
+             {
+                 "title": "আল্লাহ্‌র প্রেমে পড়ে যাবেন ┇ সূরা আর রহমান এর তিলাওয়াত ┇ Recited by Mansour Mohieddine ┇ An Nafee",
+                 "thumb": "https://i.ytimg.com/vi/of4HPl7wSkA/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/of4HPl7wSkA"
+             },
+             {
+                 "title": "সূরা আর রহমান বাংলা অর্থসহ, Surah rahman with bangla translation",
+                 "thumb": "https://i.ytimg.com/vi/sqAWY93ZpQA/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/sqAWY93ZpQA"
+             },
+             {
+                 "title": "Moutasem Al-Hameedi - Ar Rahman [The Beneficent]",
+                 "thumb": "https://i.ytimg.com/vi/wIKTu5yn2jg/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/wIKTu5yn2jg"
+             }
+         ],
+         "56": [
+
+             {
+                 "title": "সূরা ওয়াকিয়াহ এর আবেগময় তিলাওয়াত ┇ Surah Waqiah Recited by Zain Abu Kautsar ┇ An Nafee ┇ আন নাফী",
+                 "thumb": "https://i.ytimg.com/vi/6mttwIBcig0/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/6mttwIBcig0"
+             }
+
+         ],
+         "57": [{
+                 "title": "হৃদয়স্পর্শী তিলাওয়াত | তাদের হৃদয় কি আল্লাহর স্মরণে বিগলিত হওয়ার সময় হয়নি",
+                 "thumb": "https://i.ytimg.com/vi/p4dQ-HmHNGM/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/p4dQ-HmHNGM"
+             },
+             {
+                 "title": "SURAH AL HADID سورة الحديد CHANGE YOUR LIFE آيات تغير حياتك",
+                 "thumb": "https://i.ytimg.com/vi/C9m5JqCsLXg/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/C9m5JqCsLXg"
+             }
+
+         ],
+         "58": [{
+             "title": "Surah Al-Mujadila [58] | Bangla Translation of Quran | সূরা মুজাদালা | noor (Light of Islam)",
+             "thumb": "https://i.ytimg.com/vi/awh2MrUu8N8/hqdefault.jpg",
+             "url": "https://www.youtube.com/embed/awh2MrUu8N8"
+         }],
+         "59": [{
+                 "title": "সূরা আল হাশরের অশ্রুসিক্ত কোরআন তেলাওয়াত । By Hani Ar-Rifa'i",
+                 "thumb": "https://i.ytimg.com/vi/bvJX2opbf2o/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/bvJX2opbf2o"
+             },
+             {
+                 "title": "হৃদয় বিগলিত করা সূরা হাশর তিলাওয়াত┇Heart melting recitation of Sura Hashr┇An Nafee┇Salem Al Ruwaili",
+                 "thumb": "https://i.ytimg.com/vi/5QUZyxKQlgk/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/5QUZyxKQlgk"
+             }
+
+         ],
+         "60": [{
+             "title": "Surah Al-Mumtahanah [60] | Bangla Translation of Quran । সুরা মুমতাহিনা | noor (Light of Islam)",
+             "thumb": "https://i.ytimg.com/vi/nuex3YpZxqk/hqdefault.jpg",
+             "url": "https://www.youtube.com/embed/nuex3YpZxqk"
+         }],
+         "61": [{
+             "title": "সূরা আস সফ মন জুড়ানো তেলাওয়াত অনুবাদসহ। Surah As Saff Bangla Translation.",
+             "thumb": "https://i.ytimg.com/vi/KOM2vBs4s0E/hqdefault.jpg",
+             "url": "https://www.youtube.com/embed/KOM2vBs4s0E"
+         }],
+         "62": [{
+                 "title": "SOUL TOUCHING QURAN (Al Jumua) سورة الجمعة",
+                 "thumb": "https://i.ytimg.com/vi/2tIesB2l1LI/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/2tIesB2l1LI"
+             }
+
+         ],
+         "63": [
+
+             {
+                 "title": "মনোমুগ্ধকর কণ্ঠে তিলাওয়াত | সূরা মুনাফিক্বুন | Saakinah Media | Abdur Rahman Al Ossi",
+                 "thumb": "https://i.ytimg.com/vi/Rg2s_REgaBs/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/Rg2s_REgaBs"
+             }
+         ],
+         "64": [{
+                 "title": "Surah At-Taghabun [64] | Bangla Translation of Quran | সূরা আত-তাগাবুন | noor (Light of Light)",
+                 "thumb": "https://i.ytimg.com/vi/Bhn-L8gS1IE/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/Bhn-L8gS1IE"
+             }
+
+
+         ],
+         "65": [{
+                 "title": "SURAH AT-TALAQ (FEARLESS) سورة الطلاق",
+                 "thumb": "https://i.ytimg.com/vi/xW4zIgcAdpI/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/xW4zIgcAdpI"
+             }
+
+         ],
+         "66": [{
+             "title": "কেমন তওবা করলে আল্লাহপাক পাপমোচন করবেন, শুনুন | সূরাহ তাহরীমের মনোমুগ্ধকর তিলাওয়াত | Saakinah Media",
+             "thumb": "https://i.ytimg.com/vi/yb5GpTUhg2c/hqdefault.jpg",
+             "url": "https://www.youtube.com/embed/yb5GpTUhg2c"
+         }],
+         "67": [{
+                 "title": "Surat Al-Mulk - Moutasem Al-Hameedi : سورة الملك - معتصم الحميدي",
+                 "thumb": "https://i.ytimg.com/vi/pyrJAI9wLy4/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/pyrJAI9wLy4"
+             },
+             {
+                 "title": "সবচেয়ে সেরা কণ্ঠে সূরা মুলক ┇ Recited By Ismail Al Nouri ┇ An Nafee ┇ আন নাফী",
+                 "thumb": "https://i.ytimg.com/vi/bh5dGdbHCVc/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/bh5dGdbHCVc"
+             },
+             {
+                 "title": "AL MULK | QURAN RECITATION | سورة الملك",
+                 "thumb": "https://i.ytimg.com/vi/WT54-syfquk/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/WT54-syfquk"
+             }
+
+         ],
+         "68": [{
+                 "title": "Heart Touching Quran Recitation - Surah Al-Qalam (The Pen) - Salem Al Ruwaili",
+                 "thumb": "https://i.ytimg.com/vi/Amgjriih558/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/Amgjriih558"
+             },
+             {
+                 "title": "সূরা ফাতিহা ও কালাম┇সুরেলা বিচিত্র তেলাওয়াত┇শাইখ নরিন মুহাম্মাদ",
+                 "thumb": "https://i.ytimg.com/vi/sAWhQ6b8Ak8/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/sAWhQ6b8Ak8"
+             }
+
+         ],
+         "69": [
+
+             {
+                 "title": "কিয়ামত দিবসের ভয়বহ বর্ণনা | সূরা হাক্কাহ এর আবেগময় তিলাওয়াত | Abdur Rahman Al Ossi | Saakinah Media",
+                 "thumb": "https://i.ytimg.com/vi/POpxOf7Sfag/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/POpxOf7Sfag"
+             }, {
+                 "title": "অত্যন্ত আবেগপ্রবণ কণ্ঠে সূরা হাক্কাহ্ ┇ Recited by Abdur Rahman Al Ossi ┇ An Nafee ┇ আন নাফী",
+                 "thumb": "https://i.ytimg.com/vi/jQkWvUYUzg0/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/jQkWvUYUzg0"
+             }
+         ],
+         "70": [{
+                 "title": "সূরা মাআরিজ এর অন্তর জুড়ানো তিলাওয়াত┇سورة المعارج  Surah Maarij _Salim Al Ruwaili┇MercifulServant BD",
+                 "thumb": "https://i.ytimg.com/vi/pkrKduICClg/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/pkrKduICClg"
+             }
+
+         ],
+         "71": [{
+                 "title": "সূরা নূহ  -  প্রান জুড়ানো তিলাওয়াত । Recited By Salem alrwailiy",
+                 "thumb": "https://i.ytimg.com/vi/YL5oVTMxK2I/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/YL5oVTMxK2I"
+             }
+
+         ],
+         "72": [
+
+             {
+                 "title": "সূরা জিন এর অন্তর স্পর্শ করা তিলাওয়াত ┇ Recited by Omar Hisham Al Arabi ┇ MercifulServant BD",
+                 "thumb": "https://i.ytimg.com/vi/nqFoViPNfUU/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/nqFoViPNfUU"
+             }
+         ],
+         "73": [{
+             "title": "হৃদয় বিগলিত সূরে সূরা মুযযাম্মিল | Sura Muzzammil by Abdur Rahman Al Ossi | Saakinah Media",
+             "thumb": "https://i.ytimg.com/vi/LlPey79HP0Q/hqdefault.jpg",
+             "url": "https://www.youtube.com/embed/LlPey79HP0Q"
+         }],
+         "74": [
+
+             {
+                 "title": "সূরা মুদ্দাসসির | আবেগময় তেলাওয়াত | ফিলিস্তিনের ইমাম ঘাসসান শোরবাজি",
+                 "thumb": "https://i.ytimg.com/vi/B4M8o1F1ekU/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/B4M8o1F1ekU"
+             }
+         ],
+         "75": [
+
+             {
+                 "title": "সূরা আল কিয়ামাহ - অশ্রু ধরে রাখতে পারবেন না ( বিচার দিবসের বর্ণনা ! )",
+                 "thumb": "https://i.ytimg.com/vi/SoDSL35yXZ0/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/SoDSL35yXZ0"
+             }
+         ],
+         "76": [{
+                 "title": "হৃদয় জূড়ানো কন্ঠে সূরা ইনসান এর অসাধারন তিলাওয়াত ┇ Omar Hisham Al Arabi ┇ MercifulServant BD",
+                 "thumb": "https://i.ytimg.com/vi/1WRaxZrtdSs/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/1WRaxZrtdSs"
+             }
+
+
+         ],
+         "77": [{
+                 "title": "BE HEAVEN: Surah Al Mursalat  سورة المرسلات - القارئ عمر هشام",
+                 "url": "https://www.youtube.com/embed/m8DVFQJ6GT8"
+             }
+
+         ],
+         "78": [{
+                 "title": "সূরা আন নাবা এর মনোমুগ্ধকর এক তিলাওয়াত ┇ Recited By Muhammad Al Muqit ┇ An Nafee ┇ আন নাফী",
+                 "thumb": "https://i.ytimg.com/vi/bgIC-s1FWUg/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/bgIC-s1FWUg"
+             }
+
+         ],
+         "79": [{
+                 "title": "দুনিয়ার জীবনকে প্রাধান্য দানকারীর জন্য কি অপেক্ষা করছে, জানতে শুনুন এই সূরাটি | Saakinah Media",
+                 "thumb": "https://i.ytimg.com/vi/EMj7QNNKM6M/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/EMj7QNNKM6M"
+             },
+             {
+                 "title": "Emotional Quran recitation by Qari Muhammad Al Kurdi",
+                 "thumb": "https://i.ytimg.com/vi/oB14FKhqDwA/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/oB14FKhqDwA"
+             }
+         ],
+         "80": [{
+                 "title": "Surah Abasa EMOTIONAL  تلاوة تقشعر لها البدان سورة عبس",
+                 "thumb": "https://i.ytimg.com/vi/8koJ1WabHoE/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/8koJ1WabHoE"
+             }
+
+         ],
+         "81": [{
+                 "title": "মন মাতানো কণ্ঠে আত তাকভীর এর তিলাওয়াত┇Recited by Salim Bahanan┇An Nafee┇ আন নাফী",
+                 "thumb": "https://i.ytimg.com/vi/0-9TQwZIDXY/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/0-9TQwZIDXY"
+             }
+
+         ],
+         "82": [{
+             "title": "নিশ্চয়ই সৎকর্মপরায়ণরা থাকবে সুখ-স্বাচ্ছন্দ্যে | Surah Infitar | Saakinah Media",
+             "thumb": "https://i.ytimg.com/vi/PWmFf-DgnUI/hqdefault.jpg",
+             "url": "https://www.youtube.com/embed/PWmFf-DgnUI"
+         }],
+         "83": [{
+                 "title": "সূরা আল মুতাফফিফীন আবেগময় তিলাওয়াত । Surah Al Mutaffifin by Mishary Rashid Alafasy",
+                 "thumb": "https://i.ytimg.com/vi/0cHjoF_kEcA/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/0cHjoF_kEcA"
+             }
+
+         ],
+         "84": [{
+                 "title": "Surah Al-Inshiqaq [84] | Bangla translation of Quran | সুরা ইনশিকাক | noor (Light of Islam)",
+                 "thumb": "https://i.ytimg.com/vi/EkqeJn8W1p8/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/EkqeJn8W1p8"
+             }
+
+         ],
+         "85": [{
+                 "title": "| সুরা বুরুজ | অন্তরকে টাস করবে এই কোরআন  তেলাওয়াত। Sura Al-Buruj Heart Touching | Smooth Recitation",
+                 "thumb": "https://i.ytimg.com/vi/lmC8E4GHwnU/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/lmC8E4GHwnU"
+             },
+             {
+                 "title": "সূরা বুরুজের অন্তর জুড়ানো তিলাওয়াত ┇ Recited by Salim Al Ruwaili ┇ An Nafee┇ আন নাফী",
+                 "thumb": "https://i.ytimg.com/vi/ciGkpKtkOow/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/ciGkpKtkOow"
+             }
+
+         ],
+         "86": [{
+                 "title": "সূরা আত তারিক  ( الطّارق‎)  | আবেগময় তিলাওয়াত । নামাজের ছোট সূরা ।  শিখুন সূরা",
+                 "thumb": "https://i.ytimg.com/vi/bvs5iZ-cxjs/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/bvs5iZ-cxjs"
+             }
+
+         ],
+         "87": [{
+                 "title": "God Gifted Talent of pakistani Kid ~ Amazing Quran Recitation, imitates Abdul Basit (Subscribe)",
+                 "thumb": "https://i.ytimg.com/vi/KX8EvVbSR5U/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/KX8EvVbSR5U"
+             },
+             {
+                 "title": "sura Ala bangla translation | সূরা আলা বাংলা অর্থ | surah Ala with bangla translation | An Nur",
+                 "thumb": "https://i.ytimg.com/vi/VRWlYQtcf8E/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/VRWlYQtcf8E"
+             }
+
+         ],
+         "88": [{
+                 "title": "সূরা আল গাশিয়াহ (الغاشية‎) -  অসম্ভব সুন্দর কোরআন তেলাওয়াত",
+                 "thumb": "https://i.ytimg.com/vi/1bGfFZIb8NU/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/1bGfFZIb8NU"
+             }
+
+         ],
+         "89": [{
+                 "title": "সূরা আল-ফজরের সুমধুর  তিলাওয়াত।ইমাম ফয়সাল মোহাম্মদ।।",
+                 "thumb": "https://i.ytimg.com/vi/-WCXXIoG49g/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/-WCXXIoG49g"
+             },
+             {
+                 "title": "অশ্রু ধরে রাখার চেষ্টা ব্যর্থ ┇ সূরা ফাজর এর অশ্রু সিক্ত তিলাওয়াত┇Recited by Hani Ar Rifai┇ An Nafee",
+                 "thumb": "https://i.ytimg.com/vi/YvqopEYMnMw/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/YvqopEYMnMw"
+             },
+             {
+                 "title": "হে প্রশান্ত আত্মা, ফিরে এসো তোমার রবের সন্তুষ্টির দিকে | SURAH AL FAJR ᴴᴰ | Omar Hisham Al Arabi",
+                 "thumb": "https://i.ytimg.com/vi/cEgwM7Tq0Qk/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/cEgwM7Tq0Qk"
+             }
+         ],
+         "90": [{
+                 "title": "Surah Al-Balad [90] | Bangla Translation of Quran | সূরা আল-বালাদ | noor [Light of Islam]",
+                 "thumb": "https://i.ytimg.com/vi/W8zv7lI8yrk/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/W8zv7lI8yrk"
+             }
+
+         ],
+         "91": [{
+                 "title": "সেদিন গোপন বিষয়াদি পরীক্ষা করা হবে, তখন কারো শক্তি ও সাহায্যকারী থাকবে না | Saakinah Media",
+                 "thumb": "https://i.ytimg.com/vi/4ZL4Rlsfe2w/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/4ZL4Rlsfe2w"
+             }
+
+
+         ],
+         "92": [{
+                 "title": "সূরা আল লাইল হৃদয় ছোয়া তেলাওয়াত বাংলা অনুবাদ সহ । Surah Al Layl with bangla translation",
+                 "thumb": "https://i.ytimg.com/vi/7N_TkXgVk3E/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/7N_TkXgVk3E"
+             }
+
+         ],
+         "93": [{
+                 "title": "সূরা আদ্ব দ্বোহা - অত্যন্ত আবেগময় তেলাওয়াত",
+                 "thumb": "https://i.ytimg.com/vi/MTqTR0tBpMg/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/MTqTR0tBpMg"
+             },
+             {
+                 "title": "অচিরেই তোমার রব তোমাকে দান করবেন, ফলে তুমি সন্তুষ্ট হবে | Sura Ad-Duha | Saakinah Media",
+                 "thumb": "https://i.ytimg.com/vi/R96HnnPviJI/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/R96HnnPviJI"
+             },
+             {
+                 "title": "Children Recite Surah ad-Dhuha",
+                 "thumb": "https://i.ytimg.com/vi/Zp7rNZfJwmc/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/Zp7rNZfJwmc"
+             }
+
+         ],
+         "94": [
+
+             {
+                 "title": "সূরা নাসরাহ। Sura nashrah। Best quran recitation by Amirul Islam",
+                 "thumb": "https://i.ytimg.com/vi/ckyupNtiXyY/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/ckyupNtiXyY"
+             }
+         ],
+         "95": [{
+                 "title": "সূরা আত-ত্বীন । Surah At-Tin । سُوۡرَةُ التِّین | Muzammil Hasballah",
+                 "thumb": "https://i.ytimg.com/vi/Wfcptxjxa6o/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/Wfcptxjxa6o"
+             },
+             {
+                 "title": "হৃদয় বিগলিত কণ্ঠে সূরা আত ত্বীন । অসাধারন কোরআন তেলাওয়াত  ।  By Omar Hisham Al Arabi",
+                 "thumb": "https://i.ytimg.com/vi/ZlXvGZM9-Pg/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/ZlXvGZM9-Pg"
+             }
+
+         ],
+         "96": [{
+             "title": "সূরা আল আলাক (العلق) - মানুষকে  সৃষ্টি  করা হয়েছে জমাট রক্ত থেকে। Recited by Omar Hisham Al Arabi",
+             "thumb": "https://i.ytimg.com/vi/J85RU64HtkA/hqdefault.jpg",
+             "url": "https://www.youtube.com/embed/J85RU64HtkA"
+         }],
+         "97": [
+
+             {
+                 "title": "সূরা আল কদর (القدر ) -  যে রাতের আমল ১০০০ মাস অপেক্ষা শ্রেষ্ঠ।",
+                 "thumb": "https://i.ytimg.com/vi/m1EkX8469vI/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/m1EkX8469vI"
+             }
+         ],
+         "98": [
+
+             {
+                 "title": "সূরা বাইয়্যিনাহ ( سورة البينة‎‎‎ ) -  আবেগময় কুরআন তেলাওয়াত",
+                 "thumb": "https://i.ytimg.com/vi/8PorxeKhcic/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/8PorxeKhcic"
+             }
+         ],
+         "99": [{
+                 "title": "সূরা যিলযাল (الزلزلة) - মনজুড়ানো  কোরআন তেলাওয়াত",
+                 "thumb": "https://i.ytimg.com/vi/eHtna4zgUas/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/eHtna4zgUas"
+             },
+             {
+                 "title": "সূরা যিলযাল এর আবেগঘন তিলাওয়াত ┇ Recited By Sheikh Ra'ad Al Kurdi ┇ An Nafee ┇ আন নাফী",
+                 "thumb": "https://i.ytimg.com/vi/WSmxXtUwZso/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/WSmxXtUwZso"
+             }
+
+         ],
+         "100": [{
+                 "title": "SURAH AL ADIYAT  سورة العاديات",
+                 "thumb": "https://i.ytimg.com/vi/xrl5rE4o32c/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/xrl5rE4o32c"
+             }
+
+         ],
+         "101": [{
+                 "title": "Surat Al-Qariah। সূরা ক্বারিয়াহ। হদর সুরে তেলাওয়াত অনুবাদ সহ। Amirul Islam",
+                 "thumb": "https://i.ytimg.com/vi/jYACpFIfxJ8/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/jYACpFIfxJ8"
+             }
+
+         ],
+         "102": [{
+                 "title": "সূরা তাকাছুর। Surah Takasur with Bengali and English translation Amirul Islam",
+                 "thumb": "https://i.ytimg.com/vi/sFjaiYe8iUw/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/sFjaiYe8iUw"
+             }
+
+         ],
+         "103": [{
+                 "title": "Surah Al-'Asr [103] | Quran Shaeef | Bangla Translation of Quran | আল-আসর | noor [Light of Islam]",
+                 "thumb": "https://i.ytimg.com/vi/ZWF2XCAxtz4/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/ZWF2XCAxtz4"
+             }
+
+         ],
+         "104": [{
+                 "title": "সূরা হুমাঝা। জাহান্নামের ভয়াবহতা। আবেগী তেলাওয়াত। Surah Al-Humajhah। Amirul Islam",
+                 "thumb": "https://i.ytimg.com/vi/6gOptf15UcM/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/6gOptf15UcM"
+             }
+
+         ],
+         "105": [{
+                 "title": "সূরা ফীল এক যুগপোযোগী শিক্ষনীয় ঘটনা ┇ Recited by Salim Bahnan ┇ MercifulServant BD",
+                 "thumb": "https://i.ytimg.com/vi/InVpaZMLVJg/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/InVpaZMLVJg"
+             }, {
+                 "title": "যে ৭ টি ভুল সুরা ফিলের বাংলা উচ্চারনে আমাদের হয়ে থাকে",
+                 "thumb": "https://i.ytimg.com/vi/ZVAulERZJls/hqdefault.jpg",
+                 "url": "https://www.youtube.com/watch?v=ZVAulERZJls"
+             }
+
+         ],
+         "106": [
+
+             {
+                 "title": "Surah Quraysh [106] | Quran Sharif| Bangla Translation of Quran| সূরা কুরাইশ| noor (Light of Islam)",
+                 "thumb": "https://i.ytimg.com/vi/RWy4U0Bf8F0/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/RWy4U0Bf8F0"
+             }, {
+                 "title": "যে ৭ টি ভুল সুরা কুরাইশের বাংলা উচ্চারনে আমাদের হয়",
+                 "thumb": "https://i.ytimg.com/vi/XwK7FC2F3Lo/hqdefault.jpg",
+                 "url": "https://www.youtube.com/watch?v=XwK7FC2F3Lo"
+             }
+         ],
+         "107": [{
+                 "title": "Sura Maun with Bengali translation। Best quran recitation। সুরা মাউন তেলাওয়াত অনুবাদ সহ",
+                 "thumb": "https://i.ytimg.com/vi/gmfm2nvogBw/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/gmfm2nvogBw"
+             }
+
+         ],
+         "108": [{
+                 "title": "Surah Al-Kawthar [108] | Bangla Translation of Quran | সূরা কাউসার | noor [Light of Islam]",
+                 "thumb": "https://i.ytimg.com/vi/qyNJ9U4Dy-A/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/qyNJ9U4Dy-A"
+             }, {
+                 "title": "যে ৫ টি ভুল সুরা কাউসার বাংলা উচ্চারনে আমাদের হয় ",
+                 "thumb": "https://i.ytimg.com/vi/W3Bm_9o3Mok/hqdefault.jpg",
+                 "url": "https://www.youtube.com/watch?v=W3Bm_9o3Mok"
+             }
+
+         ],
+         "109": [{
+                 "title": "Sura Kafirun. Beautiful Quran recitation. Melodious recitation",
+                 "thumb": "https://i.ytimg.com/vi/jgk9QN3mLEk/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/jgk9QN3mLEk"
+             }
+
+         ],
+         "110": [
+
+             {
+                 "title": "Surah An-Nasr [110] | Quran Shareef| Bangla| Translation of Quran| সূরা নাসর | noor [Light of Islam]",
+                 "thumb": "https://i.ytimg.com/vi/tphB9zo-e2g/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/tphB9zo-e2g"
+             }
+         ],
+         "111": [{
+                 "title": "Surah Lahab [111] | Quran Sharif | Bangla Translation of Quran | সুরা লাহাব | noor [Light of Islam]",
+                 "thumb": "https://i.ytimg.com/vi/v4WTLHt6rzo/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/v4WTLHt6rzo"
+             }
+
+         ],
+         "112": [
+
+             {
+                 "title": "Surah Al-Ikhlas [112] |Quran Shareef |Bangla Translation of Quran |সূরা ইখলাস |noor (Light of Islam)",
+                 "thumb": "https://i.ytimg.com/vi/yfeZktlSjug/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/yfeZktlSjug"
+             }, {
+                 "title": "যে ৫ টি ভুল সুরা ইখলাস বাংলা উচ্চারনে আমাদের হয়",
+                 "thumb": "https://i.ytimg.com/vi/7l-sV_leJXk/hqdefault.jpg",
+                 "url": "https://www.youtube.com/watch?v=7l-sV_leJXk"
+             }
+         ],
+         "113": [{
+                 "title": "Surah Al-Falaq [113] | Quran Sharif | Bangla Translation of Quran |সুরা ফালাক |noor (Light of Islam)",
+                 "thumb": "https://i.ytimg.com/vi/O3lFaqU5H7Y/hqdefault.jpg",
+                 "url": "https://www.youtube.com/embed/O3lFaqU5H7Y"
+             }
+
+         ],
+         "114": [{
+             "title": "সূরা নাস। সেরা তেলাওয়াত। বাংলা অনুবাদ সহ। Surat An-Nas। Amirul Islam",
+             "thumb": "https://i.ytimg.com/vi/JgcGZcoaKDU/hqdefault.jpg",
+             "url": "https://www.youtube.com/embed/JgcGZcoaKDU"
+         }]
+     };
+
+
+     $(document).ready(function () {
+
+        /*
+         $.each(bangla_sura_names, function (key, val) {
+             surah = key + 1;
+             o = new Option("সূরা: (" + en2bnNumber(surah) + ") : " + val + ' [ ' + en_suras[key]
+                 .capitalize() + ' ] ', surah);
+             $(o).data('subject', val);
+             $(o).data('ayah', surah + ":1-" + ayat_numbers[key]);
+
+             $("#s2subject").append(o);
+         });
+        */
+
+        o = new Option("সূরা: (" + en2bnNumber(1) + ") : " + bangla_sura_names[0] + ' [ ' + en_suras[0]
+                 .capitalize() + ' ] ', 1);
+             $(o).data('subject', bangla_sura_names[0]);
+             $(o).data('ayah', 1 + ":1-" + ayat_numbers[0]);
+
+             $("#s2subject").append(o);
+
+        for(i=114;i>1;i--){
+            o = new Option("সূরা: (" + en2bnNumber(i) + ") : " + bangla_sura_names[i-1] + ' [' + i + ' : ' + en_suras[i-1]
+                 .capitalize() + '] ', i);
+             $(o).data('subject', bangla_sura_names[i-1]);
+             $(o).data('ayah', i + ":1-" + ayat_numbers[i-1]);
+
+             $("#s2subject").append(o); 
+        }
+
+
+
+         $('#s2subject').select2().on('change', function () {
+             $('#ayahtoload').val($('#s2subject').find(':selected').data('ayah'));
+             $('#ayahsubject').val($('#s2subject').find(':selected').data('subject'))
+             surah = $('#s2subject').find(':selected').val();
+             prepare_sura_output(surah);
+
+
+
+         });
+
+         prepare_sura_output(1);
+     });
+
+
+     function prepare_sura_output(surah_index) {
+         ayahString = $('#ayahtoload').val();
+         if (ayahString !== "") {
+             ayah_obj = String2AyahArray($('#ayahtoload').val());
+             book = sura_grammer[surah_index - 1];
+
+
+             var dynamic_data = {
+                 "subject": $('#ayahsubject').val(),
+                 "introHtml": 'সূরা('+ en2bnNumber(surah_index) + '): ' + bangla_sura_names[surah_index -1 ] +' সূরার  সব  আয়াতসমূহ দেখতে ~ `কুরআনের আয়াত` এ  ক্লিক করুন | এ সূরার সম্পর্কিত ('+ en2bnNumber(  sura_videos[surah_index].length ) + ') টি ভিডিও দেখতে `ভিডিও` তে ক্লিক করুন  | সূরার আরবি ব্যাকরণ  দেখতে  `বই / পি.ডি.এফ` এ ক্লিক করুন',
+                 "ayah": ayah_obj,
+                 "videos": sura_videos[surah_index],
+                 "articles": [
+
+                 ],
+                 "books": [book],
+                 "extrahtml": [ 
+                            {
+                                "heading": "কুরআন মাজীদ(তাজবীদ হেল্প)",
+                                "subheading": "শুধু আরবী (তাজবীদ কালার)[তাজবীদ হেল্প সহ]",
+                                "html": "/partials/quran/full_tajweed_html.html",
+                                "icon": "book-open",
+                                "bg-class" : ' bg-navy'
+                            }, {
+                                "heading": "কুরআন কিভাবে পড়বো ও বুঝবো",
+                                "subheading": "জামাল আল দীন জারাবযো",
+                                "html": "/partials/quran/how_to_understand_quran.html",
+                                "icon": "book" ,
+                                "bg-class" : 'danger'
+                            },
+                            {
+                                "heading": "কুরআন মাজীদ(শুধু আরবী)",
+                                "subheading": "শুধু আরবী টেক্সট",
+                                "html": "/partials/quran/only_arabic_quran.html",
+                                "icon": "book-open"
+                            },
+                            {
+                                "heading": "কুরআন মাজীদ (তাজবীদ+সাদা ব্যাকগ্রাউন্ড)",
+                                "subheading": "শুধু আরবী (তাজবীদ কালার)[সাদা ব্যাকগ্রাউন্ড]",
+                                "html": "/partials/quran/only_arabic_quran_with_tajweed.html",
+                                "icon": "book-open",
+                                "bg-class" : ' bg-lightblue'
+                            }, 
+                            {
+                                "heading": "কুরআন মাজীদ(তাজবীদ+হলুদ ব্যাকগ্রাউন্ড)",
+                                "subheading": "শুধু আরবী (তাজবীদ কালার)[হলুদ ব্যাকগ্রাউন্ড]",
+                                "html": "/partials/quran/only_arabic_quran_with_tajweed_v2.html",
+                                "icon": "book-open",
+                                "bg-class" : ' bg-olive'
+                            },  
+                            {
+                                "heading": "কুরআন(শুধু বাংলা)",
+                                "subheading": "(মহিউদ্দিন খান)",
+                                "html": "/partials/quran/only_bangla.html",
+                                "icon": "book-open",
+                                "bg-class" : ' bg-olive'
+                            }, 
+                            {
+                                "heading": "নূরানী কুরআন মাজীদ",
+                                "subheading": "মাওলানা আশরাফ আলী থানভী রহ",
+                                "html": "/partials/quran/quran_ashraf_ali_thanvi2.html",
+                                "icon": "book-open",
+                                "bg-class" : 'secondary'
+                            },
+                            {
+                                "heading": "সূরার আয়াতের তাজবীদ রুলস",
+                                "subheading": "( তাজবীদ প্রাকটিস)",
+                                "html": "/partials/etc/tajweed_practice.html",
+                                "icon": "tasks",
+                                "bg-class" : ' bg-pink'  
+                            },  {
+                                "heading": "সূরার আয়াতের তারকীব",
+                                "subheading": "নির্দিষ্ট আয়াতের বাক্য বিশ্লেষণ",
+                                "html": "/partials/etc/ayah_grammer.html",
+                                "icon": "bezier-curve",
+                                "bg-class" : ' bg-olive'  
+                            },  {
+                                "heading": "সূরার আয়াতের শব্দবিন্যাস ও শব্দ পুনরাবৃত্তি",
+                                "subheading": "নির্দিষ্ট আয়াতের (হুবুহু শব্দ | মৌলিক শব্দ)",
+                                "html": "/partials/etc/ayah_word_repeat.html", 
+                                "icon": "braille",
+                                "bg-class" : ' bg-orange'  
+                            },  {
+                                "heading": "সূরার শব্দ পুনরাবৃত্তি",
+                                "subheading": "(হুবুহু শব্দ | মৌলিক শব্দ)",
+                                "html": "/partials/etc/surah_word_repeat.html",
+                                "icon": "tasks",
+                                "bg-class" : ' bg-danger'  
+                            },  {
+                                "heading": "সূরার আরবি ব্যাকরণ",
+                                "subheading": "সম্পূর্ণ সূরার শব্দে শব্দে বিশ্লেষণ",
+                                "html": "/partials/etc/surah_grammer.html",
+                                "icon": "indent",
+                                "bg-class" : ' bg-info'  
+                            },   {
+                                "heading": "সূরার আয়াতের তাফসীর",
+                                "subheading": "নির্দিষ্ট আয়াতের তাফসীর",
+                                "html": "/partials/etc/ayah_tafseer.html",
+                                "icon": "receipt",
+                                "bg-class" : ' bg-teal'  
+                            },
+                 ]
+             };
+
+
+             populate_dynamic_view(dynamic_data);
+         }
+     }
+ </script>

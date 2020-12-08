@@ -1,0 +1,16 @@
+*.mp4
+/backups
+web/firebase-config.js
+*.mp3
+config.js
+firebase/init.js
+firebase-app.js
+php/databases
+php/databases/*.*
+/databases
+*.db
+*.pdf
+/resources/pdf/*.pdf
+/resources/images/*.*
+learn-quran-bd.web.app.zip
+/learn-quran-bd.web.app.zip

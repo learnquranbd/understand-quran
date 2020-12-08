@@ -1,0 +1,61 @@
+<div class="row topindexbar">
+    <div class="col-md-5 col-sm-12">
+
+        <h3 class="text-center arabic cs1">بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِیْمِ</h3>
+        <p class="bangla text-center">শুরু করছি আল্লাহর নামে যিনি পরম করুণাময়, অতি দয়ালু।</p>
+
+    </div>
+    <div class="col-md-2 col-sm-12 indexcol">
+        <button type="button" class="btn btn-block bg-gradient-secondary btn-lg" onClick="openSidebarMenu()">
+            সূচিপত্র/তালিকা </button>
+    </div>
+    <div class="col-md-5  col-sm-12">
+        <h3 class="text-center arabic cs1">  النبي / الرسول  </h3>
+        <p class="bangla text-center">নবী / রাসূল </p>
+    </div>
+
+</div>
+ 
+
+
+<script>
+    $(document).ready(function () {
+        //openSidebarMenu(); 
+        CayahArray =
+            "2:87,2:253,2:285,3:144,3:179,3:183,3:184,3:194,4:136,4:150,4:151,4:152,4:164,4:165,5:19,5:31,5:32,5:75,5:109,6:10,6:34,6:48,6:124,6:130,7:35,7:43,7:53,7:101,7:158,9:70,10:13,10:74,10:103,11:59,11:120,12:110,13:32,13:38,14:4,14:5,14:6,14:7,14:8,14:9,14:10,14:11,14:12,14:13,14:44,14:47,15:11,16:35,17:77,17:94,18:106,21:8,21:41,22:75,23:44,23:51,25:7,25:8,25:20,25:37,29:31,29:33,30:9,30:47,34:45,35:1,35:4,35:25,38:14,39:71,40:22,40:50,40:51,40:70,40:78,40:83,41:14,41:43,43:45,46:9,46:35,48:9,48:29,51:52,57:19,57:21,57:25,57:27,58:21,59:6,65:8";
+        dynamic_data = {
+            "subject": "নবী / রাসূল ",
+            "introHtml": "",
+            "ayah": String2AyahArray(CayahArray),
+            "videos": [
+                {
+                    'title': 'পথিকৃৎদের পদচিহ্ন - নবীদের জীবন',
+                    'thumb': 'https://i.ytimg.com/vi/A7eC8l-Fyuk/hqdefault.jpg',
+                    'url'  : 'https://www.youtube.com/playlist?list=PLrEnZj_8pcltUMVK4M00U_tkAvhviodPZ'
+                } 
+            ],
+            "articles": [],
+            "books": [
+                       
+                        {
+                            'type'  : "firebase-pdf", 
+                            'title' : 'নবীদের কাহিনী - প্রথম খণ্ড ',
+                            'writer': "ডঃ মুহাম্মাদ আসাদুল্লাহ আল-গালিব",
+                            'url'   : 'story%2FNobider_kahini_part-1.pdf',
+                            'thumb' : 'story%2FNobider_kahini_part-1.png', 
+                        },{
+                            'type'  : "firebase-pdf", 
+                            'title' : 'নবীদের কাহিনী - দ্বিতীয় খণ্ড ',
+                            'writer': "ডঃ মুহাম্মাদ আসাদুল্লাহ আল-গালিব",
+                            'url'   : 'story%2FNobider_kahini_part-2.pdf',
+                            'thumb' : 'story%2FNobider_kahini_part-2.png', 
+                        },
+            ]
+        };
+
+
+        populate_dynamic_view(dynamic_data);
+
+
+    });
+</script>

@@ -1,0 +1,39 @@
+<div class="row topindexbar">
+    <div class="col-md-5 col-sm-12">
+
+        <h3 class="text-center arabic cs1">بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِیْمِ</h3>
+        <p class="bangla text-center">শুরু করছি আল্লাহর নামে যিনি পরম করুণাময়, অতি দয়ালু।</p>
+
+    </div>
+    <div class="col-md-2 col-sm-12 indexcol">
+        <button type="button" class="btn btn-block bg-gradient-secondary btn-lg" onClick="openSidebarMenu()">
+            সূচিপত্র/তালিকা </button>
+    </div>
+    <div class="col-md-5  col-sm-12">
+        <h3 class="text-center arabic cs1"> مَثَلُ </h3>
+        <p class="bangla text-center">উপমা/দৃষ্টান্ত </p>
+    </div>
+
+</div>
+ 
+
+<script>
+    $(document).ready(function () {
+        //openSidebarMenu(); 
+        CayahArray =
+            "2:17, 2:18, 2:19, 2:20, 2:259, 2:26, 2:265, 2:266, 3:103, 3:117, 7:175, 7:176, 7:177, 9:109, 9:110, 10:24, 11:24, 14:18, 16:112, 16:113, 16:75, 16:76, 18:32, 18:33, 18:34, 18:35, 18:36, 18:37, 18:38, 18:39, 18:40, 18:41, 18:42, 18:43, 18:44, 18:45, 18:46, 22:31, 22:73, 29:41, 29:42, 29:43, 39:21, 39:29, 47:15, 48:29, 57:20, 62:5";
+        dynamic_data = {
+            "subject": "উপমা/দৃষ্টান্ত",
+            "introHtml": "উপমা/দৃষ্টান্ত",
+            "ayah": String2AyahArray(CayahArray),
+            "videos": [],
+            "articles": [],
+            "books": []
+        };
+
+
+        populate_dynamic_view(dynamic_data);
+
+
+    });
+</script>

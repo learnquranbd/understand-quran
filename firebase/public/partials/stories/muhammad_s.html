@@ -1,0 +1,83 @@
+<div class="row topindexbar">
+    <div class="col-md-5 col-sm-12">
+
+        <h3 class="text-center arabic cs1">بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِیْمِ</h3>
+        <p class="bangla text-center">শুরু করছি আল্লাহর নামে যিনি পরম করুণাময়, অতি দয়ালু।</p>
+
+    </div>
+    <div class="col-md-2 col-sm-12 indexcol">
+        <button type="button" class="btn btn-block bg-gradient-secondary btn-lg" onClick="openSidebarMenu()">
+            সূচিপত্র/তালিকা </button>
+    </div>
+    <div class="col-md-5  col-sm-12">
+        <h3 class="text-center arabic cs1"> রাসূলুল্লাহ (সাঃ) ﷺ  </h3>
+        <p class="bangla text-center"></p>
+    </div>
+
+</div>
+ 
+
+
+<script>
+    $(document).ready(function () {
+        //openSidebarMenu(); 
+        
+        dynamic_data = {
+            "subject": "রাসূলুল্লাহ (সাঃ) ",
+            "introHtml": "মুহাম্মাদ ইবনে আবদুল্লাহ, রাসূলুল্লাহ সাল্লাল্লাহু আলাইহি ওয়াসাল্লাম",
+            "ayah": String2AyahArray("2:104,3:164,4:46,4:140,6:57,6:58,6:68,7:157,7:158,7:184,7:188,8:12,8:30,8:32,8:36,8:37,8:50,8:56,8:58,8:59,8:72,9:4,9:6,9:7,9:12,9:17,9:73,10:15,10:16,10:49,10:50,10:51,10:52,11:2,11:3,11:4,11:12,11:13,11:14,12:108,13:43,15:89,15:97,16:89,16:125,16:127,17:53,18:6,18:110,20:130,21:107,22:78,24:11,24:12,24:13,24:14,24:15,24:16,24:17,25:41,25:42,25:52,25:57,26:194,27:91,27:92,27:93,28:46,28:47,29:52,30:30,31:15,33:28,33:29,33:30,33:31,33:32,33:33,33:34,33:45,33:50,33:51,33:52,33:53,33:55,33:59,34:28,34:46,34:47,34:48,34:49,34:50,34:78,36:6,38:86,42:23,46:8,46:9,48:8,48:9,48:10,48:18,48:29,49:1,49:2,49:3,49:4,49:5,50:39,52:29,53:4,53:5,53:6,53:7,53:8,53:9,53:10,53:11,53:12,53:13,53:14,53:15,53:16,53:17,53:18,53:56,58:20,58:21,58:22,60:8,62:2,66:1,66:3,66:4,66:5,66:6,66:9,68:2,69:41,69:42,73:1,73:2,73:3,73:4,73:5,73:6,73:7,73:8,73:15,73:20,74:1,74:2,74:3,74:4,74:5,74:6,74:7,80:1,80:2,80:3,80:4,80:5,80:6,80:7,80:8,80:9,80:10,80:11,80:12,81:22,81:23,81:24,81:25,108:3"),
+            "videos": [
+                {
+                    'title': 'রাসূল ﷺ এর জীবনী - শায়েখ আব্দুল কাইয়ুম',
+                    'thumb': 'https://i.ytimg.com/vi/uUMTNVYDyxo/hqdefault.jpg',
+                    'url' : 'https://www.youtube.com/playlist?list=PLDfP1yNs-Ic--5HXz2p7Nc1tzjFSm9akX'
+                },
+                {
+                    'title': 'সীরাহ | নবীজি সাল্লাল্লাহু আলাইহি ওয়াসাল্লাম এর জীবনী',
+                    'thumb': 'https://i.ytimg.com/vi/f74nV31QXK4/hqdefault.jpg',
+                    'url' : 'https://www.youtube.com/playlist?list=PLrEnZj_8pcluLIl0V0JxYBE8pzkXA4FOu'
+                },
+                {
+                    'title': 'সীরাহ - রাসূল (সাঃ) এর জীবনী | ইয়াসির কাদি',
+                    'thumb': 'https://i.ytimg.com/vi/dFtQdnjwOD4/hqdefault.jpg',
+                    'url' : 'https://www.youtube.com/playlist?list=PL3s3cylukkRQL_9XEFkfHuNhH1MldfRZ3'
+                },
+                {
+                    'title': 'নবীজির (সাঃ) জীবন ',
+                    'thumb': 'https://i.ytimg.com/vi/C5Xxz5yXpfk/hqdefault.jpg',
+                    'url' : 'https://www.youtube.com/playlist?list=PLurmO1MwMjBCvDujmY639qFF5BiTPhzyP'
+                },
+                {
+                    'title': 'Life of Muhammad - PBUH',
+                    'thumb': 'https://i.ytimg.com/vi/VO22l6-Qkys/hqdefault.jpg',
+                    'url' : 'https://www.youtube.com/playlist?list=PL91FA0E3B7837B214'
+                },
+                {
+                    'title': 'রাসূল ﷺ এর জীবনী - শায়েখ আব্দুল কাইয়ুম',
+                    'thumb': 'https://i.ytimg.com/vi/kgNcg-PzJSI/hqdefault.jpg',
+                    'url' : 'https://www.youtube.com/playlist?list=PLA0cV1UDgWf1cMzqW6osE_JBH0Kyw2nTl'
+                },
+                {
+                    'title': 'The Life of the Prophet',
+                    'thumb': 'https://i.ytimg.com/vi/vaOOUZg7FqQ/hqdefault.jpg',
+                    'url' : 'https://www.youtube.com/playlist?list=PLnY1zv_MLwhyyoqC30O9QKijcRY1DOLqx'
+                }
+            ],
+            "articles": [],
+            "books": [
+                        {
+                            'type'  : "firebase-pdf", 
+                            'title' : 'সীরাতুর রাসূল (সা:)',
+                            'writer': "ডঃ মুহাম্মাদ আসাদুল্লাহ আল-গালিব",
+                            'url'   : 'sirat%2Fseeratur-rasool-sm.pdf',
+                            'thumb' : 'sirat%2Fseeratur-rasool-sm.png', 
+                        },
+            ]
+        };
+
+
+        populate_dynamic_view(dynamic_data);
+
+
+    });
+</script>

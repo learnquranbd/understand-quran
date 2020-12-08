@@ -1,0 +1,231 @@
+<div class="row topindexbar">
+    <div class="col-md-5 col-sm-12">
+
+        <h3 class="text-center arabic cs1">بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِیْمِ</h3>
+        <p class="bangla text-center">শুরু করছি আল্লাহর নামে যিনি পরম করুণাময়, অতি দয়ালু।</p>
+
+    </div>
+    <div class="col-md-2 col-sm-12 indexcol">
+        <button type="button" class="btn btn-block bg-gradient-secondary btn-lg" onClick="openSidebarMenu()">
+            সূচিপত্র/তালিকা </button>
+    </div>
+    <div class="col-md-5  col-sm-12">
+        <h3 class="text-center arabic cs1"> اللغة العربية للقرآن </h3>
+        <p class="bangla text-center">কুরআনের আরবি ভাষা </p>
+    </div>
+
+</div>
+
+
+
+
+
+<script>
+    $(document).ready(function () {
+        CayahArray =
+            "4:82, 4:140, 11:13, 11:35, 12:2, 13:37, 16:103, 17:41, 17:88, 17:89, 17:107, 18:54, 19:97, 20:113, 20:114, 22:16,  26:195, 30:58, 34:6, 34:31, 39:27, 39:28, 41:3,41:41, 41:44, 42:7, 43:3, 44:58, 46:12, 46:29, 47:24, 50:45, 52:33, 54:17, 54:22, 54:32 ,54:40, 55:2, 56:77, 59:21, 68:51, 73:20, 76:23, 81:19, 85:21, 86:13";
+        dynamic_data = {
+            "subject": "কুরআনের আরবি ভাষা",
+            "introHtml": "পৃথিবীতে অনেক ভাষা আছে। সব ভাষাই আল্লাহর দান। তাহলে কোরআন কেন আরবি ভাষায় অবতীর্ণ হয়েছে? এর জবাবে আল্লাহ বলেন, ‘আমি যদি এই কোরআনকে অনারবি ভাষায় অবতীর্ণ করতাম, তবে তারা বলত, এর আয়াতগুলো সুস্পষ্টভাবে বর্ণনা করা হলো না কেন? এটি কেমন কথা যে কোরআন অনারবি ও রাসুল [মুহাম্মদ (সা.)] আরবীয়। বলো, যারা ইমান আনে, তাদের জন্য এটি হেদায়েত ও (আত্মার) ব্যাধির প্রতিকার, আর যারা ইমান আনে না, তাদের কানে বধিরতা আছে। তাদের জন্য এটি অন্ধত্বের কারণ। এরা এমন যে যেন তাদের বহু দূর-দূরান্ত থেকে ডাকা হচ্ছে।’ (সুরা : হা-মিম সিজ্দা, আয়াত : ৪৪)",
+            "ayah": String2AyahArray(CayahArray),
+            "videos": [{
+                    "title": "কুরআন বুঝার জন্য আরবি ভাষা শিখার গুরুত্ব- প্রফেসর মোখতার আহমাদ",
+                    "thumb": "https://i.ytimg.com/vi/JsommZo0WnI/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/JsommZo0WnI"
+                }, {
+                    "title": "কুরআন ও সালাহ বুঝুন আরো সহজ উপায়ে",
+                    "thumb": "https://i.ytimg.com/vi/OP4NbdjXPYY/hqdefault.jpg",
+                    "url": "https://www.youtube.com/embed/pmc5q5KpXgc?list=PL2FHm7GZu6dkOquL_ZrA9kqsSf6JBhR6N"
+                }, {
+                    "title": "Bayyinah Dream Bangla",
+                    "thumb": "https://i.ytimg.com/vi_webp/iyKzNqsJZbI/hqdefault.webp",
+                    "url": "https://www.youtube.com/embed/videoseries?list=PL7TWabiVnFOIOTCjCLv5KWWO8wvWN2jtz"
+                }, {
+                    "title": 'ইকরা সহজ আরবী শি‌খি',
+                    "thumb": "https://i.ytimg.com/vi/Pgk4dVFgWbQ/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PLBVw9XNURD_AdUWNG_wO5O4XD5VcBMj1s"
+                }, {
+                    "title": "আল-কুরআনের ভাষা শিক্ষা",
+                    "thumb": "https://i.ytimg.com/vi_webp/P1JzIE6KxSw/hqdefault.webp",
+                    "url": "https://www.youtube.com/playlist?list=PL1JKv-zqJfEYrTa7TpUGb74JOjPoCojjT"
+                }, {
+                    "title": "কুরআনীয় আরবী শিক্ষা",
+                    "thumb": "https://i.ytimg.com/vi/u-lciWC4Exg/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PL1JKv-zqJfEb6_i7oyG_vtv7d_nRzK3vF"
+                },
+                {
+                    "title": "কুরআনিক অ্যারাবিক ল্যাঙ্গুয়েজ",
+                    "thumb": "https://i.ytimg.com/vi_webp/3IooMEUScTQ/hqdefault.webp",
+                    "url": "https://www.youtube.com/playlist?list=PLhC0vRy9ZpCuwNW9GPJWVVMuNiYuuWvp4"
+                },
+                {
+                    "title": "এসো আরবী শিখি",
+                    "thumb": "https://i.ytimg.com/vi_webp/ar_NDZQBydY/hqdefault.webp",
+                    "url": "https://www.youtube.com/playlist?list=PLOPo9pl2YzJNfprQqnQZnYuouMt0BeL5-"
+                },
+                {
+                    "title": "আরবী ব্যাকরণ শিক্ষা",
+                    "thumb": "https://i.ytimg.com/vi/y-8xqK7tQhA/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PLrKezsGbHrwsbEwCrwcHFDYXAG_xufWl5"
+                }, 
+                {
+                    "title": "আল-কুরআনে বালাগাহ",
+                    "thumb": "https://i.ytimg.com/vi/67xOJyG8-z4/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PL1JKv-zqJfEYQaisddDaptvd1V6kv7AGb"
+                }, {
+                    "title": "Let's Learn Arabic With Fun & Ease",
+                    "thumb": "https://i.ytimg.com/vi/pA3Fdl2bAT4/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PLIBMga6MApfJg9r5cn2yjvlIC-sZcq-9_"
+                },
+                {
+                    "title": "Quranic Arabic Language in Bangla",
+                    "thumb": "https://i.ytimg.com/vi_webp/tLS3R7LZUrs/hqdefault.webp",
+                    "url": "https://www.youtube.com/playlist?list=PLbpuqpqN9oa9E8SxrhHFyr0RFFXnfRMit"
+                },
+                {
+                    "title": "Quranic Arabic with Abu Taubah",
+                    "thumb": "https://i.ytimg.com/vi_webp/Ml5b4NGZ-5s/hqdefault.webp",
+                    "url": "https://www.youtube.com/playlist?list=PLbpuqpqN9oa8cdZ7Gw9hWUBJTd1DlOT9j"
+                },
+                {
+                    "title": "আল-কুরআনের ভাষা শিক্ষা (Learn Quranic Language)",
+                    "thumb": "https://i.ytimg.com/vi_webp/hLdlczcMzgc/hqdefault.webp",
+                    "url": "https://www.youtube.com/playlist?list=PLTo1mZkT6t_KjRu4HQ0FjUhEbCGB0udCB"
+                },
+                {
+                    "title": "বাংলা Online Quran Smart Madrasa",
+                    "thumb": "https://i.ytimg.com/vi/wvpnmd0Tid4/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PLQW3_-K8_bK3XXxdZOHyT0IT6Ni-5OJty"
+                },
+                {
+                    "title": "এসো আরবী শিখি- ১ম খন্ড",
+                    "thumb": "https://i.ytimg.com/vi/SR-rQABkK-Y/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PLwlIe2pxu_yahNfofNOp_QMjwzYWfEG4P"
+                },
+                {
+                    "title": "এসো আরবী শিখি- ২য় খন্ড",
+                    "thumb": "https://i.ytimg.com/vi/EAjp10NB500/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PLwlIe2pxu_yY6EbfABsGRgvsW3gNxESQu"
+                },
+                {
+                    "title": "তামরীন- ১ম, ২য় ও ৩য় ভাগ (এসো আরবী শিখি বই এর উপর)",
+                    "thumb": "https://i.ytimg.com/vi/YdkeNBFIeos/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PLwlIe2pxu_yZOt_UwhQWK_D-I6YDizE20"
+                },
+                {
+                    "title": "Madina Book I",
+                    "thumb": "https://i.ytimg.com/vi/3mCmPOCYdtE/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PLD12AB760427DD567"
+                },
+                {
+                    "title": "Madina Book II",
+                    "thumb": "https://i.ytimg.com/vi/3mCmPOCYdtE/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PLBDFADAAC4A9DEDF8"
+                },
+                {
+                    "title": "Madina Book III",
+                    "thumb": "https://i.ytimg.com/vi/3mCmPOCYdtE/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PL0456AF8AB89FD3CF"
+                },
+                {
+                    "title": "Quranic Arabic Language Course 2020",
+                    "thumb": "https://i.ytimg.com/vi_webp/YY20tIxvkKk/hqdefault.webp",
+                    "url": "https://www.youtube.com/playlist?list=PLwxxQEZcjx4HKrBYa555TZxrooQhuT8jX"
+                },
+                {
+                    "title": "Selections From The Glorious Qur'an",
+                    "thumb": "https://i.ytimg.com/vi/rljQ3gQUevM/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PLOLaRv7CHp2xvsh1UX5whQFXYBhOtWvDC"
+                },
+                {
+                    "title": "Learning Arabic",
+                    "thumb": "https://i.ytimg.com/vi/4mWjeswAA5M/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PLF0B755C75BD5927C"
+                },
+                {
+                    "title": "Synonyms and perfect word choice in the Quran",
+                    "thumb": "https://i.ytimg.com/vi/_34dGK4Z8vs/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PLIY5DwaQvSihrm1rvc_TALpCddKpI9hp1"
+                },
+                {
+                    "title": "Quran: Words In-depth",
+                    "thumb": "https://i.ytimg.com/vi/bcEswjmOwYo/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PLSCByKt3vw-bfk4gEgdtCwu8mTHIh9Jln"
+                },
+                {
+                    "title": "Easy Quranic Arabic Course 101",
+                    "thumb": "https://i.ytimg.com/vi/NUZk2I8SRvc/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PLCtHO35Jp3rOT6ejyK0x8VdH9FYQVwCtx"
+                }
+
+            ],
+            "articles": [{
+                "title": "Madinah Arabic Course by Abdul Adheem",
+                "url": "https://www.youtube.com/channel/UCcO1BkkqmX5EZW5jhx505eQ/playlists?app=desktop"
+            }, {
+                "title": "অর্থ বুঝে কুরআন পড়ি",
+                "url": "https://www.facebook.com/notes/muhammad-masood/%E0%A6%85%E0%A6%B0%E0%A7%8D%E0%A6%A5-%E0%A6%AC%E0%A7%81%E0%A6%9D%E0%A7%87-%E0%A6%95%E0%A7%8B%E0%A6%B0%E0%A6%86%E0%A6%A8-%E0%A6%AA%E0%A7%9C%E0%A6%BF-%E0%A6%B8%E0%A6%AC-%E0%A6%AA%E0%A6%B0%E0%A7%8D%E0%A6%AC-%E0%A6%8F%E0%A6%95%E0%A6%B8%E0%A6%BE%E0%A6%A5%E0%A7%87/10211984124055058/"
+            }, {
+                "title": "আরবি ব্যাকরণের সহজ পাঠ",
+                "url": "https://www.facebook.com/notes/muhammad-masood/%E0%A6%86%E0%A6%B0%E0%A6%AC%E0%A6%BF-%E0%A6%AC%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%95%E0%A6%B0%E0%A6%A3%E0%A7%87%E0%A6%B0-%E0%A6%B8%E0%A6%B9%E0%A6%9C-%E0%A6%AA%E0%A6%BE%E0%A6%A0/10217764786007994/"
+            }, {
+                "title": "Bayyinah",
+                "url": "https://bayyinah.com/"
+            }, {
+                "title": "Madinah Arabic - Book 1",
+                "url": "https://www.youtube.com/playlist?list=PLNiBEEw_9iZYzk6YOEVKYPBSWZtJaMTmZ"
+            }, {
+                "title": "Madina Book 1 (Intensive Morning Classes)",
+                "url": "https://www.youtube.com/playlist?list=PLC0vfqwI4sUIe4lnibTx04IX3fYhq4ZLv"
+            }, {
+                "title": "আরবী ব্যাকরণ",
+                "url": "https://pdfislamickitab.wordpress.com/2020/04/06/%E0%A6%86%E0%A6%B0%E0%A6%AC%E0%A7%80-%E0%A6%AC%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%95%E0%A6%B0%E0%A6%A3-2/"
+            }],
+            "books": [{
+                    'title': 'কুরআনীয় আরবি শিক্ষা',
+                    'thumb': 'https://ds.rokomari.store/rokomari110/ProductNew20190903/260X372/0ac15db074e4_140853.jpg',
+                    'url': "/resources/pdf/quraniya-arabi.pdf",
+                    'type': 'file-pdf',
+                    'writer': 'মুহাম্মদ আবু হেনা এবং মুহাম্মদ ইয়াহিয়া।'
+                }, {
+                    'title': 'অর্থ-বুঝে-কুরআন-পড়ি',
+                    'thumb': '/images/understand_quran.png',
+                    'url': "/resources/pdf/read_quran_by_understand_its_meaning.pdf",
+                    'type': 'file-pdf',
+                    'writer': 'ইঞ্জিঃ মুহাম্মদ মাস্উদ'
+                }, {
+                    'title': 'কুরআনীয় আরবি শিক্ষা',
+                    'thumb': '/images/quran_edu.png',
+                    'url': "/resources/pdf/quraneo_arabi_sikkha.pdf",
+                    'type': 'file-pdf',
+                    'writer': ''
+                }, {
+                    'title': 'Quran-The Linguistic Miracle',
+                    'thumb': 'quran%2Fquran_l_mir.png',
+                    'url': "quran%2Fen_quran_the_linguistic_miracle_linguisticmiracle.pdf",
+                    'type': 'firebase-pdf',
+                    'writer': ''
+                }, {
+                    'title': 'আল কুরআনের আলোকে আরবী শিক্ষা',
+                    'thumb': '/images/quran_edu.png',
+                    'url': "/resources/pdf/quranio_arabi.pdf",
+                    'type': 'file-pdf',
+                    'writer': '-মাওলানা আবু তাহের'
+                },
+                {
+                    'title': 'সহজে কুরআনীয় ব্যাকরণ শিখি',
+                    'thumb': '/images/quran_edu.png',
+                    'url': "https://drive.google.com/file/d/1X1OmqzHK6aWScs0V30oNoo8zwZF4c0Go/view",
+                    'type': 'file-pdf',
+                    'writer': ''
+                }
+
+            ]
+        };
+
+
+        populate_dynamic_view(dynamic_data);
+
+
+    });
+</script>

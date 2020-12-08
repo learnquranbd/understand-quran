@@ -1,0 +1,153 @@
+<div class="row topindexbar">
+        <div class="col-md-5 col-sm-12">
+
+                <h3 class="text-center arabic cs1">بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِیْمِ</h3>
+                <p class="bangla text-center">শুরু করছি আল্লাহর নামে যিনি পরম করুণাময়, অতি দয়ালু।</p>
+
+        </div>
+        <div class="col-md-2 col-sm-12 indexcol">
+                <button type="button" class="btn btn-block bg-gradient-secondary btn-lg" onClick="openSidebarMenu()">
+                        সূচিপত্র/তালিকা </button>
+        </div>
+        <div class="col-md-5  col-sm-12">
+                <h3 class="text-center arabic cs1"> الأسماء الحسنى </h3>
+                <p class="bangla text-center">আল্লাহর নাম</p>
+        </div>
+
+</div>
+
+
+
+
+<script>
+        $(document).ready(function () {
+                //openSidebarMenu(); 
+                CayahArray =
+                        "1:2, 2:116, 2:117, 2:137, 2:163, 2:207, 2:228, 2:255, 3:18, 3:2, 3:33, 3:34, 4:134, 4:45, 5:118, 7:54, 8:10, 9:118, 10:32, 11:66, 11:73, 12:92, 14:47, 15:23, 17:110, 17:30, 17:43, 20:111, 22:64, 23:116, 25:58, 27:40, 28:68, 31:26, 32:6, 33:34, 34:21, 34:26, 34:27, 35:15, 35:41, 39:62, 40:65, 42:28, 48:7, 53:43, 53:44, 53:45, 57:1, 57:2, 57:24, 57:3, 59:22, 59:23, 59:24, 60:6, 64:17, 64:18, 64:6, 85:15, 112:1, 112:2, 112:3, 112:4";
+                dynamic_data = {
+                        "subject": "আল্লাহর নাম",
+                        "introHtml": "আল্লাহর ৯৯টি নাম হলো ইসলাম ধর্ম মতে কুরআন ও হাদিসে বর্ণিত আল্লাহ্‌র গুণবাচক নামের একটি তালিকা বা সংকলন। ইসলাম ধর্ম মতে বুনিয়াদি নাম বা ভিত্তি নাম একটিই। আর তা হলো আল্লাহ্, কিন্তু তার গুণবাচক নাম অনেকগুলো।",
+                        "ayah": String2AyahArray(CayahArray),
+                        "videos": [{
+                                        "title": "মধুর কণ্ঠে আল্লাহ্‌র ৯৯ টি নামের অসাধারণ একটি গজল। By Omar Esa",
+                                        "url": "https://www.youtube.com/embed/WazTMTUsvnw"
+                                },
+                                {
+                                        "title": "আল্লাহর ৯৯টি নামের গুরুত্ব ও ফযিলত",
+                                        "thumb": "https://i.ytimg.com/vi/UndE-u8r338/hqdefault.jpg",
+                                        "url": "https://www.youtube.com/watch?v=UndE-u8r338"
+                                },
+                                {
+                                        "title": "99 Names of Allah",
+                                        "thumb": "https://i.ytimg.com/vi/lCvuM0k8Stg/maxresdefault.jpg",
+                                        "url": "https://www.youtube.com/watch?v=lCvuM0k8Stg"
+                                },
+                                {
+                                        "title": "আল্লাহর পরিচয়",
+                                        "thumb": "https://i.ytimg.com/vi/hMbYkKE_0Pk/hqdefault.jpg",
+                                        "url": "https://www.youtube.com/playlist?list=PLRwCnjR9k4omof6MUxvrefJL2pXtJ7MiJ"
+                                },
+                                {
+                                        "title": "আল্লাহর ৯৯টি নাম জানলে আপনি জান্নাতি",
+                                        "thumb": "https://i.ytimg.com/vi/o8SKoHtxpjw/hqdefault.jpg",
+                                        "url": "https://www.youtube.com/watch?v=o8SKoHtxpjw"
+                                },
+                                {
+                                        "title": "আল্লাহর নাম মুখস্ত করে কিভাবে জান্নাতে যাবেন",
+                                        "thumb": "https://i.ytimg.com/vi/Jpqr3dIWogE/hqdefault.jpg",
+                                        "url": "https://www.youtube.com/watch?v=Jpqr3dIWogE"
+                                },
+                                {
+                                        "title": "আল্লাহ তাআলার সুন্দর গুণবাচক নামসমূহের আলোচনা",
+                                        "thumb": "https://i.ytimg.com/vi/RvzHh3TogoU/hqdefault.jpg",
+                                        "url": "https://www.youtube.com/playlist?list=PLrEnZj_8pclsE24qHuIV8-5r0Nue2lpAE"
+                                },
+                                {
+                                        "title": "Allah is Al ‘Afuww—The Pardoner, The Eliminator of Sins",
+                                        "thumb": "https://i.ytimg.com/vi/_2agr2zQwh8/hqdefault.jpg",
+                                        "url": "https://www.youtube.com/watch?v=_2agr2zQwh8"
+                                },
+                                {
+                                        "title": "King of Kings ",
+                                        "thumb": "https://i.ytimg.com/vi/9rVspcTs96c/hqdefault.jpg",
+                                        "url": "https://www.youtube.com/watch?v=9rVspcTs96c"
+                                },
+                                {
+                                        "title": "Allah Loves To Forgive",
+                                        "thumb": "https://i.ytimg.com/vi/QGygHHmyZKM/maxresdefault.jpg",
+                                        "url": "https://www.youtube.com/watch?v=QGygHHmyZKM"
+                                },
+                                {
+                                        "title": "Allah is Most Forgiving - Obey Him and Repent",
+                                        "thumb": "https://i.ytimg.com/vi/ALHZhQCc_3s/hqdefault.jpg",
+                                        "url": "https://www.youtube.com/watch?v=ALHZhQCc_3s"
+                                },
+                                {
+                                        "title": "WHO IS ALLAH",
+                                        "thumb": "https://i.ytimg.com/vi/1oF_lLWC168/hqdefault.jpg",
+                                        "url": "https://www.youtube.com/watch?v=1oF_lLWC168"
+                                },
+                                {
+                                        "title": "THE KINGDOM OF ALLAH - KNOW YOUR CREATOR",
+                                        "thumb": "https://i.ytimg.com/vi/IJ8zpcKNX_g/maxresdefault.jpg",
+                                        "url": "https://www.youtube.com/embed/IJ8zpcKNX_g"
+                                },
+                                {
+                                        "title": "আমি (আল্লাহ) রয়েছি সন্নিকটে",
+                                        "thumb": "https://i.ytimg.com/vi/xT02F_mFiBc/maxresdefault.jpg",
+                                        "url": "https://www.youtube.com/embed/xT02F_mFiBc"
+                                },
+                                {
+                                        "title": "Allah Is Most Wise - A Reason Behind Everything!",
+                                        "thumb": "https://i.ytimg.com/vi/UrgPKbpYAho/hqdefault.jpg",
+                                        "url": "https://www.youtube.com/watch?v=UrgPKbpYAho"
+                                }, {
+
+                                        "title": "যে নামের বরকতে আল্লাহ তায়ালা বান্দার গুনাহ চিরতরে মুছে দিবেন...",
+                                        "thumb": "https://i.ytimg.com/vi/shbHTXj5RIs/hqdefault.jpg",
+                                        "url": "https://www.youtube.com/embed/shbHTXj5RIs"
+
+                                }
+                        ],
+                        "articles": [{
+                                "title" : "উত্তম নামসমূহ তাঁরই",
+                                "url" : "https://www.facebook.com/notes/muhammad-masood/%E0%A6%89%E0%A6%A4%E0%A7%8D%E0%A6%A4%E0%A6%AE-%E0%A6%A8%E0%A6%BE%E0%A6%AE%E0%A6%B8%E0%A6%AE%E0%A7%82%E0%A6%B9-%E0%A6%A4%E0%A6%BE%E0%A6%81%E0%A6%B0%E0%A6%87-%E0%A6%B8%E0%A6%AC-%E0%A6%AA%E0%A6%B0%E0%A7%8D%E0%A6%AC-%E0%A6%8F%E0%A6%95%E0%A6%B8%E0%A6%BE%E0%A6%A5%E0%A7%87/10215498189224491/"
+                        }],
+                        "books": [{
+                                'type'  : "firebase-pdf", 
+                                'title' : 'আল্লাহর সুন্দর নাম সমূহ ',
+                                'writer': "",
+                                'url'   : 'asmaul-husna%2F99names.pdf',
+                                'thumb' : 'asmaul-husna%2F99names.jpg',  
+                                },
+                                {
+                                'title': 'তিনিই আমার রব',
+                                "writer": "শাইখ আলী জাবির আল ফীফী",
+                                "type": "book",
+                                "thumb": "https://wafilife-media.s3.amazonaws.com/uploads/2018/09/1577691815777-250x350.jpeg",
+                                "url": "https://www.wafilife.com/shop/books/tinii-amar-rabb/"
+                                },
+                                
+                        ],
+                        "extrahtml": [{
+                                "heading": "আল্লাহর ৯৯টি নাম",
+                                "subheading": "(উচ্চারণ ও অর্থসহ)",
+                                "html": "/partials/ALLAH/99-names.html",
+                                "icon": "hand-holding-heart"
+                        },/*
+                        {
+                                "heading": "আল্লাহর ৯৯টি নাম",
+                                "subheading": "কুরআনের  আয়াতে ৯৯টি  নামের ব্যবহার",
+                                "html": "/partials/ALLAH/99-names-ayahs.html",
+                                "icon": "hand-holding-heart"
+                        } */
+                
+                        ]
+                };
+
+
+                populate_dynamic_view(dynamic_data);
+
+
+        });
+</script>

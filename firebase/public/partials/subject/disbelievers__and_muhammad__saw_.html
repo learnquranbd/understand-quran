@@ -1,0 +1,40 @@
+<div class="row topindexbar">
+   <div class="col-md-5 col-sm-12">
+
+           <h3 class="text-center arabic cs1">بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِیْمِ</h3>
+           <p class="bangla text-center">শুরু করছি আল্লাহর নামে যিনি পরম করুণাময়, অতি দয়ালু।</p>
+
+   </div>
+   <div class="col-md-2 col-sm-12 indexcol">
+           <button type="button" class="btn btn-block bg-gradient-secondary btn-lg" onClick="openSidebarMenu()"> সূচিপত্র/তালিকা </button>
+   </div>
+   <div class="col-md-5  col-sm-12">
+           <h3 class="text-center arabic cs1">   </h3>
+           <p class="bangla text-center">কাফের এবং মুহাম্মদ (সাঃ)</p>
+   </div>
+
+</div>
+
+
+
+
+<script>
+   $(document).ready(function () {
+           //openSidebarMenu(); 
+           CayahArray =
+                   "4:140, 6:57, 6:58, 6:68, 8:12, 8:30, 8:32, 8:36, 8:37, 8:50, 8:56, 8:58, 8:59, 8:72, 9:12, 9:17, 9:4, 9:6, 9:7, 9:73, 10:49, 10:50, 10:51, 10:52, 17:53, 20:130, 25:52, 31:15, 50:39, 60:8, 66:9";
+           dynamic_data = {
+                   "subject": "কাফের এবং মুহাম্মদ (সাঃ)",
+                   "introHtml": "",
+                   "ayah": String2AyahArray(CayahArray),
+                   "videos": [],
+                   "articles": [],
+                   "books": []
+           };
+
+
+           populate_dynamic_view(dynamic_data);
+
+
+   });
+</script>

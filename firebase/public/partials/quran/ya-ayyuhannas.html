@@ -1,0 +1,91 @@
+<div class="row topindexbar">
+    <div class="col-md-5 col-sm-12">
+        
+            <h3 class="text-center arabic cs1">بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِیْمِ</h3>
+            <p class="bangla text-center">শুরু করছি আল্লাহর নামে যিনি পরম করুণাময়, অতি দয়ালু।</p>
+        
+    </div>
+    <div class="col-md-2 col-sm-12 indexcol">
+        <button type="button" class="btn btn-block bg-gradient-secondary btn-lg" onClick="openSidebarMenu()"> সূচিপত্র/তালিকা </button>
+    </div>
+    <div class="col-md-5  col-sm-12">
+                <h3 class="text-center arabic cs1"> _______ يٰٓأَيُّهَا الْإِنسٰنُ /  يٰٓأَيُّهَا النَّاسُ</h3>
+                <p class="bangla text-center">হে মানুষ! ______ </p> 
+    </div> 
+  
+</div>
+ 
+ 
+
+
+  <script>
+     
+      $(document).ready(function() {
+          //openSidebarMenu(); 
+
+          dynamic_data =  {
+                    "subject"  : "হে মানুষ! ",
+                    "introHtml":"<h5>কুরআনে আল্লাহ বিভিন্ন আয়াতে হে মানুষ! বলে সম্বোধন করেছেন</h5><p>এই সকল আয়াতে আল্লাহ মানুষকে কি বলতে চেয়েছেন সেই বিষয়গুলো নিয়ে আলোচনা করা হয়েছে। আর এই সকল বিষয়ে আমল করে একজন মানুষ তার পার্থিব ও পারলৌকিক জীবকে সফল করতে পারবেন</p>",
+                    "ayah": [  
+                              
+                               {  "surah" : 2,
+                                  "ayah"  :  [21, 168]
+                               },
+                               {  "surah" : 4,
+                                  "ayah"  :  [1, 133, 170, 174]
+                               },
+                               {  "surah" : 7,
+                                  "ayah"  : [158]
+                               },
+                               {  "surah" : 10,
+                                  "ayah"  : [23, 57, 104, 108]
+                               },
+                               {  "surah" : 22,
+                                  "ayah"  :  [1,5,49, 73] 
+                               } ,
+                               {  "surah" : 27,
+                                  "ayah"  : [16]  
+                               } ,
+                               {  "surah" : 31,
+                                  "ayah"  : [33] 
+                               } ,
+                               {  "surah" : 35,
+                                  "ayah"  : [3, 5, 15] 
+                               } ,
+                               {  "surah" : 48,
+                                  "ayah"  : [9] 
+                               } ,
+                               {  "surah" : 49 ,
+                                  "ayah"  :  [13]
+                               },
+                               {  "surah" : 82,
+                                  "ayah"  : [6] 
+                               },
+                               {  "surah" : 84,
+                                  "ayah"  : [6] 
+                               } 
+                    ],
+                    "videos": [
+                                    { 
+                                        "title": "O Mankind, Listen! Sheikh Mansour As-Salami (English/Arabic)",  
+                                        "url":"https://www.youtube.com/embed/5h-P0UunPow"
+                                    },   
+                                    { 
+                                        "title": "Oh Mankind - Qur'an (Surah Fatir) By Wafiq Syed",  
+                                        "url":"https://www.youtube.com/embed/TYydcEZe0VA"
+                                    },       
+                    ],
+                    "articles" : [
+                                   
+                    ],
+                    "books": [  
+                                  
+                    ]
+                };
+        
+
+            populate_dynamic_view(dynamic_data); 
+
+
+      });
+  </script>

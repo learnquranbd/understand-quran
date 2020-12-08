@@ -1,0 +1,40 @@
+<div class="row topindexbar">
+   <div class="col-md-5 col-sm-12">
+
+           <h3 class="text-center arabic cs1">بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِیْمِ</h3>
+           <p class="bangla text-center">শুরু করছি আল্লাহর নামে যিনি পরম করুণাময়, অতি দয়ালু।</p>
+
+   </div>
+   <div class="col-md-2 col-sm-12 indexcol">
+           <button type="button" class="btn btn-block bg-gradient-secondary btn-lg" onClick="openSidebarMenu()"> সূচিপত্র/তালিকা </button>
+   </div>
+   <div class="col-md-5  col-sm-12">
+           <h3 class="text-center arabic cs1">   </h3>
+           <p class="bangla text-center">ইবাদত</p>
+   </div>
+
+</div>
+
+
+
+
+<script>
+   $(document).ready(function () {
+           //openSidebarMenu(); 
+           CayahArray =
+                   "1:4, 2:128, 2:133, 2:138, 2:172, 2:21, 2:83, 3:51, 3:64, 3:79, 4:172, 4:36, 5:117, 5:60, 5:72, 5:76, 6:102, 6:56, 7:206, 7:59, 7:65, 7:70, 7:73, 7:85, 9:112, 9:31, 10:104, 10:18, 10:28, 10:29, 10:3, 10:87, 11:109, 11:123, 11:2, 11:26, 11:50, 11:61, 11:62, 11:84, 11:87, 12:40, 13:36, 14:10, 14:35, 15:99, 16:114, 16:35, 16:36, 16:72, 16:73, 17:23, 18:110, 18:16, 18:21, 19:36, 19:42, 19:43, 19:44, 19:49, 19:65, 19:82, 20:14, 21:106, 21:19, 21:25, 21:53, 21:66, 21:67, 21:73, 21:84, 21:92, 21:98, 22:11, 22:71, 22:77, 23:23, 23:32, 24:55, 25:17, 25:55, 26:69, 26:70, 26:71, 26:75, 26:92, 27:43, 27:45, 27:91, 28:63, 29:16, 29:17, 29:36, 29:56, 34:40, 34:41";
+           dynamic_data = {
+                   "subject": "ইবাদত",
+                   "introHtml": "",
+                   "ayah": String2AyahArray(CayahArray),
+                   "videos": [],
+                   "articles": [],
+                   "books": []
+           };
+
+
+           populate_dynamic_view(dynamic_data);
+
+
+   });
+</script>

@@ -1,0 +1,1072 @@
+<div class="tajweed_practice">
+    <div class="pageIndex pindextop">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-lg-12 text-center">
+                <div class="row">
+                    <div class="col-12">
+                        <h5 class="bg-navy pad10 lh12">এটা একটি মডিউল, এর মাধ্যমে আপনি আয়াতে ব্যবহার করা তাজবীদ রুলস
+                            দেখতে পারবেন, চর্চা করুন বেশি বেশি যাতে, তাজবীদ রুলস পুরোপুরি আয়ত্ত করা সহজ হয় + যাচাই করুন
+                            আপনার তাজবীদ শিক্ষা স্মৃতি </h5>
+                    </div>
+                    <div class="col-md-6  col-sm-12 text-right mobilecenter">
+                        <select class="niceselect SelectQSurah" onchange="tajweed_loadSurah_Ayahs()">
+                            <option value=""> সূরা </option>
+                        </select>
+
+                        <select class="niceselect SelectAyahSelected" onchange="tajweed_loadSurah_Ayah_andProcess()">
+                            <option value="1"> 1 </option>
+                        </select>
+
+
+                    </div>
+                    <div class="col-md-6 col-sm-12 text-left mobilecenter">
+                        <button type="button" onclick="tajweed_loadSurah_Ayah_andProcess()"
+                            class="btn bg-lightblue btn-lg"> সূরার আয়াত লোড করুন </button>
+                        <button type="button" onclick="reloadTajweedRules()" class="btn bg-warning debugonly"> <i
+                                class="fa fa-sync"></i></button>
+                    </div>
+                </div>
+                <hr />
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <hr />
+    <div class="next_prev_nav clearfix text-right">
+        <button onclick="TajweedgoNextPrevSurah(0)" class="btn btn-sm btn-info prev_surah float-left"><i
+                class="fa fa-arrow-circle-left"></i> আগের সূরা </button>
+        <button onclick="TajweedgoNextPrev(0)" class="btn btn-sm btn-info prev_ayah"><i
+                class="fa fa-arrow-circle-left"></i> আগের আয়াত </button> &nbsp;
+        
+        
+        <button onclick="TajweedgoNextPrev(1)" class="btn btn-sm btn-info next_ayah"><i
+                class="fa fa-arrow-circle-right"></i> পরবর্তী আয়াত </button> &nbsp;
+        <button onclick="TajweedgoNextPrevSurah(1)" class="btn btn-sm btn-info next_surah float-right"><i
+                class="fa fa-arrow-circle-right"></i> পরবর্তী সূরা </button>
+    </div>
+    <br />
+
+    <div class="row">
+        <div class="col-md-1 text-center">
+            
+           <br /> আয়াতের অডিও :  <button class="bg-green btn btn-tool"><i class="current_ayah_to_play fas playayah fa-play-circle" data-playsrc="1:1" onclick="setnew_audio_and_play(this)"></i></button>
+
+        </div>
+        <div class="col-md-11"> <div class="tajweed_ayah_html bg-white qtext tajweed2" dir="rtl"></div> </div>
+    </div>
+    
+
+    <div class="tajweed_ayah_based_details_wrap">
+
+        <hr />
+        <div class="col-12 text-right">
+            <p> <small>নিচের কালার তাজবীদ নিয়ম এ মাউস নিয়ে গেলে নিয়ম দেখাবে, আর বিস্তারিত জানতে ক্লিক করুন </small></p>
+            <div class="text-right"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="quranic_ayah_arabic bg-white arabic lfont text-right"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-12 text-right">
+        <div class="surah_ayahs_tajweed_rules_tip"></div>
+    </div>
+
+    <div class="tajweed_ayah_based_details_wrap">
+        <div class="row">
+            <div class="col-md-4 offset-7 debugonly position_debug">
+                <div class="slider-green">
+                    <input type="text" value="" class="slider form-control" data-slider-min="1" data-slider-max="3"
+                        data-slider-step="1" data-slider-value="[1,3]" data-slider-orientation="horizontal"
+                        data-slider-selection="before" data-slider-tooltip="show" onChange="markDownNow()">
+                </div>
+            </div>
+            <div class="col-md-1 text-center debugonly gap"> <button onClick="reset_highlightWords()"><i class="fa fa-sync"></i></button> </div>
+        </div>
+        
+        <div class="next_prev_nav clearfix text-right">
+            <button onclick="TajweedgoNextPrev(0)" class="btn btn-sm btn-info prev_ayah"><i
+                    class="fa fa-arrow-circle-left"></i> আগের আয়াত </button> &nbsp;
+            <button onclick="TajweedgoNextPrev(1)" class="btn btn-sm btn-info next_ayah"><i
+                    class="fa fa-arrow-circle-right"></i> পরবর্তী আয়াত </button> &nbsp;
+        </div>
+        <hr />
+
+    </div>
+    
+
+    <div class="tajweed_ayah_based_details_wrap">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="tajwee_rules_details"></div>
+                 &nbsp; আয়াতের অডিও :  <button class="bg-green btn btn-tool"><i class="current_ayah_to_play fas playayah fa-play-circle" data-playsrc="1:1" onclick="setnew_audio_and_play(this)"></i></button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+            <div class="tajwee_rules_videos"></div>
+        </div>
+    </div>
+
+
+    <hr />
+    <div class="next_prev_nav clearfix text-center">
+        <button onclick="TajweedgoNextPrevSurah(0)" class="btn btn-sm btn-info prev_surah float-left"><i
+                class="fa fa-arrow-circle-left"></i> আগের সূরা </button>
+        <button onclick="TajweedgoNextPrev(0)" class="btn btn-sm btn-info prev_ayah"><i
+                class="fa fa-arrow-circle-left"></i> আগের আয়াত </button>
+        <button onclick="TajweedgoNextPrev(1)" class="btn btn-sm btn-info next_ayah"><i
+                class="fa fa-arrow-circle-right"></i> পরবর্তী আয়াত </button>
+        <button onclick="TajweedgoNextPrevSurah(1)" class="btn btn-sm btn-info next_surah float-right"><i
+                class="fa fa-arrow-circle-right"></i> পরবর্তী সূরা </button>
+    </div>
+    <br />
+
+
+    <div class="no_record_found_notice text-center bg-danger"></div>
+</div>
+
+<link rel="stylesheet" href="css/bootstrap-slider.min.css">
+<link rel="stylesheet" href="css/alt/adminlte.plugins.min.css">
+
+<style>
+    .tajwee_rules_details .bg-white {
+        color: #19771d !important;
+        font-weight: 100;
+    }
+
+    .tajwee_rules_details .btn-tool {
+        font-size: 1rem !important;
+    }
+
+    .rules_highlight {
+        font-size: 4.6rem;
+        color: #f10707;
+        font-weight: 500;
+    }
+
+    .rule_explain {
+        border: 1px solid #d9e4e6;
+        padding: 5px 10px;
+        margin: 2px 3px;
+        border-radius: 10px;
+        display: block;
+        float: right;
+    }
+
+    .dump_enabled {
+        /*display: inline;*/
+        display: none;
+    }
+
+    .tip {
+        background: none;
+        border: none;
+    }
+
+    .tip .fitparent {
+        line-height: 20px;
+        width: 100%;
+        display: inline-block;
+        border-radius: 10px;
+        min-width: 100%;
+        padding: 10px;
+        outline: none;
+        border-color: #f03231;
+        box-shadow: 0 0 10px #e04444;
+        font-size: 1.2rem;
+    }
+
+    .quranic_ayah_arabic span {
+        cursor: pointer;
+    }
+
+    .quranic_ayah_arabic.arabic {
+        font-size: 4.8rem;
+    }
+
+    .quranic_ayah_arabic .hamzat_wasl,
+    .fa.hamzat_wasl {
+        color: #c8c7c8;
+    }
+
+    /**/
+    .quranic_ayah_arabic .lam_shamsiyyah,
+    .fa.lam_shamsiyyah {
+        color: #8a868a;
+    }
+
+    /**/
+    .quranic_ayah_arabic .madd_2,
+    .fa.madd_2 {
+        color: #8dc9f9;
+    }
+
+    /**/
+    .quranic_ayah_arabic .madd_246,
+    .fa.madd_246 {
+        color: #5094fb;
+    }
+
+    /**/
+    .quranic_ayah_arabic .madd_6,
+    .fa.madd_6 {
+        color: #5094fb;
+    }
+
+    .quranic_ayah_arabic .idghaam_no_ghunnah,
+    .fa.idghaam_no_ghunnah {
+        color: #14b136;
+    }
+
+    .quranic_ayah_arabic .silent,
+    .fa.silent {
+        color: #c8c7c8;
+    }
+
+    .quranic_ayah_arabic .ghunnah,
+    .fa.ghunnah {
+        color: #f19d34;
+    }
+
+    /**/
+    .quranic_ayah_arabic .qalqalah,
+    .fa.qalqalah {
+        color: #f03231;
+    }
+
+    /**/
+    .quranic_ayah_arabic .ikhfa,
+    .fa.ikhfa {
+        color: #bf1ad1;
+    }
+
+    /**/
+    .quranic_ayah_arabic .madd_munfasil,
+    .fa.madd_munfasil {
+        color: #2a67c2;
+    }
+
+    .quranic_ayah_arabic .madd_muttasil,
+    .fa.madd_muttasil {
+        color: #5094fb;
+    }
+
+    .quranic_ayah_arabic .idghaam_ghunnah,
+    .fa.idghaam_ghunnah {
+        color: #34aa5e;
+    }
+
+    .quranic_ayah_arabic .ikhfa_shafawi,
+    .fa.ikhfa_shafawi {
+        color: #e667e6;
+    }
+
+    .quranic_ayah_arabic .idghaam_shafawi,
+    .fa.idghaam_shafawi {
+        color: #34aa5e;
+    }
+
+    .quranic_ayah_arabic .iqlab,
+    .fa.iqlab {
+        color: #f28f16;
+    }
+
+    /**/
+    .quranic_ayah_arabic .idghaam_mutajanisayn,
+    .fa.idghaam_mutajanisayn {
+        color: #0b0c0b;
+    }
+
+    .quranic_ayah_arabic .idghaam_mutaqaribayn,
+    .fa.idghaam_mutaqaribayn {
+        color: #34aa5e;
+    }
+
+
+
+    .tip .hamzat_wasl,
+    .ctip.hamzat_wasl {
+        background-color: #c8c7c8;
+        color: #000;
+    }
+
+    /**/
+    .tip .lam_shamsiyyah,
+    .ctip.lam_shamsiyyah {
+        background-color: #c8c7c8;
+        color: #000;
+    }
+
+    /**/
+    .tip .madd_2,
+    .ctip.madd_2 {
+        background-color: #8dc9f9;
+        color: #000;
+    }
+
+    /**/
+    .tip .madd_246,
+    .ctip.madd_246 {
+        background-color: #5094fb;
+        color: #000;
+    }
+
+    /**/
+    .tip .madd_6,
+    .ctip.madd_6 {
+        background-color: #5094fb;
+        color: #000;
+    }
+
+    .tip .idghaam_no_ghunnah,
+    .ctip.idghaam_no_ghunnah {
+        background-color: #14b136;
+        color: #000;
+    }
+
+    .tip .silent,
+    .ctip.silent {
+        background-color: #c8c7c8;
+        color: #000;
+    }
+
+    .tip .ghunnah,
+    .ctip.ghunnah {
+        background-color: #f19d34;
+        color: #000;
+    }
+
+    /**/
+    .tip .qalqalah,
+    .ctip.qalqalah {
+        background-color: #f03231;
+        color: #e1fb22;
+        text-shadow: 1px 1px black;
+    }
+
+    /**/
+    .tip .ikhfa,
+    .ctip.ikhfa {
+        background-color: #bf1ad1;
+        color: #fff;
+    }
+
+    /**/
+    .tip .madd_munfasil,
+    .ctip.madd_munfasil {
+        background-color: #2a67c2;
+        color: #fff;
+    }
+
+    .tip .madd_muttasil,
+    .ctip.madd_muttasil {
+        background-color: #5094fb;
+        color: #000;
+    }
+
+    .tip .idghaam_ghunnah,
+    .ctip.idghaam_ghunnah {
+        background-color: #34aa5e;
+        color: #000;
+    }
+
+    .tip .ikhfa_shafawi,
+    .ctip.ikhfa_shafawi {
+        background-color: #e667e6;
+        color: #fff;
+    }
+
+    .tip .idghaam_shafawi,
+    .ctip.idghaam_shafawi {
+        background-color: #34aa5e;
+        color: #000;
+    }
+
+    .tip .iqlab,
+    .ctip.iqlab {
+        background-color: #f28f16;
+        color: #000;
+    }
+
+    /**/
+    .tip .idghaam_mutajanisayn,
+    .ctip.idghaam_mutajanisayn {
+        background-color: #34aa5e;
+        color: #000;
+    }
+
+    .tip .idghaam_mutaqaribayn,
+    .ctip.idghaam_mutaqaribayn {
+        background-color: #34aa5e;
+        color: #000;
+    }
+
+    .ctip {
+        display: inline;
+        border: none;
+        padding: 3px 5px;
+        margin: 2px auto;
+        border-radius: 10px;
+        font-size: 0.8rem;
+    }
+
+
+    .quranic_ayah_arabic .madd_munfasil {
+        font-size: 5rem;
+        display: inline;
+        min-width: 2px;
+    }
+
+    .quranic_ayah_arabic .madd_2 {
+        font-size: 5rem;
+        min-width: 2px;
+        position: relative;
+    }
+
+    .overtip {
+        position: absolute;
+        top: 15px;
+        right: -20px;
+        width: 18px;
+        height: 50px;
+    }
+</style>
+<script src="js/bootstrap-slider.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var tajweed_rules_array = {
+        'hamzat_wasl': 'হামযাতুল ওয়াসল',
+        'lam_shamsiyyah': 'লাম-শামসিয়া',
+        'madd_2': 'এক আলিফ মদ্দ(এক আলিফ টেনে পড়া)',
+        'madd_246': 'মদ্দ(টেনে পড়া)',
+        'madd_6': 'চার আলিফ মদ্দ(চার আলিফ টেনে পড়া)',
+        'idghaam_no_ghunnah': 'গুনাহ ছাড়া ইদগাম',
+        'silent': 'নিশ্চুপ',
+        'ghunnah': 'গুনাহ',
+        'qalqalah': 'কলকলা',
+        'ikhfa': 'ইখফা ',
+        'madd_munfasil': 'মদ্দে মুনফাসিল:তিন আলিফ মদ্দ(তিন আলিফ টেনে পড়া)',
+        'madd_muttasil': 'মদ্দে মুত্তাসিল',
+        'idghaam_ghunnah': 'ইদগাম গুনাহ',
+        'ikhfa_shafawi': 'মীম সাকিনের ইখফা ',
+        'idghaam_shafawi': 'মীম সাকিনের ইদগামঃ',
+        'iqlab': 'ইকলাব',
+        'idghaam_mutajanisayn': 'ইদগাম মুতাজানিসায়ন',
+        'idghaam_mutaqaribayn': 'ইদগাম মুতাকারীবায়ন',
+    } 
+
+        var quranic_practical_tajweed_videos = {
+            '1': ['ViKy-laGnDI', 'j-UdzYyFztI', 'oDIPlifqx4E', 'T2EXt0qB1Zk'],  //  'আল ফাতিহা',
+            '2': ['ccrQfIIa_yk', '1_THRrpKvII', 'vAhJgKMC9qc', 'dC4fdbHicbI', 'e1fjRUXqDSk', 'qxi0p5eRcS4',
+                'S9ZK9btmJeI', '-Hcs90uolUg', 'Xi8mdSu_LAw', 'dVS3zVkB0gM'
+            ],   // 'আল বাকারা',
+            '18': ['x3dMLcFY694', 'D-ya38lNfZI',  'UEQnGhKtKnw', 'A10H6Avv55A', 'IFe97pLZVk8'], // 'আল কাহফ',
+            '36': ['_lM2mgAHJw0', 'RFX8RDGL088', 'N-H9p9GUtN8', 'oXg13moEeFA', '8ldNdqyzsCw'], // 'ইয়াসীন',
+            '55': ['7PNnKKrOWDk', 'I2avanQfP8w'],   // 'আর রাহমান',
+            '59': ['eOW-I6SHqlg'],                  // 'আল-হাশর',
+            '67': ['z9zv3tWUhxM', 'CBQSzUAmYZE'],                    //  'আল-মুলক',
+            '78': ['am8PewENIRg', 'A5cNvRQ8o6k', 'iGjw7z2TkCg'],     //     'আন নাবা',                         
+            '79': ['Ybo1rbQvD6s', 'OpGp3R-Sg3E'],                    //     'আন নাযিয়াত',                         
+            '80': ['Sug4KWLhwbo', 'YAakl5QYOEs'],                             //   'আবাসা',                
+            '81': ['ztYtA0Eo6Uc'],                             //   'আত-তাকভীর',                   
+            '82': ['otbKPWoTZOE'],                             //   'আল-ইনফিতার',                    
+            '83': ['GLKlBS2Knbw', '_DKEJjVloec'],                             //   'আত মুত্বাফ্‌ফিফীন',                     
+            '84': ['jtn560eu6bo', 'lx9ylJspUJE'],                  //   'আল ইন‌শিকাক',                          
+            '85': ['X12Er-TqWa0', 'phgxMa8PBgA', 'EsWD-G7OKk8'],   //   'আল-বুরুজ',                       
+            '86': ['tY3zJAhOw2Y', 'zoNpEEHF8RA'],                  //   'আত-তারিক্ব',                     
+            '87': ['Dey2TWgtnqU', '1pzQ5kq9PU8'],                  //   'আল আ\'লা',                         
+            '88': ['Zw9N2Niszb8', 'kKRQNAPtIVE'],                  //   'আল গাশিয়াহ্‌',                         
+            '89': ['MXcp-d-VpOU', 'DqXxyI_o4Yk', '7jGbilX0nGE', '4ziFL305v28'],                  //   'আল ফাজ্‌র',                          
+            '90': ['t9GAsMmScWc', 'mCsrqitES_A', 'e162xAPGwIw'],  //   'আল বালাদ',                          
+            '91': ['UMGOZ8DgDTg', 'dpJ4XbAHs6Y'],                 //   'আশ-শাম্‌স',                        
+            '92': ['BhSnfgGhcQs', 'dJnWzna3ikk'],                 //   'আল লাইল',                       
+            '93': ['mZssywsef4g'],                                //   'আদ-দুহা',                     
+            '94': ['4QPsSq4yc98'],                                //   'আল ইনশিরাহ',                          
+            '95': ['4Cljpvs8zbk'],                                //   'ত্বীন',                           
+            '96': ['beeEg70zbuw', 'U13TfyafPb8'],                 //   'আলাক্ব',                           
+            '97': ['beeEg70zbuw', 'bbe0FrUcnQM', 'LXSUQY2EpQ8'],                 //   'ক্বদর'                          
+            '98': ['beeEg70zbuw', 'YXhla5xurI4', 'dPVKStKBVOk'],  //   'বাইয়্যিনাহ',                         
+            '99': ['beeEg70zbuw', 'IYOuL7yZeXs'],                  //   'যিলযাল',                          
+            '100': ['beeEg70zbuw', 'JPokt_kUZj4'],                 //   'আল-আদিয়াত',                 
+            '101': ['w6io2M3MOc0', 'ExWGmcpfieE'],                 //   'ক্বারিয়াহ',                 
+            '102': ['rGVI5B0Vom8'],                                //  'তাকাসুর',                 
+            '103': ['yNa2KI0uGIg', 'EDXP7aTlgjY', 'ReJ1luZjHTw'],  //   'আছর',                      
+            '104': ['Crb2k1mCM_k', 'AhcQMPEcKcw'],                 //   'হুমাযাহ',                         
+            '105': ['IJ6Ke8PS1SU', '-5AL_dnN6Dk', 'k5xDI6EH2fE'],                 //   'ফীল',                      
+            '106': ['WW2Bsml4caA', 'RA9qFuC7FhE', '-5AL_dnN6Dk'],  //   'কুরাইশ',                     
+            '107': ['PIj40N0eHMs', 'V52vHUQFFME', 'vLmHkWDlQHE'],  //   'মাউন',                     
+            '108': ['MIQho8WdPas', '_sFrPyMFHiU', 'OxTkeGsraOE'],  //   'কাওসার',                       
+            '109': ['v1p7G0zSlXw', 'ssxbE7C4GVM'],  //   'কাফিরুন',                       
+            '110': ['hsLEu0AzpiU', '6ap9qBkyUxo'],  //   'নাসর',                       
+            '111': ['NVs0c2VEYW0', 'gRxBCCdhIhg'],  //   'লাহাব',                          
+            '112': ['whkkj0AYan0', 'KbSQSJJwuL4'],  //   'আল-ইখলাস',                          
+            '113': ['k4CEdeIwpcs', 'yaSRfVmwtBI'],  //   'আল-ফালাক',                           
+            '114': ['fkmBMAcWGfM', 'b4EZAzOsxLU']   //   'আন-নাস'                              
+        };
+
+
+    /*     
+       
+
+    */
+
+    var total_error = 0;
+    var surah_verified = [114, 113, 112, 111, 110, 109, 108, 107, 106, 105, 104, 103, 102, 101, 100, 1];
+
+    $(document).ready(function () {
+        $('.pageIndex').slideDown();
+
+        var soptions = [];
+
+        soptions.push('<option value="',
+            1, '"> (',
+            en2bnNumber(1) + ') সূরা - ' + bangla_sura_names[0], '</option>');
+
+        for (val = 114; val > 1; val--) {
+            soptions.push('<option value="',
+                val, '"> (',
+                en2bnNumber(val) + ') সূরা - ' + bangla_sura_names[val - 1], '</option>');
+        }
+        $(".tajweed_practice select.SelectQSurah").html(soptions.join(''));
+        $(".tajweed_practice .pindextop select.SelectQSurah option[value=\"1\"]").prop('selected', true);
+        $(".tajweed_practice .pindextop select.SelectQSurah").trigger('change');
+
+
+    });
+
+    function TajweedgoNextPrev(e) {
+        surah = $(".tajweed_practice select.SelectQSurah option:selected").val();
+        selectedayah = parseInt($(".tajweed_practice select.SelectAyahSelected option:selected").val(), 10);
+
+        if (e == 0) {
+            // previous 
+            ay = selectedayah - 1;
+            $(".tajweed_practice select.SelectAyahSelected option[value=\"" + ay + "\"]").prop('selected', true);
+            $(".tajweed_practice select.SelectAyahSelected").trigger('change');
+
+        }
+        if (e == 1) {
+            // next 
+            ay = selectedayah + 1;
+            $(".tajweed_practice select.SelectAyahSelected option[value=\"" + ay + "\"]").prop('selected', true);
+            $(".tajweed_practice select.SelectAyahSelected").trigger('change');
+
+        }
+
+
+    }
+
+    function TajweedgoNextPrevSurah(e) {
+
+        selectedayah = parseInt($(".tajweed_practice select.SelectQSurah option:selected").val(), 10);
+        selectedayah = selectedayah == 0 ? 1 : selectedayah;
+        if (e == 0) {
+            // previous 
+            ay = selectedayah - 1;
+            $(".tajweed_practice select.SelectQSurah option[value=\"" + ay + "\"]").prop('selected', true);
+            $(".tajweed_practice select.SelectQSurah").trigger('change');
+
+        }
+        if (e == 1) {
+            // next 
+            ay = selectedayah + 1;
+            $(".tajweed_practice select.SelectQSurah option[value=\"" + ay + "\"]").prop('selected', true);
+            $(".tajweed_practice select.SelectQSurah").trigger('change');
+
+        }
+
+    }
+
+    var surah_ayahs_obj = null;
+    var surah_ayahs_tajweed_rules = null;
+
+
+    function tajweed_loadSurah_Ayahs() {
+        surah = $(".tajweed_practice select.SelectQSurah option:selected").val();
+        var foptions = [];
+        $(".tajweed_practice select.SelectAyahSelected").html('');
+
+        $.ajax({
+            url: '/resources/json/surah/' + surah + '.json',
+            success: function (data) {
+                surah_ayahs_obj = data;
+                $.each(surah_ayahs_obj.verse, function (k, val) {
+                    keyIndex = parseInt(k.replace('verse_', ''));
+
+                    ayah_option_text = keyIndex == 0 ? 'বিসমিল্লাহ্ বা বাসমালাহ' : ' আয়াত - ' +
+                        en2bnNumber(parseInt(keyIndex));
+
+                    foptions.push('<option value="',
+                        keyIndex, '">' + ayah_option_text + '</option>');
+
+                });
+
+                $(".tajweed_practice select.SelectAyahSelected").html(foptions.join(''));
+
+                tajweed_loadSurah_Ayah_andProcess();
+            }
+        });
+
+
+        if (surah_verified.indexOf(parseInt(surah)) < 0) {
+            if (debugonly) $('.tajweed_ayah_based_details_wrap').show();
+            else $('.tajweed_ayah_based_details_wrap').hide();
+        } else {
+            $('.tajweed_ayah_based_details_wrap').show();
+        }
+
+
+
+
+        if (quranic_practical_tajweed_videos[surah] !== undefined) {
+            tajweed_practice_videos = '';
+            $.each(quranic_practical_tajweed_videos[surah], function (k, val) {
+                tajweed_practice_videos +=
+                    '<div class="col-md-4 col-sm-12 bg-black text-center"><iframe width="90%" style="border-radious:10px;border: 10px solid #333;margin: 10px auto;" height="450" src="https://www.youtube.com/embed/' +
+                    val +
+                    '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';
+            });
+            $('.tajwee_rules_videos').html(
+                '<div class="clearfix"><h3 class="h3 bg-navy pad10 lh12 text-center">সূরা '+  bangla_sura_names[surah-1] + ' - এর তাজবীদ প্রাকটিস : ভিডিও </h3><div class="row">' +
+                tajweed_practice_videos + '</div></div>');
+        } else {
+            $('.tajwee_rules_videos').html('');
+        }
+
+        if (surah_verified.indexOf(parseInt(surah)) < 0 && quranic_practical_tajweed_videos[surah] === undefined) {
+            $('.no_record_found_notice').html(
+                'সূরা '+  bangla_sura_names[surah-1] + ' - এর তাজবীদ নিয়ম এর উপর কোন ভিডিও পাওয়া যায় নাই, অনুগ্রহ করে পরে চেক করুন, আমরা এর উপর কাজ করছি, অথবা অন্য সূরা গুলো চেক করুন '
+                );
+        } else {
+            $('.no_record_found_notice').html('');
+        }
+
+
+
+
+        /*
+
+            for (var i = 1; i <= ayat_numbers[surah-1]; i++) {
+                foptions.push('<option value="',
+                i, '"> আয়াত - ',
+                en2bnNumber(i), '</option>'); 
+            } 
+
+
+        */
+
+
+
+
+    }
+
+
+
+    function tajweed_loadSurah_Ayah_andProcess() {
+        $('.quranic_ayah_wbw').slideDown();
+        $('.tajweed_ayah_html').html('');
+
+        fsurah = parseInt($(".tajweed_practice select.SelectQSurah option:selected").val(), 10);
+        selectedayah = parseInt($(".tajweed_practice select.SelectAyahSelected option:selected").val(), 10);
+
+        if (fsurah <= 1) $('.next_prev_nav .prev_surah').hide();
+        else {
+            $('.next_prev_nav .prev_surah').show();
+            $('.next_prev_nav .prev_surah').html('<i class="fa fa-arrow-circle-left"></i>  আগের সূরা (' + en2bnNumber(
+                fsurah - 1) + ") " + bangla_sura_names[fsurah - 2])
+        }
+
+        if (fsurah >= 114) $('.next_prev_nav .next_surah').hide();
+        else {
+            $('.next_prev_nav .next_surah').show();
+            $('.next_prev_nav .next_surah').html(' <i class="fa fa-arrow-circle-right"></i>  পরবর্তী সূরা (' +
+                en2bnNumber(fsurah + 1) + ") " + bangla_sura_names[fsurah])
+        }
+
+        if (selectedayah == 0) {
+            $('.next_prev_nav .prev_ayah').hide();
+
+            if (selectedayah >= ayat_numbers[fsurah - 1]) $('.next_prev_nav .next_ayah').hide();
+            else {
+                $('.next_prev_nav .next_ayah').show();
+                $('.next_prev_nav .next_ayah').html(' <i class="fa fa-arrow-circle-right"></i>  পরবর্তী আয়াত : ' +
+                    en2bnNumber(selectedayah + 1))
+            }
+        } else {
+            if (selectedayah == 1) $('.next_prev_nav .prev_ayah').hide();
+            else {
+                $('.next_prev_nav .prev_ayah').show();
+                $('.next_prev_nav .prev_ayah').html('<i class="fa fa-arrow-circle-left"></i>  আগের আয়াত : ' +
+                    en2bnNumber(selectedayah - 1))
+            }
+
+
+            if (selectedayah == ayat_numbers[fsurah - 1]) $('.next_prev_nav .next_ayah').hide();
+            else {
+                $('.next_prev_nav .next_ayah').show();
+                $('.next_prev_nav .next_ayah').html(' <i class="fa fa-arrow-circle-right"></i>  পরবর্তী আয়াত : ' +
+                    en2bnNumber(selectedayah + 1))
+            }
+        }
+
+
+        tajweed_text_html =
+            '<div  class="quran-container recursiveajaxload2 waiting arabic tajweed2 tajweed-ar-surah-' + fsurah +
+            '-ayah-' + selectedayah + '" id="tajweed-ar-surah-' + fsurah + '-ayah-' + selectedayah +
+            '" data-ajaxurl="/resources/tajweed/' + fsurah + '_' + selectedayah + '.html"></div>';
+        $('.tajweed_ayah_html').html(tajweed_text_html);
+        call_ajax_now($('.tajweed-ar-surah-' + fsurah + '-ayah-' + selectedayah).data('ajaxurl'), $(
+            '.tajweed-ar-surah-' + fsurah + '-ayah-' + selectedayah));
+
+
+        $.ajax({
+            url: '/resources/json/tajweed/' + fsurah + '.json',
+            success: function (data) {
+                surah_ayahs_tajweed_rules = data;
+                $('.quranic_ayah_arabic').html(surah_ayahs_obj.verse['verse_' + selectedayah]);
+                highlightWords();
+                generate_tajweed_span_html(surah_ayahs_obj, selectedayah, surah_ayahs_tajweed_rules); 
+            }
+        });
+
+
+    }
+
+    function generate_tajweed_span_html(surah_ayahs_obj, selectedayah, surah_ayahs_tajweed_rules) {
+        generate_tajweed_html = '';
+
+        fsurah = parseInt($(".tajweed_practice  select.SelectQSurah option:selected").val(), 10);
+        selectedayah = parseInt($(".tajweed_practice  select.SelectAyahSelected option:selected").val(), 10);
+
+        ayah_html = surah_ayahs_obj.verse['verse_' + selectedayah];
+
+        ayah_html = ayah_html.replace('ۦ', '').replace(' ۖ', '').replace(' ۚ', '');
+
+        selected_ayah_rules = surah_ayahs_tajweed_rules.verse['verse_' + (selectedayah)];
+
+        $('.tajwee_rules_details').html(
+            '<h3 class="h3 bg-navy pad10 lh12 text-center">এই আয়াত এর তাজবিদ নিয়ম গুলো নিচে দেয়া হল</h3>');
+
+        //if(debugonly)$('.position_debug').html('<div class="text-right debugonly"><input size="2" value="1" id="rule_start_from" /> <input size="2" value="4" id="rule_start_to" /><button onClick="markDownNow()"><i class="fa fa-star-half-alt"></i></button> &nbsp;<br /><br /></div>');
+        if (debugonly) $('.position_debug').html(
+            '<div class="slider-teal"> <input type="text" value="" id="sliderrange" class="slider form-control" data-slider-min="1" data-slider-max="' +
+            ayah_html.length + '"                data-slider-step="1" data-slider-value="[1,' + ayah_html.length +
+            ']" data-slider-orientation="horizontal"                data-slider-selection="before" data-slider-tooltip="show" onChange="markDownNow()"></div>'
+            );
+
+        $('.slider').bootstrapSlider();
+        $('.surah_ayahs_tajweed_rules_tip').html('');
+        rules_appied = [];
+
+        $.each(selected_ayah_rules, function (key, val) {
+
+            if (rules_appied.indexOf(val['rule']) < 0) {
+                rules_appied.push(val['rule']);
+            }
+
+            replacement_string = '<span class=" rules_highlight ' + val['rule'] + '">';
+            heighliter = ayah_html.substring(val['start'], val['end']);
+            endStart = val['end'];
+            generate_tajweed_html = ayah_html.substring(0, val['start']) + replacement_string + heighliter +
+                '</span>' + ayah_html.substring(endStart, ayah_html.length);
+
+            $('.tajwee_rules_details').append('<div class="bg-white rule_explain text-right"> [' + en2bnNumber(
+                    key + 1) + ']<span class="dump_enabled">[' + val['start'] + ':' + val['end'] +
+                ']</span> <button class="rounded btn btn-tool" onClick="showRulesDetails(\'' + val['rule'] +
+                '\')"><i class="fa fa-comment-alt ' + val['rule'] + '"></i> (' + tajweed_rules_array[val[
+                    'rule']] + ') </button>    :' + '<span class="arabic lfont">' + generate_tajweed_html);
+
+        });
+
+        
+
+
+        r_a_html = '';
+        $.each(rules_appied, function (rk, rv) {
+            r_a_html += '<button class="ctip ' + rv + '" onClick="showRulesDetails(\'' + rv + '\')">' +
+                tajweed_rules_array[rv] + '</button> ';
+        });
+
+        $('.surah_ayahs_tajweed_rules_tip').html(r_a_html);
+
+
+    }
+
+
+    function highlightWords() {
+        var offset = 0;
+        var original;
+
+        fsurah = parseInt($(".tajweed_practice  select.SelectQSurah option:selected").val(), 10);
+        selectedayah = parseInt($(".tajweed_practice  select.SelectAyahSelected option:selected").val(), 10);
+
+        selected_ayah_rules = surah_ayahs_tajweed_rules.verse['verse_' + (selectedayah)];
+
+        $.each(selected_ayah_rules, function (key, val) {
+            original = $('.quranic_ayah_arabic').html();
+            var length = original.length;
+            var before = original.substring(0, val['start'] + offset);
+            var replace = original.substring(val['start'] + offset, val['end'] + offset);
+            var after = original.substring(val['end'] + offset, length);
+            var final = before + '<span class="' + val['rule'] + '">' + replace + '</span>' + after;
+            offset += 22 + val['rule'].length;
+            $(".quranic_ayah_arabic").html(final);
+        });
+
+
+        $('.quranic_ayah_arabic span').mouseenter(function () {
+
+            $('.tip').show();
+            $('.tip').html('<div class="fitparent ' + $(this).attr('class') + '">' + tajweed_rules_array[$(this)
+                .attr('class')] + '</div>');
+            $('.tip').css('height', '40px');
+            $('.tip').css('max-width', '100%');
+            $('.tip').css('top', $(this).offset().top - 20);
+            $('.tip').css('left', $(this).offset().left - tajweed_rules_array[$(this).attr('class')].length *
+                10 + 20); // $(window).width() / 2 - $('.tip').outerWidth() / 2);
+
+
+        }).mouseleave(function () {
+            $('.tip').hide();
+            $('.tip').html('');
+        });
+
+        audio.pause();
+        $('.current_ayah_to_play').data('playsrc', fsurah+':'+selectedayah);  
+        var playbutton = $('#play i');
+        playbutton.removeClass('fa-pause-circle').addClass('fa-play-circle');  
+        $('.current_ayah_to_play').removeClass('fa-pause-circle').addClass('fa-play-circle'); 
+
+        $('.quranic_ayah_arabic span').click(function () {
+            showRulesDetails($(this).attr('class'));
+        });
+
+
+        $('.quranic_ayah_arabic .madd_2').html($('.quranic_ayah_arabic .madd_2').html() +
+            '&zwj;<span class="overtip"></span>&zwj;');
+
+
+
+
+    }
+
+    function reset_highlightWords() {
+        fsurah = parseInt($(".tajweed_practice  select.SelectQSurah option:selected").val(), 10);
+        selectedayah = parseInt($(".tajweed_practice  select.SelectAyahSelected option:selected").val(), 10);
+
+        ayah_html = surah_ayahs_obj.verse['verse_' + selectedayah];
+        $('.quranic_ayah_arabic').html(ayah_html);
+        highlightWords();
+    }
+
+
+
+
+
+
+    function markDownNow() {
+        fsurah = parseInt($(".tajweed_practice  select.SelectQSurah option:selected").val(), 10);
+        selectedayah = parseInt($(".tajweed_practice  select.SelectAyahSelected option:selected").val(), 10);
+
+
+        sliderrange = $('#sliderrange').val().split(',');
+        rule_start_from = sliderrange[0]; // $('#rule_start_from').val();
+        rule_start_to = sliderrange[1]; //$('#rule_start_to').val();
+
+        ayah_html = surah_ayahs_obj.verse['verse_' + selectedayah];
+
+
+        replacement_string = '<span class=" rules_highlight ">';
+        heighliter = ayah_html.substring(rule_start_from, rule_start_to);
+        generate_tajweed_html = ayah_html.substring(0, rule_start_from) + replacement_string + heighliter + '</span>' +
+            ayah_html.substring(rule_start_to, ayah_html.length);
+
+
+
+        $('.quranic_ayah_arabic').html(generate_tajweed_html);
+
+    }
+
+
+    function showRulesDetails(rule) {
+
+        $('#modal-xl .modal-title').html('তাজবীদ রুলস : ' + tajweed_rules_array[rule]);
+        $('#modal-xl .modal-body .modal-body-content').html($('#tajweed_rules_details .' + rule).html());
+        $('#modal-xl').modal();
+
+    }
+
+
+    function reloadTajweedRules() {
+        old_fsurah = parseInt($(".tajweed_practice  select.SelectQSurah option:selected").val(), 10);
+        old_selectedayah = parseInt($(".tajweed_practice  select.SelectAyahSelected option:selected").val(), 10);
+
+        loadExtraHTML('/partials/etc/tajweed_practice.html', 8, 1);
+
+        setTimeout(function () {
+            $(".tajweed_practice  select.SelectQSurah option[value=\"" + old_fsurah + "\"]").prop('selected',
+                true);
+            $(".tajweed_practice  select.SelectQSurah").trigger('change');
+            setTimeout(function () {
+                $(".tajweed_practice  select.SelectAyahSelected option[value=\"" + old_selectedayah +
+                    "\"]").prop('selected', true);
+                $(".tajweed_practice  select.SelectAyahSelected").trigger('change');
+            }, 750);
+        }, 500);
+    }
+</script>
+
+
+
+
+<div class="hidden" id="tajweed_rules_details">
+    <div class="hamzat_wasl">
+        <p>হামজাতুল ওয়াসল: এই শব্দটির অর্থ হলো একটি সংযোগকারী 'হামজা' ।এর চিহ্ন হল আলিফ এর উপর একটি ছোট সোয়াদ । যখন
+            হামজাতুল ওয়াসল এর পূর্বে হরকত যুক্ত অক্ষর আসে তখন একে উচ্চারণ করার প্রয়োজন পড়ে না. </p>
+        <hr />
+        <div class="text-center">
+            <iframe width="650" height="450" src="https://www.youtube.com/embed/HQ90xQQIVe0" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="lam_shamsiyyah"> 
+        <h3 clas="h3 ">হুরুফে শামছিয়া</h3>
+        <p class="arabic lfont"> ت، ث، د، ذ، ر ز، س، ش، ص، ض، ط، ظ، ل، ن </p>
+        <p>উপরের এ সব আরবী বর্ণমালার পূর্বে আলিফ-লাম (ال) ব্যবহার করলে লামের উচ্চারণ হয় না।</p>
+        
+        
+    
+    </div>
+    <div class="madd_2">
+        <h4>মাদ্দ অর্থ বর্ধিত করা, দীর্ঘ করা। হরকতের উচ্চারণ দীর্ঘ করে পড়াকে মাদ্দ বলে। মাদ্দের হরফ ৩টি : و ، ا ، ى তবে
+            শর্ত হলো :</h4>
+        <ol>
+            <li>ওয়াও و সাকিন( ْ ) হতে হবে ও আগের হরফে (ডানে) পেশ( ُ ) হতে হবে।</li>
+            <li>আলিফ ا হরকতবিহীন আগের হরফে জবর ( َ ) হতে হবে।</li>
+            <li>ইয়া ى সাকিন( ْ ) হতে হবে ও আগের হরফে (ডানে) জের( ِ ) হতে হবে।</li>
+        </ol>
+        <p>যে মাদ্দ অস্থায়ী সাকিনের জন্য হয় তা মাদ্দে আ’রিদ্ব লিসসুকুন</p>
+        <p>অস্থায়ী সাকিনের কী যেকোনা শব্দের শেষ হরফে হারকাত থাকলে ওয়াকফের অবস্থায় তা সাকিন হয়ে যায়। ঐ সাকিনকে
+            অস্থায়ী সাকিন বলা হয়।
+            যেমন: تَمَ কে ওয়াকফের অবস্থায়(থামার সময়) تَمْ পড়তে হয়।</p>
+    </div>
+    <div class="madd_246">
+        <h4>মাদ্দ অর্থ বর্ধিত করা, দীর্ঘ করা। হরকতের উচ্চারণ দীর্ঘ করে পড়াকে মাদ্দ বলে। মাদ্দের হরফ ৩টি : و ، ا ، ى তবে
+            শর্ত হলো :</h4>
+        <ol>
+            <li>ওয়াও و সাকিন( ْ ) হতে হবে ও আগের হরফে (ডানে) পেশ( ُ ) হতে হবে।</li>
+            <li>আলিফ ا হরকতবিহীন আগের হরফে জবর ( َ ) হতে হবে।</li>
+            <li>ইয়া ى সাকিন( ْ ) হতে হবে ও আগের হরফে (ডানে) জের( ِ ) হতে হবে।</li>
+        </ol>
+        <p>অবশ্যই ৬ হারকাত বা ৩ আলিফ লম্বা করে পড়তে হবে।</p>
+        <p>চার / ছয় আলিফ পরিমাণ টানতে হবে</p>
+    </div>
+    <div class="madd_6">
+        <h4>মাদ্দ অর্থ বর্ধিত করা, দীর্ঘ করা। হরকতের উচ্চারণ দীর্ঘ করে পড়াকে মাদ্দ বলে। মাদ্দের হরফ ৩টি : و ، ا ، ى তবে
+            শর্ত হলো :</h4>
+        <ol>
+            <li>ওয়াও و সাকিন( ْ ) হতে হবে ও আগের হরফে (ডানে) পেশ( ُ ) হতে হবে।</li>
+            <li>আলিফ ا হরকতবিহীন আগের হরফে জবর ( َ ) হতে হবে।</li>
+            <li>ইয়া ى সাকিন( ْ ) হতে হবে ও আগের হরফে (ডানে) জের( ِ ) হতে হবে।</li>
+        </ol>
+        <p>অবশ্যই ৬ হারকাত বা ৩ আলিফ লম্বা করে পড়তে হবে।</p>
+    </div>
+    <div class="idghaam_no_ghunnah">
+        <h4>গুনাহ ছাড়া ইদগাম</h4>
+        <p>ইদগামে বেলাগুন্না: ইদগামে বেলাগুন্নার হরফ দুইটি, (ر ـ ل) <br />
+            নুনে সাকিন বা তানবিনের পর (র, লাম ) এর যে কোন একটি বর্ণ এলে গুন্নাহ ছাড়া মিলিয়ে পড়তে হয়।</p>
+    </div>
+    <div class="silent"> Silent </div>
+    <div class="ghunnah">
+        <h4>গুন্নাহ্</h4>
+        <p>নাকের মূল হতে নির্গত আওয়াজকে গুন্নাহ্ বলা হয়। অনেকটা বাংলা চন্দ্রবিন্দু উচ্চারণের মতো গুন্নাহ্ উচ্চারিত
+            হয়।কোন কোন অবস্থায় গুন্নাহের সহিত পড়তে হয় নিচে তার সম্পূর্ণ তালিকা দেওয়া হয়েছে :</p>
+        <p>নুন সাকিন (نْ)</p>
+        <p>মিম সাকিন(مْ)</p>
+        <p>যেসব গুন্নাহ্ ২ হরকত বা ১ আলিফ পরিমান লম্বা করে পড়তে হবে :</p>
+        <ol>
+            <li>ইখফা</li>
+            <li>ইদগামে মা’ল গুন্নাহ</li>
+            <li>ইকলাব</li>
+            <li>ইখফায়ে শফওয়ী</li>
+            <li>ইদগামে মিসলাইন সগির</li>
+        </ol>
+
+        <p>যেসব গুন্নাহ্ ৩ হরকত বা দেড় আলিফ পরিমান লম্বা করে পড়া যাবে :</p>
+
+        <p>বি দ্র. এই শ্রেণীর গুন্নাহ্ কে ২ হরকত বা ১ আলিফ পরিমানও লম্বা করা যাবে।</p>
+        <ol>
+            <li>নুন মুশাদ্দাদ (نّ)</li>
+            <li>মিম মুশাদ্দাদ (مّ)</li>
+        </ol>
+    </div>
+    <div class="qalqalah">
+
+        <h4>ক্বালক্বালাহ (কম্পিত হওয়া)</h4>
+        <p>ক্বালক্বালাহ শব্দের অর্থ কম্পিত হওয়া বা নাড়া দেওয়া। ق ، ط ، ب ، ج ، د এই ৫ টি হরফকে সাকিন অবস্থায় একধরনের
+            অতিরিক্ত আওয়াজ করে উচ্চারণ করতে হয়(বংলা এ/ও এর মতো)</p>
+
+
+    </div>
+    <div class="ikhfa">
+        <h4>ইখফা </h4>
+        <p>ইখফা অর্থ গুপন করা। এর হরফ ১৫ টি।এখানে নুন সাকিন ও তানউইনের পর যেকোনো একটি হরফ আসলে তাকে নাসিকাযোগে গোপন করে
+            এক আলিফ পরিমান দীর্ঘ করে পড়াকে ইখফা বলে। ت ، ث ، ج، د ، ذ ، ز ، س ، ش ، ص ، ض ، ط ، ظ ، ف ، ق ، ك হলো ইখফা
+            এর ১৫ টি হরফ।</p>
+    </div>
+    <div class="madd_munfasil">
+        <h4>মাদ্দ অর্থ বর্ধিত করা, দীর্ঘ করা। হরকতের উচ্চারণ দীর্ঘ করে পড়াকে মাদ্দ বলে। মাদ্দের হরফ ৩টি : و ، ا ، ى তবে
+            শর্ত হলো :</h4>
+        <ol>
+            <li>ওয়াও و সাকিন( ْ ) হতে হবে ও আগের হরফে (ডানে) পেশ( ُ ) হতে হবে।</li>
+            <li>আলিফ ا হরকতবিহীন আগের হরফে জবর ( َ ) হতে হবে।</li>
+            <li>ইয়া ى সাকিন( ْ ) হতে হবে ও আগের হরফে (ডানে) জের( ِ ) হতে হবে।</li>
+        </ol>
+        <p>মাদ্দ এর হরফের পর পৃথক শব্দে হামজাহ (ء) আসলে মাদ্দে মুনফাসিলের হয়
+    </div>
+    </p>
+
+
+    <div class="madd_muttasil">
+        <h4>মাদ্দ অর্থ বর্ধিত করা, দীর্ঘ করা। হরকতের উচ্চারণ দীর্ঘ করে পড়াকে মাদ্দ বলে। মাদ্দের হরফ ৩টি : و ، ا ، ى তবে
+            শর্ত হলো :</h4>
+        <ol>
+            <li>ওয়াও و সাকিন( ْ ) হতে হবে ও আগের হরফে (ডানে) পেশ( ُ ) হতে হবে।</li>
+            <li>আলিফ ا হরকতবিহীন আগের হরফে জবর ( َ ) হতে হবে।</li>
+            <li>ইয়া ى সাকিন( ْ ) হতে হবে ও আগের হরফে (ডানে) জের( ِ ) হতে হবে।</li>
+        </ol>
+        <p>মাদ্দ এর হরফের পর একই শব্দে হামজাহ (ء) আসলে মাদ্দে মুত্তাসিল হয়</p>
+
+        <p>চার আলিফ পরিমাণ টানতে হবে</p>
+
+
+    </div>
+    <div class="idghaam_ghunnah">
+        <h4>ইদগাম গুনাহ</h4>
+        <p>ইদগামে বাগুন্নাহর হারফ চারটি (ى م و ن) এই চার হারফের কোন একটি হরফ ن নূন সাকিন বা তানবিন এর পরে আসলে ن নূন
+            সাকিন বা তানবিনকে (নুনের সহিত) গুন্নাহর সহিত মিলিয়ে পড়তে হয। ن সাকিন এর পরে যেমন। ان يضرب। তানবিন এর পরে
+            যেমন- حِطَّتٌ نَغْفِرْ لَكُمْ</p>
+    </div>
+    <div class="ikhfa_shafawi">মীম সাকিনের ইখফা </div>
+    <div class="idghaam_shafawi">মীম সাকিনের ইদগামঃ </div>
+    <div class="iqlab">
+        <h4>ইক্বলাব</h4>
+        <p>ইক্বলাব অর্থ পরিবর্তন করা। এখানে নুন সাকিন ও তানউইনের উচ্চারণকে م এর মতো করে পড়া বুঝান হচ্ছে যখন এদের পর ب
+            এই ১ টি হরফ আসে।</p>
+    </div>
+    <div class="idghaam_mutajanisayn">ইদগাম মুতাজানিসায়ন </div>
+    <div class="madd_munfasil">মদ্দে মুনফাসিল:তিন আলিফ মদ্দ(তিন আলিফ টেনে পড়া)</div>
+    <div class="idghaam_mutaqaribayn">ইদগাম মুতাকারীবায়ন </div>
+</div>

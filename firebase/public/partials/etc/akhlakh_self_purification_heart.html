@@ -1,0 +1,140 @@
+<div class="row topindexbar">
+    <div class="col-md-5 col-sm-12">
+
+        <h3 class="text-center arabic cs1">بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِیْمِ</h3>
+        <p class="bangla text-center">শুরু করছি আল্লাহর নামে যিনি পরম করুণাময়, অতি দয়ালু।</p>
+
+    </div>
+    <div class="col-md-2 col-sm-12 indexcol">
+        <button type="button" class="btn btn-block bg-gradient-secondary btn-lg" onClick="openSidebarMenu()">
+            সূচিপত্র/তালিকা </button>
+    </div>
+    <div class="col-md-5  col-sm-12">
+        <h3 class="text-center arabic cs1"> আত্নশুদ্ধি/অন্তর/আখলাক </h3>
+        <p class="bangla text-center"> </p>
+    </div>
+
+</div>
+
+ 
+
+<script>
+    $(document).ready(function () {
+        //openSidebarMenu(); 
+        CayahArray =
+            "2:10,5:52,8:49,9:125,22:53,24:50,33:12,33:32,33:60,47:20,47:29,74:31";
+        dynamic_data = {
+            "subject": "আত্নশুদ্ধি/অন্তর/আখলাক",
+            "introHtml": "",
+            "ayah": String2AyahArray(CayahArray),
+            "videos": [
+                {
+                    'title' : 'অন্তরের রোগ ও এর প্রতিকার',
+                    'thumb' : 'https://i.ytimg.com/vi/pu5nbCT50Uk/hqdefault.jpg',
+                    'url'   : 'https://www.youtube.com/playlist?list=PLDfP1yNs-Ic_3lJ7wmvMvj792-aI6Ts_K'
+                },
+                {
+                    'title' : 'অন্তরের রোগ শায়েখ সালেহ আল মুনাজ্জিদ',
+                    'thumb' : 'https://i.ytimg.com/vi/YEvIHSA6O0s/hqdefault.jpg',
+                    'url'   : 'https://www.youtube.com/playlist?list=PLkFSxXxvt6F6Max95CIE4mRp8-7Mz4gXN'
+                },
+                {
+                    'title' : 'উত্তম আখলাক',
+                    'thumb' : 'https://i.ytimg.com/vi/LCmBPGgFFro/hqdefault.jpg',
+                    'url'   : 'https://www.youtube.com/playlist?list=PLZDzG-Xjalkgt9-JM5GsG9IuxcOcYHEBH'
+                },
+                {
+                    'title' : 'উত্তম চরিত্রে নিজেকে শোভিত করি',
+                    'thumb' : 'https://i.ytimg.com/vi/GSlSztzvINQ/hqdefault.jpg',
+                    'url'   : 'https://www.youtube.com/playlist?list=PL7E7DFtKYTnZ1MLQreP21g9zIrGbWGjLJ'
+                },
+                {
+                    'title' : 'আদাব আখলাক',
+                    'thumb' : 'https://i.ytimg.com/vi/Sz4i6i-VkeE/hqdefault.jpg',
+                    'url'   : 'https://www.youtube.com/playlist?list=PLGs7B2B7W7V3EdT5Sc2aEq9XgPx6jVSga'
+                },
+                {
+                    'title' : 'উত্তম আখলাক',
+                    'thumb' : 'https://i.ytimg.com/vi/cTNPmbggZF8/hqdefault.jpg',
+                    'url'   : 'https://www.youtube.com/playlist?list=PLNrZxZruVrDkU-W-aE0NTmjL239JWQDyL'
+                }
+            ],
+            "articles": [],
+            "books": [
+                    {
+                        'title': 'আত্মশুদ্ধি',
+                        'url': 'kolb%2Fbn_attoshuddhi.pdf',
+                        'thumb': 'kolb%2Fbn_attoshuddhi.png',
+                        "writer": "খালিদ ইবন আব্দুল্লাহ আল-মুসলিহ",
+                        "type": "firebase-pdf" 
+                    },{
+                        'title': 'অনন্য শিষ্টাচার',
+                        'url'  : 'kolb%2FAl-Adabul_Mufrad.pdf',
+                        'thumb': 'kolb%2FAl-Adabul_Mufrad.png',
+                        "writer": "ইমাম বুখারী (রহঃ)",
+                        "type": "firebase-pdf" 
+                    },{
+                        'title': 'অন্তরের আমল: ইখলাস',
+                        'url': 'kolb%2Fbn_ontorer_amol_ikhlas.pdf',
+                        'thumb': 'kolb%2Fontorer_amol_cover.jpg',
+                        "writer": "শায়খ মুহাম্মদ সালেহ আল-মুনাজ্জিদ",
+                        "type": "firebase-pdf" 
+                    },
+                    {
+                        'title': 'অন্তরের আমল: দ্বীনদারি',
+                        'thumb': 'kolb%2Fontorer_amol_cover.jpg',
+                        "writer": "শায়খ মুহাম্মদ সালেহ আল-মুনাজ্জিদ",
+                        "type": "firebase-pdf",
+                        'url': 'kolb%2Fbn_ontor_er_amol_deendari.pdf'
+                    },
+                    {
+                        'title': 'অন্তর বিধ্বংসী বিষয়: প্রবৃত্তির অনুসরণ',
+                        'thumb': 'kolb%2Fontorer_rog.jpg',
+                        "writer": "শায়খ মুহাম্মদ সালেহ আল-মুনাজ্জিদ",
+                        "type": "firebase-pdf",
+                        'url': 'kolb%2Fbn_ontorbidonsi_bisoy_pobritir_onusoron.pdf'
+                    },
+                    {
+                        'title': 'অন্তর-বিধ্বংসী বিষয়সমূহ : ঝগড়া-বিবাদ',
+                        'thumb': 'kolb%2Fontorer_rog.jpg',
+                        "writer": "শায়খ মুহাম্মদ সালেহ আল-মুনাজ্জিদ",
+                        "type": "firebase-pdf",
+                        'url': 'kolb%2Fbn_ontor_bidhongshi_bishoysomuho_jhogra_bibad.pdf'
+                    },
+                    {
+                        'title': 'অন্তর-বিধ্বংসী বিষয়সমূহ : নিফাক',
+                        'thumb': 'kolb%2Fontorer_rog.jpg',
+                        "writer": "শায়খ মুহাম্মদ সালেহ আল-মুনাজ্জিদ",
+                        "type": "firebase-pdf",
+                        'url': 'kolb%2Fbn_ontor_bidhongshi_bishoy_nifaq.pdf'
+                    },
+                    {
+                        'title': 'অন্তর বিধ্বংসী বিষয়: আসক্তি',
+                        'thumb': 'kolb%2Fontorer_rog.jpg',
+                        "writer": "শায়খ মুহাম্মদ সালেহ আল-মুনাজ্জিদ",
+                        "type": "firebase-pdf",
+                        'url': 'kolb%2Fbn_ontor_bidhongshi_bishoy_Ashokty.pdf'
+                    },
+                    {
+                        'title': 'অন্তর বিধ্বংসী বিষয়সমূহ : অহংকার',
+                        'thumb': 'kolb%2Fontorer_rog.jpg',
+                        "writer": "শায়খ মুহাম্মদ সালেহ আল-মুনাজ্জিদ",
+                        "type": "firebase-pdf",
+                        'url': 'kolb%2Fbn_ontor_biddhonshi_bishoysomuho_ohonkar.pdf'
+                    },
+                    {
+                        'title': 'অন্তর বিধ্বংসী বিষয়: দুনিয়ার মহব্বত',
+                        'thumb': 'kolb%2Fontorer_rog.jpg',
+                        "writer": "শায়খ মুহাম্মদ সালেহ আল-মুনাজ্জিদ",
+                        "type": "firebase-pdf",
+                        'url': 'kolb%2Fbn_ONtor_bidhongsi_bisoy_duniar_muhabbot.pdf'
+                    }
+            ]
+        };
+
+
+        populate_dynamic_view(dynamic_data);
+
+
+    });
+</script>

@@ -1,0 +1,1128 @@
+<div class="arabic_word_forms_practice">
+        <div class="row lgap bg-navy ">
+            <div class="col-md-4 text-center">
+                <a href="javascript:void(0)" class="show_help bg-navy " onClick="openBlock('ism');"><i class="fa fa-help"></i> বিশেষ্য ( اِسْمٌ  ) </a>
+            </div>
+            <div class="col-md-4 text-center">
+                <a href="javascript:void(0)" class="show_help bg-navy " onClick="openBlock('harf');"><i class="fa fa-help"></i> হরফ(অব্যয়) ( حَرْفٌ   ) </a> 
+            </div>
+            <div class="col-md-4 text-center">
+                <a href="javascript:void(0)" class="show_help bg-navy " onClick="openBlock('verb');"><i class="fa fa-help"></i> ক্রিয়াপদ ( فِعْلٌ   ) </a>
+            </div> 
+        </div>
+
+        <hr /> <br />
+
+
+        <div class="row"> 
+            <div class="col-md-12 ism-block word_forms_blocks  text-center">
+                <h2>  বিশেষ্য ( اِسْمٌ ) </h2>
+
+                নির্বাচিত শব্দ <select class="niceselect ism_words select2" onchange="DoIsmWordChanged()"></select>
+                <div class="ism_word_details  text-center"> 
+                    <div class="row">
+                        <div class="col-md-12"> 
+                                <input type="text" class="arabic large dchange text-right" data-linked="word" value="" /> 
+                                <span class="bangla large"> শব্দ | অর্থ </span>  <input type="text" class="bangla large dchange text-center" data-linked="meaning" value="" /> 
+                        </div>   
+                    </div>
+                       
+                    <br /><br />
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <table class="simpletable male">
+                                <tr  class="bg-info noborder arabic large ">
+                                     <td colspan="4"> <span class="bg-info"> الْمُذَكَّرُ পুরুষবাচক </span>  </td> 
+                                 </tr>
+                                 <tr  class="bg-primary subheading noborder">
+                                    <td> <span class="bangla large  bg-primary"><span class="arabic ">   الإِعْرَابُ </span> অবস্থা  </span>  </td>
+                                    <td>  <span class="bangla large bg-primary"><span class="arabic ">  المفرد </span> একবচন  </span>  </td>
+                                    <td> <span class="bangla large bg-primary"> <span class="arabic "> الْمُثَنَّى </span> দ্বিবচন </span>  </td>
+                                    <td> <span class="bangla large bg-primary"> <span class="arabic "> الْجَمْعُ </span> বহুবচন </span>  </td> 
+                                </tr>
+        
+         
+                                <tr>
+                                    <td   class="bg-primary"> <span class="bangla large  bg-primary">  কর্তৃবাচক <span class="arabic ">  مَرْفُوْعٌ  </span> </span>  </td>
+                                    <td>  
+                                       <br /> <input type="text" class="arabic large dchange text-center" data-linked="msr" value="" />  
+                                    </td>
+                                    <td>  
+                                        <br /> <input type="text" class="arabic large dchange text-center" data-linked="mdr" value="" />  
+                                    </td>
+                                    <td> 
+                                        <br /> <input type="text" class="arabic large dchange text-center" data-linked="mpr" value="" />  
+                                    </td> 
+                                </tr>
+
+
+
+                                
+                                <tr>
+                                    <td   class="bg-primary"> <span class="bangla large   bg-primary"> কর্মবাচক - <span class="arabic ">  مَنْصُوْبٌ   </span>  </span>  </td>
+                                    <td>  
+                                       <br /> <input type="text" class="arabic large dchange text-center" data-linked="msn" value="" />  
+                                    </td>
+                                    <td>  
+                                        <br /> <input type="text" class="arabic large dchange text-center" data-linked="mdn" value="" />  
+                                    </td>
+                                    <td> 
+                                        <br /> <input type="text" class="arabic large dchange text-center" data-linked="mpn" value="" />  
+                                    </td> 
+                                </tr>
+
+
+
+                                
+                                <tr>
+                                    <td   class="bg-primary"> <span class="arabic large  bg-primary"> সম্মন্ধসূচক - <span class="arabic ">  مَجْرُوْرٌ   </span> </span>  </td>
+                                    <td>  
+                                        <br /> <input type="text" class="arabic large dchange text-center" data-linked="msj" value="" />  
+                                    </td>
+                                    <td>  
+                                        <br /> <input type="text" class="arabic large dchange text-center" data-linked="mdj" value="" />  
+                                    </td>
+                                    <td> 
+                                        <br /> <input type="text" class="arabic large dchange text-center" data-linked="mpj" value="" />  
+                                    </td> 
+                                </tr>
+
+
+         
+                             </table>
+                          
+         
+         
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12"> <br /> <hr /> <br /> 
+
+                            <table class="simpletable female">
+                                <tr  class="bg-info noborder arabic large ">
+                                     <td colspan="4"> <span class="heading bg-info">  الْمُؤَنَّثُ  স্ত্রীবাচক  </span>  </td> 
+                                 </tr>
+                                 <tr  class="bg-pink subheading noborder">
+                                    <td> <span class="bangla large  bg-pink"><span class="arabic ">   الإِعْرَابُ </span> অবস্থা  </span>  </td>
+                                    <td>  <span class="bangla large bg-pink"><span class="arabic ">  المفرد </span> একবচন  </span>  </td>
+                                    <td> <span class="bangla large bg-pink"> <span class="arabic "> الْمُثَنَّى </span> দ্বিবচন </span>  </td>
+                                    <td> <span class="bangla large bg-pink"> <span class="arabic "> الْجَمْعُ </span> বহুবচন </span>  </td> 
+                                </tr>
+        
+                                <tr>
+                                    <td   class="bg-pink"> <span class="bangla large  bg-pink">  কর্তৃবাচক <span class="arabic ">  مَرْفُوْعٌ  </span> </span>  </td>
+                                    <td>  
+                                       <br /> <input type="text" class="bangla large dchange text-center" data-linked="ms" value="" /> 
+                                       <br /> <input type="text" class="bangla large dchange text-center" data-linked="msm" value="" /> 
+                                    </td>
+                                    <td>  
+                                       <br /> <input type="text" class="bangla large dchange text-center" data-linked="ms" value="" /> 
+                                       <br /> <input type="text" class="bangla large dchange text-center" data-linked="msm" value="" /> 
+                                    </td>
+                                    <td> 
+                                       <br /> <input type="text" class="bangla large dchange text-center" data-linked="ms" value="" /> 
+                                       <br /> <input type="text" class="bangla large dchange text-center" data-linked="msm" value="" /> 
+                                    </td> 
+                                </tr>
+
+
+
+                                
+                                <tr>
+                                    <td   class="bg-pink"> <span class="bangla large   bg-pink"> কর্মবাচক - <span class="arabic ">  مَنْصُوْبٌ   </span>  </span>  </td>
+                                    <td>  
+                                       <br /> <input type="text" class="bangla large dchange text-center" data-linked="ms" value="" /> 
+                                       <br /> <input type="text" class="bangla large dchange text-center" data-linked="msm" value="" /> 
+                                    </td>
+                                    <td>  
+                                       <br /> <input type="text" class="bangla large dchange text-center" data-linked="ms" value="" /> 
+                                       <br /> <input type="text" class="bangla large dchange text-center" data-linked="msm" value="" /> 
+                                    </td>
+                                    <td> 
+                                       <br /> <input type="text" class="bangla large dchange text-center" data-linked="ms" value="" /> 
+                                       <br /> <input type="text" class="bangla large dchange text-center" data-linked="msm" value="" /> 
+                                    </td> 
+                                </tr>
+
+
+
+                                
+                                <tr>
+                                    <td   class="bg-pink"> <span class="bangla large  bg-pink"> সম্মন্ধসূচক - <span class="arabic ">  مَجْرُوْرٌ   </span> </span>  </td>
+                                    <td>  
+                                       <br /> <input type="text" class="bangla large dchange text-center" data-linked="ms" value="" /> 
+                                       <br /> <input type="text" class="bangla large dchange text-center" data-linked="msm" value="" /> 
+                                    </td>
+                                    <td>  
+                                       <br /> <input type="text" class="bangla large dchange text-center" data-linked="ms" value="" /> 
+                                       <br /> <input type="text" class="bangla large dchange text-center" data-linked="msm" value="" /> 
+                                    </td>
+                                    <td> 
+                                       <br /> <input type="text" class="bangla large dchange text-center" data-linked="ms" value="" /> 
+                                       <br /> <input type="text" class="bangla large dchange text-center" data-linked="msm" value="" /> 
+                                    </td> 
+                                </tr>
+
+
+         
+                             </table>
+         
+         
+
+                        </div>
+                    </div>
+ 
+                </div>
+                <hr /> 
+                <div class="row" style="padding-bottom: 100px;"> 
+                    <div class="col-md-12 text-center"> <button onClick="generateIsmArray()"> Generate ISM Array </button>  </div>
+                    <div class="ism_array_result"></div>
+                </div>
+
+            </div>
+
+
+            <!-- harf Block -->
+
+
+
+            <div class="col-md-12 harf-block word_forms_blocks text-center" style="display: none;">
+                 
+                <div class="harf_word_details">
+                            <h2>  হরফ(অব্যয়) ( حَرْفٌ )  </h2>
+
+
+                            <div id="post-229" class="post-229 post type-post status-publish format-standard hentry category-76350601 tag-14311016 tag-6831657 tag-27324721">
+
+			
+                                <h1 class="post-title">الحرف (অব্যয়)</h1>
+                                 
+                    
+                      <p>@ حرف দুই প্রকার; যথা- &nbsp; 1.الحروف العاملة</p>
+                    <p>2.الحروف غير العاملة</p>
+                    <p>@<strong>الحروف العاملة</strong><strong> &nbsp;</strong>(আমলকারী حرف সমূহ) ঃ নিম্মে আমলকারী حرف সমূহ বিস্তারিত আলোচনা করা হলো।</p>
+                    <p align="center"><strong>الحروف الجارة</strong><strong> </strong><strong></strong></p>
+                    <p align="center">(যের দানকারী অব্যয়)</p>
+                    <p>@ ®k pjÙÛ حرف …¢m اسم Hl f§&shy;hÑ h&shy;p Eq¡l ®n&shy;o جر (যেl) ®cu a¡&shy;L حرف جار বলে ।<strong></strong></p>
+                    <p>@ <strong>مجرور</strong><strong> </strong><strong>ঃ</strong> আর যে اسم এর পূর্বে حرف جار বসে তাকে مجرور বলে।</p>
+                    <p><strong>উদাহরণ-</strong> بالقلم (কলম দ্বারা) এখানে ب টি &nbsp;حرف جار এবং القلم টি مجرور</p>
+                    <p>@ &nbsp;ا<strong>لحروف الجارة</strong> (®kl দানকারী অব্যয়) ১৭টি, যথা-</p>
+                    <p dir="RTL" align="center">ب، ت، ك، ل، واو، منذ، مذ، خلا، رب، حشا، من، عدا، فى، عن، على، حتى ، الى</p>
+                    <p>&nbsp;নিম্নে এগুলো কি অর্থে ব্যবহৃত হয় তার বিবরণ দেয়া হলো।</p>
+                    <table border="0" cellspacing="0" cellpadding="0">
+                    <tbody>
+                    <tr>
+                    <td colspan="3" width="432"><strong>১. </strong><strong>ب</strong><strong> </strong><strong>-দিয়া</strong><strong>,</strong> দ্বারা, কর্তৃক, সাথে, বিনিময়ে, কিছু, প্রতি, ব্যাপারে, প্রসঙ্গে, শপথ, কারন, যেহেতু অর্থে ব্যবহৃত হয়। যেমন-<strong></strong></td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="216">كتبتُ بالقلمِ -আমি কলম দ্বারা লিখেছি।</td>
+                    <td colspan="2" valign="top" width="216">جئت بقريةগ্রামের নিকট দিয়ে আসলাম।</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="216">مريضت بغفلتىআমার অসাবধানতাবশত অসুস্থ হলাম।</td>
+                    <td colspan="2" valign="top" width="216">اشتريت بقرة بعجلهاগাভিটি বাছুরসহ কিনেছি।</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="216">بعت فرسا بمائة درهمঘোড়াটি একশত দিরহাম দিয়ে বিক্রি করেছি।</td>
+                    <td colspan="2" valign="top" width="216">زيد بالبلدযায়েদ শহরের মধ্যে আছে।</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="216">اليس الله بحاكمআল্লাহ্&zwnj; কি বিচারক নন?</td>
+                    <td colspan="2" valign="top" width="216">ذهب بزيدসে যায়েদের নিকট গেল।</td>
+                    </tr>
+                    <tr>
+                    <td colspan="3" width="432"><strong>২. </strong><strong>ت</strong><strong> </strong><strong>-শপথ</strong><strong>,</strong> কসম (শুধুমাত্র আল্লাহর সাথে নির্দিষ্ট) অর্থে ব্যবহৃত হয়। যেমন-<strong></strong></td>
+                    </tr>
+                    <tr>
+                    <td colspan="2" valign="top" width="240">تاللهِ لاضربنَّ زيدًاআল্লাহর শপথ আমি যায়েদ কে অবশ্যই মারব।</td>
+                    <td valign="top" width="192">تالله اذهب الى داكاআল্লাহর শপথ আমি ঢাকা যাব।</td>
+                    </tr>
+                    <tr>
+                    <td colspan="3" valign="top" width="432"><strong>৩. </strong><strong>ك</strong><strong> </strong><strong>– </strong>মত, সাদৃশ্য, অর্থে ব্যবহৃত হয়। যেমন-<strong></strong></td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="216">زيدٌ كالاسدِযায়েদ সিংহের ন্যায়।</td>
+                    <td colspan="2" valign="top" width="216">ليس كمثله شيئতার মত কোন বস্তু নেই।</td>
+                    </tr>
+                    <tr>
+                    <td colspan="3" valign="top" width="432"><strong>৪. </strong><strong>ل</strong><strong> </strong><strong>– </strong>জন্য, উদ্দেশ্য, পক্ষে, এর অর্থে ব্যবহৃত হয়। যেমন-<strong></strong></td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="216">الحمد للهসমস্থ প্রশংসা আল্লাহর জন্য।</td>
+                    <td colspan="2" valign="top" width="216">المالُ لزيدٍসম্পত্তিটি যায়েদের।</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="216">الجُلِّ للفرسِজ্বিনটি ঘোড়ার জন্য।</td>
+                    <td colspan="2" valign="top" width="216">ردف لكمসে তোমাদের পিছনে।</td>
+                    </tr>
+                    <tr>
+                    <td colspan="3" valign="top" width="432"><strong>৫. </strong><strong>واو</strong><strong> </strong><strong>– </strong>শপথ, কসম অর্থে ব্যবহৃত হয়। যেমন-<strong></strong></td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="216">واللهِ لااشركُ باللهِআল্লাহর শপথ আমি আল্লাহর সাথে কাউকে শরীক করব না।</td>
+                    <td colspan="2" valign="top" width="216">والله لاقولن الصدقআল্লাহর শপথ আমি সত্য কথা বলব।</td>
+                    </tr>
+                    <tr>
+                    <td colspan="3" valign="top" width="432"><strong>৬. </strong><strong>منذ</strong><strong> </strong><strong>-৭. &nbsp;</strong><strong>مذ</strong><strong>– </strong>হতে, অবধি, যাবত অর্থে ব্যবহৃত হয়। যেমন-<strong></strong></td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="216">ما رائيته منذُ يومِ الجمعةِআমি যায়েদকে গত শুক্রবার থেকে দেখি নি।</td>
+                    <td colspan="2" valign="top" width="216">ما رأيته مذشهرينআমি তাকে দুঞ্চমাস থেকে দেখি নি।</td>
+                    </tr>
+                    <tr>
+                    <td colspan="3" width="432"><strong>৮. </strong><strong>خلا</strong><strong> </strong><strong>-৯. &nbsp;</strong><strong>حشا</strong><strong> </strong><strong>-১০. </strong><strong>عدا</strong><strong> – </strong>ব্যতীত, ছাড়া, বাদে অর্থে ব্যবহৃত হয়। যেমন-<strong></strong></td>
+                    </tr>
+                    <tr>
+                    <td colspan="3" valign="top" width="432">
+                    <p align="center">جاءنى القومُ خلا زيدٍ</p>
+                    <p align="center">যায়েদ ব্যাতীত সম্প্রদায়টি আমার নিকট এসেছে।</p>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td colspan="3" valign="top" width="432">
+                    <p align="center">جاءنى القومُ عدا بكرٍ</p>
+                    <p align="center">বকর ব্যাতীত সম্প্রদায়টি আমার কাছে এসেছে।</p>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td colspan="3" valign="top" width="432">
+                    <p align="center">جاءنى الطلاب حشا خالدٍ</p>
+                    <p align="center">আমার নিকট খালেদ ব্যতীত সকল ছাত্ররা এসেছে।</p>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td width="216"></td>
+                    <td width="24"></td>
+                    <td width="192"></td>
+                    </tr>
+                    </tbody>
+                    </table>
+                    <p><strong>১১. </strong><strong>رب</strong><strong> </strong><strong>– </strong>কিছু , সামান্য অর্থে ব্যবহৃত হয়। যেমন-<strong></strong></p>
+                    <table border="0" cellspacing="0" cellpadding="0">
+                    <tbody>
+                    <tr>
+                    <td colspan="3" valign="top" width="432"></td>
+                    </tr>
+                    <tr>
+                    <td colspan="3" valign="top" width="432">
+                    <p align="center">ربَّ رجلٍ كريمٍ لقيتُهُ</p>
+                    <p align="center">আমি অতি অল্প দাতা লোকের সাথে সাক্ষাত করেছি।</p>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td colspan="3" valign="top" width="432">
+                    <p align="center">رب تلميذ ذكى لقيته</p>
+                    <p align="center">আমি অতি অল্প মেধাবী ছেলের সাথে সাক্ষাত করেছি।</p>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td colspan="3" valign="top" width="432"><strong>১২. </strong><strong>من</strong><strong> </strong><strong>– </strong>হতে, কিছু, -র, এর, বর্ণনা {স্থন-কালের ক্ষেত্রে} অর্থে ব্যবহৃত হয়। যেমন-<strong></strong></td>
+                    </tr>
+                    <tr>
+                    <td colspan="2" valign="top" width="216">سرت من البصرةِ الى الكوفةِআমি বসরা থেকে কুফা পর্যন্ত ভ্রমন করেছি।</td>
+                    <td valign="top" width="216">حفظت من القرأنআমি কোর-আনের কিছু অংশ মুখস্ত করেছি।</td>
+                    </tr>
+                    <tr>
+                    <td colspan="2" valign="top" width="216">ما جائنى من احدআমার নিকট কেউ আসে নি।</td>
+                    <td valign="top" width="216"></td>
+                    </tr>
+                    <tr>
+                    <td colspan="3" valign="top" width="432"><strong>১৩. </strong><strong>فى</strong><strong> </strong><strong>–&nbsp; </strong>মধ্যে, ভিতরে, বিষয়ে, প্রসঙ্গে, ব্যাপারে অর্থে ব্যবহৃত হয়। যেমন-<strong></strong></td>
+                    </tr>
+                    <tr>
+                    <td colspan="2" valign="top" width="216">ان كنتم فى سفرযদি তোমরা সফরে থাক।</td>
+                    <td valign="top" width="216">زيدٌ فى البيتِ -যায়েদ বাড়ির মধ্যে আছে।</td>
+                    </tr>
+                    <tr>
+                    <td colspan="2" valign="top" width="216">انا فى الدار -আমি ঘরের মধ্যে</td>
+                    <td valign="top" width="216"></td>
+                    </tr>
+                    <tr>
+                    <td colspan="3" valign="top" width="432"><strong>১৪. </strong><strong>عن</strong><strong> </strong><strong>– </strong>হতে, নিকট হতে, র, এর, {ব্যাক্তি, বস্তুর ক্ষেত্রে} অর্থে ব্যবহৃত হয়। যেমন-<strong></strong></td>
+                    </tr>
+                    <tr>
+                    <td colspan="3" valign="top" width="432">رميتُ السَّهْمَ عن القَوْسِআমি ধনুক হতে তীর নিক্ষেপ করলাম।</td>
+                    </tr>
+                    <tr>
+                    <td colspan="3" valign="top" width="432"><strong>১৫. </strong><strong>على</strong><strong> </strong><strong>– </strong>উপরে, পাশে, বিপক্ষে, বিরুদ্ধে অর্থে ব্যবহৃত হয়। যেমন-<strong></strong></td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="192">زيدٌ على السطعِযায়েদ ছাদের উপর।</td>
+                    <td colspan="2" valign="top" width="240">الكتاب على الطاويلةবইটি টেবিলের উপর।</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="192">مررت عليهআমি তার নিকট দিয়ে গেলাম।</td>
+                    <td colspan="2" valign="top" width="240">كتب عليكم الصيامতোমারদের উপর রোজা ফরজ করা হয়েছে।</td>
+                    </tr>
+                    <tr>
+                    <td colspan="3" valign="top" width="432"><strong>১৬. </strong><strong>حتى</strong><strong> </strong><strong>– </strong>অবশেষে, পর্যন্ত অর্থে ব্যবহৃত হয়। যেমন-<strong></strong></td>
+                    </tr>
+                    <tr>
+                    <td colspan="2" valign="top" width="216">الكلت السمك حتى راسهاআমি মাছটি মাথা পর্যন্ত খেয়েছি।</td>
+                    <td valign="top" width="216">نِمْتُ البارحةَ حتى الصباحِআমি ভোর পর্যন্ত শান্তিতে ঘুমিয়েছি।</td>
+                    </tr>
+                    <tr>
+                    <td colspan="3" valign="top" width="432"><strong>১৭. </strong><strong>الى</strong><strong> </strong><strong>– </strong>দিকে, পর্যন্ত, তে, প্রতি অর্থে ব্যবহৃত হয়। যেমন-<strong></strong></td>
+                    </tr>
+                    <tr>
+                    <td colspan="2" valign="top" width="216">سرت من مكة الى مدينةআমি মক্কা থেকে মদীনা পর্যন্ত ভ্রমন করেছি।</td>
+                    <td valign="top" width="216">سرت من راجشاهى الى داكاআমি রাাজশাহী থেকে ঢাকা পর্যন্ত ভ্রমন করেছি।</td>
+                    </tr>
+                    <tr>
+                    <td colspan="3" valign="top" width="432">اذهب الى المدرسة -আমি মাদ্&zwnj;রাসার দিকে যাব।</td>
+                    </tr>
+                    <tr>
+                    <td width="192"></td>
+                    <td width="24"></td>
+                    <td width="216"></td>
+                    </tr>
+                    </tbody>
+                    </table>
+                    <p><strong>&nbsp;</strong></p>
+                    <p><strong>Note:</strong> جار مجرور মিলে সর্বদা একটি فعل বা شبه فعل এর সাথে متعلق (সম্পৃক্ত) হবে। উক্ত فعل বা شبه فعل টি حرف جار এর আগে বা পরে @E&shy;õM থাকতে পারে আবার উহ্যও থাকতে পারে। شبه فعل &nbsp;বলতে ১. اسم فاعل 2.اسم مفعول 3.اسم فاعل مبالغة &nbsp;4.اسم تفضيل 5.اسم مصدر ৬. صفة مشبهة &nbsp;এই &nbsp;৬টি بـحث এর صيغة গুলিকে বুঝায় ।</p>
+                    <p align="center"><strong>&nbsp;الحروف المشبهة بالفعل</strong><strong></strong></p>
+                    <p align="center">(فعل বা ক্রিয়ার সদৃশ্য অব্যয়)<strong></strong></p>
+                    <p>@ &nbsp;ইহারা ৬টি, যেগুলি &nbsp;مبتدأ &nbsp;কে نصب &nbsp;ও خبر ®Lرفع &nbsp;দেয়। যথা-</p>
+                    <table border="1" cellspacing="0" cellpadding="0">
+                    <tbody>
+                    <tr>
+                    <td valign="top" width="36">
+                    <p align="center">১</p>
+                    </td>
+                    <td valign="top" width="60">
+                    <p align="center">إنَّ</p>
+                    </td>
+                    <td valign="top" width="156">হ্যা, সত্যই, বটে</td>
+                    <td valign="top" width="180">إن زيدًا قائمٌ</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="36">
+                    <p align="center">২</p>
+                    </td>
+                    <td valign="top" width="60">
+                    <p align="center">أنَّ</p>
+                    </td>
+                    <td valign="top" width="156">হ্যা, সত্যই, বটে</td>
+                    <td valign="top" width="180">سمعت أن زيدًا علمٌ</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="36">
+                    <p align="center">৩</p>
+                    </td>
+                    <td valign="top" width="60">
+                    <p align="center">كأنَّ</p>
+                    </td>
+                    <td valign="top" width="156">মনে হয়, যেন, মত</td>
+                    <td valign="top" width="180">كأن زيدًا أسدٌ</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="36">
+                    <p align="center">৪</p>
+                    </td>
+                    <td valign="top" width="60">
+                    <p align="center">لكنَّ</p>
+                    </td>
+                    <td valign="top" width="156">কিন্তু, সুতরাং</td>
+                    <td valign="top" width="180">غاب زيدٌ لكن بكرًا حاضرٌ</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="36">
+                    <p align="center">৫</p>
+                    </td>
+                    <td valign="top" width="60">
+                    <p align="center">ليت</p>
+                    </td>
+                    <td valign="top" width="156">যদি</td>
+                    <td valign="top" width="180">ليت الشبابَ عائدٌ</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="36">
+                    <p align="center">৬</p>
+                    </td>
+                    <td valign="top" width="60">
+                    <p align="center">لعل</p>
+                    </td>
+                    <td valign="top" width="156">সম্ভবত, মনে হয়, হয়ত</td>
+                    <td valign="top" width="180">
+                    <h2 align="left">لعلي السلطانَ يكرِمينِى</h2>
+                    </td>
+                    </tr>
+                    </tbody>
+                    </table>
+                    <p><strong>&nbsp;Note:</strong> কেউ কেউ &nbsp;&nbsp;بانَّHhw &nbsp;لانَّ কেও حرف مشبهة بالفعل বলে উল্লেখ করেছেন।</p>
+                    <p align="center">&nbsp;<strong>الحروف الندأ</strong><strong></strong></p>
+                    <p align="center">(আহবানকারী অব্যয়)</p>
+                    <p>@ ইহারা ৭টি, যেগুলি اسم কে نصب দেয়। যথা</p>
+                    <table border="1" cellspacing="0" cellpadding="0">
+                    <tbody>
+                    <tr>
+                    <td valign="top" width="36">
+                    <p align="center">১</p>
+                    </td>
+                    <td valign="top" width="60">
+                    <p align="center">يا</p>
+                    </td>
+                    <td rowspan="5" width="156">(হে, ওহে,, ওগো, ঐ, এইযে, এই, এই জনাব/ জনাবা)</td>
+                    <td valign="top" width="180">يا عبدَ اللهِ</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="36">
+                    <p align="center">২</p>
+                    </td>
+                    <td valign="top" width="60">
+                    <p align="center">أيا</p>
+                    </td>
+                    <td valign="top" width="180">أيا غلامَ زيد</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="36">
+                    <p align="center">৩</p>
+                    </td>
+                    <td valign="top" width="60">
+                    <p align="center">هيا</p>
+                    </td>
+                    <td valign="top" width="180">هيا شريفَ القومِ ٍ</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="36">
+                    <p align="center">৪</p>
+                    </td>
+                    <td valign="top" width="60">
+                    <p align="center">اى</p>
+                    </td>
+                    <td valign="top" width="180">
+                    <p align="center">اى افضلَ القومِ، اى عبدَ اللهِ</p>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="36">
+                    <p align="center">৫</p>
+                    </td>
+                    <td valign="top" width="60">
+                    <p align="center">أ</p>
+                    </td>
+                    <td valign="top" width="180">أعبدَ اللهِ</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="36">
+                    <p align="center">৬</p>
+                    </td>
+                    <td valign="top" width="60">
+                    <p align="center">وَ</p>
+                    </td>
+                    <td colspan="2" valign="top" width="336">(বিপদের সময় কিংবা অসুস্ত অবস্থায ডাকা)</td>
+                    </tr>
+                    </tbody>
+                    </table>
+                    <p align="center"><strong>&nbsp;الحروف الناصبة لفعل المضارع</strong><strong></strong></p>
+                    <p align="center">(মুযারে ®Lنصب &nbsp;দানকারী অব্যয়)<strong></strong></p>
+                    <p>@ الحروف الناصبة المضارع&nbsp; ৪টি ইহারা فعل مضارع কে نصب দেয়।</p>
+                    <table border="1" cellspacing="0" cellpadding="0">
+                    <tbody>
+                    <tr>
+                    <td valign="top" width="37">
+                    <p align="center">১</p>
+                    </td>
+                    <td valign="top" width="35">
+                    <p align="center">ان</p>
+                    </td>
+                    <td valign="top" width="216">যে</td>
+                    <td valign="top" width="144">اريد ان تحسن الىَّ</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="37">
+                    <p align="center">২</p>
+                    </td>
+                    <td valign="top" width="35">
+                    <p align="center">لن</p>
+                    </td>
+                    <td valign="top" width="216">কখনো না, নিশ্চয় না</td>
+                    <td valign="top" width="144">انا لن اضربك</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="37">
+                    <p align="center">৩</p>
+                    </td>
+                    <td valign="top" width="35">
+                    <p align="center">كى</p>
+                    </td>
+                    <td valign="top" width="216">যেন</td>
+                    <td valign="top" width="144">اسلمت كى ادخل الجنة</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="37">
+                    <p align="center">৪</p>
+                    </td>
+                    <td valign="top" width="35">
+                    <p align="center">اذن</p>
+                    </td>
+                    <td valign="top" width="216">যেন</td>
+                    <td valign="top" width="144">اذن يغفر الله لك</td>
+                    </tr>
+                    </tbody>
+                    </table>
+                    <p><strong>&nbsp;Note: </strong>এছাড়াও আরো কতগুলি حرف রয়েছে যে গুলি مضارع কে نصب দেয়। যথা-</p>
+                    <table border="1" cellspacing="0" cellpadding="0">
+                    <tbody>
+                    <tr>
+                    <td width="48">
+                    <p align="center">১</p>
+                    </td>
+                    <td width="96">لام التعليل</td>
+                    <td width="168">خذ الدواء لتبرراء</td>
+                    </tr>
+                    <tr>
+                    <td width="48">
+                    <p align="center">২</p>
+                    </td>
+                    <td width="96">لام الجهود</td>
+                    <td width="168">ما كان الله ليعذبهم</td>
+                    </tr>
+                    <tr>
+                    <td width="48">
+                    <p align="center">৩</p>
+                    </td>
+                    <td width="96">حتى</td>
+                    <td width="168">صم حتى تغيب الشمس</td>
+                    </tr>
+                    <tr>
+                    <td width="48">
+                    <p align="center">৪</p>
+                    </td>
+                    <td width="96">او</td>
+                    <td width="168">لاضربنك او تنوب</td>
+                    </tr>
+                    <tr>
+                    <td width="48">
+                    <p align="center">৫</p>
+                    </td>
+                    <td width="96">فاء</td>
+                    <td width="168">زرنى فاكرمك</td>
+                    </tr>
+                    <tr>
+                    <td width="48">
+                    <p align="center">৬</p>
+                    </td>
+                    <td width="96">واو معية</td>
+                    <td width="168">لا ازورك وتهجرنى</td>
+                    </tr>
+                    </tbody>
+                    </table>
+                    <p align="center">&nbsp;<strong>الحروف الجازمة المضارع</strong><strong></strong></p>
+                    <p align="center">(মুযারে কে যযম দানকারী অব্যয়)</p>
+                    <p>@ ইহারা ৫টি &nbsp;فعل مضارع কে جزم দেয়। ইহাদেরকে &nbsp;حرف شرطJ বলে।</p>
+                    <table border="1" cellspacing="0" cellpadding="0">
+                    <tbody>
+                    <tr>
+                    <td width="24">
+                    <p align="center">১</p>
+                    </td>
+                    <td width="74">لم</td>
+                    <td colspan="2" width="118">না</td>
+                    <td colspan="2" valign="top" width="216">لم يَضْرِبْ</td>
+                    </tr>
+                    <tr>
+                    <td width="24">
+                    <p align="center">২</p>
+                    </td>
+                    <td width="74">لما</td>
+                    <td colspan="2" width="118">যাই হোাক</td>
+                    <td colspan="2" valign="top" width="216">لـمَّا يَضْرِبْ زَيْدٌ</td>
+                    </tr>
+                    <tr>
+                    <td width="24">
+                    <p align="center">৩</p>
+                    </td>
+                    <td width="74">لام الامر</td>
+                    <td colspan="2" width="118">উচিৎ,প্রস্তাব,হোক, হবে</td>
+                    <td colspan="2" valign="top" width="216">لِيَنْصُرْ، ِاَنْصُرْ، لِاُنْصَرْ، لِتُضْرَبْ</td>
+                    </tr>
+                    <tr>
+                    <td width="24">
+                    <p align="center">৪</p>
+                    </td>
+                    <td width="74">لائ النهى</td>
+                    <td colspan="2" width="118">উচিৎ নয়, না, না হোক, না হবে</td>
+                    <td colspan="2" valign="top" width="216">لايضربْ،لاتضربْ،لااضربْ</td>
+                    </tr>
+                    <tr>
+                    <td width="24">
+                    <p align="center">৫</p>
+                    </td>
+                    <td colspan="2" width="88">ان الشرطية</td>
+                    <td colspan="2" width="124">যদি সম্ভব আকাংখ্যা</td>
+                    <td valign="top" width="196">اِن تَضْرِِبْ اَضْرِبْ</td>
+                    </tr>
+                    <tr>
+                    <td width="24"></td>
+                    <td width="74"></td>
+                    <td width="14"></td>
+                    <td width="104"></td>
+                    <td width="20"></td>
+                    <td width="196"></td>
+                    </tr>
+                    </tbody>
+                    </table>
+                    <p><strong>&nbsp;Note:</strong> প্রথম ৪টি একটি فعل مضارع &nbsp;কে জযম দেয়, আর শেষের টি দুঞ্চটি فعل مضارع &nbsp;কে জযম দেয়।</p>
+                    <p>উপরোক্ত حرف গুলো ছাড়াও আরো কতগুলো حرف&nbsp; রয়েছে যে গুলো فعل مضارع কে জযম দেয়; যথা- لو -যদি (অসম্ভব আকাংখ্যা) , إذ، إذا، كلما -(যখন, যে সময়, যে মুহুর্তে), إذًا -(হঠাৎ)।</p>
+                    <p align="center">&nbsp;<strong>الحروف ما و لا المشبهتان بليس</strong><strong> </strong><strong></strong></p>
+                    <p align="center">(ليس সদৃশ্য অব্যয়)&nbsp; <strong></strong></p>
+                    <p>@ ইহারা ২টি, مبتدأ &nbsp;®Lرفع &nbsp;ও خبر ®Lنصب &nbsp;দেয়। যথা-</p>
+                    <table width="432" border="1" cellspacing="0" cellpadding="0">
+                    <tbody>
+                    <tr>
+                    <td valign="top" width="24">
+                    <p align="center">১</p>
+                    </td>
+                    <td valign="top" width="84">
+                    <p align="center">ما</p>
+                    </td>
+                    <td rowspan="2" width="192">না, নাই, নেই, নি, নয়, নও, নই, নহে</td>
+                    <td valign="top" width="132">ما زيدٌ قائمًا</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="24">
+                    <p align="center">২</p>
+                    </td>
+                    <td valign="top" width="84">
+                    <p align="center">لا</p>
+                    </td>
+                    <td valign="top" width="132">لا رجلٌ افضلُ منكَ</td>
+                    </tr>
+                    </tbody>
+                    </table>
+                    <p><strong>&nbsp;</strong>@Ef&shy;l¡š² حرف عامل গুলো ছাড়াও আরো দুটি আমেল আছে আর তাহলো</p>
+                    <ul>
+                    <li><strong>حرف نفى جحد</strong><strong>&nbsp; x</strong>لـم &nbsp;(فعل مضارع এর পূর্বে বসে শেষ Ar&shy;lساكن &nbsp;-যযম <strong>দেয়।)</strong><strong></strong></li>
+                    <li><strong>حرف لا للنفى الجنس</strong><strong>x</strong>لا &nbsp;(اسم কে نصب এবং خبر কে رفع দেয়)<strong></strong></li>
+                    </ul>
+                    <p>@ <strong>الحروف غير عاملة</strong><strong> </strong>(Bjm করে না এরুপ حرف সমূহ) ঃ&nbsp; আমল করে না এরুপ حرف সমূহ বিস্তারিত আলোচনা করা হলো।</p>
+                    <p align="center"><strong>الحروف الاستثنى</strong><strong> </strong><strong></strong></p>
+                    <p align="center">(পৃথককারী অব্যয়)<strong>&nbsp; </strong></p>
+                    <p>@ <strong>ইহা</strong> ৯টি&nbsp; যথা-</p>
+                    <table border="1" cellspacing="0" cellpadding="0">
+                    <tbody>
+                    <tr>
+                    <td valign="top" width="36">
+                    <p align="center">১</p>
+                    </td>
+                    <td valign="top" width="84">
+                    <p align="center">الا</p>
+                    </td>
+                    <td rowspan="10" width="132">
+                    <p align="center">ব্যাতীত / ছাড়া /&nbsp; বাদে / না / নেই / নয় / নও / নই /&nbsp; অন্যথায়</p>
+                    </td>
+                    <td valign="top" width="180">جاءنى القوم الا زيدًا</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="36">
+                    <p align="center">২</p>
+                    </td>
+                    <td valign="top" width="84">
+                    <p align="center">عادا</p>
+                    </td>
+                    <td valign="top" width="180">جاءنى القوم عادا زيدًا</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="36">
+                    <p align="center">৩</p>
+                    </td>
+                    <td valign="top" width="84">
+                    <p align="center">&nbsp;ما عاد</p>
+                    </td>
+                    <td valign="top" width="180">جاءنى القوم ما عاد زيدًا</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="36">
+                    <p align="center">৪</p>
+                    </td>
+                    <td valign="top" width="84">
+                    <p align="center">خلا</p>
+                    </td>
+                    <td valign="top" width="180">جاءنى القوم خلا زيدًا</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="36">
+                    <p align="center">৫</p>
+                    </td>
+                    <td valign="top" width="84">
+                    <p align="center">ليس</p>
+                    </td>
+                    <td valign="top" width="180">جاءنى القوم ليس زيدًا</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="36">
+                    <p align="center">৬</p>
+                    </td>
+                    <td valign="top" width="84">
+                    <p align="center">لايكون</p>
+                    </td>
+                    <td valign="top" width="180">جاءنى القوم لايكون زيدًا</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="36">
+                    <p align="center">৭</p>
+                    </td>
+                    <td valign="top" width="84">
+                    <p align="center">غير</p>
+                    </td>
+                    <td valign="top" width="180">جاءنى القوم غير زيدٍ</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="36">
+                    <p align="center">৮</p>
+                    </td>
+                    <td valign="top" width="84">
+                    <p align="center">حاشا</p>
+                    </td>
+                    <td valign="top" width="180">جاءنى القوم حاشا زيدٍ</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="36">
+                    <p align="center">৯</p>
+                    </td>
+                    <td valign="top" width="84">
+                    <p align="center">سوى</p>
+                    </td>
+                    <td valign="top" width="180">جاءنى القوم سوى زيدٍ</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="36">
+                    <p align="center">১০</p>
+                    </td>
+                    <td valign="top" width="84">
+                    <p align="center">سواء</p>
+                    </td>
+                    <td valign="top" width="180">جاءنى القوم سواء زيدٍ</td>
+                    </tr>
+                    </tbody>
+                    </table>
+                    <p align="center">&nbsp;<strong>الحروف العطف</strong><strong></strong></p>
+                    <p align="center">(সংযোগকারী&nbsp; অব্যয়)</p>
+                    <p>@ ®k në à¡l¡ عطف Ll¡ qu a¡&shy;L حرف عطف (pw&shy;k¡SL অব্যয়) বলে।&nbsp; ইহারা ১০টি যথা-</p>
+                    <table border="1" cellspacing="0" cellpadding="0">
+                    <tbody>
+                    <tr>
+                    <td valign="top" width="34">
+                    <p align="center">১</p>
+                    </td>
+                    <td valign="top" width="50">
+                    <p align="center">واو</p>
+                    </td>
+                    <td valign="top" width="170">এবং/ও/বরঞ্চ/বরং/অর্থাৎ/ এমতাবস্থায়/</td>
+                    <td colspan="2" valign="top" width="185">جاءنى زيدٌ و عمرٌ</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="34">
+                    <p align="center">২</p>
+                    </td>
+                    <td valign="top" width="50">
+                    <p align="center">فاء</p>
+                    </td>
+                    <td colspan="2" valign="top" width="204">তারপর/ অতপর/ অতএব/ সুতরাং</td>
+                    <td valign="top" width="151">قام زيدٌ فعمرٌو</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="34">
+                    <p align="center">৩</p>
+                    </td>
+                    <td valign="top" width="50">
+                    <p align="center">ثم</p>
+                    </td>
+                    <td valign="top" width="170">আবার/পুনরায়/তারপর</td>
+                    <td colspan="2" valign="top" width="185">دخل زيدٌ ثم عمرٌو</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="34">
+                    <p align="center">৪</p>
+                    </td>
+                    <td valign="top" width="50">
+                    <p align="center">حتى</p>
+                    </td>
+                    <td valign="top" width="170">অতপর/পর্যন্ত/অবশেষে</td>
+                    <td colspan="2" valign="top" width="185">مات الناسُ حتى الانبياءُ</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="34">
+                    <p align="center">৫</p>
+                    </td>
+                    <td valign="top" width="50">
+                    <p align="center">او</p>
+                    </td>
+                    <td valign="top" width="170">অথবা/ কিংবা</td>
+                    <td colspan="2" valign="top" width="185">مررت برجلٍ او إمرأةٍ</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="34">
+                    <p align="center">৬</p>
+                    </td>
+                    <td valign="top" width="50">
+                    <p align="center">إما</p>
+                    </td>
+                    <td valign="top" width="170">হয়ত/ অথবা</td>
+                    <td colspan="2" valign="top" width="185">أزيدٌ عندك ام عمرُو</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="34">
+                    <p align="center">৭</p>
+                    </td>
+                    <td valign="top" width="50">
+                    <p align="center">ام</p>
+                    </td>
+                    <td valign="top" width="170"></td>
+                    <td colspan="2" valign="top" width="185">العددُ إما زوجٌ وإما فردٌ</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="34">
+                    <p align="center">৮</p>
+                    </td>
+                    <td valign="top" width="50">
+                    <p align="center">لا</p>
+                    </td>
+                    <td valign="top" width="170">না/নয়ত</td>
+                    <td colspan="2" valign="top" width="185">جاءنى زيدٌ لا عمرُو</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="34">
+                    <p align="center">৯</p>
+                    </td>
+                    <td valign="top" width="50">
+                    <p align="center">بل</p>
+                    </td>
+                    <td valign="top" width="170">বরং/বরঞ্চ</td>
+                    <td colspan="2" valign="top" width="185">جاءنى زيدٌ بل عمرُو</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="34">
+                    <p align="center">১০</p>
+                    </td>
+                    <td valign="top" width="50">
+                    <p align="center">لكن</p>
+                    </td>
+                    <td valign="top" width="170">কিন্তু/সুতরাং/তবে/তবু</td>
+                    <td colspan="2" valign="top" width="185">ما جاءنى زيدٌ لكن عمرُو جاء</td>
+                    </tr>
+                    <tr>
+                    <td width="34"></td>
+                    <td width="50"></td>
+                    <td width="170"></td>
+                    <td width="34"></td>
+                    <td width="151"></td>
+                    </tr>
+                    </tbody>
+                    </table>
+                    <p align="center">&nbsp;<strong>الحروف التنبيه</strong><strong></strong></p>
+                    <p align="center">(সতর্ককারী অব্যয়)</p>
+                    <p>@ ইহারা ৩টি যথা-</p>
+                    <table width="432" border="1" cellspacing="0" cellpadding="0">
+                    <tbody>
+                    <tr>
+                    <td valign="top" width="24">
+                    <p align="center">১</p>
+                    </td>
+                    <td valign="top" width="56">
+                    <p align="center">اَمَا</p>
+                    </td>
+                    <td rowspan="3" width="130">
+                    <p align="center">হুসিয়ার/সাবধান/ হে/ ওহে/ঐ/ এই</p>
+                    </td>
+                    <td valign="top" width="222">اما لا تفعل</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="24">
+                    <p align="center">২</p>
+                    </td>
+                    <td valign="top" width="56">
+                    <p align="center">اَلاَ</p>
+                    </td>
+                    <td valign="top" width="222">الا لاتصرب</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="24">
+                    <p align="center">৩</p>
+                    </td>
+                    <td valign="top" width="56">
+                    <p align="center">هَا</p>
+                    </td>
+                    <td valign="top" width="222">ها زيدٌ قائمٌ (اسمية) ها افعل (فعلية)</td>
+                    </tr>
+                    </tbody>
+                    </table>
+                    <p align="center">&nbsp;<strong>الحروف الايجاب</strong><strong></strong></p>
+                    <p align="center">(হাঁ বোধক অব্যয়)</p>
+                    <p>@ ইহারা ৬টি, যথা-</p>
+                    <table width="432" border="1" cellspacing="0" cellpadding="0">
+                    <tbody>
+                    <tr>
+                    <td rowspan="2" width="120">
+                    <p align="center">نَعَمْ، بَلَى، اَجَلْ، جَيْرَ،انَّ،اِىْ</p>
+                    </td>
+                    <td rowspan="2" valign="top" width="156">
+                    <p align="center">জি / হ্যা /&nbsp; সত্য / হয় / বটে / ঠিকই / নিশ্চয় /&nbsp; অবশ্যই / বেশ / ভালো</p>
+                    </td>
+                    <td valign="top" width="156">أجاء زيدٌ -نعم</td>
+                    </tr>
+                    <tr>
+                    <td valign="top" width="156">الست بربكم قالوا بلى</td>
+                    </tr>
+                    </tbody>
+                    </table>
+                    <p>@ উপরোক্ত حرف عير عامل গুলি ছাড়াও আরো কতগুলো حرف عير عامل&nbsp; আছ।যথা-</p>
+                    <table width="432" border="1" cellspacing="0" cellpadding="0">
+                    <tbody>
+                    <tr>
+                    <td width="112">حرف استفهام</td>
+                    <td width="320">هل، أ، ام، اف، او، (কি)</td>
+                    </tr>
+                    <tr>
+                    <td width="112">حرف نفى</td>
+                    <td valign="top" width="320">أن، ما، لا، ليس (না/ নাই/ নেই/ নি/ নয়/ নও/ নই/ নহে)</td>
+                    </tr>
+                    <tr>
+                    <td width="112">حرف زيادة</td>
+                    <td valign="top" width="320">إن، أن، ما ، لا، من، بِ، لِ، (কখনো কখনো এই শব্দ গুলি বাক্যের মধ্যে অতিরিক্ত হিসেবে ব্যবহৃত হয় তখন ইহাদের অর্থের প্রয়োজন হয় না।</td>
+                    </tr>
+                    <tr>
+                    <td width="112">حرف تفسير</td>
+                    <td valign="top" width="320">أن، اى، ف (অথ্যাৎ)</td>
+                    </tr>
+                    <tr>
+                    <td width="112">حرف تخصيص</td>
+                    <td valign="top" width="320">ألا، هلا، (কি-না,) &nbsp;لولا، لوما (যদি-না)</td>
+                    </tr>
+                    <tr>
+                    <td width="112">حرف مصدر</td>
+                    <td valign="top" width="320">ما، ان (ইহারা অবস্থা বিশেষে فعل مضارع এর পূর্বিে বসে مصدرى অর্থ প্রকাশ করে যেমন- انيضرب (মারা), ما يضرب&nbsp; (মারা)</td>
+                    </tr>
+                    <tr>
+                    <td width="112">حرف تاكيد</td>
+                    <td valign="top" width="320">কোন বিষয়ের গুরুত্ব বুঝাবার জন্য আধিক্য বোধক যে শব্দ বলা হয় তাকে تاكيد বলে। حرف تاكيد ঃ&nbsp; لَ، نْ، نّ، قد، لقد، إنَّ، أنَّ (নিশ্চয়/অবশ্যই/ নিতান্তই/ নিশ্চিত / সত্যই) &nbsp;نفس، عين، كلا، كلتا، كل، اجمع ইত্যাদি।</td>
+                    </tr>
+                    <tr>
+                    <td width="112">حرف ردع</td>
+                    <td valign="top" width="320">كلاَّ (কখনো না/ অসম্ভব/ নিশ্চয় না ।</td>
+                    </tr>
+                    </tbody>
+                    </table>
+                                
+                                
+                                
+                                
+                                
+                    
+                        </div>
+
+
+
+                </div>
+            </div>
+
+
+
+
+            <!-- Verb Block -->
+
+
+            <div class="col-md-12 verb-block word_forms_blocks  text-center"  style="display: none;">
+                <h2> ক্রিয়াপদ ( فِعْلٌ )</h2>
+                <select class="niceselect verb_words select2"></select>
+                <div class="verb_word_details">
+
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+</div>
+
+<style>
+      .niceselect.select2{ margin: 10px auto;}
+      .dchange{ border: 1px solid #eee; background: none;}
+      .bg-light2{ background: #fefefe;}
+      .heading{ line-height: 1.4;}
+      .subheading{ line-height: 1.4;}
+      table.simpletable{width: 100%;}
+      table.simpletable.male tr td{ border-bottom: 2px double #0f242f; border-right: 3px solid #0f242f;}
+      table.simpletable.female tr td{ border-bottom: 2px double #e83e8c;border-right: 3px solid #e83e8c;}
+      table.simpletable tr.noborder td{ border: none;}
+      table.simpletable td{ padding: 3px 5px;}
+      input.arabic.large{ font-size: 3rem !important;}
+</style>
+<script>
+    var ism_words = [
+          { "word" : "مُسْلِمٌ", 
+            'meaning': 'মুসলিম', 
+                                'msr': 'مُسْلِمٌ',   
+                                'msn' : 'مُسْلِمًا', 
+                                'msj' : 'مُسْلِمٍ', 
+
+                                'mdr': 'مُسْلِمَانِ',   
+                                'mdn' : 'مُسْلِمَيْنِ', 
+                                'mdj' : 'مُسْلِمَيْنِ', 
+
+                                'mpr': 'مُسْلِمُوْنَ',    
+                                'mpn' : 'مُسْلِمِيْنَ', 
+                                'mpj' : 'مُسْلِمِيْنَ', 
+
+
+                               
+                                'fsr': 'مُسْلِمٌ',     
+                                'fsn' : 'Muslima',  
+                                'fsj' : 'Muslima', 
+
+                                'fdr': 'مُسْلِمٌ',   
+                                'fdn' : 'Muslima',  
+                                'fdj' : 'Muslima', 
+
+                                'fpr': 'مُسْلِمٌ',    
+                                'fpn' : 'Muslima',  
+                                'fpj' : 'Muslima',
+        },
+          { "word" : "sdsa", 'meaning': 'asdfs Meaning', 'ms': 'sd', 'md' : 'dsfa', 'mp': 'sdf P', 'fs': 'F ddS', 'fd': 'Fd D', 'fp': 'Ff Pl'},
+    ]
+    $(document).ready(function () {
+        var soptions = [];
+    
+        $.each(ism_words, function(k, v){  
+            soptions.push('<option value="', k, '"> ' + v['meaning'] + ' ( ' + v['word'] + ' ) </option>');
+        });    
+        
+
+        $(".arabic_word_forms_practice select.ism_words").html(soptions.join(''));
+        DoIsmWordChanged();
+
+
+    });
+
+
+    function DoIsmWordChanged(){
+       Cindex = $(".arabic_word_forms_practice select.ism_words").val();
+
+       $('.arabic_word_forms_practice .dchange').each(function(){
+           target = $(this).data('linked');
+           $(this).val(ism_words[Cindex][target]);
+
+       })
+
+
+    }
+
+    function generateIsmArray(){
+        $('.ism_array_result').html('Development Purpose to generate JSON array, for new word adding');
+    }
+
+    function openBlock(block){
+         $('.arabic_word_forms_practice .word_forms_blocks').hide();
+         $('.arabic_word_forms_practice .'+block+'-block').slideDown();
+    }
+
+
+</script>

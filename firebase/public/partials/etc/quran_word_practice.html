@@ -1,0 +1,365 @@
+<style>
+    .bbottom{
+         border-bottom: 1px solid #eee;
+    }
+    .arabic_quiz_success .words-text,
+    .arabic_quiz .words-text{
+        padding-top: 0;
+    }
+    .arabic_quiz_success .quran-text span{
+        color: #167b1a;
+        font-weight: 500;
+    }
+
+    .arabic_quiz .quran-text{
+        background: url(/images/what_quiz.png) no-repeat center center;
+        color: #212121;
+        background-size: contain;
+        min-height: 50px;
+        display: block;
+        min-width: 50px;
+        font-size: 0;
+    }
+
+
+</style>
+<div class="wbw_practive">
+                <div class="pageIndex pindextop"> 
+                    <div class="row">  
+                        <div class="col-md-12 col-sm-12 col-lg-12 text-center">
+                            <div class="row">
+                                <div class="col-12"><h5 class="bg-navy pad10 lh12">এটা একটি মডিউল, যার মাধ্যমে আপনি আপনার মুখস্ত সূরার শব্দ সমূহ কে যাচাই করতে পারবেন,  সঠিক শব্দ তে ক্লিক করে যাচাই করুন আপনার (সঠিক হরফ / সূরার শব্দ বিন্যাস) স্মৃতি  </h5></div>
+                                <div class="col-md-6  col-sm-12 text-right mobilecenter"> 
+                                    <select  class="niceselect SelectQSurah" onchange="loadSurah_Ayahs()">
+                                        <option value=""> সূরা </option>
+                                    </select>
+
+                                    <select  class="niceselect SelectAyahSelected" onchange="loadSurah_Ayah_andProcess()">
+                                        <option value="1"> 1 </option>
+                                    </select>
+                
+
+                                </div>
+                                <div class="col-md-6 col-sm-12 text-left mobilecenter">
+                                    <button type="button" onclick="loadSurah_Ayah_andProcess()" class="btn bg-lightblue btn-lg"> সূরার আয়াত লোড করুন </button> 
+                                </div>
+                            </div>
+                            <hr /> 
+                            
+                        </div>
+                    </div> 
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3 col-sm-12"><div class="total_error bn text-center"></div></div>
+                    <div class="col-md-9 col-sm-12"><div class="full_quran_translation translation"></div>  </div>
+                    
+                </div>
+
+
+                <hr />
+                <div class="next_prev_nav clearfix text-center"> 
+                    <button onclick="goNextPrevSurah(0)" class="btn btn-sm btn-info prev_surah float-left"><i class="fa fa-arrow-circle-left"></i> আগের  সূরা  </button>
+                    <button onclick="goNextPrev(0)" class="btn btn-sm btn-info prev_ayah"><i class="fa fa-arrow-circle-left"></i> আগের  আয়াত  </button>
+                    <button onclick="goNextPrev(1)" class="btn btn-sm btn-info next_ayah"><i class="fa fa-arrow-circle-right"></i> পরবর্তী আয়াত </button>
+                    <button onclick="goNextPrevSurah(1)" class="btn btn-sm btn-info next_surah float-right"><i class="fa fa-arrow-circle-right"></i> পরবর্তী সূরা  </button>
+                </div>
+                <br /> 
+
+                
+                <div class="quranic_ayah_wbw"></div> 
+                <hr />
+                <div class="next_prev_nav clearfix text-center"> 
+                    <button onclick="goNextPrevSurah(0)" class="btn btn-sm btn-info prev_surah float-left"><i class="fa fa-arrow-circle-left"></i> আগের  সূরা  </button>
+                    <button onclick="goNextPrev(0)" class="btn btn-sm btn-info prev_ayah"><i class="fa fa-arrow-circle-left"></i> আগের  আয়াত  </button>
+                    <button onclick="goNextPrev(1)" class="btn btn-sm btn-info next_ayah"><i class="fa fa-arrow-circle-right"></i> পরবর্তী আয়াত </button>
+                    <button onclick="goNextPrevSurah(1)" class="btn btn-sm btn-info next_surah float-right"><i class="fa fa-arrow-circle-right"></i> পরবর্তী সূরা  </button>
+                </div>
+                <br /> 
+
+</div>
+
+
+<script type="text/javascript"> 
+
+var total_error  = 0;
+$(document).ready(function () {
+    $('.pageIndex').slideDown();
+    
+    var soptions = []; 
+
+    soptions.push('<option value="',
+        1, '"> (',
+        en2bnNumber(1)+ ') সূরা - ' + bangla_sura_names[0], '</option>'); 
+
+    for (var i = 114; i > 1; i--) {
+        soptions.push('<option value="',
+        i, '"> (',
+        en2bnNumber(i)+ ') সূরা - ' + bangla_sura_names[i-1], '</option>'); 
+    }
+ 
+    $(".wbw_practive  select.SelectQSurah").html(soptions.join('')); 
+   
+    $(".wbw_practive  .pindextop select.SelectQSurah option[value=\"1\"]").prop('selected', true);
+    $(".wbw_practive  .pindextop select.SelectQSurah").trigger('change'); 
+
+    
+     
+
+});
+
+function goNextPrev(e){
+
+    selectedayah = parseInt($(".wbw_practive  select.SelectAyahSelected option:selected").val(), 10); 
+ 
+
+    if(e == 0){
+        // previous 
+        ay = selectedayah -1; 
+        $(".wbw_practive  select.SelectAyahSelected option[value=\""+  ay  +"\"]").prop('selected', true);
+        $(".wbw_practive  select.SelectAyahSelected").trigger('change'); 
+
+    }
+    if(e == 1){
+        // next 
+        ay = selectedayah + 1; 
+        $(".wbw_practive  select.SelectAyahSelected option[value=\""+  ay  +"\"]").prop('selected', true);
+        $(".wbw_practive  select.SelectAyahSelected").trigger('change');
+
+    }
+    
+}
+
+function goNextPrevSurah(e){
+
+    selectedayah = parseInt($(".wbw_practive  select.SelectQSurah option:selected").val(), 10); 
+ 
+
+    if(e == 0){
+        // previous 
+        ay = selectedayah -1; 
+        $(".wbw_practive  select.SelectQSurah option[value=\""+  ay  +"\"]").prop('selected', true);
+        $(".wbw_practive  select.SelectQSurah").trigger('change'); 
+
+    }
+    if(e == 1){
+        // next 
+        ay = selectedayah + 1; 
+        $(".wbw_practive  select.SelectQSurah option[value=\""+  ay  +"\"]").prop('selected', true);
+        $(".wbw_practive  select.SelectQSurah").trigger('change');
+
+    }
+    
+}
+
+
+function loadSurah_Ayahs(){
+    surah = $(".wbw_practive  select.SelectQSurah option:selected").val();
+    var foptions = [];  
+       
+    for (var i = 1; i <= ayat_numbers[surah-1]; i++) {
+        foptions.push('<option value="',
+        i, '"> আয়াত - ',
+        en2bnNumber(i), '</option>'); 
+    } 
+
+    $(".wbw_practive  select.SelectAyahSelected").html(foptions.join(''));  
+    loadSurah_Ayah_andProcess();
+ 
+
+}
+
+function loadSurah_Ayah_andProcess(){ 
+    $('.quranic_ayah_wbw').slideDown(); 
+    $('.full_quran_translation').html('');
+
+    total_error = 0;
+    $('.total_error').html('');  // reset error count 
+
+    fsurah    = parseInt( $(".wbw_practive  select.SelectQSurah option:selected").val(), 10);
+    selectedayah = parseInt( $(".wbw_practive  select.SelectAyahSelected option:selected").val(), 10); 
+ 
+    if(fsurah <= 1) $('.next_prev_nav .prev_surah').hide();
+    else { $('.next_prev_nav .prev_surah').show(); $('.next_prev_nav .prev_surah').html('<i class="fa fa-arrow-circle-left"></i>  আগের সূরা (' + en2bnNumber(fsurah-1) + ") " + bangla_sura_names[fsurah-2] ) }
+
+    if(fsurah >= 114) $('.next_prev_nav .next_surah').hide();
+    else {  $('.next_prev_nav .next_surah').show(); $('.next_prev_nav .next_surah').html(' <i class="fa fa-arrow-circle-right"></i>  পরবর্তী সূরা (' + en2bnNumber(fsurah+1) + ") " + bangla_sura_names[fsurah] )}
+
+
+
+    if(selectedayah == 1) $('.next_prev_nav .prev_ayah').hide();
+    else { $('.next_prev_nav .prev_ayah').show(); $('.next_prev_nav .prev_ayah').html('<i class="fa fa-arrow-circle-left"></i>  আগের আয়াত : ' + en2bnNumber(selectedayah-1)  )  }
+    
+
+    if(selectedayah >= ayat_numbers[fsurah-1]) $('.next_prev_nav .next_ayah').hide();
+    else { $('.next_prev_nav .next_ayah').show();  $('.next_prev_nav .next_ayah').html(' <i class="fa fa-arrow-circle-right"></i>  পরবর্তী আয়াত : ' + en2bnNumber(selectedayah+1)  ) }
+
+    
+    
+    full_quran_tajweed_html = '';
+
+    loadandReplace('/resources/quran/'+ fsurah + '/' + selectedayah + '_translation.html', '.full_quran_translation');
+
+    ajaxurl = '/resources/quran/'+fsurah+'/'+ selectedayah + '_ayat.html';
+    $('.ajaxprocess').addClass('run'); 
+    
+    $.ajax({
+        type: "GET",
+        async:false, // set async false to wait for previous response
+        url: ajaxurl,  
+        success: function(data)
+        {
+           $('.ajaxprocess').removeClass('run');
+           data_html = ''; 
+           
+           $('.quranic_ayah_wbw').html(data);  
+
+           ayahblocks = $('.quranic_ayah_wbw .block'); 
+           $.each(ayahblocks, function(k, val){ 
+                random_words = generate_random_words(k, val);
+                data_html += '<tr class="arabic-block-'+k+'"><td style="width:30%" class="wbw_block text-center '+ random_words['class']+'">'+ $(val).html() +'</td><td class="col-md-9 arabic_quiz_random_words">' + random_words['randomwords'] + '</td></tr>'; 
+           });
+
+           $('.quranic_ayah_wbw').html('<table class="table-striped" style="width:100%">' + data_html + '</table>');  
+
+
+
+          
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown) { 
+            $('.ajaxprocess').removeClass('run'); 
+            console.log("Status: " + textStatus); console.log("Error: " + errorThrown); 
+        } 
+    });  
+
+}
+
+
+function generate_random_words(k, block){
+   wreturn = {
+       "class": 'arabic_quiz',
+       "randomwords" : ""
+   }
+   arabic_word = $(block).find('.quran-text span').text();
+
+   words = [];
+   words.push(arabic_word);
+   
+   similar_sound_words = [  
+      { "search": "ق" , "replace" : "ك"}, 
+      { "search": "ك" , "replace" : "ق"},  
+      { "search": "ص" , "replace" : "س"},  
+      { "search": "ص" , "replace" : "ث"},  
+      { "search": "ص" , "replace" : "ش"},  
+      { "search": "س" , "replace" : "ص"},  
+      { "search": "س" , "replace" : "ش"},  
+      { "search": "ش" , "replace" : "س"},  
+      { "search": "د" , "replace" : "ض"},  
+      { "search": "ض" , "replace" : "د"},  
+      { "search": "ث" , "replace" : "س"},  
+      { "search": "ث" , "replace" : "ص"},  
+      { "search": "ث" , "replace" : "ش"},  
+      { "search": "س" , "replace" : "ث"},  
+      { "search": "ش" , "replace" : "ث"},  
+      { "search": "ش" , "replace" : "ص"},  
+      { "search": "ذ" , "replace" : "ج"},  
+      { "search": "ذ" , "replace" : "ظ"},  
+      { "search": "ظ" , "replace" : "ذ"},  
+      { "search": "ظ" , "replace" : "ز"},  
+      { "search": "ز" , "replace" : "ظ"},  
+      { "search": "ذ" , "replace" : "ز"},  
+      { "search": "ز" , "replace" : "ذ"},  
+      { "search": "ز" , "replace" : "ج"},  
+      { "search": "ح" , "replace" : "ه"},  
+      { "search": "ه" , "replace" : "ح"},  
+      { "search": "ت" , "replace" : "ط"},  
+      { "search": "ط" , "replace" : "ت"},  
+      { "search": "أ" , "replace" : "ع"},  
+      { "search": "ع" , "replace" : "أ"},  
+      { "search": "بِ" , "replace" : "بِي"},  
+      { "search": "بِي" , "replace" : "بِ"},  
+      { "search": "ال" , "replace" : ""},  
+      { "search": "ٱل" , "replace" : ""},  
+      { "search": "فِث" , "replace" : "فِ"},  
+      { "search": "نَعْ" , "replace" : "نَا"},     
+      { "search": "يّ" , "replace" : "ي"},   
+      { "search": "ي" , "replace" : "يّ"},   
+      { "search": "ة" , "replace" : "ت"},   
+      { "search": "لّ" , "replace" : "الّ"},   
+      //{ "search": "" , "replace" : ""},   
+      //{ "search": "" , "replace" : ""},   
+      
+    ];
+
+  $.each(similar_sound_words, function(ak, wval){ 
+    if(arabic_word.indexOf(wval['search']) >= 0){
+       new_arabic_word = arabic_word.replace( wval['search'], wval['replace']); 
+       words.push(new_arabic_word); 
+    } 
+  });
+
+   
+   random_words_html = '';
+
+   swords = $.shuffle(words);
+
+   $.each(swords, function(kk, aval){
+       random_words_html += '<button class="btn btn-secondary arabic large mar5" onClick="checkWordMatch(this, '+ k +')">'+ aval + '</button>';   
+   });
+
+   if(swords.length == 1){
+       wreturn['class'] = 'arabic_quiz_success';
+       wreturn['randomwords'] = '<div class="arabic large">' + arabic_word + '</div>';
+   }else{
+        wreturn['randomwords'] = random_words_html;
+   }
+
+   return wreturn;
+}
+
+function checkWordMatch(e, k){
+   btn_arabic      = $(e).text();
+   wbw_org_arabic  = $('.quranic_ayah_wbw .arabic-block-'+k+' .wbw_block .quran-text span').text();
+   
+    
+   $('.quranic_ayah_wbw .arabic-block-'+k+ ' .wbw_block').removeClass('arabic_quiz_success').addClass('arabic_quiz');
+   $('.quranic_ayah_wbw .arabic-block-'+k+' .arabic_quiz_random_words .btn').removeClass('btn-success').removeClass('btn-danger').addClass('btn-secondary');
+
+   if(btn_arabic == wbw_org_arabic){ 
+        $(e).removeClass('btn-secondary').addClass('btn-success');
+        $('.quranic_ayah_wbw .arabic-block-'+k+' .wbw_block').removeClass('arabic_quiz').addClass('arabic_quiz_success');
+
+   }else{
+        $('.total_error').html('মোট ভুল হয়েছে  ' + en2bnNumber(++total_error) + ' বার');
+        $(e).removeClass('btn-secondary').addClass('btn-danger');
+        $('.quranic_ayah_wbw .arabic-block-'+k+' .wbw_block').removeClass('arabic_quiz_success').addClass('arabic_quiz');
+   }
+
+   if($('.quranic_ayah_wbw  .arabic_quiz').length < 1)
+   {
+       $(document).Toasts('create', {title: '<i class="fa fa-success fa-2x"></i> ধন্যবাদ সম্পূর্ণ আয়াত সঠিক হয়েছে',  'icon': 'fa fa-spinner fa-2x fa-spin', 'autohide' : true, 'delay': 1500 }); 
+   }
+
+   //console.log($(this).text())
+}
+
+
+(function($){
+
+$.fn.shuffle = function() {
+    return this.each(function(){
+        var items = $(this).children().clone(true);
+        return (items.length) ? $(this).html($.shuffle(items)) : this;
+    });
+}
+
+$.shuffle = function(arr) {
+    for(var j, x, i = arr.length; i; j = parseInt(Math.random() * i), x = arr[--i], arr[i] = arr[j], arr[j] = x);
+    return arr;
+}
+
+})(jQuery);
+
+ 
+ 
+</script>

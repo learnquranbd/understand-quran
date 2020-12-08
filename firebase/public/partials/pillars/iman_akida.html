@@ -1,0 +1,126 @@
+<div class="row topindexbar">
+    <div class="col-md-5 col-sm-12">
+
+        <h3 class="text-center arabic cs1">بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِیْمِ</h3>
+        <p class="bangla text-center">শুরু করছি আল্লাহর নামে যিনি পরম করুণাময়, অতি দয়ালু।</p>
+
+    </div>
+    <div class="col-md-2 col-sm-12 indexcol">
+        <button type="button" class="btn btn-block bg-gradient-secondary btn-lg" onClick="openSidebarMenu()">
+            সূচিপত্র/তালিকা </button>
+    </div>
+    <div class="col-md-5  col-sm-12">
+        <h3 class="text-center arabic cs1"> الإيمان </h3>
+        <p class="bangla text-center">ঈমান </p>
+    </div>
+
+</div>
+
+ 
+
+
+<script>
+    $(document).ready(function () {
+        //openSidebarMenu(); 
+        CayahArray =
+            "2:108, 3:167, 3:173, 3:177, 3:193, 5:5, 9:23, 9:124, 16:106, 30:56, 40:10, 42:52, 49:11, 49:14, 49:17, 49:7, 52:21, 58:22, 59:10, 59:9";
+        dynamic_data = {
+            "subject": "ঈমান ",
+            "introHtml": `  
+                    ঈমান শব্দের আভিধানিক অর্থ দৃঢ় বিশ্বাস। ইসলাম ধর্মে ঈমানের অর্থ অত্যন্ত ব্যাপক । ঈমানের সাতটিি স্তম্ভ হচ্ছেঃ  
+                    <ol><li> এক.  --  একক ইলাহ হিসেবে আল্লাহকে বিশ্বাস করা।
+                    </li><li> দুই.  --  আল্লাহর ফেরেশতাদের প্রতি বিশ্বাস করা।
+                    </li><li> তিন.  --  সমস্ত আসমানী কিতাব সমূহতে বিশ্বাস।
+                    </li><li> চার.  --  সকল নবী ও রাসূলগণের প্রতি বিশ্বাস।
+                    </li><li> পাঁচ.  --  তাক্বদীর বা ভালো মন্দের ওপর আল্লাহর ক্ষমতা রয়েছে বলে বিশ্বাস করা।
+                    </li><li> ছয়.  --  আখিরাত বা পরকালের প্রতি বিশ্বাস।
+                    </li><li> সাত. --  মৃত্যুর পর পুনঃজীবিত হওয়ার প্রতি বিশ্বাস।</li></ol>`,
+
+            "ayah": String2AyahArray(CayahArray),
+            "videos": [
+                        {
+                                "title": "ঈমান অর্থ বিশ্বাস এটি প্রচলিত একটা ভুল ধারণা, তাহলে ঈমান অর্থ কি। ড  আবু বকর যাকারিয়া",
+                                "thumb": "https://i.ytimg.com/vi/1qmB_4dD2og/hqdefault.jpg",
+                                "url"  : "https://www.youtube.com/embed/1qmB_4dD2og"
+                        },
+                        {
+                                "title": "ঈমান ভঙ্গের কারণ সমূহ। শাইখ তামিম আল আদনানী (হাফিজাহুল্লাহ)",
+                                "thumb": "https://i.ytimg.com/vi/n95eWZeDIBU/hqdefault.jpg",
+                                "url"  : "https://www.youtube.com/embed/n95eWZeDIBU"
+                        },
+                        {
+                                "title": "আকীদা ও ঈমান  বিষয়ক পর্যালোচনা  Dr. Manzur e Elahi",
+                                "thumb": "https://i.ytimg.com/vi/Q1ZmkswBr50/hqdefault.jpg",
+                                "url"  : "https://www.youtube.com/embed/Q1ZmkswBr50"
+                        },
+                        {
+                                "title": "আকিদা সিরিজ",
+                                "thumb": "https://i.ytimg.com/vi/HiD7sFwtmDg/hqdefault.jpg",
+                                "url"  : "https://www.youtube.com/playlist?list=PL7E7DFtKYTnZajnNkWP_Lmw9HnwkNdtE5"
+                        },
+                        {
+                                "title": "ঈমানের ছয়টি রুকনের সংক্ষিপ্ত ব্যাখ্যা",
+                                "thumb": "https://i.ytimg.com/vi/HX3kdcqN9Fg/maxresdefault.jpg",
+                                "url"  : "https://www.youtube.com/watch?v=HX3kdcqN9Fg"
+                        }
+            ],
+            "articles": [],
+            "books": [
+                    {
+                        'title': 'ঈমানের মৌলিক নীতিমালা',
+                        'url': 'aqeedah%2Fbn_imaner_moulik_nitimala_songkranto_moni_mukta.pdf',
+                        'thumb': 'aqeedah%2Fbn_imaner_moulik_nitimala_songkranto_moni_mukta.png',
+                        "writer": "মুহাম্মাদ ইয়োসরী ইবরাহীম",
+                        "type": "firebase-pdf" 
+                    }, {
+                        'title': 'ইমানের ৭৭ টি শাখা',
+                        'url': 'aqeedah%2Fimaner_sattatorti_shaka.pdf',
+                        'thumb': 'aqeedah%2Fimaner_sattatorti_shaka_cover.png',
+                        "writer": "ইমাম বায়হাকী",
+                        "type": "firebase-pdf" 
+                    },{
+                        'title': 'কুরআন-সুন্নাহর আলোকে ~ ইসলামী আকীদা',
+                        'url': 'aqeedah%2Fquran_sunnaher_aloke_islami_aqida.pdf',
+                        'thumb': 'aqeedah%2Fquran_sunnaher_aloke_islami_aqida_cover.jpeg',
+                        "writer": "ড. আব্দুল্লাহ জাহাঙ্গীর",
+                        "type": "firebase-pdf" 
+                    },{
+                        'title': 'সহীহ হাদীস সম্বলিত অহী ও ঈমান বিশ্বকোষ',
+                        'url': 'aqeedah%2Fbn_sohi_hadith_sombolito_ohi_o_iman_biswokish.pdf',
+                        'thumb': 'aqeedah%2Fbn_sohi_hadith_sombolito_ohi_o_iman_biswokish.png',
+                        "writer": "আব্দুল্লাহ আল-মামুন আল-আযহারী",
+                        "type": "firebase-pdf" 
+                    },{
+                        'title': 'কুরআন-সুন্নাহর আলোকে ~ আল্লাহ ও রাসূল (ছাঃ ) সম্পর্কে সঠিক আক্বীদা',
+                        'url': 'aqeedah%2Fshothik_aqeedah.pdf',
+                        'thumb': 'aqeedah%2Fshothik_aqeedah_cover.png',
+                        "writer": "হাফেয আব্দুল মতীন",
+                        "type": "firebase-pdf" 
+                    },{
+                        'title': 'আল-ফিকহুল আকবর (বঙ্গানুবাদ ও ব্যাখ্যা)',
+                        'url': 'aqeedah%2Ffiq_akbar.pdf',
+                        'thumb': 'aqeedah%2Ffiq_akbar.png',
+                        "writer": "ড. আব্দুল্লাহ জাহাঙ্গীর (রহ.)",
+                        "type": "firebase-pdf" 
+                    },{
+                        'title': 'কুরআন ও হাদীসের আলোকে সহজ আকীদা',
+                        'url': 'aqeedah%2Fbn_sohoj_aqeeda.pdf',
+                        'thumb': 'aqeedah%2Fbn_sohoj_aqeeda.png',
+                        "writer": "আহমাদ ইবন আব্দুর রহমান আল-কাযী",
+                        "type": "firebase-pdf" 
+                    },{
+                        'title': 'ফাতাওয়া আরকানুল ইসলাম-১ (ঈমান)',
+                        'url': 'aqeedah%2Fbn_fatawa_arkanul_islam.pdf',
+                        'thumb': 'aqeedah%2Fbn_fatawa_arkanul_islam_cover.png',
+                        "writer": "মুহাম্মাদ ইবন সালেহ আল-উসাইমীন",
+                        "type": "firebase-pdf" 
+                    },
+            ]
+        };
+
+
+        populate_dynamic_view(dynamic_data);
+
+
+    });
+</script>

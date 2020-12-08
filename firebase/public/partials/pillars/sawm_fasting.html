@@ -1,0 +1,82 @@
+<div class="row topindexbar">
+    <div class="col-md-5 col-sm-12">
+
+        <h3 class="text-center arabic cs1">بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِیْمِ</h3>
+        <p class="bangla text-center">শুরু করছি আল্লাহর নামে যিনি পরম করুণাময়, অতি দয়ালু।</p>
+
+    </div>
+    <div class="col-md-2 col-sm-12 indexcol">
+        <button type="button" class="btn btn-block bg-gradient-secondary btn-lg" onClick="openSidebarMenu()">
+            সূচিপত্র/তালিকা </button>
+    </div>
+    <div class="col-md-5  col-sm-12">
+        <h3 class="text-center arabic cs1"> صيام </h3>
+        <p class="bangla text-center">সিয়াম / রোজা</p>
+    </div>
+
+</div>
+
+ 
+
+
+<script>
+    $(document).ready(function () {
+        //openSidebarMenu(); 
+        CayahArray =
+            "2:178, 2:183, 2:184, 2:185, 2:186, 2:187, 2:196, 4:92, 5:89, 5:95, 19:26, 33:35";
+        dynamic_data = {
+            "subject": "সিয়াম / রোজা",
+            "introHtml": "রোযা বা রোজা (ফার্সি روزہ রুজ়ে), সাউম (আরবি صوم স্বাউম্‌), বা সিয়াম ইসলাম ধর্মের পাঁচটি মূল ভিত্তির তৃতীয়। সুবহে সাদেক থেকে সূর্যাস্ত পর্যন্ত সকল প্রকার পানাহার,পাপাচার, কামাচার এবং সেই সাথে যাবতীয় ভোগ-বিলাস থেকেও বিরত থাকার নাম রোযা। ইসলামী বিধান অনুসারে, প্রতিটি প্রাপ্তবয়স্ক মুসলমানের জন্য রমযান মাসের প্রতি দিন রোজা রাখা ফরজ, (فرض ফ়ার্দ্ব্‌) যার অর্থ অবশ্য পালনীয়।",
+            "ayah": String2AyahArray(CayahArray),
+            "videos": [
+                {
+                    'title': 'ধূলিমলিন উপহার: রমাদান',
+                    'thumb' : 'https://i.ytimg.com/vi/D0HSa_9-f8g/hqdefault.jpg',
+                    'url' : 'https://www.youtube.com/playlist?list=PLrEnZj_8pclt_XvpICHJ48ualJVGsmlU8'
+                }, {
+                    'title': 'রামাদানের চিঠি',
+                    'thumb' : 'https://i.ytimg.com/vi/JYWb3R2i22I/hqdefault.jpg',
+                    'url' : 'https://www.youtube.com/playlist?list=PLrEnZj_8pcltKoopEnFmVCBgou5SUoGDh'
+                }, {
+                    'title': 'রমাদান সংক্রান্ত ভুল',
+                    'thumb' : 'https://i.ytimg.com/vi/B1CUJOqW2tg/hqdefault.jpgs',
+                    'url' : 'https://www.youtube.com/playlist?list=PLKKVMCcG_2QqlqxPgMcmsupw4SGgPONAu'
+                }, {
+                    'title': 'সিয়াম ও রামাদান',
+                    'thumb' : 'https://i.ytimg.com/vi/FHCa9LeGC1g/hqdefault.jpg',
+                    'url' : 'https://www.youtube.com/playlist?list=PL4t9900UvRaJYhgi71QtAYwlFWJhO3FeS'
+                }, {
+                    'title': 'রমজান ও রোজা',
+                    'thumb' : 'https://i.ytimg.com/vi/XRSQ5Fjtg8M/hqdefault.jpg',
+                    'url' : 'https://www.youtube.com/playlist?list=PLTaSXzG7OJzxulRBk98QJdQYXmWHSrqej'
+                }, {
+                    'title': 'রমাদান',
+                    'thumb' : 'https://i.ytimg.com/vi/0KtlVKGkCpI/hqdefault.jpg',
+                    'url' : 'https://www.youtube.com/playlist?list=PLiWNh3deGIzMxbomFm1stWk-SZK5FzL69'
+                }
+            ],
+            "articles": [],
+            "books": [
+            
+                     {
+                        'title': 'রাসূল যেভাবে রমজান যাপন করেছেন',
+                        "writer": "ফায়সাল ইবন আলী আল-বা‘দানী",
+                        "type": "firebase-pdf",
+                        'thumb': 'siam%2Fbn_ramdan_rasuul.png',
+                        'url': 'siam%2Fbn_ramdan_rasuul.pdf'
+                    }, {
+                        'title': 'ফাতাওয়া আরকানুল ইসলাম-৪ সাওম',
+                        "writer": "মুহাম্মাদ ইবন সালেহ আল-উসাইমীন",
+                        "type": "firebase-pdf",
+                        'thumb': 'siam%2Fbn_fatawa_arkanul_islam_elsoum.png',
+                        'url': 'siam%2Fbn_fatawa_arkanul_islam_elsoum.pdf'
+                    },
+            ]
+        };
+
+
+        populate_dynamic_view(dynamic_data);
+
+
+    });
+</script>

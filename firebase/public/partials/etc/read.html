@@ -1,0 +1,517 @@
+<div class="row topindexbar">
+    <div class="col-md-5 col-sm-12">
+
+        <h3 class="text-center arabic cs1">بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِیْمِ</h3>
+        <p class="bangla text-center">শুরু করছি আল্লাহর নামে যিনি পরম করুণাময়, অতি দয়ালু।</p>
+
+    </div>
+    <div class="col-md-2 col-sm-12 indexcol">
+        <button type="button" class="btn btn-block bg-gradient-secondary btn-lg" onClick="openSidebarMenu()">
+            সূচিপত্র/তালিকা </button>
+    </div>
+    <div class="col-md-5  col-sm-12">
+        <h3 class="text-center arabic cs1"> اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ</h3>
+        <p class="bangla text-center"> পাঠ করুন আপনার পালনকর্তার নামে  </p>
+    </div>
+
+</div>
+
+ 
+
+<script>
+    $(document).ready(function () {
+        //openSidebarMenu(); 
+        CayahArray =
+            "3:79, 6:105, 6:156, 34:44, 68:37, 96:1";
+        dynamic_data = {  
+            "subject": "ইসলামিক বই ",
+            "introHtml": "",
+            "ayah": String2AyahArray(CayahArray),
+            "videos": [{
+                'title': 'Chintaporadh Audio book। চিন্তাপরাধ অডিও বুক',
+                'thumb': 'https://i.ytimg.com/vi/Br2VJkNov6Q/hqdefault.jpg',
+                'url'  : 'https://www.youtube.com/playlist?list=PLTN5vYftyktnkNoIXiqwgtw9htT33U6Hf'
+            },{
+                'title': 'ফেরা - সিহিন্তা শরীফাহ, নাইলাহ আয়াতুল্লাহ। Bangla Islamic Audiobook.',
+                'thumb': 'https://i.ytimg.com/vi/b97FK6IXja4/hqdefault.jpg',
+                'url'  : 'https://www.youtube.com/playlist?list=PLYx_auDJrso3Se9zWkl0qNjClxHYa3Yg1'
+            },{
+                'title': 'বেলা ফুরাবার আগে by আরিফ আজাদ',
+                'thumb': 'https://i.ytimg.com/vi/vwwIoWKZ894/hqdefault.jpg',
+                'url'  : 'https://www.youtube.com/playlist?list=PLYx_auDJrso3JgZtQiZnRXTotBqtXNZDE'
+            },{
+                'title': 'প্রিয়তমা || রাসুলুল্লাহ সাঃ এর দাম্পত্যজীবন এবং উম্মুল মুমিনিনদের প্রেমময় জীবনের গল্পভাষ্য।',
+                'thumb': 'https://i.ytimg.com/vi/8aLStT7iulA/hqdefault.jpg',
+                'url'  : 'https://www.youtube.com/playlist?list=PLTCdWZQHkM6D17Xf9EsPriwXK8j5QIgyO'
+            },{
+                'title': 'উসূলুল ঈমান(ঈমানের মৌলিক নীতিমালা)',
+                'thumb': 'https://i.ytimg.com/vi/lSpVTdYeaWI/hqdefault.jpg',
+                'url'  : 'https://www.youtube.com/playlist?list=PL6AAfPzsBJ6v8xI6E-RfeFhqDXrsvQnyA'
+            },{
+                'title': 'ডাবল স্ট্যান্ডার্ড - ডঃ শামসুল আরেফিন',
+                'thumb': 'https://i.ytimg.com/vi/B0uawWSuVR8/hqdefault.jpg',
+                'url'  : 'https://www.youtube.com/playlist?list=PL6AAfPzsBJ6sH0y2n_zogAvmKP_L3zHRy'
+            },{
+                'title': 'উল্টো নির্ণয় - মোহাম্মদ তোয়াহা আকবর',
+                'thumb': 'https://i.ytimg.com/vi/dqHz6Hx6fv4/hqdefault.jpg',
+                'url'  : 'https://www.youtube.com/playlist?list=PL6AAfPzsBJ6t6_FIXdwcplApbUuI9nF4E'
+            },{
+                'title': 'তাকলিদ কি ও কেনো? - মাওলানা তাকী উসমানী',
+                'thumb': 'https://i.ytimg.com/vi/6ESv4n-4jNM/hqdefault.jpg',
+                'url'  : 'https://www.youtube.com/playlist?list=PL6AAfPzsBJ6tlijB_m_PSXLn4GvB_zeC6'
+            },{
+                'title': 'তাওহীদের কালিমা(কালিমার ব্যাখ্যা বিশ্লেষণ)',
+                'thumb': 'https://i.ytimg.com/vi/-zVNP0UaUaM/hqdefault.jpg',
+                'url'  : 'https://www.youtube.com/playlist?list=PL6AAfPzsBJ6sBOpMTcgbNMz0MHy38ODlj'
+            },{
+                'title': 'ঈমান সবার আগে - মাওলানা আব্দুল মালেক',
+                'thumb': 'https://i.ytimg.com/vi/QWEh8Ub_h68/hqdefault.jpg',
+                'url'  : 'https://www.youtube.com/playlist?list=PL6AAfPzsBJ6tBd5ERw7ellxs05UhF85k1'
+            },{
+                'title': 'কিতাবুল ঈমান - মুফতী মনসূরুল হক',
+                'thumb': 'https://i.ytimg.com/vi/KBIlciBNR7w/hqdefault.jpg',
+                'url'  : 'https://www.youtube.com/playlist?list=PL6AAfPzsBJ6sGkRO4Aldi8XenDD19FqSu'
+            },{
+                'title': 'পর্ণ/হস্থমৈথুন থেকে বাঁচার উপায়?',
+                'thumb': 'https://i.ytimg.com/vi/tOqnzxaKvBo/hqdefault.jpg',
+                'url'  : 'https://www.youtube.com/playlist?list=PL6AAfPzsBJ6tGBUASxjsQwATqzNCZrIxf'
+            },{
+                'title': 'মুক্ত বাতাসের খোঁজে - Anti-Porn Series',
+                'thumb': 'https://i.ytimg.com/vi/ym2bLapTmXc/hqdefault.jpg',
+                'url'  : 'https://www.youtube.com/playlist?list=PL6AAfPzsBJ6ubeJ9ciqVzP2PnZt9JpOGI'
+            },{
+                'title': 'ইউনিভার্সিটির ক্যান্টিনে - শারয়ী পর্দার বিধি-বিধান',
+                'thumb': 'https://i.ytimg.com/vi/f2qk5oQHbQk/hqdefault.jpg',
+                'url'  : 'https://www.youtube.com/playlist?list=PL6AAfPzsBJ6sYjn9pQerabyEy_A0Vpaz-'
+            },{
+                'title': 'ঈমান ও বস্তুবাদের সংঘাত - আবুল হাসান আলী নাদভী',
+                'thumb': 'https://i.ytimg.com/vi/DoV1X34vJCU/hqdefault.jpg',
+                'url'  : 'https://www.youtube.com/playlist?list=PL6AAfPzsBJ6tK0_qmmyeP4E_SXUS9W3YK'
+            }],
+            "articles": [
+                        {"title": "সহীহ বুখারী (তাওহীদ)", "url": "https://www.hadithbd.com/hadith/chapter/?book=12"},
+                        {"title": "সহীহ বুখারী (ইসলামিক ফাউন্ডেশন)", "url": "https://www.hadithbd.com/hadith/chapter/?book=1"},
+                        {"title": "সহীহ মুসলিম (হাদীস একাডেমী)", "url": "https://www.hadithbd.com/hadith/chapter/?book=22"},
+                        {"title": "সহীহ মুসলিম (ইসলামিক ফাউন্ডেশন)", "url": "https://www.hadithbd.com/hadith/chapter/?book=2"},
+                        {"title": "সুনান আবূ দাউদ (তাহকিককৃত)", "url": "https://www.hadithbd.com/hadith/chapter/?book=25"},
+                        {"title": "সূনান আবু দাউদ (ইসলামিক ফাউন্ডেশন)", "url": "https://www.hadithbd.com/hadith/chapter/?book=4"},
+                        {"title": "সূনান আত তিরমিজী (তাহকীককৃত)", "url": "https://www.hadithbd.com/hadith/chapter/?book=19"},
+                        {"title": "সূনান তিরমিজী (ইসলামিক ফাউন্ডেশন)", "url": "https://www.hadithbd.com/hadith/chapter/?book=11"},
+                        {"title": "সহীহ শামায়েলে তিরমিযী", "url": "https://www.hadithbd.com/hadith/chapter/?book=23"},
+                        {"title": "সূনান নাসাঈ (ইসলামিক ফাউন্ডেশন)", "url": "https://www.hadithbd.com/hadith/chapter/?book=6"},
+                        {"title": "রিয়াযুস স্বা-লিহীন", "url": "https://www.hadithbd.com/hadith/chapter/?book=3"},
+                        {"title": "আল-লুলু ওয়াল মারজান", "url": "https://www.hadithbd.com/hadith/chapter/?book=18"},
+                        {"title": "সুনানে ইবনে মাজাহ", "url": "https://www.hadithbd.com/hadith/chapter/?book=9"},
+                        {"title": "সুনান আদ-দারেমী", "url": "https://www.hadithbd.com/hadith/chapter/?book=21"},
+                        {"title": "বুলুগুল মারাম", "url": "https://www.hadithbd.com/hadith/chapter/?book=28"},
+                        {"title": "আল-আদাবুল মুফরাদ", "url": "https://www.hadithbd.com/hadith/chapter/?book=20"},
+                        {"title": "মুসনাদে আহমাদ", "url": "https://www.hadithbd.com/hadith/chapter/?book=26"},
+                        {"title": "মুয়াত্তা মালিক", "url": "https://www.hadithbd.com/hadith/chapter/?book=29"},
+                        {"title": "মিশকাতুল মাসাবীহ (মিশকাত)", "url": "https://www.hadithbd.com/hadith/chapter/?book=24"},
+                        {"title": "হাদীস সম্ভার", "url": "https://www.hadithbd.com/hadith/chapter/?book=27"},
+                        {"title": "সুনান আদ-দারাকুতনী", "url": "https://www.hadithbd.com/hadith/chapter/?book=30"},
+                        {"title": "সহীহ হাদিসে কুদসি", "url": "https://www.hadithbd.com/hadith/chapter/?book=13"},
+                        {"title": "রমযান বিষয়ে জাল ও দুর্বল হাদিসসমূহ", "url": "https://www.hadithbd.com/hadith/chapter/?book=15"},
+                        {"title": "আন্‌-নওয়াবীর চল্লিশ হাদীস", "url": "https://www.hadithbd.com/hadith/chapter/?book=14"},
+                        {"title": "যঈফ ও জাল হাদিস", "url": "https://www.hadithbd.com/hadith/chapter/?book=8"}, 
+                        {"title": " আল ইরশাদ-সহীহ আকীদার দিশারী", "url": "https://www.hadithbd.com/books/section/?book=158"},
+                        {"title": " আল-ফিকহুল আকবর", "url": "https://www.hadithbd.com/books/section/?book=44"},
+                        {"title": " ইসলাম বিনষ্টকারী বিষয়সমূহ", "url": "https://www.hadithbd.com/books/section/?book=106"},
+                        {"title": " ঈমান বিধ্বংসী দশটি কারণ", "url": "https://www.hadithbd.com/books/section/?book=32"},
+                        {"title": " কিতাবুত তাওহীদ", "url": "https://www.hadithbd.com/books/section/?book=39"},
+                        {"title": " চার ইমামের আকীদাহ (আবূ হানীফা, মালেক, শাফে‘ঈ ও আহমাদ ইবন হাম্বল)", "url": "https://www.hadithbd.com/books/section/?book=98"},
+                        {"title": " তাওহীদ ও তার প্রমাণাদি", "url": "https://www.hadithbd.com/books/section/?book=26"},
+                        {"title": " তাওহীদ পন্থীদের নয়নমণি", "url": "https://www.hadithbd.com/books/section/?book=142"},
+                        {"title": " তাওহীদের কালেমা: লা-ইলাহা ইল্লাল্লাহ [এর ফযীলত, অর্থ, শর্ত ও পরিপন্থী বিষয়]", "url": "https://www.hadithbd.com/books/section/?book=74"},
+                        {"title": " নাজাত প্রাপ্ত দলের আকীদাহ", "url": "https://www.hadithbd.com/books/section/?book=14"},
+                        {"title": " প্রশ্নোত্তরে সহজ তাওহীদ শিক্ষা", "url": "https://www.hadithbd.com/books/section/?book=7"},
+                        {"title": " ফির্‌কাহ নাজিয়া", "url": "https://www.hadithbd.com/books/section/?book=148"},
+                        {"title": " মানহাজ (আল-আজবিবাতুল মুফীদাহ)", "url": "https://www.hadithbd.com/books/section/?book=157"},
+                        {"title": " শরহুল আকীদাহ আল-ওয়াসেতীয়া", "url": "https://www.hadithbd.com/books/section/?book=58"},
+                        {"title": " শারহুল আক্বীদা আত্-ত্বহাবীয়া", "url": "https://www.hadithbd.com/books/section/?book=63"},
+                        {"title": " শু'আবুল ঈমান (ঈমানের শাখাসমূহ)", "url": "https://www.hadithbd.com/books/section/?book=147"},
+                        {"title": " কসর ও জমা করে সালাত আদায় সম্পর্কে কিছু বিধান", "url": "https://www.hadithbd.com/books/section/?book=52"},
+                        {"title": " কুরআন ও সহীহ হাদীসের আলোকে জামা‘আতে সালাত আদায় [বিধান, ফযীলত, ফায়েদা ও নিয়ম-কানূন]", "url": "https://www.hadithbd.com/books/section/?book=127"},
+                        {"title": " চেয়ারে বসে সালাত আদায় বিধি-বিধান, সতর্কীকরণ ও মাসলা-মাসায়েল", "url": "https://www.hadithbd.com/books/section/?book=96"},
+                        {"title": " ছালাতুর রাসূল (ছাঃ)", "url": "https://www.hadithbd.com/books/section/?book=67"},
+                        {"title": " জানাযা দর্পণ", "url": "https://www.hadithbd.com/books/section/?book=143"},
+                        {"title": " জানাযার নামাযের নিয়ম", "url": "https://www.hadithbd.com/books/section/?book=73"},
+                        {"title": " জানাযার বিধিবিধান", "url": "https://www.hadithbd.com/books/section/?book=11"},
+                        {"title": " জাল হাদীছের কবলে রাসূলুল্লাহ (ছাঃ)-এর ছালাত", "url": "https://www.hadithbd.com/books/section/?book=13"},
+                        {"title": " নবী (সা", "url": "https://www.hadithbd.com/books/section/?book=55"},
+                        {"title": " প্রশ্নোত্তরে সালাতুদ-দুহার সংক্ষিপ্ত বিধান", "url": "https://www.hadithbd.com/books/section/?book=128"},
+                        {"title": " সালাতুল আউওয়াবীন", "url": "https://www.hadithbd.com/books/section/?book=129"},
+                        {"title": " সালাতের গুরুত্ব ও ফযীলত", "url": "https://www.hadithbd.com/books/section/?book=104"},
+                        {"title": " স্বালাতে মুবাশ্‌শির", "url": "https://www.hadithbd.com/books/section/?book=19"},
+                        {"title": " দৈনন্দিন জীবনে ইসলাম [যাকাত অধ্যায়]", "url": "https://www.hadithbd.com/books/section/?book=23"},
+                        {"title": " যাকাত ও সাওম বিষয়ক দু’টি পুস্তিকা", "url": "https://www.hadithbd.com/books/section/?book=83"},
+                        {"title": " যাকাত বিধানের সারসংক্ষেপ ", "url": "https://www.hadithbd.com/books/section/?book=103"},
+                        {"title": " প্রশ্নোত্তরে রমযান ও ঈদ", "url": "https://www.hadithbd.com/books/section/?book=18"},
+                        {"title": " রমযান মাসের ৩০ আসর", "url": "https://www.hadithbd.com/books/section/?book=60"},
+                        {"title": " রমযানের দায়িত্ব-কর্তব্য (ইবন রজব আল-হাম্বলী রহ", "url": "https://www.hadithbd.com/books/section/?book=88"},
+                        {"title": " রমাযানের ফাযায়েল ও রোযার মাসায়েল", "url": "https://www.hadithbd.com/books/section/?book=33"},
+                        {"title": " সহীহ হাদীসের আলোকে সাওম বিশ্বকোষ", "url": "https://www.hadithbd.com/books/section/?book=130"},
+                        {"title": " সাওম বিষয়ক আধুনিক কিছু মাসআলা", "url": "https://www.hadithbd.com/books/section/?book=89"},
+                        {"title": " সিয়াম বিষয়ক নির্বাচিত ফাতওয়া", "url": "https://www.hadithbd.com/books/section/?book=12"},
+                        {"title": " কুরআন ও হাদীছের আলোকে  হজ্জ, উমরাহ ও মদীনা যিয়ারত", "url": "https://www.hadithbd.com/books/section/?book=69"},
+                        {"title": " কুরবানীর বিধান", "url": "https://www.hadithbd.com/books/section/?book=38"},
+                        {"title": " প্রশ্নোত্তরে হজ্জ ও উমরা", "url": "https://www.hadithbd.com/books/section/?book=3"},
+                        {"title": " যিলহজ মাসের প্রথম দশ দিন, ঈদ, কুরবানি ও আইয়ামে তাশরীকের দিনসমূহ", "url": "https://www.hadithbd.com/books/section/?book=20"},
+                        {"title": " হজ উমরা ও যিয়ারত", "url": "https://www.hadithbd.com/books/section/?book=53"},
+                        {"title": " হজ সফরে সহজ গাইড", "url": "https://www.hadithbd.com/books/section/?book=48"},
+                        {"title": " হজে প্রদত্ত নবী সাল্লাল্লাহু আলাইহি ওয়াসাল্লামের ফাতাওয়া", "url": "https://www.hadithbd.com/books/section/?book=115"},
+                        {"title": " হজের সাথে সংশ্লিষ্ট আকীদাগত ভুল-ভ্রান্তিসমূহ", "url": "https://www.hadithbd.com/books/section/?book=82"},
+                        {"title": " হজ্জ, উমরা ও যিয়ারত গাইড", "url": "https://www.hadithbd.com/books/section/?book=25"},
+                        {"title": " দুআ-মুনাজাত : কখন ও কিভাবে", "url": "https://www.hadithbd.com/books/section/?book=9"},
+                        {"title": " নামাযের দো‘আ ও যিক্‌র", "url": "https://www.hadithbd.com/books/section/?book=6"},
+                        {"title": " রাহে বেলায়াত", "url": "https://www.hadithbd.com/books/section/?book=62"},
+                        {"title": " সহীহ দুআ ও যিক্‌র", "url": "https://www.hadithbd.com/books/section/?book=141"},
+                        {"title": " হিসনুল মুসলিম", "url": "https://www.hadithbd.com/books/section/?book=4"},
+                        {"title": " অতি গুরুত্বপূর্ণ কতিপয় প্রশ্নোত্তর", "url": "https://www.hadithbd.com/books/section/?book=114"},
+                        {"title": " ইবরাহীম আলাইহিস সালাম কোন ছেলেকে কুরবানী দিয়েছিলেন?", "url": "https://www.hadithbd.com/books/section/?book=156"},
+                        {"title": " ইসলাম কিউ এ ফতোয়া সমগ্র", "url": "https://www.hadithbd.com/books/section/?book=16"},
+                        {"title": " দীনের ফিক্‌হ তথা জ্ঞানই ফিতনা থেকে বাঁচার সঠিক উপায়", "url": "https://www.hadithbd.com/books/section/?book=102"},
+                        {"title": " দ্বীনী প্রশ্নোত্তর", "url": "https://www.hadithbd.com/books/section/?book=1"},
+                        {"title": " প্রশ্নোত্তরে ফিকহুল ইবাদাত", "url": "https://www.hadithbd.com/books/section/?book=154"},
+                        {"title": " ফাতাওয়া আরকানুল ইসলাম", "url": "https://www.hadithbd.com/books/section/?book=2"},
+                        {"title": " মুখতাসার যাদুল মা‘আদ ", "url": "https://www.hadithbd.com/books/section/?book=30"},
+                        {"title": " রূহ সম্পর্কিত সংক্ষিপ্ত মাসআলাসমূহ", "url": "https://www.hadithbd.com/books/section/?book=42"},
+                        {"title": " সহজ ফিকহ শিক্ষা", "url": "https://www.hadithbd.com/books/section/?book=81"},
+                        {"title": " সহীহ ফিক্বহুস সুন্নাহ", "url": "https://www.hadithbd.com/books/section/?book=17"},
+                        {"title": " স্বর্ণ ক্রয়-বিক্রয় সংক্রান্ত বিবিধ প্রশ্ন-উত্তর", "url": "https://www.hadithbd.com/books/section/?book=27"},
+                        {"title": " উসীলা গ্রহণ: বৈধ ও অবৈধ পন্থা", "url": "https://www.hadithbd.com/books/section/?book=92"},
+                        {"title": " কুরআন ও হাদীছের মানদন্ডে সুফীবাদ", "url": "https://www.hadithbd.com/books/section/?book=10"},
+                        {"title": " প্রচলিত বিভিন্ন খতম  তাৎপর্য ও পর্যালোচনা", "url": "https://www.hadithbd.com/books/section/?book=132"},
+                        {"title": " বাংলাদেশে প্রচলিত শির্ক বিদ‘আত ও কুসংস্কার পর্যালোচনা", "url": "https://www.hadithbd.com/books/section/?book=94"},
+                        {"title": " বিদআত দর্পণ", "url": "https://www.hadithbd.com/books/section/?book=146"},
+                        {"title": " বিদ‘আত ও এর মন্দ প্রভাব ", "url": "https://www.hadithbd.com/books/section/?book=131"},
+                        {"title": " বিদ‘আত পরিচিতির মূলনীতি", "url": "https://www.hadithbd.com/books/section/?book=95"},
+                        {"title": " বৈধ ও অবৈধ অসীলা", "url": "https://www.hadithbd.com/books/section/?book=90"},
+                        {"title": " বড় শির্ক ও ছোট শির্ক", "url": "https://www.hadithbd.com/books/section/?book=140"},
+                        {"title": " যে কেউ কোনো জাতির সাথে সামঞ্জস্য বিধান করে চলবে সে তাদের দলভুক্ত বলে গণ্য হবে", "url": "https://www.hadithbd.com/books/section/?book=49"},
+                        {"title": " শরী‘আতের স্বয়ংসম্পূর্ণতা ও বিদ‘আতের ভয়াবহতা", "url": "https://www.hadithbd.com/books/section/?book=105"},
+                        {"title": " শির্ক কী ও কেন?", "url": "https://www.hadithbd.com/books/section/?book=151"},
+                        {"title": "  যুব সমাজের অবক্ষয়, কারণ ও প্রতিকার", "url": "https://www.hadithbd.com/books/section/?book=111"},
+                        {"title": " আকীকা এবং এ সংক্রান্ত কিছু বিধান", "url": "https://www.hadithbd.com/books/section/?book=159"},
+                        {"title": " আদর্শ বিবাহ ও দাম্পত্য", "url": "https://www.hadithbd.com/books/section/?book=28"},
+                        {"title": " আদর্শ মুসলিম পরিবার", "url": "https://www.hadithbd.com/books/section/?book=75"},
+                        {"title": " আমি তাওবা করতে চাই ", "url": "https://www.hadithbd.com/books/section/?book=31"},
+                        {"title": " ইসলামী জীবন-ধারা", "url": "https://www.hadithbd.com/books/section/?book=51"},
+                        {"title": " উপদেশ", "url": "https://www.hadithbd.com/books/section/?book=56"},
+                        {"title": " কুরআন ও সহীহ হাদীসের আলোকে আত্মীয়তার বন্ধন ছিন্ন করার ভয়াবহ পরিণতি", "url": "https://www.hadithbd.com/books/section/?book=76"},
+                        {"title": " কুরআন ও সহীহ হাদীসের আলোকে নিষিদ্ধ কর্মকান্ড", "url": "https://www.hadithbd.com/books/section/?book=139"},
+                        {"title": " কুরআন ও সহীহ হাদীসের আলোকে ব্যভিচার ও সমকামিতার ভয়াবহ পরিণতি", "url": "https://www.hadithbd.com/books/section/?book=79"},
+                        {"title": " কুরআন ও সহীহ হাদীসের আলোকে মদপান ও ধূমপানের অপকারিতা", "url": "https://www.hadithbd.com/books/section/?book=80"},
+                        {"title": " কুরআন ও সুন্নাহর আলোকে মুসলিম জীবনের আদব-কায়দা ", "url": "https://www.hadithbd.com/books/section/?book=133"},
+                        {"title": " কুরআনে কারীম ও সহীহ সুন্নাহর আলোকে গুনাহ্ মাফের আমল ", "url": "https://www.hadithbd.com/books/section/?book=113"},
+                        {"title": " গুনাহ মাফের উপায়", "url": "https://www.hadithbd.com/books/section/?book=66"},
+                        {"title": " জালেম শাসকের সামনে সত্য তুলে ধরা", "url": "https://www.hadithbd.com/books/section/?book=110"},
+                        {"title": " দাড়ি রাখা ওয়াজিব", "url": "https://www.hadithbd.com/books/section/?book=145"},
+                        {"title": " ন্যায়ের আদেশ ও অন্যায়ের নিষেধ অত্যাবশ্যক", "url": "https://www.hadithbd.com/books/section/?book=112"},
+                        {"title": " ব্যবসা-বাণিজ্য: করনীয় ও বর্জনীয়", "url": "https://www.hadithbd.com/books/section/?book=77"},
+                        {"title": " মহিলাদের স্রাব ও প্রসূতি অবস্থার বিধিবিধান সংক্রান্ত ৬০টি প্রশ্ন", "url": "https://www.hadithbd.com/books/section/?book=46"},
+                        {"title": " মুসলিম শাসকের প্রতি জনগণের  দায়িত্ব ও কর্তব্য", "url": "https://www.hadithbd.com/books/section/?book=136"},
+                        {"title": " মেহমানের মেহমানদারি", "url": "https://www.hadithbd.com/books/section/?book=100"},
+                        {"title": " যুব-সমস্যা ও তার শরয়ী সমাধান", "url": "https://www.hadithbd.com/books/section/?book=150"},
+                        {"title": " লা-তাহযান [হতাশ হবেন না]", "url": "https://www.hadithbd.com/books/section/?book=54"},
+                        {"title": " শারহু মাসাইলিল জাহিলিয়্যাহ", "url": "https://www.hadithbd.com/books/section/?book=64"},
+                        {"title": " শিশুর নাম নির্বাচন: ইসলামী দৃষ্টিকোণ", "url": "https://www.hadithbd.com/books/section/?book=161"},
+                        {"title": " সদ্য ভূমিষ্ঠ সন্তানের ক্ষেত্রে করণীয়", "url": "https://www.hadithbd.com/books/section/?book=160"},
+                        {"title": " হাদীসের আলোকে আদর্শ স্বামী  ", "url": "https://www.hadithbd.com/books/section/?book=109"},
+                        {"title": " আর-রাহীকুল মাখতূম", "url": "https://www.hadithbd.com/books/section/?book=43"},
+                        {"title": " নবী-রাসূলগণের ঘটনায় রয়েছে শিক্ষা", "url": "https://www.hadithbd.com/books/section/?book=155"},
+                        {"title": " নবীদের কাহিনী", "url": "https://www.hadithbd.com/books/section/?book=15"},
+                        {"title": " রাসূল [সাল্লাল্লাহু আলাইহি ওয়াসাল্লামের]  গৃহে একদিন", "url": "https://www.hadithbd.com/books/section/?book=57"},
+                        {"title": " ইসলামের নামে জঙ্গিবাদ", "url": "https://www.hadithbd.com/books/section/?book=50"},
+                        {"title": " ইয়েমেনের বিদ্রোহী  হুতী শিয়াদের আসল চেহারা", "url": "https://www.hadithbd.com/books/section/?book=35"},
+                        {"title": " দল, সংগঠন, ইমারত ও বায়‘আত সম্পর্কে বিশিষ্ট উলামায়ে কেরামের বক্তব্য", "url": "https://www.hadithbd.com/books/section/?book=40"},
+                        {"title": " সালাফী ও সালাফিয়াত পরিচিতি", "url": "https://www.hadithbd.com/books/section/?book=149"},
+                        {"title": " কুরআনের অর্থ বুঝার সহজ অভিধান", "url": "https://www.hadithbd.com/books/section/?book=87"},
+                        {"title": " মুখতাসারুল ফাওয়ায়েদ (ইবনুল কাইয়্যেম রহ", "url": "https://www.hadithbd.com/books/section/?book=86"},
+                        {"title": " হাদীসের নামে জালিয়াতি", "url": "https://www.hadithbd.com/books/section/?book=37"},
+                        {"title": " উসূলে ফিক্বহ  (ফিক্বহের মূলনীতি)", "url": "https://www.hadithbd.com/books/section/?book=72"},
+                        {"title": " হাদিস শাস্ত্রের পরিভাষা পরিচিতি", "url": "https://www.hadithbd.com/books/section/?book=41"},
+                        {"title": " জাদুকর্ম, জ্যোতিষ ও দৈবকর্ম এবং এতদসংক্রান্ত অন্যান্য বিষয় সম্পর্কে ইসলামের বিধান", "url": "https://www.hadithbd.com/books/section/?book=97"},
+                        {"title": " যাদুকর ও জ্যোতিষীর গলায় ধারালো তরবারি", "url": "https://www.hadithbd.com/books/section/?book=45"},
+                        {"title": " আলেমগণের মধ্যে মতভেদ কারণ এবং আমাদের অবস্থান", "url": "https://www.hadithbd.com/books/section/?book=137"},
+                        {"title": " আল্লাহর দিকে দাওয়াতের সম্বল", "url": "https://www.hadithbd.com/books/section/?book=108"},
+                        {"title": " নবী-রাসূলগণের দা‘ওয়াতী মূলনীতি", "url": "https://www.hadithbd.com/books/section/?book=68"},
+                        {"title": " কবর যিয়ারত ও কবরবাসীর কাছে সাহায্যের আবেদন", "url": "https://www.hadithbd.com/books/section/?book=91"},
+                        {"title": " কবরের শাস্তি ও শান্তি সম্পর্কে কতিপয় মাসআলা বারযাখী জীবন", "url": "https://www.hadithbd.com/books/section/?book=84"},
+                        {"title": " কিয়ামতের আলামত", "url": "https://www.hadithbd.com/books/section/?book=21"},
+                        {"title": " জান্নাত-জাহান্নাম", "url": "https://www.hadithbd.com/books/section/?book=144"},
+                        {"title": " ইয়াহূদী-খৃস্টানরা কি কাফির?", "url": "https://www.hadithbd.com/books/section/?book=134"},
+                        {"title": " কিতাবুল মোকাদ্দস, ইঞ্জিল শরীফ ও ঈসায়ী ধর্ম", "url": "https://www.hadithbd.com/books/section/?book=135"},
+                        {"title": " খ্রিস্টান বানানোর অপকৌশল থেকে সাবধান", "url": "https://www.hadithbd.com/books/section/?book=85"},
+                        {"title": " ধর্মনিরপেক্ষ রাষ্ট্রে কি কোনো ইসলামী দলে যোগ দেওয়া যাবে?", "url": "https://www.hadithbd.com/books/section/?book=122"},
+                        {"title": " ধর্মনিরপেক্ষতা ও তার কুফল", "url": "https://www.hadithbd.com/books/section/?book=123"},
+                        {"title": " নাস্তিক্যবাদ উৎস ও সমাধান", "url": "https://www.hadithbd.com/books/section/?book=124"},
+                        {"title": " বাংলাদেশে নাস্তিক্যবাদী অপতৎপরতা : প্রতিরোধের উপায়", "url": "https://www.hadithbd.com/books/section/?book=121"},
+                        {"title": " বারো ইমামের অনুসারী শিয়াদের দৃষ্টিতে চার ইমাম (আবু হানিফা, মালেক, শাফে‘ঈ ও আহমাদ)", "url": "https://www.hadithbd.com/books/section/?book=93"},
+                        {"title": " শিয়া আকিদার অসারতা", "url": "https://www.hadithbd.com/books/section/?book=153"},
+                        {"title": " শিয়া আকীদা সম্পর্কে ইবন তাইমিয়্যার মিনহাজুস সুন্নাহ থেকে নির্বাচিত কিছু কথা", "url": "https://www.hadithbd.com/books/section/?book=152"},
+                        {"title": " নারী শিক্ষা সম্পর্কে ইসলামী দৃষ্টিভঙ্গি", "url": "https://www.hadithbd.com/books/section/?book=118"},
+                        {"title": " পর্দা একটি ইবাদত", "url": "https://www.hadithbd.com/books/section/?book=78"},
+                        {"title": " পর্দাহীনতার পরিণতি ", "url": "https://www.hadithbd.com/books/section/?book=119"},
+                        {"title": " পোশাক যখন বিপদের কারণ", "url": "https://www.hadithbd.com/books/section/?book=117"},
+                        {"title": " বেলা ফুরাবার আগে ", "url": "https://www.hadithbd.com/books/section/?book=116"},
+                        {"title": " সৌন্দর্য প্রদর্শন ও বেপর্দা প্রসঙ্গে মুমিন নারীদের জন্য কতিপয় নির্দেশনা", "url": "https://www.hadithbd.com/books/section/?book=101"},
+                        {"title": " সৌভাগ্যময় ঘর ও স্বামী-স্ত্রীর দ্বন্দ্ব", "url": "https://www.hadithbd.com/books/section/?book=120"},
+                        {"title": " আবু বকর ও উমর রাদিয়াল্লাহু আনহুমার জীবনের কিছু ঘটনা", "url": "https://www.hadithbd.com/books/section/?book=125"},
+                        {"title": " উম্মতের ওপর সাহাবীগণের অধিকারসমূহ", "url": "https://www.hadithbd.com/books/section/?book=126"},
+                        {"title": " আল্লাহ তা‘আলার নান্দনিক নাম ও গুণসমগ্র: কিছু আদর্শিক নীতিমালা", "url": "https://www.hadithbd.com/books/section/?book=107"},
+                        {"title": " ইসলামে হালাল উপার্জন : গুরুত্ব ও তাৎপর্য", "url": "https://www.hadithbd.com/books/section/?book=8"},
+                        {"title": " ব্যাংকের সুদ কি হালাল", "url": "https://www.hadithbd.com/books/section/?book=36"},
+                        {"title": " যে সকল হারামকে মানুষ তুচ্ছ মনে করে থাকে", "url": "https://www.hadithbd.com/books/section/?book=99"},
+                        {"title": " সুদের ক্ষতি-অপকার-কুপ্রভাব", "url": "https://www.hadithbd.com/books/section/?book=29"},
+                        {"title": " হারাম ও কবিরা গুনাহ", "url": "https://www.hadithbd.com/books/section/?book=47"}
+
+
+            ],
+            "books": [
+                        {
+                            'type'  : "firebase-pdf", 
+                            'title' : 'আল-কুরআনের শিক্ষা',
+                            'writer': "মুহাম্মদ ইকবাল কিলানী",
+                            'url'   : 'quran%2Fbn_al_quran_er_shikkha.pdf',
+                            'thumb' : 'quran%2Fbn_al_quran_er_shikkha.png', 
+                        },{
+                            'type'  : "firebase-pdf", 
+                            'title' : 'আল-কুরআন এক নজরে একশত চৌদ্দ সূরা',
+                            'writer': "অধ্যাপক মুজিবুর রহমান",
+                            'url'   : 'quran%2Fal_quran-ak_nojore_aksho_sowddho_sura.pdf',
+                            'thumb' : 'quran%2Fal_quran-ak_nojore_aksho_sowddho_sura.png', 
+                        },{
+                            'type'  : "firebase-pdf", 
+                            'title' : 'আল-কুরআনের শৈল্পিক সৌন্দর্য',
+                            'writer': "সাইয়েদ কুতুব শহীদ",
+                            'url'   : 'quran%2Fal_quraner_shoilpik_soundorjo.pdf',
+                            'thumb' : 'quran%2Fal_quraner_shoilpik_soundorjo.png', 
+                        } ,{
+                            'type'  : "firebase-pdf", 
+                            'title' : 'কুরআন অধ্যয়ন সহায়িকা ',
+                            'writer': "খুররম মুরাদ",
+                            'url'   : 'quran%2Fquran_oddhoyon_sohayika.pdf',
+                            'thumb' : 'quran%2Fquran_oddhoyon_sohayika.png', 
+                        } ,{
+                            'type'  : "firebase-pdf", 
+                            'title' : 'কুরআন হিফজ করবেন যেভাবে ',
+                            'writer': "ড. রাগেব সারজানী",
+                            'url'   : 'quran%2FQuran_Hefj_KorbenJevabePDFEdition.pdf',
+                            'thumb' : 'quran%2FQuran_Hefj_KorbenJevabePDFEdition.jpg', 
+                        } , {
+                            'title' : 'কুরআনের চিরন্তন মু`জিযা',
+                            'thumb' : 'quran%2Fquran_mujija.png',
+                            'url'   : "quran%2Fquraner-chirontun-mujija.pdf",
+                            'type'  : 'firebase-pdf',
+                            'writer': ''
+                        } ,{
+                            'type'  : "firebase-pdf", 
+                            'title' : 'আল কুরআনের ১৬০ মুজিজা ও রহস্য',
+                            'writer': "মুহাম্মদ শামসুল হক সিদ্দিক",
+                            'url'   : 'etc%2F160_muziza_of_quran.pdf',
+                            'thumb' : 'etc%2F160_muziza_of_quran.png', 
+                        },{
+                            'type'  : "firebase-pdf", 
+                            'title' : 'আল-কুরআনে উদাহরণ',
+                            'writer': " মুজিবুর রহমান ",
+                            'url'   : 'etc%2Fal_qurane_udahoron.pdf',
+                            'thumb' : 'etc%2Fal_qurane_udahoron.png', 
+                        },{
+                            'type'  : "firebase-pdf", 
+                            'title' : 'কুরআন বোঝার পথ ও পাথেয়',
+                            'writer': "আবদুস শহীদ নাসিম",
+                            'url'   : 'etc%2Fquran_bujar_poth_o_patheo.pdf',
+                            'thumb' : 'etc%2Fquran_bujar_poth_o_patheo.png', 
+                        },{
+                            'type'  : "firebase-pdf", 
+                            'title' : 'কুরআন অনুধাবন',
+                            'writer': "মুহাম্মাদ আসাদুল্লাহ আল-গালিব",
+                            'url'   : 'etc%2Fquran_onudhabon_by_prof._dr._muhammad_asadullah_al-ghalib.pdf',
+                            'thumb' : 'etc%2Fquran_onudhabon_by_prof._dr._muhammad_asadullah_al-ghalib.png', 
+                        },{
+                            'type'  : "firebase-pdf", 
+                            'title' : 'আল্লাহর ভয়ে কাঁদো',
+                            'writer': "",
+                            'url'   : 'etc%2Fcry_for_ALLAH.pdf',
+                            'thumb' : 'etc%2Fcry_for_ALLAH.png', 
+                        },{
+                            'type'  : "firebase-pdf", 
+                            'title' : 'রাসূল স. এর হাসি-কান্না ও জিকির',
+                            'writer': "মুহাম্মদ ইবনে ইবরাহীম আততুওয়াইজিরী",
+                            'url'   : 'etc%2Frasul_sm_er_hashi_kanna_o_jikir.pdf',
+                            'thumb' : 'etc%2Frasul_sm_er_hashi_kanna_o_jikir.png', 
+                        },{
+                            'type'  : "firebase-pdf", 
+                            'title' : 'কম হাসো বেশী কাঁদো',
+                            'writer': "অধ্যাপক মুজিবুর রহমান",
+                            'url'   : 'etc%2Fkom_haso_besi_kado.pdf',
+                            'thumb' : 'etc%2Fkom_haso_besi_kado.png', 
+                        },{
+                            'type'  : "firebase-pdf", 
+                            'title' : 'আল্লাহর উপর ভরসা',
+                            'writer': "মুহাম্মদ সালেহ আল মুনাজ্জিদ",
+                            'url'   : 'etc%2FALLAHor_upor_vorsa.pdf',
+                            'thumb' : 'etc%2FALLAHor_upor_vorsa.png', 
+                        },{
+                            'type'  : "firebase-pdf", 
+                            'title' : 'রাহে বেলায়াত',
+                            'writer': "ড. খোন্দকার আব্দুল্লাহ জাহাঙ্গীর",
+                            'url'   : 'dua%2FRaheBelayet.pdf',
+                            'thumb' : 'dua%2FRaheBelayet.jpeg', 
+                        } ,{
+                            'type'  : "firebase-pdf", 
+                            'title' : 'হাদিসের গল্প ',
+                            'writer': "",
+                            'url'   : 'story%2FHadiser_golpo.pdf',
+                            'thumb' : 'story%2FHadiser_golpo.png', 
+                        } ,{
+                            'type'  : "firebase-pdf", 
+                            'title' : 'কে বড় ক্ষতিগ্রস্থ?',
+                            'writer': "আব্দুর রাযযাক বিন ইউসুফ",
+                            'url'   : 'looser%2FKBoroKhotigrosto.pdf',
+                            'thumb' : 'looser%2FKBoroKhotigrosto.jpeg', 
+                        }, {
+                            'type'  : "firebase-pdf", 
+                            'title' : 'পড়',
+                            'writer': "ওমর আল জাবির ",
+                            'url'   : 'etc%2FPoro-POD.pdf',
+                            'thumb' : 'etc%2Fporo.jpeg', 
+                        }, {
+                            'type'  : "firebase-pdf",
+                            'title' : 'তাকওয়া',
+                            'writer': "আমির জামান",
+                            'url'   : 'etc%2Ftaqwah.pdf',
+                            'thumb' : 'etc%2Ftaqwah.png',
+                       },{
+                            'type'  : "firebase-pdf", 
+                            'title' : 'তাকওয়া. (আল্লাহভীতি)',
+                            'writer': "ড. মুহাম্মাদ কাবীরুল ইসলাম ",
+                            'url'   : 'etc%2FTaqwa.pdf',
+                            'thumb' : 'etc%2FTaqwa.png', 
+                        }, {
+                            'type'  : "firebase-pdf", 
+                            'title' : "হতাশ হবেন না, Don't Be sad",
+                            'writer': "ড. আইদ আল কারণী",
+                            'url'   : 'etc%2Fla_tahjan.pdf',
+                            'thumb' : 'etc%2Fla_tahjan.png', 
+                        }, {
+                            'type'  : "firebase-pdf", 
+                            'title' : "Enjoy Your Life – জীবনকে উপভোগ করুন",
+                            'writer': "শেখ ডক্টর মুহাম্মদ বিন আব্দুল আল আরিফি",
+                            'url'   : 'etc%2FEnjoy_Your_Life_Bangla.pdf',
+                            'thumb' : 'etc%2FEnjoy_Your_Life_Bangla.png', 
+                        }
+                        ,{
+                            'type'  : "firebase-pdf", 
+                            'title' : 'মহিলা বিষয়ক হাদীস সংকলন',
+                            'writer': "মুয়াল্লিমা মোরশেদা বেগম",
+                            'url'   : 'hadith%2Fmohila_bishoyok_hadis_songkolon.pdf',
+                            'thumb' : 'hadith%2Fmohila_bishoyok_hadis_songkolon.png', 
+                        }  ,{
+                            'type'  : "firebase-pdf", 
+                            'title' : 'যেসব হারামকে অনেকেই তুচ্ছ মনে করে',
+                            'writer': "শাইখ মুহাম্মাদ বিন সালেহ আল মুনাজ্জিদ",
+                            'url'   : 'forbidden%2Fharam_k_tuccho_mone_kore.pdf',
+                            'thumb' : 'forbidden%2Fharam_k_tuccho_mone_kore.png', 
+                        },{
+                            'type'  : "firebase-pdf", 
+                            'title' : 'হারাম ও কবিরা গুনাহ - প্রথম খন্ড    ',
+                            'writer': "মোস্তাফিজুর রহমান বিন আব্দুল আজিজ",
+                            'url'   : 'forbidden%2FHaramOkabiraGunah1stPart.pdf',
+                            'thumb' : 'forbidden%2Fharam_o_kobira_gunah_1.png', 
+                        },{
+                            'type'  : "firebase-pdf", 
+                            'title' : 'হারাম ও কবিরা গুনাহ -  দ্বিতীয় খন্ড   ',
+                            'writer': "মোস্তাফিজুর রহমান বিন আব্দুল আজিজ",
+                            'url'   : 'forbidden%2FHaramOkabiraGunah2ndPart.pdf',
+                            'thumb' : 'forbidden%2Fharam_o_kobira_gunah_2.png', 
+                        },{
+                            'type'  : "firebase-pdf", 
+                            'title' : 'হারাম ও কবিরা গুনাহ - তৃতীয়  খন্ড ',
+                            'writer': "মোস্তাফিজুর রহমান বিন আব্দুল আজিজ",
+                            'url'   : 'forbidden%2FHaramOkabiraGunah3rdPart.pdf',
+                            'thumb' : 'forbidden%2Fharam_o_kobira_gunah_2.png', 
+                        },{
+                            'type'  : "firebase-pdf", 
+                            'title' : 'কবিরা গুনাহ',
+                            'writer': "ইমাম শামসুদ্দীন আয-যাহাবী",
+                            'url'   : 'forbidden%2FKabiraGunah.pdf',
+                            'thumb' : 'forbidden%2Fkobira_gunah.jpg', 
+                        },{
+                            'type'  : "firebase-pdf", 
+                            'title' : 'কবীরা গুনাহ ও তাওবা',
+                            'writer': "ডা মোঃ সেলিম রেজা",
+                            'url'   : 'forbidden%2FKabira-Gunah-o-Tawbah.pdf',
+                            'thumb' : 'forbidden%2Fkobira_gunah_O_tawba.jpeg', 
+                        },{
+                            'type'  : "firebase-pdf", 
+                            'title' : 'ইসলামে হালাল-হারামের বিধান',
+                            'writer': "আল্লামা ইউসূফ আল-কারযাভী",
+                            'url'   : 'forbidden%2Fislame_halal_haramer_bidhan.pdf',
+                            'thumb' : 'forbidden%2Fhalal_haram_in_islam.png', 
+                        },{
+                            'type'  : "firebase-pdf", 
+                            'title' : 'গল্পের মাধ্যমে জ্ঞান',
+                            'writer': "হাদীছ ফাউণ্ডেশন",
+                            'url'   : 'etc%2FGolper_maddhome_gan.pdf',
+                            'thumb' : 'etc%2FGolper_maddhome_gan.png', 
+                        },{
+                            'type'  : "firebase-pdf", 
+                            'title' : 'Near Synonyms Nouman Ali Khan',
+                            'writer': "Muslim Matters Org",
+                            'url'   : 'quran%2Fnear-synonyms-nouman-ali-khan-muslimmattersorg.pdf',
+                            'thumb' : 'quran%2Fnear-synonyms-nouman-ali-khan-muslimmattersorg.png', 
+                        },{
+                            'type'  : "firebase-pdf", 
+                            'title' : 'হারাম রুযী ও রোযগার',
+                            'writer': "আব্দুল হামীদ ফাইযী",
+                            'url'   : 'etc%2Fbn_haram_rujee_o_rojgar.pdf',
+                            'thumb' : 'etc%2Fbn_haram_rujee_o_rojgar.png', 
+                        },{
+                            'type'  : "firebase-pdf", 
+                            'title' : 'মুনাফিকী',
+                            'writer': "মুহাম্মদ সালেহ আল মুনাজ্জিদ",
+                            'url'   : 'etc%2Fmunafiki.pdf',
+                            'thumb' : 'etc%2Fmunafiki.png', 
+                        },{
+                            'type'  : "firebase-pdf", 
+                            'title' : 'রাসূলের-চোখে-দুনিয়া',
+                            'writer': "ইমাম আহমাদ ইবনু হাম্বাল",
+                            'url'   : 'etc%2Frasuler_cokhe_dunia.pdf',
+                            'thumb' : 'etc%2Frasuler_cokhe_dunia.png', 
+                        },{
+                            'type'  : "firebase-pdf", 
+                            'title' : 'হিংসা ও অহংকার',
+                            'writer': "মুহাম্মদ আসাদুল্লাহ আল-গালিব",
+                            'url'   : 'etc%2Fhingsha_o_ohonkar_by_prof._dr._md._asadullah_al-ghalib.pdf',
+                            'thumb' : 'etc%2Fhingsha_o_ohonkar_by_prof._dr._md._asadullah_al-ghalib.png', 
+                        },{
+                            'type'  : "firebase-pdf", 
+                            'title' : 'তালবীসুল ইবলিসঃ শয়তানের ধোঁকা',
+                            'writer': "আবদুর রহমান ইবনে মুহাম্মদ জাওযী",
+                            'url'   : 'etc%2Ftalbisul_iblis.pdf',
+                            'thumb' : 'etc%2Ftalbisul_iblis.png', 
+                        },{
+                            'type'  : "firebase-pdf", 
+                            'title' : 'বালা মুসিবত কারণ ও করণীয়',
+                            'writer': "মুহাম্মদ নাসীল শাহরুখ",
+                            'url'   : 'etc%2Fbalamusibot.pdf',
+                            'thumb' : 'etc%2Fbalamusibot.png', 
+                        },{
+                            'type'  : "firebase-pdf", 
+                            'title' : 'অন্তরের ব্যাধিসমূহ ও তাদের চিকিৎসা',
+                            'writer': "শাইখুল ইসলাম ইবনে তাইমিয়্যাহ",
+                            'url'   : 'etc%2Fontorer_badhi_o_tar_chikitsha.pdf',
+                            'thumb' : 'etc%2Fontorer_badhi_o_tar_chikitsha.png', 
+                        }
+                         
+            ]
+        };
+
+
+        populate_dynamic_view(dynamic_data);
+
+
+    });
+</script>

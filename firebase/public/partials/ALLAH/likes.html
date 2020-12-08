@@ -1,0 +1,124 @@
+<div class="row topindexbar">
+        <div class="col-md-5 col-sm-12">
+
+                <h3 class="text-center arabic cs1">بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِیْمِ</h3>
+                <p class="bangla text-center">শুরু করছি আল্লাহর নামে যিনি পরম করুণাময়, অতি দয়ালু।</p>
+
+        </div>
+        <div class="col-md-2 col-sm-12 indexcol">
+                <button type="button" class="btn btn-block bg-gradient-secondary btn-lg" onClick="openSidebarMenu()">
+                        সূচিপত্র/তালিকা </button>
+        </div>
+        <div class="col-md-5  col-sm-12">
+                <h3 class="text-center arabic cs1"> الله يحب </h3>
+                <p class="bangla text-center">আল্লাহর ~ পছন্দ</p>
+        </div>
+
+</div>
+
+
+
+
+<script>
+        $(document).ready(function () {
+                //openSidebarMenu(); 
+                CayahArray =
+                        "2:195,2:222,3:31,3:76,3:134,3:146,3:148,3:159,5:13,5:42,5:54,5:93,9:4,9:7,9:108,19:96,20:39,49:9,60:8,61:4";
+                dynamic_data = {
+                        "subject": "আল্লাহর ~ পছন্দ",
+                        "introHtml": "স্বয়ং  আল্লাহর পছন্দ",
+                        "ayah": String2AyahArray(CayahArray),
+                        "videos": [{
+                                        'title': 'আল্লাহর সবচেয়ে প্রিয় বান্দা',
+                                        'thumb': 'https://i.ytimg.com/vi/xuOA1A2cdEM/maxresdefault.jpg',
+                                        'url': 'https://www.youtube.com/watch?v=xuOA1A2cdEM'
+                                }, {
+                                        'title': 'Allah Loves...',
+                                        'thumb': 'https://i.ytimg.com/vi/u_VDvY0v-bo/hqdefault.jpg',
+                                        'url': 'https://www.youtube.com/playlist?list=PLQ02IYL5pmhHLgbkpUu1a5igh6Hsff0eY'
+                                }, {
+                                        'title': 'আল্লাহ কাদেরকে ভালবাসেন , জানেন কি',
+                                        'thumb': 'https://i.ytimg.com/vi/qcCdU2YPbHQ/maxresdefault.jpg',
+                                        'url': 'https://www.youtube.com/watch?v=qcCdU2YPbHQ'
+                                }, {
+                                        "title": "আল্লাহ্‌ যাদের বেশি পরীক্ষা করেন...",
+                                        "thumb": "https://i.ytimg.com/vi/vJ-GCT7doKY/hqdefault.jpg",
+                                        "url": "https://www.youtube.com/embed/vJ-GCT7doKY"
+                                },
+                                {
+                                        "title": "দেখে নিন আল্লাহর পছন্দের বান্দা কারা এবং কেন??",
+                                        "thumb": "https://i.ytimg.com/vi/SRoEObUlEJo/hqdefault.jpg",
+                                        "url": "https://www.youtube.com/embed/SRoEObUlEJo"
+                                }, {
+                                        "title": "আল্লাহ ক্ষমাশীল। ক্ষমা করাকে তিনি পছন্দ করেন..",
+                                        "thumb": "https://i.ytimg.com/vi/S2G79suT_gI/hqdefault.jpg",
+                                        "url": "https://www.youtube.com/embed/S2G79suT_gI"
+                                }, {
+                                        "title": "আল্লাহ যাদেরকে ভালোবাসেন",
+                                        "thumb": "https://i.ytimg.com/vi/NPRAHE7zc9o/hqdefault.jpg",
+                                        "url": "https://www.youtube.com/embed/NPRAHE7zc9o"
+                                }, {
+                                        "title": "আল্লাহ যাকে ভালোবাসেন, তাদের পরীক্ষা করেন ",
+                                        "thumb": "https://i.ytimg.com/vi/B7U31qj2WnQ/hqdefault.jpg",
+                                        "url": "https://www.youtube.com/embed/B7U31qj2WnQ"
+                                }, 
+                                {
+                                        "title": "নিশ্চয় ধৈর্য্যশীলকে আল্লাহ পছন্দ করেন",
+                                        "thumb": "https://i.ytimg.com/vi/8-DKZ51B3G8/hqdefault.jpg",
+                                        "url": "https://www.youtube.com/embed/8-DKZ51B3G8"
+                                }, {
+                                        "title": "Allah Smiles At Such A Person",
+                                        "thumb": "https://i.ytimg.com/vi/7qDlNhgDvmA/hqdefault.jpg",
+                                        "url": "https://www.youtube.com/embed/7qDlNhgDvmA"
+                                }, {
+                                        "title": "Allah Loves This Type of Sinner",
+                                        "thumb": "https://i.ytimg.com/vi/BC-Rcc4SneM/hqdefault.jpg",
+                                        "url": "https://www.youtube.com/embed/BC-Rcc4SneM"
+                                }, {
+                                        "title": "ALLAH SMILES AT THIS SINNER",
+                                        "thumb": "https://i.ytimg.com/vi/9-qkm3Wkq2E/hqdefault.jpg",
+                                        "url": "https://www.youtube.com/embed/9-qkm3Wkq2E"
+                                }, {
+                                        "title": "তিন ধরনের ব্যাক্তিকে দেখে আল্লাহ হাসেন|Allah Smiles At Such a Person",
+                                        "thumb": "https://i.ytimg.com/vi/oiB8RymMPaY/hqdefault.jpg",
+                                        "url": "https://www.youtube.com/embed/oiB8RymMPaY"
+                                }, {
+                                        "title": "[২য় পর্ব] তিন ধরনের ব্যাক্তিকে দেখে আল্লাহ হাসেন| Allah Smiles At Such a Person",
+                                        "thumb": "https://i.ytimg.com/vi/ht7awCqXjAk/hqdefault.jpg",
+                                        "url": "https://www.youtube.com/embed/ht7awCqXjAk"
+                                }, {
+                                        "title": "আল্লাহ এই পাপী ব্যাক্তিকে দেখে হাসেন|Allah Smile At This Sinner",
+                                        "thumb": "https://i.ytimg.com/vi/moQrKdG_4eE/hqdefault.jpg",
+                                        "url": "https://www.youtube.com/embed/moQrKdG_4eE"
+                                },
+                                {
+                                        "title": "যাদের দিকে তাকিয়ে মহান আল্লাহ হাসেন! শায়খ মুখতার আহমাদ",
+                                        "thumb": "https://i.ytimg.com/vi/pPu39FKwk6M/hqdefault.jpg",
+                                        "url": "https://www.youtube.com/embed/pPu39FKwk6M"
+                                }
+
+                        ],
+                        "articles": [],
+                        "books": [
+                                {
+                                'type'  : "firebase-pdf", 
+                                'title' : 'আল্লাহর নিকট অধিক পছন্দনীয় আমল',
+                                'writer': "আসমা বিনতে রাশেদ আর-রুয়াইদা",
+                                'url'   : 'etc%2Fbn_allahor_nikot_priyo_amol.pdf',
+                                'thumb' : 'etc%2Fbn_allahor_nikot_priyo_amol.png', 
+                                }, {
+                                'type'  : "firebase-pdf", 
+                                'title' : 'আল্লাহর প্রিয় বান্দা হবেন কিভাবে?',
+                                'writer': "আবু আহমাদ সাইফুদ্দিন বেলাল",
+                                'url'   : 'etc%2Fbn-kaif-tkoon-habib-llallah.pdf',
+                                'thumb' : 'etc%2Fbn-kaif-tkoon-habib-llallah.png', 
+                                }
+                        ]
+                };
+
+
+                populate_dynamic_view(dynamic_data);
+
+
+        });
+</script>
