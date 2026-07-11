@@ -899,27 +899,7 @@ function loadQuranicVerse() {
                     "title": " ০৩. সুরা আল-ইমরান",
                     "thumb": "https://i.ytimg.com/vi/rLAxUE61MdA/hqdefault.jpg",
                     "url": "https://www.youtube.com/playlist?list=PL7TWabiVnFOJfS63lCVVe22mpG1qk5aR7"
-                }, {
-                    "title": "তাফসির: ০৪. সুরা আন-নিসা",
-                    "thumb": "https://i.ytimg.com/vi/_4c8I6SBZyk/hqdefault.jpg",
-                    "url": "https://www.youtube.com/playlist?list=PLDfP1yNs-Ic-Q4X29ueZa32z5bZ8SjL4I"
-                }, {
-                    "title": "তাফসির: ০৫. সুরা আল-মায়েদাহ",
-                    "thumb": "https://i.ytimg.com/vi/Icp4OvxCZCk/hqdefault.jpg",
-                    "url": "https://www.youtube.com/playlist?list=PLDfP1yNs-Ic8FCmoS6DiTGNgVOEvY0QNh"
-                }, {
-                    "title": "তাফসির: ০৬. সুরা আল-আন‘আম",
-                    "thumb": "https://i.ytimg.com/vi/6qacK842mg4/hqdefault.jpg",
-                    "url": "https://www.youtube.com/playlist?list=PLDfP1yNs-Ic8ncAI2TPSHhRXrU5cOPIR0"
-                }, {
-                    "title": "তাফসির: ০৭. সুরা আল-আ‘রাফ",
-                    "thumb": "https://i.ytimg.com/vi/qDI99cCM_Is/hqdefault.jpg",
-                    "url": "https://www.youtube.com/playlist?list=PLDfP1yNs-Ic9uE7Yjw496-FdUzPUuQ-QW"
-                }, {
-                    "title": "তাফসির: ০৮. সুরা আল-আনফাল",
-                    "thumb": "https://i.ytimg.com/vi/S9Och-GaBMI/hqdefault.jpg",
-                    "url": "https://www.youtube.com/playlist?list=PLDfP1yNs-Ic_Lg_ml5B32-Wc-m-AjCgxi"
-                }, {
+                },      {
                     "title": "তাফসির: ০৯. সুরা আত-তাওবা",
                     "thumb": "https://i.ytimg.com/vi/h94LX41fDrc/hqdefault.jpg",
                     "url": "https://www.youtube.com/playlist?list=PLA0cV1UDgWf30kHfuWkwZUUDRAb08jPOj"
@@ -999,9 +979,6 @@ function loadQuranicVerse() {
                },{
                    'title' : 'Calming Recitation - Shaykh Moutasem Al Hameedi Videos',
                    'url'   : 'https://www.youtube.com/playlist?list=PL3xtJi9mON_o-lIIc26Rz3wqciO9S0kVZ'
-               },{
-                   'title' : '30 Para of Quran (Beautiful and Fast Recitation in 30 min)',
-                   'url'   : 'https://www.youtube.com/playlist?list=PL_kCIDEjSaa2QkLOEnYdOmgmx6vS5Oc-_'
                }
             ],
             "books": sura_grammer,
