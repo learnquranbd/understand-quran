@@ -179,30 +179,62 @@ $(document).ready(function () {
        $('.nav.nav-treeview').css('height', 'auto');
 
        $('.dynamic-view').html(''); 
-       
-       
-        
-       if($(this).data('partials') !== undefined){ 
-          $('.ajaxprocess').addClass('run');
-          jQuery.ajax({
-              url: "/partials/"+$(this).data('partials')+'.html', 
-          })
-          .done(function( data ) {  
-              dynamicObj                 = null; 
-              is_recursively_ajax = false;   
-              $('.subject-menu-right .settings-control-panel').html(''); 
-              $('.dynamic-view').html(data);  
-              if($( document ).width() < 600)
-              $('body').removeClass('sidebar-open').addClass('sidebar-closed sidebar-collapse');
-              $('.ajaxprocess').removeClass('run'); 
 
-          }).fail(function() {
-            $('.ajaxprocess').removeClass('run');
-          })
-          .always(function() {
-            $('.ajaxprocess').removeClass('run');
-          });
-        }
+       // show in modal 
+
+       if($(this).hasClass('show_in_modal')){
+
+       this_modal_title = $(this).data('modaltitle');
+
+        if($(this).data('partials') !== undefined){ 
+            $('.ajaxprocess').addClass('run');
+            jQuery.ajax({
+                url: "/partials/"+$(this).data('partials')+'.html', 
+            })
+            .done(function( data ) {   
+
+                $('#modal-xl .modal-title').html(this_modal_title);
+                $('#modal-xl .modal-body .modal-body-content').html(data);
+                $('#modal-xl').modal();
+
+  
+            }).fail(function() {
+              $('.ajaxprocess').removeClass('run');
+            })
+            .always(function() {
+              $('.ajaxprocess').removeClass('run');
+            });
+          }
+
+
+       }else{ 
+                    
+                    
+                if($(this).data('partials') !== undefined){ 
+                    $('.ajaxprocess').addClass('run');
+                    jQuery.ajax({
+                        url: "/partials/"+$(this).data('partials')+'.html', 
+                    })
+                    .done(function( data ) {  
+                        dynamicObj                 = null; 
+                        is_recursively_ajax = false;   
+                        $('.subject-menu-right .settings-control-panel').html(''); 
+                        $('.dynamic-view').html(data);  
+                        if($( document ).width() < 600)
+                        $('body').removeClass('sidebar-open').addClass('sidebar-closed sidebar-collapse');
+                        $('.ajaxprocess').removeClass('run'); 
+
+                    }).fail(function() {
+                        $('.ajaxprocess').removeClass('run');
+                    })
+                    .always(function() {
+                        $('.ajaxprocess').removeClass('run');
+                    });
+                    }
+        
+    }
+
+
 
           
     }); // .nav-link click end 
@@ -1115,7 +1147,7 @@ function debugger_callback(){
 }
 
 function populate_dynamic_view(dataObj){ 
-      
+      $('.home_star_modules').hide();
       $('#dynamic_content .dynamic_content_block').html('');
       debugger_callback();
 
@@ -1235,6 +1267,10 @@ function populate_dynamic_view(dataObj){
               $('.' + auto_load_function).trigger('click');
               auto_load_function = '';
        // }, 1000);
+      }
+      if($('.index_title').html() !== undefined){ 
+        $('.home_star_modules').show();
+        $('.index_title').removeClass('index_title');
       }
 
      // rightsidescrollbar();
@@ -1442,7 +1478,7 @@ function openGrammerBooks(sn){
    // $('.card.quranic_surah.surah-' + (sn+1) + ' .timeline').slideToggle();
     $('.card.quranic_surah.surah-' + (sn+1) + ' .surah_pdf_grammer_'+ (sn+1)).slideToggle();
 }
-
+    
 
 function getSurahHeading(surah){
     return '<i class="fas fa-play-circle bg-green playayah" data-playsrc="'+ surah + '" onclick="setnew_audio_and_play(this, true)" style="border-radius: 50%;"></i><span class="mobilefull">সূরা '+ en2bnNumber(surah+1) + ' : ' + bangla_sura_names[surah]  +  '<span class="arabic"> ( ' + arabic_sura_names[surah]  + ' ) </span> </span><span class="mobilefull"> সূরার বাংলা অর্থ (  '  + surah_bangla_meaning[surah] +' ) </span><span class="mobilefull"> সূরার মোট আয়াত(' + en2bnNumber( ayat_numbers[surah] ) +') </span><span class="mobilefull"> নাজিল স্থান : '+ place_revealed[surah] +' </span><span class="mobilefull last"> নাজিল ক্রম :'+ revealed_order[surah] + '</span> | <a href="javascript:void(0)" onClick="openReadMode('+surah+')" ><i class="fa fa-hand-point-up"></i> সব আয়াত একসাথে  </a> | <a href="javascript:void(0)" onClick="openGrammerBooks('+surah+')" ><i class="fa fa-book"></i> সূরার আরবি ব্যাকরণ </a> | <a href="javascript:void(0)" onClick="loadUrlInModal(\'/partials/arabic_languages/wordspersurah/'+ (surah+1) +'.html\', \' সূরা '+ en2bnNumber(surah+1) + ' : ' + bangla_sura_names[surah] + ' :  শব্দ+পুনরাবৃত্তি :  (হুবুহু শব্দ :' + en2bnNumber(  exact_word_rep_surah[surah]) + ' |  মৌলিক শব্দ: ' + en2bnNumber(lemma_word_rep_surah[surah]) + ' | সূরার মোট আরবি হরফ:' + en2bnNumber(  surah_letter_count[surah] ) + ')\')" ><i class="fa fa-braille"></i> সূরার শব্দ+পুনরাবৃত্তি (হুবুহু শব্দ :' + en2bnNumber(  exact_word_rep_surah[surah]) + ' |  মৌলিক শব্দ: ' + en2bnNumber(lemma_word_rep_surah[surah]) + ' | সূরার মোট আরবি হরফ:' + en2bnNumber(  surah_letter_count[surah] ) + ') </a>';     
@@ -1710,7 +1746,7 @@ function get_ayahHTML(fsurah, fayah){
 
              
             // check if the ayah is a sejda ayah 
-            sejda_ayahs = ["7:206","13:15","16:50","17:109","19:58","22:18","25:60","27:26","32:15","28:24","41:38","53:62","84:21","96:19"];
+            sejda_ayahs = ["7:206","13:15","16:50","17:109","19:58","22:18","25:60","27:26","32:15","38:24","41:38","53:62","84:21","96:19"];
             fsurafayah = fsurah.toString()+":"+fayah.toString();
              
              

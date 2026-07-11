@@ -1123,7 +1123,7 @@
          });
         */
 
-        o = new Option("সূরা: (" + en2bnNumber(1) + ") : " + bangla_sura_names[0] + ' [ ' + en_suras[0]
+        o = new Option("সূরা: (" + en2bnNumber(1) + ") : " + bangla_sura_names[0] + '  [ ' + en_suras[0]
                  .capitalize() + ' ] ', 1);
              $(o).data('subject', bangla_sura_names[0]);
              $(o).data('ayah', 1 + ":1-" + ayat_numbers[0]);
@@ -1164,7 +1164,7 @@
 
              var dynamic_data = {
                  "subject": $('#ayahsubject').val(),
-                 "introHtml": 'সূরা('+ en2bnNumber(surah_index) + '): ' + bangla_sura_names[surah_index -1 ] +' সূরার  সব  আয়াতসমূহ দেখতে ~ `কুরআনের আয়াত` এ  ক্লিক করুন | এ সূরার সম্পর্কিত ('+ en2bnNumber(  sura_videos[surah_index].length ) + ') টি ভিডিও দেখতে `ভিডিও` তে ক্লিক করুন  | সূরার আরবি ব্যাকরণ  দেখতে  `বই / পি.ডি.এফ` এ ক্লিক করুন',
+                 "introHtml": 'সূরা('+ en2bnNumber(surah_index) + '): ' + bangla_sura_names[surah_index -1 ] +'  ('+ surah_bangla_meaning [surah_index -1 ] +')  সূরার  সব  আয়াতসমূহ দেখতে ~ `কুরআনের আয়াত` এ  ক্লিক করুন | এ সূরার সম্পর্কিত ('+ en2bnNumber(  sura_videos[surah_index].length ) + ') টি ভিডিও দেখতে `ভিডিও` তে ক্লিক করুন  | সূরার আরবি ব্যাকরণ  দেখতে  `বই / পি.ডি.এফ` এ ক্লিক করুন',
                  "ayah": ayah_obj,
                  "videos": sura_videos[surah_index],
                  "articles": [
@@ -1260,7 +1260,10 @@
              };
 
 
-             populate_dynamic_view(dynamic_data);
+             populate_dynamic_view(dynamic_data); 
+              
          }
      }
+
+      
  </script>

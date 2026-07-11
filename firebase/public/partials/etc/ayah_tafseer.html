@@ -239,9 +239,9 @@
         
         surah_ayah_arabic_html = '<div  class="quran-container recursiveajaxload2 waiting arabic tajweed2 tajweed-ar-surah-' + fsurah + '-ayah-' + selectedayah + '" id="tajweed-ar-surah-' + fsurah + '-ayah-' + selectedayah + '" data-ajaxurl="/resources/tajweed/' + fsurah + '_' + selectedayah + '.html"></div>';
         surah_ayah_arabic_html += '<div class="ajax_translation translation text-right recursiveajaxload waiting surah-'+fsurah+'-ayah-'+selectedayah+'-translation"  data-ajaxurl="/resources/quran/'+ fsurah + '/' + selectedayah + '_translation.html"></div> ';
+        surah_ayah_arabic_html += '<div class="ajax_translation quran-container wordbywordwrap text-right recursiveajaxload waiting ayah_grammer-'+fsurah+'-ayah-'+selectedayah+'"  data-ajaxurl="/resources/quran/'+ fsurah + '/' + selectedayah + '_ayat.html"></div> ';
         $('.etc_ayah_tafseer .tajweed_ayah_html').html(surah_ayah_arabic_html);
-        
-
+         
         etc_ayah_tafseer_details_html = '<div class="quranic_tafseer ondemandload waiting tafseer-'+ fsurah + '-ayah-'+ selectedayah + '" data-ajaxurl="/resources/quran/'+ fsurah + '/' + selectedayah + '_tafseer.html" ></div>';
         $('.etc_ayah_tafseer_details').html(etc_ayah_tafseer_details_html);
        
@@ -252,6 +252,7 @@
         call_ajax_now($('.etc_ayah_tafseer .tajweed-ar-surah-' + fsurah + '-ayah-' + selectedayah).data('ajaxurl'), $('.etc_ayah_tafseer .tajweed-ar-surah-' + fsurah + '-ayah-' + selectedayah));
         call_ajax_now($('.etc_ayah_tafseer .surah-'+fsurah+'-ayah-'+selectedayah+'-translation').data('ajaxurl'), $('.etc_ayah_tafseer .surah-'+fsurah+'-ayah-'+selectedayah+'-translation'));
         call_ajax_now($('.etc_ayah_tafseer_details .tafseer-'+ fsurah + '-ayah-'+ selectedayah).data('ajaxurl'), $('.etc_ayah_tafseer_details .tafseer-'+ fsurah + '-ayah-'+ selectedayah), open_first_tow_tafseer);
+        call_ajax_now($('.etc_ayah_tafseer .ayah_grammer-'+ fsurah + '-ayah-'+ selectedayah).data('ajaxurl'), $( '.etc_ayah_tafseer .ayah_grammer-'+ fsurah + '-ayah-'+ selectedayah));
 
 
         }, 400);
@@ -259,7 +260,7 @@
       
 
     }
-
+ 
     function open_first_tow_tafseer(){
         $('.etc_ayah_tafseer_details .panel-title a').slice(0,2).trigger('click');
     }

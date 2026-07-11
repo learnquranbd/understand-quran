@@ -816,6 +816,11 @@ $(document).ready(function () {
 function String2AyahArray(surahAyahString) {
     var ayah_obj = [];
     var total_ayah = 0;
+    
+    surahAyahString = surahAyahString.replaceAll("--", ":");
+    surahAyahString = surahAyahString.replaceAll(".", ",");
+    //console.log(surahAyahString);
+    //$('#ayahtoload').val(surahAyahString);
     var ayahval = surahAyahString.split(",");
 
 
@@ -829,7 +834,7 @@ function String2AyahArray(surahAyahString) {
 
     $.each(ayahval, function (k, v) {
         val = v.split(":");
-
+        console.log(val);
         haveAyaRange = val[1].indexOf("-");
         if (haveAyaRange > 0) {
             ayaRange = val[1].split("-");
@@ -872,16 +877,28 @@ function loadQuranicVerse() {
             "ayah": ayah_obj,
             "videos": [{
                     "title": "সুরাহ ফাতিহাকে নতুন করে জানা",
-                    "thumb": "https://i.ytimg.com/vi/SgRI6V7Hb1M/hqdefault.jpg",
+                    "thumb": "https://i.ytimg.com/vi/GZBsZI_1tPk/hqdefault.jpg",
                     "url": "https://www.youtube.com/playlist?list=PLRRmxaFCrLnWmzRNJN56nOmNc70ZJnz3v"
                 }, {
+                    "title": "Thematic Overview of the Quran                    ",
+                    "thumb": "https://i.ytimg.com/vi/nmV5YsiiURo/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PL7TWabiVnFOIU_aS6TmyxuXl2ZPkdJDsH"
+                },{
                     "title": "তাফসির: ০২ আল বাক্বারাহ",
-                    "thumb": "https://i.ytimg.com/vi/N8vrOD_u3zo/hqdefault.jpg",
-                    "url": "https://www.youtube.com/playlist?list=PLDfP1yNs-Ic9ch8KjFBfXogZkSDuVWHqK"
+                    "thumb": "https://i.ytimg.com/vi/TCNB-OwTA7I/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PLA0cV1UDgWf2lorNxXdjI-w5FUXiDFsAY"
+                }, {
+                    "title": "০২ আল বাক্বারাহ",
+                    "thumb": "https://i.ytimg.com/vi/6MnwId91thc/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PL7TWabiVnFOIll5lbRAKzOywpLjiae-qu"
                 }, {
                     "title": "তাফসির: ০৩. সুরা আল-ইমরান",
-                    "thumb": "https://i.ytimg.com/vi/kSS9N__b4D8/hqdefault.jpg",
-                    "url": "https://www.youtube.com/playlist?list=PLDfP1yNs-Ic_teUE82IRv3n3BUZZ2qC6g"
+                    "thumb": "https://i.ytimg.com/vi/iXGTjQBNDuE/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PLA0cV1UDgWf2w--v8QfEw3IfcIwfnjUVI"
+                }, {
+                    "title": " ০৩. সুরা আল-ইমরান",
+                    "thumb": "https://i.ytimg.com/vi/rLAxUE61MdA/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PL7TWabiVnFOJfS63lCVVe22mpG1qk5aR7"
                 }, {
                     "title": "তাফসির: ০৪. সুরা আন-নিসা",
                     "thumb": "https://i.ytimg.com/vi/_4c8I6SBZyk/hqdefault.jpg",
@@ -904,44 +921,56 @@ function loadQuranicVerse() {
                     "url": "https://www.youtube.com/playlist?list=PLDfP1yNs-Ic_Lg_ml5B32-Wc-m-AjCgxi"
                 }, {
                     "title": "তাফসির: ০৯. সুরা আত-তাওবা",
-                    "thumb": "https://i.ytimg.com/vi/OB6TF0DsziA/hqdefault.jpg",
-                    "url": "https://www.youtube.com/playlist?list=PLDfP1yNs-Ic_a43pU5a9HYOPXklpHHGhT"
+                    "thumb": "https://i.ytimg.com/vi/h94LX41fDrc/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PLA0cV1UDgWf30kHfuWkwZUUDRAb08jPOj"
                 }, {
                     "title": "তাফসির: ১০. সুরা ইউনুস",
-                    "thumb": "https://i.ytimg.com/vi/niG5eHgoZUw/hqdefault.jpg",
-                    "url": "https://www.youtube.com/playlist?list=PLDfP1yNs-Ic-P21IC3LBEYgAQsqW6QZA1"
+                    "thumb": "https://i.ytimg.com/vi/I4ccef-cM8k/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PLA0cV1UDgWf0-m4uqNc6nHs6RuLEY2Wrb"
                 }, {
                     "title": "তাফসির: ১১. সুরা হুদ",
-                    "thumb": "https://i.ytimg.com/vi/x48Q5y9zWic/hqdefault.jpg",
-                    "url": "https://www.youtube.com/playlist?list=PLDfP1yNs-Ic-r9-hjl5XIECAycyDAXp0J"
+                    "thumb": "https://i.ytimg.com/vi/i0vV8TIAInw/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PLA0cV1UDgWf28T-FMJhMs-gnQPaaW5qLY"
                 }, {
                     "title": "তাফসির: ১২. সুরা ইউসুফ",
-                    "thumb": "https://i.ytimg.com/vi/l-BvVsV5dWQ/hqdefault.jpg",
-                    "url": "https://www.youtube.com/playlist?list=PLDfP1yNs-Ic8rpv7s4Ip2n65O1tpJxLd3"
+                    "thumb": "https://i.ytimg.com/vi/r0WLQ2F3cjQ/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PLA0cV1UDgWf0noklSV-XrOnenhWGBJ2Yq"
+                },{
+                    "title": "Grammer: ১২. সুরা ইউসুফ",
+                    "thumb": "https://i.ytimg.com/vi/Rr12b1JI6o4/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PL7TWabiVnFOJpRuQw0xFlQnAOkcdWDe3d"
                 }, {
                     "title": "তাফসির: ১৩. সুরা আর রা‘দ",
-                    "thumb": "https://i.ytimg.com/vi/_IqyPtdZpvg/hqdefault.jpg",
-                    "url": "https://www.youtube.com/playlist?list=PLDfP1yNs-Ic9a5Kt9SliCDGrRk-f4iwhV"
+                    "thumb": "https://i.ytimg.com/vi/hziiMGMzNDg/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PLA0cV1UDgWf0elGaK42N-Sa6bzsXu4SOq"
                 }, {
                     "title": "তাফসির: ১৪. সুরা ইবরাহিম",
-                    "thumb": "https://i.ytimg.com/vi/INPTQtYzxpo/hqdefault.jpg",
-                    "url": "https://www.youtube.com/playlist?list=PLDfP1yNs-Ic92pTIg9kW3cdNw4Fii0rvr"
+                    "thumb": "https://i.ytimg.com/vi/ziSLCdFGQNg/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PLA0cV1UDgWf2BaB7A0xo1k4ib5p_QjvHA"
                 }, {
                     "title": "তাফসির: ১৫ আল-হিজর",
-                    "thumb": "https://i.ytimg.com/vi/vX5_6Z9mQ4A/hqdefault.jpg",
-                    "url": "https://www.youtube.com/playlist?list=PLDfP1yNs-Ic9cU58aFfuL4lnUfsSoBIry"
+                    "thumb": "https://i.ytimg.com/vi/su0zODEceDQ/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PLA0cV1UDgWf2vsG6PIXH7j2trTLk4VNh9"
                 }, {
                     "title": "তাফসির: ১৬. আন-নাহল",
-                    "thumb": "https://i.ytimg.com/vi/c72iXerQuKw/hqdefault.jpg",
-                    "url": "https://www.youtube.com/playlist?list=PLDfP1yNs-Ic8orAZZ6Ejg2fqzK5eQUzu8"
+                    "thumb": "https://i.ytimg.com/vi/hQ-CpWqz7ds/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PLA0cV1UDgWf2KMzPKAjPtU2zppRYjFQHa"
                 }, {
                     "title": "তাফসির: ১৭ বনী ইসরাঈল",
-                    "thumb": "https://i.ytimg.com/vi/SAUicUon7kQ/hqdefault.jpg",
-                    "url": "https://www.youtube.com/playlist?list=PLDfP1yNs-Ic_W3HjtSfOXVg1QFMfj-S-A"
+                    "thumb": "https://i.ytimg.com/vi/MYhdkrexz5k/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PLA0cV1UDgWf3seF94QES81WRk3atjQ_LC"
                 },{
                     "title": "তাফসির: ১৮. আল কাহ্ফ",
-                    "thumb": "https://i.ytimg.com/vi/jAD0oItt4xU/hqdefault.jpg",
-                    "url": "https://www.youtube.com/playlist?list=PLDfP1yNs-Ic9zvyyFT6g0tfN16ZxHclPQ"
+                    "thumb": "https://i.ytimg.com/vi/rC_22Jpy1Jo/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PLA0cV1UDgWf0aYYcnaufK4SzwJXmrqrsY"
+                },{
+                    "title": "১৮. আল কাহ্ফ",
+                    "thumb": "https://i.ytimg.com/vi/ecSmHMud9cE/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PL7TWabiVnFOJNityv_-tvTprbcPtWL2qj"
+                }, {
+                    "title": "তাফসির: ১৯.  সুরা মারিয়াম",
+                    "thumb": "https://i.ytimg.com/vi/gO8Y66Fiq9E/hqdefault.jpg",
+                    "url": "https://www.youtube.com/playlist?list=PLA0cV1UDgWf0C4LwZT3lMIfdLdBTTzdDX"
                 },
                 {
                     "title": "তাফসির:  ৩০ পারা, আমপারা",
@@ -1167,7 +1196,8 @@ function generate_extra_raw_html(){
     return returnhtml;
 }
 
-function loadSection(partialClass, module){  
+function loadSection(partialClass, module){   
     $('.mt-2 .' + partialClass + '.nav-link').trigger('click');
     auto_load_function = module;
+   
 }

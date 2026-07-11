@@ -1,7 +1,7 @@
 <div class="only_bangla_wrap">
         <div class="pageIndex pindextop"> 
             <div class="row">  
-                <div class="col-md-12 col-sm-12 col-lg-4 text-center">
+                <div class="col-md-12 col-sm-12 col-lg-6 text-center">
                     <div class="row">
                         <div class="col-md-6  col-sm-12 text-right"> 
                             <select  class="niceselect SelectQSurah" onchange="loadFullSurahBn()">
@@ -29,7 +29,7 @@
 
         <div class="pageIndex pindexbottom">
             <div class="row">        
-                <div class="col-md-12 col-sm-12 col-lg-4 text-center">
+                <div class="col-md-12 col-sm-12 col-lg-6 text-center">
                     
                             <select  class="niceselect SelectQSurah" onchange="cloadOnlySurahBn()">
                                 <option value=""> সূরা </option>
@@ -50,12 +50,12 @@ $(document).ready(function () {
                 
     soptions.push('<option value="',
         1, '"> (',
-        en2bnNumber(1)+ ') সূরা - ' + bangla_sura_names[0], '</option>'); 
+        en2bnNumber(1)+ ') সূরা - ' + bangla_sura_names[0], '  ('+ surah_bangla_meaning [0] +') | আয়াত [' + en2bnNumber (ayat_numbers[0]) + '] টি </option>'); 
 
     for (var i = 114; i > 1; i--) {
         soptions.push('<option value="',
         i, '"> (',
-        en2bnNumber(i)+ ') সূরা - ' + bangla_sura_names[i-1], '</option>'); 
+        en2bnNumber(i)+ ') সূরা - ' + bangla_sura_names[i-1], '  ('+ surah_bangla_meaning [i-1] + ') | আয়াত [' + en2bnNumber( ayat_numbers[i-1] ) + '] টি </option>'); 
     }
  
     $(".only_bangla_wrap select.SelectQSurah").html(soptions.join(''));
@@ -79,7 +79,9 @@ function loadFullSurahBn(){
 
     i = $(".only_bangla_wrap select.SelectQSurah option:selected").val();
     full_surah_bangla_html = '<div id="pg_'+i+'" data-ajaxurl="/partials/quran/onlybangla/'+i+'.html"  class="page recursiveajaxload2 waiting"></div>'; 
-    $('.full_surah_bangla').html(full_surah_bangla_html);
+    $('.full_surah_bangla').html( '<div class="page" style="min-height:100px">'+  getSurahHeading(parseInt(i)-1) +  '<hr /> <div class="card quranic_surah surah-'+i+'"><div class="surah_pdf_window surah_pdf_grammer_'+i+'" style="display:none"></div> <div class="surah_readmode_window surah_readmode_'+i+'" style="display:none"></div> ' +  full_surah_bangla_html + '</div></div>' );
+
+    
 
     $(".only_bangla_wrap .pindexbottom select.SelectQSurah option[value=\""+ i + "\"]").prop('selected', true);
 
@@ -95,4 +97,5 @@ function loadFullSurahBn(){
     }
     .full_surah_bangla .surah-name{ font-size: 1.2rem;}
     .full_surah_bangla .line{ font-size: 1.0rem; text-align: left;}
+    html .page .page{ width: 100%; margin: 2px auto; max-width: 100%;}
 </style>
