@@ -1,15 +1,65 @@
-<div class="text-center"> 
-            <a href="https://arabic.omaralzabir.com/" target="_blank">
-                <img src="/images/Keyboard Layout 1.png" alt="" /> 
-               </a>     
-        
-    
-    <textarea class="arabic large" style="width: 99%; height:90%; min-height: 300px; padding: 10px;" dir="rtl"></textarea>
-    <button class="btn btn-secondary" onclick="SwitchArabicKeyboard()"> স্থায়ী ভাবে নিচে টাইপ উইন্ডো  (SHOW/HIDE)</button>
+<div class="text-center">
+
+    <textarea id="akb-input" class="arabic large" style="width: 99%; height:90%; min-height: 200px; padding: 10px;" dir="rtl"></textarea>
+
+    <div id="akb-keys" style="max-width: 720px; margin: 10px auto; direction: rtl;"></div>
+
+    <div style="margin-bottom: 10px;">
+        <button class="btn btn-sm btn-outline-secondary bangla" id="akb-space">স্পেস</button>
+        <button class="btn btn-sm btn-outline-secondary bangla" id="akb-backspace">⌫ মুছুন</button>
+        <button class="btn btn-sm btn-outline-secondary bangla" id="akb-clear">সব মুছুন</button>
+        <button class="btn btn-sm btn-outline-primary bangla" id="akb-copy">কপি করুন</button>
+    </div>
+
+    <button class="btn btn-secondary bangla" onclick="SwitchArabicKeyboard()"> স্থায়ী ভাবে নিচে টাইপ উইন্ডো  (SHOW/HIDE)</button>
+    <a href="https://arabic.omaralzabir.com/" target="_blank" class="btn btn-outline-secondary bangla">অনলাইন আরবি কিবোর্ড (নতুন উইন্ডো)</a>
 </div>
 <script>
-
     function SwitchArabicKeyboard(){
-       $('.developer_panel').toggle(); 
+       $('.developer_panel').toggle();
     }
+
+    (function () {
+        var rows = [
+            ['ا','ب','ت','ث','ج','ح','خ','د','ذ','ر','ز','س','ش'],
+            ['ص','ض','ط','ظ','ع','غ','ف','ق','ك','ل','م','ن','ه'],
+            ['و','ي','ء','أ','إ','آ','ؤ','ئ','ة','ى','لا'],
+            ['َ','ُ','ِ','ً','ٌ','ٍ','ْ','ّ','ٰ']
+        ];
+        var $keys = $('#akb-keys'), input = document.getElementById('akb-input');
+
+        function insert(txt) {
+            var s = input.selectionStart, e = input.selectionEnd, v = input.value;
+            input.value = v.slice(0, s) + txt + v.slice(e);
+            input.selectionStart = input.selectionEnd = s + txt.length;
+            input.focus();
+        }
+
+        rows.forEach(function (row) {
+            var $row = $('<div style="margin-bottom: 4px;"></div>');
+            row.forEach(function (ch) {
+                // show harakat on a dotted circle so they are visible on the key
+                var label = ch.length === 1 && ch >= 'ً' && ch <= 'ٰ' ? '◌' + ch : ch;
+                $('<button class="btn btn-outline-dark arabic" style="min-width: 44px; margin: 1px; font-size: 1.4em; padding: 2px 8px;"></button>')
+                    .text(label)
+                    .on('click', function () { insert(ch); })
+                    .appendTo($row);
+            });
+            $keys.append($row);
+        });
+
+        $('#akb-space').on('click', function () { insert(' '); });
+        $('#akb-backspace').on('click', function () {
+            var s = input.selectionStart, e = input.selectionEnd, v = input.value;
+            if (s === e && s > 0) s = s - 1;
+            input.value = v.slice(0, s) + v.slice(e);
+            input.selectionStart = input.selectionEnd = s;
+            input.focus();
+        });
+        $('#akb-clear').on('click', function () { input.value = ''; input.focus(); });
+        $('#akb-copy').on('click', function () {
+            input.select();
+            document.execCommand('copy');
+        });
+    })();
 </script>

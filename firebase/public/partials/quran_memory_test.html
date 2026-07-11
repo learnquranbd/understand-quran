@@ -1,9 +1,96 @@
-কোরআনের সুরা বা আয়াত বা পেজ মুখস্ত যাচাই এর জন্য, আপনার স্মৃতি থেকে পড়ে রেকর্ড করে, পুনরায় প্লে করে নিজে নিজেই যাচাই করুন <br ><hr /> 
+কোরআনের সুরা বা আয়াত বা পেজ মুখস্ত যাচাই এর জন্য, আপনার স্মৃতি থেকে পড়ে রেকর্ড করে, পুনরায় প্লে করে নিজে নিজেই যাচাই করুন <br><hr />
 
+<div class="memory-test-recorder text-center">
 
-প্রথমে <a href="https://addpipe.com/simple-recorderjs-demo/" style="color: blue; font-weight: bold;" target="_blank"> এই লিংকে ক্লিক </a>  করে ওয়েব পেজ ওপেন করুন, নতুন উইন্ডোতে ~ এর পর রেকর্ড করে অডিও শুনুন + এখানে যাচাই করুন (কুরআন এর সূরা / আয়াত / পেইজ ওপেন করে ) 
+    <div class="mtr-controls" style="margin-bottom: 10px;">
+        <button id="mtr-start" class="btn btn-danger btn-lg bangla">
+            <i class="fas fa-microphone"></i> রেকর্ড শুরু করুন
+        </button>
+        <button id="mtr-stop" class="btn btn-secondary btn-lg bangla" disabled>
+            <i class="fas fa-stop"></i> থামান
+        </button>
+        <span id="mtr-timer" class="bangla" style="font-size: 1.3em; margin-left: 10px; font-weight: bold;">০:০০</span>
+    </div>
+
+    <p id="mtr-status" class="bangla" style="min-height: 1.5em;">রেকর্ড শুরু করতে উপরের লাল বাটনে ক্লিক করুন (মাইক্রোফোন এর অনুমতি দিতে হবে)</p>
+
+    <div id="mtr-takes" class="text-left" style="max-width: 640px; margin: 0 auto;"></div>
+</div>
+
+<script>
+(function () {
+    var mediaRecorder = null, chunks = [], timerId = null, seconds = 0, takeNo = 0;
+
+    function bn(n) {
+        var d = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+        return String(n).replace(/[0-9]/g, function (c) { return d[c]; });
+    }
+    function fmt(s) {
+        var m = Math.floor(s / 60), r = String(s % 60);
+        if (r.length < 2) r = '0' + r;
+        return bn(m) + ':' + bn(r);
+    }
+
+    function setStatus(msg) { $('#mtr-status').text(msg); }
+
+    function stopTracks() {
+        if (mediaRecorder && mediaRecorder.stream)
+            mediaRecorder.stream.getTracks().forEach(function (t) { t.stop(); });
+    }
+
+    if (!navigator.mediaDevices || !window.MediaRecorder) {
+        setStatus('দুঃখিত, আপনার ব্রাউজারে অডিও রেকর্ডিং সাপোর্ট নেই — অনুগ্রহ করে আধুনিক ব্রাউজার (Chrome/Firefox) ব্যবহার করুন');
+        $('#mtr-start').prop('disabled', true);
+        return;
+    }
+
+    $('#mtr-start').on('click', function () {
+        navigator.mediaDevices.getUserMedia({ audio: true }).then(function (stream) {
+            chunks = [];
+            mediaRecorder = new MediaRecorder(stream);
+            mediaRecorder.ondataavailable = function (e) { if (e.data.size > 0) chunks.push(e.data); };
+            mediaRecorder.onstop = function () {
+                stopTracks();
+                var blob = new Blob(chunks, { type: mediaRecorder.mimeType || 'audio/webm' });
+                var url = URL.createObjectURL(blob);
+                takeNo++;
+                var $take = $(
+                    '<div class="mtr-take" style="border: 1px solid #ddd; border-radius: 6px; padding: 8px; margin-top: 8px;">' +
+                    '  <span class="bangla" style="font-weight: bold;">রেকর্ড ' + bn(takeNo) + ' (' + fmt(seconds) + ')</span>' +
+                    '  <button class="btn btn-sm btn-outline-danger mtr-del bangla" style="float: right;">মুছুন</button>' +
+                    '  <audio controls style="width: 100%; margin-top: 6px;"></audio>' +
+                    '</div>');
+                $take.find('audio').attr('src', url);
+                $take.find('.mtr-del').on('click', function () { URL.revokeObjectURL(url); $take.remove(); });
+                $('#mtr-takes').prepend($take);
+                setStatus('রেকর্ড শেষ — নিচে প্লে করে আপনার তিলাওয়াত নিজেই যাচাই করুন');
+            };
+            mediaRecorder.start();
+            seconds = 0;
+            $('#mtr-timer').text(fmt(0));
+            timerId = setInterval(function () { seconds++; $('#mtr-timer').text(fmt(seconds)); }, 1000);
+            $('#mtr-start').prop('disabled', true);
+            $('#mtr-stop').prop('disabled', false);
+            setStatus('রেকর্ডিং চলছে... আপনার স্মৃতি থেকে সূরা / আয়াত পড়ুন');
+        }).catch(function () {
+            setStatus('মাইক্রোফোন পাওয়া যায়নি — ব্রাউজারে মাইক্রোফোনের অনুমতি (Allow) দিন');
+        });
+    });
+
+    $('#mtr-stop').on('click', function () {
+        if (timerId) { clearInterval(timerId); timerId = null; }
+        if (mediaRecorder && mediaRecorder.state !== 'inactive') mediaRecorder.stop();
+        $('#mtr-start').prop('disabled', false);
+        $('#mtr-stop').prop('disabled', true);
+    });
+
+    // stop mic + timer if the modal is closed mid-recording
+    $('#modal-xl').one('hidden.bs.modal', function () {
+        if (timerId) { clearInterval(timerId); timerId = null; }
+        if (mediaRecorder && mediaRecorder.state !== 'inactive') mediaRecorder.stop(); else stopTracks();
+    });
+})();
+</script>
 
 <hr />
-
-
-অথবা  <a href="https://play.google.com/store/apps/details?id=smartdatasoft.quranmemorizationtest&hl=bn&gl=US" style="color: blue; font-weight: bold;" target="_blank"> এই লিংকে ক্লিক </a>  করে মোবাইল এপ্লিকেশন ডাউনলোড করে, মুখস্ত স্মৃতি যাচাই করতে পারেন   
+এছাড়া <a href="https://play.google.com/store/apps/details?id=smartdatasoft.quranmemorizationtest&hl=bn&gl=US" style="color: blue; font-weight: bold;" target="_blank"> এই লিংকে ক্লিক </a> করে মোবাইল এপ্লিকেশন ডাউনলোড করে, মুখস্ত স্মৃতি যাচাই করতে পারেন
